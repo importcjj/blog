@@ -6,7 +6,7 @@ AUTHOR = u'Jiaju.chen'
 SITENAME = u'Signal'
 SITEURL = 'http://www.importcjj.com'
 
-THEME = 'themes/yake'
+THEME = 'yake'
 PATH = 'content'
 
 TIMEZONE = 'Asia/Shanghai'
