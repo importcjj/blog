@@ -7,6 +7,7 @@ INPUTDIR=$(BASEDIR)/content
 OUTPUTDIR=$(BASEDIR)/output
 CONFFILE=$(BASEDIR)/pelicanconf.py
 PUBLISHCONF=$(BASEDIR)/publishconf.py
+THEME_URL=https://github.com/importcjj/yake
 
 FTP_HOST=localhost
 FTP_USER=anonymous
@@ -97,6 +98,7 @@ stopserver:
 	@echo 'Stopped Pelican and SimpleHTTPServer processes running in background.'
 
 publish:
+	git clone --depth 1 $(THEME_URL)
 	$(PELICAN) $(INPUTDIR) -o $(OUTPUTDIR) -s $(PUBLISHCONF) $(PELICANOPTS)
 
 ssh_upload: publish
@@ -122,5 +124,5 @@ ifeq ($(TRAVIS_PULL_REQUEST), false)
 	ghp-import -n $(OUTPUTDIR)
 	@git push -fq https://${GH_TOKEN}@github.com/$(TRAVIS_REPO_SLUG).git gh-pages > dev/null
 	@git push -fq https://{CODING_USER}:${CODING_PASSWD}@git.coding.net/${CODING_USER}/signal.git gh-pages > /dev/null
-
+endif
 .PHONY: html help clean regenerate serve serve-global devserver publish ssh_upload rsync_upload dropbox_upload ftp_upload s3_upload cf_upload github
