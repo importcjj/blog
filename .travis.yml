@@ -7,7 +7,7 @@ install:
 - pip install markdown
 - pip install ghp-import
 script:
-- make github 2> /dev/null
+- 'make github 2> /dev/null'
 env:
   global:
   - secure: aVxScEwRBGLiEfsExGe4DG4nAyFlcoNGvL/wrc3gBKGpySyqHfRnySak9yk1YxJZtUTpvx4WEI28fUaVpdwbeLDzUExFSlBDzv2tEVsZsb6+RmnVs82tndJuSofKdddr9azbwljInQuoGwody7prCUbq1BpMI+p+2+YgstRoAN5UyPTjLwH1J58PAkblpkjcS1IeK7qo6Jv75ZApuLDZ2FhRHcMuepWrUYQpXNHKcE9bBlCLSBHaji8yQgTsl5Dytxr4yGOh20C8jbSvJ9ZjOGJ5QbSyjFKLiJuQjzkpLniIo9PkxKuCjlVlIiMcUiLDssYWr+ypufW288Cfe4Q2CRPM2/PFGfmbwrBE7yKn5tuAyC7S/qJv6GuZDm2vfwTAynCFC1fVCgw/PskWsjCzPWDpX5r/VzGufJTGYl8BhO3CBHK92ThtUHfOmjadG++Zjvvi71WWkNsM3UVU4Bfz7qe6OrWHRmg0gqltIJsrb26wcl8XD9bu8qyHhFq1lmiAyZWaTLFSr10d6S/SkAfUy1bgKituvyKfGkAzDoPXfOqeIgLh07too+vp6biRC2CWM8Ex3KtpV0drURk4tzZM+kcGZjMa58AtX2YmSluECN7QiH67ybyFhXCbhknOE5cy2iJm+YScXP/mZiMziiYFLJ7J3ypKbbCbh74N6F5sSsI=
