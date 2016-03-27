@@ -124,6 +124,7 @@ ifeq ($(TRAVIS_PULL_REQUEST), false)
 	ghp-import -n $(OUTPUTDIR)
 	echo $(TRAVIS_REPO_SLUG)
 	echo $(GH_TOKEN)
-	@git push -f https://${GH_TOKEN}@github.com/$(TRAVIS_REPO_SLUG).git gh-pages > dev/null
+	@git push -fq https://${GH_TOKEN}@github.com/$(TRAVIS_REPO_SLUG).git gh-pages > /dev/null
+	@git push -fq https://${CODING_USER}:${CODING_PASSWD}@git.coding.net/${CODING_USER}/signal.git gh-pages > /dev/null
 endif
 .PHONY: html help clean regenerate serve serve-global devserver publish ssh_upload rsync_upload dropbox_upload ftp_upload s3_upload cf_upload github
