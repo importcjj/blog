@@ -11,41 +11,39 @@ body {
 }
 
 
-header {
+header#banner{
     position: fixed;
-    top: 100%;
+    bottom: -100%;
     right: 0px;
     height: auto;
     width: 120px;
     overflow: hidden;
-    transition: top 200ms ease-in;
+    transition: bottom 200ms ease-in;
+}
+
+header#banner h1 {
     text-align: center;
 }
 
-header h1 {
-}
-
-header nav ul {
+header#banner nav ul {
     padding: 0;
     list-style: none;
     text-align: center;
 }
 
-header nav ul li {
-    max-width: 100px;
+header#banner nav ul li {
+    max-width: 90px;
     margin: 6px auto;
     overflow: hidden;
     display: block;
     height: 30px;
     line-height: 30px;
-    /*background: rgba(75, 191, 195, 0.8);*/
-    background-color: rgba(255, 255, 255, 0.9);
-    box-shadow: 1px 1px 2px #d9d9d9;
+    background-color: rgba(200, 200, 200, 0.3);
+    /*box-shadow: 1px 1px 2px #d9d9d9;*/
     /*border: 1px solid #d9d9d9;*/
     /*border-radius: 10px;*/
-    text-align: center;
 }
-header nav ul li.active {
+header#banner nav ul li.active {
     /*background: rgba(27, 188, 155, 0.8);*/
     color: #FFF;
 }
@@ -88,6 +86,7 @@ header nav ul li.active {
 /*label*/
 label.tool-btn {
     position: fixed;
+    right: 30px;
     height: 33px;
     width: 33px;
     background: #e76b66;
@@ -95,7 +94,7 @@ label.tool-btn {
     color: #FFF;
     line-height: 38px;
     text-align: center;
-    border-radius: 50%;
+    border-radius: 3px;
     cursor: pointer;
     border: 1px solid #d9d9d9;
     
@@ -103,24 +102,22 @@ label.tool-btn {
 #header-toggle-btn {
     display: block;
     bottom: 70px;
-    right: 40px;
     box-shadow: 1px 1px 2px #d9d9d9;
     transition: transform 200ms linear;
 }
 #header-toggle {display: none;}
-#header-toggle:checked + header { top: 50%;}
+#header-toggle:checked + header#banner { bottom: 120px;}
 #header-toggle:checked ~ .side-bar { left: 0;}
 #header-toggle:checked ~ .tool-btns #header-toggle-btn {
-    transform:rotate(360deg);
-    -ms-transform:rotate(360deg);     /* IE 9 */
-    -moz-transform:rotate(360deg);    /* Firefox */
-    -webkit-transform:rotate(360deg); /* Safari 和 Chrome */
-    -o-transform:rotate(360deg);  /* Opera */
+    transform:rotate(90deg);
+    -ms-transform:rotate(90deg);     /* IE 9 */
+    -moz-transform:rotate(90deg);    /* Firefox */
+    -webkit-transform:rotate(90deg); /* Safari 和 Chrome */
+    -o-transform:rotate(90deg);  /* Opera */
 }
 #back-to-top {
     display: none;
     bottom: 30px;
-    right: 40px;
 }
 
 
@@ -144,7 +141,7 @@ div.side-wrapper .wrapper {
 div.content {
     /*width: 100%;*/
     width: 700px;
-    margin: 10px auto;
+    margin: 20px auto;
     transition: padding-left 250ms ease-in;
 }
 
@@ -153,11 +150,14 @@ div.content {
     list-style: none;
     padding: 10px;}
     #posts-list li {
-        margin-bottom: 10px;
-    }
+        margin-bottom: 10px;}
 
 article {
     border-bottom: 1px dashed #d9d9d9;
+}
+
+footer.post-info {
+    margin-bottom: 10px;
 }
 
 div.meta * {
@@ -179,7 +179,7 @@ a.category {
     display: inline-block;
     padding: 0px 16px;
     line-height: 25px;
-    background-color: #e76b66;
+    background-color: #e78170;
     font-size: 12px;
     color: #FFF;
     border: 1px solid #d9d9d9;
@@ -191,21 +191,68 @@ p.tags a {
     font-size: 12px;
 }
 
-h1 {font-size: 1.5em;}
+h1 {font-size: 20px;}
 
 a {
     color: #555555;
     text-decoration: none;
 }
 
-@media screen and (max-width: 700px) {
+p.copyright {
+    font-size: 12px;
+    color: #999999;
+}
+
+p.copyright:hover {
+    color: red;
+}
+
+section#extras {
+    padding: 5px;
+}
+
+footer#contentinfo {
+    border-top: 1px solid #d9d9d9;
+    font-size: 12px;
+    color: #999999;
+}
+
+@media screen and (max-width: 720px) {
     div.content {
+        margin-top: 56px;
         width: 85%;
     }
+    label.tool-btn {
+        right: 15px;
+    }
+    header#banner {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 51px;
+        width: 100%;
+        overflow: hidden;
+        background: #FFF;
+        background: #ebe7df;
+        box-shadow: 0px 1px 3px #d9d9d9;
+        transition: height 200ms ease-in;
+    }
+    .side-bar {display: none;}
+    #header-toggle-btn {
+        top: 12px; 
+        position: fixed;
+        box-shadow: none;
+        border: none;
+    }
+    #header-toggle:checked + header#banner{ bottom: 100%; height: 267px;}
 }
 
 @media screen and (max-width: 400px) {
     div.content {
         width: 96%;
     }
+    label.tool-btn {
+        right: 5px;
+    }
+
 }

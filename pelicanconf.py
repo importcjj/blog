@@ -4,7 +4,7 @@ from __future__ import unicode_literals
 
 AUTHOR = u'Jiaju.chen'
 SITENAME = u'Signal'
-SITEURL = 'http://www.importcjj.com'
+# SITEURL = 'http://www.importcjj.com'
 
 THEME = 'themes/yake'
 PATH = 'content'
@@ -26,8 +26,7 @@ GITHUB_URL = 'https://github.com/importcjj'
 # Blogroll
 LINKS = (('Pelican', 'http://getpelican.com/'),
          ('Python.org', 'http://python.org/'),
-         ('Jinja2', 'http://jinja.pocoo.org/'),
-         ('You can modify those links in your config file', '#'),)
+         ('Jinja2', 'http://jinja.pocoo.org/'))
 
 # Social widget
 SOCIAL = (('You can add links in your config file', '#'),

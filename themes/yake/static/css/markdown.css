@@ -1,5 +1,5 @@
 .markdown {
-    font-family: "Segoe UI", Arial, freesans, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-family: "lucida grande", "lucida sans unicode", lucida, helvetica, "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
     font-size: 16px;
     line-height: 1.6;
     word-wrap: break-word
@@ -75,6 +75,14 @@
 .markdown h3 tt, .markdown h3 code, .markdown h4 tt, .markdown h4 code,
 .markdown h5 tt, .markdown h5 code, .markdown h6 tt, .markdown h6 code {
     font-size: inherit
+}
+
+.post-body a {
+    color: #4094c7;
+}
+
+.post-body a:hover {
+    color: #075b8d;
 }
 
 .markdown h1 {

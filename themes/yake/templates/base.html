@@ -18,8 +18,8 @@
 </head>
 
 <body id="index" class="home">
-{% include 'github.html' %}
-        <input id="header-toggle" type="checkbox" checked>
+<!-- {% include 'github.html' %} -->
+        <input id="header-toggle" type="checkbox">
         <header id="banner" class="body">
                 <h1><a href="{{ SITEURL }}/">{{ SITENAME }} {% if SITESUBTITLE %} <strong>{{ SITESUBTITLE }}</strong>{% endif %}</a></h1>
                 <nav><ul>
@@ -40,6 +40,7 @@
         </header><!-- /#banner -->
         <aside class="side-bar">
             <ul>
+                <li><a href="{{ SITEURL }}/"><i class="fa fa-info fa-lg"></i></a></li>
                 <li><a href="{{ SITEURL }}/categories.html"><i class="fa fa-book fa-lg"></i></a></li>
                 <li><a href="{{ SITEURL }}/archives.html"><i class="fa fa-archive fa-lg"></i></a></li>
                 <li><a href="{{ SITEURL }}/tags.html"><i class="fa fa-tags fa-lg"></i></a></li>
@@ -50,7 +51,7 @@
             </ul>
         </aside>
         <div class="tool-btns">
-            <label id="header-toggle-btn" class='tool-btn' for="header-toggle"><i class="fa fa-arrows"></i></label>
+            <label id="header-toggle-btn" class='tool-btn' for="header-toggle"><i class="fa fa-bars"></i></label>
             <label id="back-to-top" class="tool-btn"><i class="fa fa-arrow-up"></i></label>
         </div>
         <div class="content">
@@ -87,11 +88,13 @@
         </section><!-- /#extras -->
 
         <footer id="contentinfo" class="body">
-                <address id="about" class="vcard body">
-                Proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
-                </address><!-- /#about -->
+                <p>Proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
+                </p><!-- /#about -->
+                <p>The theme is by <a href="https://github.com/importcjj">importcjj</a>, thanks!</p>
+                <p>托管于 <a href="https://github.com">github</a> 和 <a href="https://coding.net/">coding</a>,  
+                并借助 <a href="https://travis-ci.com/">travis ci</a> 完成自动编译发布.
+                </p>
 
-                <p>The theme is by <a href="">Jiaju Chen</a>, thanks!</p>
         </footer><!-- /#contentinfo -->
         </div>
 

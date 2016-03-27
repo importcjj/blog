@@ -5,10 +5,8 @@
     var backToTop = function() {
         var fromTop = scrollTop();
         if(fromTop){
-            var to = 3 / (fromTop / 20) * 50;
-            console.log(to);
-            window.scrollBy(0, -20);
-            window.timeout = setTimeout(backToTop, to);
+            window.scrollBy(0, -40);
+            window.timeout = setTimeout(backToTop, 5);
         } else{
             clearTimeout(window.timeout);
         }
@@ -17,7 +15,6 @@
     $('back-to-top').onclick = function(evt) {backToTop()};
 
     window.onscroll = function(evt) {
-        console.log('111');
         if(scrollTop() > 500) {$('back-to-top').style.display = 'block';}else {$('back-to-top').style.display = 'none';}
     };
 

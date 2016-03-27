@@ -3,17 +3,15 @@
 {% block content %}
 <section id="content" class="body">
   <article>
-    <header>
-      <h1 class="entry-title">
-        <a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark"
-           title="Permalink to {{ article.title|striptags }}">{{ article.title }}</a></h1>
+    <div>
       {% include 'twitter.html' %}
-    </header>
+    </div>
 
     <div class="entry-content markdown-body markdown">
       {% include 'article_infos.html' %}
-      {{ article.content }}
+      <div class="post-body"> {{ article.content }} </div>
     </div><!-- /.entry-content -->
+    <p class="copyright">©版权所有, 转载请注明出处</p>
     {% if DISQUS_SITENAME and SITEURL and article.status != "draft" %}
     <div class="comments">
       <h2>Comments !</h2>
