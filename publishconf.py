@@ -24,7 +24,8 @@ AUTHOR_FEED_RSS = None
 GITHUB_URL = 'https://github.com/importcjj'
 
 # Blogroll
-LINKS = (('Pelican', 'http://getpelican.com/'),
+LINKS = (('Slade', 'chihiro.moe'),
+         ('Pelican', 'http://getpelican.com/'),
          ('Python.org', 'http://python.org/'),
          ('Jinja2', 'http://jinja.pocoo.org/'))
 
