@@ -17,3 +17,7 @@ Authors: importcjj
 1. `git rm --cached <filename>` 不用担心，这一步只是删除该文件在版本库中的追踪，并不会正真删除磁盘上的物理文件
 2. 更新.gitignore文件, 如果之前已经更新过了，就可以直接跳过这一步了。
 3. add + commit 提交
+
+#### 新建一个orphan(孤儿)分支
+
+`git checkout --orphan <name>`
