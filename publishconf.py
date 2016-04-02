@@ -35,6 +35,7 @@ SOCIAL = (('You can add links in your config file', '#'),
 
 DEFAULT_PAGINATION = 10
 DISQUS_SITENAME = 'importcjj'
+BUILD_STATUS_URL = 'https://travis-ci.org/importcjj/www.importcjj.com.svg?branch=master'
 
 # Uncomment following line if you want document-relative URLs when developing
 # RELATIVE_URLS = True
