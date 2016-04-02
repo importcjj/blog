@@ -151,14 +151,14 @@ tail -f /data/test.celery/celery.log
   
 * **apply_async:** 列举几个常用的参数:
   
-  ``` 
+``` 
   * args: 传给task的参数.
   * kwargs: 传给task的参数.
   * countdown： 延时执行的秒数.countdown=10表示10s后执行.
   * eta: datetime类型, 执行的日期.
   * queue: 指定任务消息要去的队列.
   * ...
-  ```
+```
 
 ## 3. celery beat
 
