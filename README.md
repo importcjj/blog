@@ -2,4 +2,4 @@
 
 <http://www.importcjj.com>
 
-![](https://travis-ci.org/importcjj/personal_blog.svg?branch=master)
+![](https://travis-ci.org/importcjj/www.importcjj.com.svg?branch=master)
