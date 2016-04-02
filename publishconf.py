@@ -25,6 +25,7 @@ GITHUB_URL = 'https://github.com/importcjj'
 
 # Blogroll
 LINKS = (('Slade', 'http://chihiro.moe'),
+         ('无主之地', 'http://shenyizhou.github.io'),
          ('Pelican', 'http://getpelican.com/'),
          ('Python.org', 'http://python.org/'),
          ('Jinja2', 'http://jinja.pocoo.org/'))
