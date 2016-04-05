@@ -5,7 +5,7 @@ Date: 2016-04-05 19:41:06
 Author: importcjj
 
 
-#### 记录Emacs的配置和相关配置，以备万一。 ~/.emacs/init.el
+#### 记录Emacs的相关配置和插件，以备万一。 ~/.emacs/init.el
 
 ```elisp
 
