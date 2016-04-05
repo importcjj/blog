@@ -139,40 +139,16 @@ Author: importcjj
 
 #### 相关插件
 
-- jedi
-  
-  python代码的静态分析工具
-- pycheck
-
-  python代码规范检查工具
-- py-autopep8
-
-  python代码自动格式化工具
-- yaml-mode
-  
-  yaml文件编辑模式
-- sr-speedbar
-
-  侧边栏， F5开启/关闭
-- ace-jump-mode
-
-  代码首字母跳转工具
-- color-theme-github
-
-  github的代码主题
-- emacs-for-python
-
-  emacs开发python的相关有用套件
-- go-autocomplete
-  
-  galang的自动补全工具
+- jedi : python代码的静态分析工具
+- pycheck : python代码规范检查工具
+- py-autopep8 : python代码自动格式化工具
+- yaml-mode : yaml文件编辑模式
+- sr-speedbar : 侧边栏， F5开启/关闭
+- ace-jump-mode : 代码首字母跳转工具
+- color-theme-github : github的代码主题
+- emacs-for-python : emacs开发python的相关有用套件
+- go-autocomplete : galang的自动补全工具
 - mouse
-- move-lines
-  
-  代码行和快的快速移动工具
-- open-next-line
-
-  快速在当前行的上方或下方新建空白行
-- smooth-scroll
-
-  平缓滚动
+- move-lines : 代码行和快的快速移动工具
+- open-next-line : 快速在当前行的上方或下方新建空白行
+- smooth-scroll : 平缓滚动
