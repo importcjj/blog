@@ -22,7 +22,7 @@ Authors: importcjj
 
 `git checkout --orphan <name>`
 
-#### 4. git diff 查看修改内容
+#### 5. git diff 查看修改内容
 
 这里要说的是两种情况:
 
