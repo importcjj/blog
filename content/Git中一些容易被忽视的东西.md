@@ -23,7 +23,10 @@ Authors: importcjj
 `git checkout --orphan <name>`
 
 #### 4. git diff 查看修改内容
+
 这里要说的是两种情况:
+
 1. 文件改动还未加入暂存区（即未git add），这种情况直接使用`git diff`或者`git diff <path`查看一个或多个文件的改动情况。
 2. 文件改动已经加入暂存区，这种情况需要使用参数**--staged**, 即`git diff --staged`或者`git diff --staged <path>`来查看暂存区中的文件与代码仓库中的文件差异。
+
 注： 可以使用**difftool**来代替**diff**命令从而更加清晰的查看文件改动！
