@@ -5,24 +5,24 @@ Date: 2016-03-27 03:37:03
 Modified: 2016-04-07 18:58:16
 Authors: importcjj
 
-#### 1. 修改commit的message
+#### 修改commit的message
 1. 修改最近一次commit的message  `git commit --amend` 然后输入想要修改的message
 2. 批量修改commit的message `git rebase -i HEAD~n` n为一个数字，表示最近n次commit, 将想要修改的commit id前的pick改成reword(r)命令, 然后修改id后的commit message,  保存退出后即可.
 
-#### 2. 合并连续的多个commit为一个commit
+#### 合并连续的多个commit为一个commit
 使用`git rebase -i HEAD~n` 把将被合并的commit id前的pick命令改成squash(s)
 
-#### 3. 忽略已被提交过的文件
+#### 忽略已被提交过的文件
 
 1. `git rm --cached <filename>` 不用担心，这一步只是删除该文件在版本库中的追踪，并不会正真删除磁盘上的物理文件
 2. 更新.gitignore文件, 如果之前已经更新过了，就可以直接跳过这一步了。
 3. add + commit 提交
 
-#### 4. 新建一个orphan(孤儿)分支
+#### 新建一个orphan(孤儿)分支
 
 `git checkout --orphan <name>`
 
-#### 5. git diff 查看修改内容
+#### 使用 git diff 查看修改内容
 
 这里要说的是两种情况:
 
