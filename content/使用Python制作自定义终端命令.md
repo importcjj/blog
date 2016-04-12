@@ -2,6 +2,7 @@ Title: 使用Python制作自定义终端命令
 Category: Python
 Tags: Python
 Date: 2016-03-27 03:37:03
+Modified: 2016-04-12 19:18:49
 Authors: importcjj
 
 ### 介绍
@@ -14,13 +15,17 @@ Authors: importcjj
    也许你会兴高采烈的去尝试一发，在bin文件下创建xxx.py，打上一句 print “hello world”, 然后去掉.py的后缀, 再使用chmod a+x xxx来赋予它执行的权限。打开终端，敲下xxx。最后你只会得到print: command not found的错误提示。为什么？因为操作系统不知道这是一个py文件。思考一下，我们平时运行py文件都需要打上python xxx.py形式的命令，其实我们告诉了操作系统这是一个python文件（哪怕是有.py后缀），需要使用python解释器来解释运行该文件。现在，我们没有指定解释器了，自然就无法顺利的作为py脚本来运行了，它被错误的认为是shell脚本了。而shell编程中只有echo，没有print命令。
        
    那么我们要做的就是在文件的第一行为该文件指定它的解释器(通过环境变量来获取当前使用的python解释器的路径):
-       
-    #!/usr/bin/env python
+   
+   ```sh
+   #!/usr/bin/env python
+   ```
 
 这是一种常见写法，当然可以写成:
 
-    #!/usr/bin/python
-    
+```sh
+#!/usr/bin/python
+```
+
 这样，我们就为这个脚本指定了一个固定的解释器(它的路径是/usr/bin/python)，可能有些时候你需要这样做。但是第一种更加灵活，尤其是在使用virtualenv创建的虚拟环境中，采用第二种写法的脚本将无法导入虚拟环境中安装的依赖包。
 
 ### 拓展
