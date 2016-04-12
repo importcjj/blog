@@ -7,18 +7,18 @@ Authors: importcjj
 
 ### 介绍
 
-   首先，拿pip举个例子，pip是我们使用较多的python包管理工具。当我们安装pip之后，直接在终端中就可以使用pip这个命令。那你有没有想过这是如何实现的？
+首先，拿pip举个例子，pip是我们使用较多的python包管理工具。当我们安装pip之后，直接在终端中就可以使用pip这个命令。那你有没有想过这是如何实现的？
 
       
-  其实，pip这个命令最终调用了python所在文件夹bin目录的pip文件。为什么说最终？因为使用系统默认的python安装pip时，可能会在/usr/local/bin或者/usr/bin下创建软链接。如果使用了virtualenv，那么pip文件就在env/bin下。那么pip文件到底是什么呢？答案就是，是一个具有执行权限的python文件，只不过去掉了.py的后缀.
+其实，pip这个命令最终调用了python所在文件夹bin目录的pip文件。为什么说最终？因为使用系统默认的python安装pip时，可能会在/usr/local/bin或者/usr/bin下创建软链接。如果使用了virtualenv，那么pip文件就在env/bin下。那么pip文件到底是什么呢？答案就是，是一个具有执行权限的python文件，只不过去掉了.py的后缀.
       
-   也许你会兴高采烈的去尝试一发，在bin文件下创建xxx.py，打上一句 print “hello world”, 然后去掉.py的后缀, 再使用chmod a+x xxx来赋予它执行的权限。打开终端，敲下xxx。最后你只会得到print: command not found的错误提示。为什么？因为操作系统不知道这是一个py文件。思考一下，我们平时运行py文件都需要打上python xxx.py形式的命令，其实我们告诉了操作系统这是一个python文件（哪怕是有.py后缀），需要使用python解释器来解释运行该文件。现在，我们没有指定解释器了，自然就无法顺利的作为py脚本来运行了，它被错误的认为是shell脚本了。而shell编程中只有echo，没有print命令。
+也许你会兴高采烈的去尝试一发，在bin文件下创建xxx.py，打上一句 print “hello world”, 然后去掉.py的后缀, 再使用chmod a+x xxx来赋予它执行的权限。打开终端，敲下xxx。最后你只会得到print: command not found的错误提示。为什么？因为操作系统不知道这是一个py文件。思考一下，我们平时运行py文件都需要打上python xxx.py形式的命令，其实我们告诉了操作系统这是一个python文件（哪怕是有.py后缀），需要使用python解释器来解释运行该文件。现在，我们没有指定解释器了，自然就无法顺利的作为py脚本来运行了，它被错误的认为是shell脚本了。而shell编程中只有echo，没有print命令。
        
-   那么我们要做的就是在文件的第一行为该文件指定它的解释器(通过环境变量来获取当前使用的python解释器的路径):
-   
-   ```sh
+那么我们要做的就是在文件的第一行为该文件指定它的解释器(通过环境变量来获取当前使用的python解释器的路径):
+
+```sh
    #!/usr/bin/env python
-   ```
+```
 
 这是一种常见写法，当然可以写成:
 
