@@ -17,7 +17,7 @@ Authors: importcjj
 那么我们要做的就是在文件的第一行为该文件指定它的解释器(通过环境变量来获取当前使用的python解释器的路径):
 
 ```sh
-   #!/usr/bin/env python
+#!/usr/bin/env python
 ```
 
 这是一种常见写法，当然可以写成:
