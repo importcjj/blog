@@ -29,13 +29,17 @@ Authors: importcjj
 ```python
      from setuptools import setup
      setup(
-         name=‘project_name’,
-          version=‘0.1’,
+         name='project_name',
+          version='0.1',
           ...
-          scripts=[‘xxx']
+          entry_points={
+            'console_scripts': [
+               'hello = hello.main:main',
+            ]
+          }
      )
 ```
-以上代码中scripts参数所表示的就是需要在python的bin目录下创建的命令文件在该项目中的路径。
+表示hello这个命令执行的是hello包下的main模块中的main函数.
 
 ### 实践
 环境: python2.7 + mac osx
@@ -43,33 +47,39 @@ Authors: importcjj
 
 ```
 example/
-
-- hello
 - setup.py
+- hello/
+   _ __init__.py
+   - main.py
 ```
 
-其中, hello是我们写的命令文件，内容如下:
+其中, `main.py`是我们写的命令文件，内容如下:
 
 ```python
 #!/usr/bin/env python
 # -*- coding:utf-8 -*-
 
-print 'hello world'
+def main():
+   print 'hello word'
 ```
 setup.py的内容如下:
 
 ```python
 from setuptools import setup
 setup(
-     name='hahaha',
+     name='hello',
      version='0.1',
-     scripts=[‘./hello']
+     entry_points={
+         'console_scripts':[
+            'hello = hello.main:main'
+         ]
+     }
 )
 ```
-因为hello这个文件跟setup.py在同一目录, 所以它相对于setup.py的路径就是./hello 在安装这个简单的项目之前，我们还需要修改一下hello文件到额权限：
+在安装这个简单的项目之前，我们还需要修改一下hello文件到额权限：
           chmod a+x hello
 
 接着安装, `python setup.py` install 或者 `pip install` . 这两种方式随便哪种都可以，安装完成后在终端中输入hello命令试试，有没有显示hello world？
 
 ### 结尾
-由于hello文件其实是个py文件，所以你可以像写其他py文件一样，修改它，写入任何python代码。当然，说了这么多，提醒一点，并不是所有的python包都是通过上述方式来提供终端命令的，不过这是一种很普遍很简便的方式！
+说了这么多，提醒一点，并不是所有的python包都是通过上述方式来提供终端命令的，不过这是一种很普遍很简便的方式！
