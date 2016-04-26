@@ -1,7 +1,8 @@
-Title: Python的单例实现
+Title: Python单例模式的实现
 Category: Python
 Tag: singleton, decorator
 Date: 2016-04-26 16:10:27
+Modified: 2016-04-26 18:37:29
 Author: importcjj
 
 
@@ -20,10 +21,9 @@ class Singleton(object):
   	def __call__(self, cls):
     	@functools.wraps(cls)
     	def wrapper(*args, **kwargs)
-      		cls_name = cls.__name__
-      		if not self.instances.get(cls_name):
-        		self.instances[cls_name] = cls(*args, **kwargs)
-      		return self.instances[cls_name]
+      		if not self.instances.get(cls):
+        		self.instances[cls] = cls(*args, **kwargs)
+      		return self.instances[cls]
     	return wrapper
     
 singleton = Singleton()
@@ -82,10 +82,35 @@ if __name__ == '__main__':
 
 #### 3. metaclass元类
 
-关于metaclss的介绍请看我写的另一篇[小记](<Python的metaclass小记.md>)
-
 ```python
 
 class Singleton(type):
+	_instances = {}
+	def __cal__(self):
+		if self not in self._instances:
+			self._instances[self] = super(Singleton, self).__call__(*args, *kwargs)
+		return self._instances[self]
+
+# py2写法
+class Test(object):
+	__metaclass__ = Singleton
 	
+	pass
+
+# py3写法
+class Test(object, metaclass=Singleton):
+	pass
+	
+if __name__ == '__main__':
+	print(Test)
+	t1 = Test()
+	t2 = Test()
+	print(t1, t2)
+	assert t1 == t2
+	print(isinstance(t1, Test)
+
+# 使用元类是最好的，因为Test的行为都没有被改变
+# 所以isinstance, type等函数的调用都没有影响
+# 不过理解起来可能会有一些困难了
+# 因为我觉得自己理解的还有写不够透彻
 ```
