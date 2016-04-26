@@ -28,7 +28,8 @@ LINKS = (('Slade', 'http://chihiro.moe'),
          ('无主之地', 'http://shenyizhou.github.io'),
          ('Pelican', 'http://getpelican.com/'),
          ('Python.org', 'http://python.org/'),
-         ('Jinja2', 'http://jinja.pocoo.org/'))
+         ('Jinja2', 'http://jinja.pocoo.org/'),
+         ('Expert-python', 'http://dongweiming.github.io/Expert-Python/#1'))
 
 # Social widget
 SOCIAL = (('You can add links in your config file', '#'),
