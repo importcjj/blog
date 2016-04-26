@@ -53,7 +53,6 @@ class Singleton(object):
 
 	def __init__(self, cls):
 		self.cls = cls
-		self.__class__ = cls
 		self.cls_instance = None
 	
 	def __call__(self, *args, **kwargs):
