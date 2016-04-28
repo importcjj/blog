@@ -2,6 +2,7 @@ Title: 我的Emacs的配置
 Category: Emacs
 Tags: Emacs
 Date: 2016-04-05 19:41:06
+Modified: 2016-04-28 14:13:09
 Author: importcjj
 
 
@@ -152,3 +153,4 @@ Author: importcjj
 - move-lines : 代码行和快的快速移动工具
 - open-next-line : 快速在当前行的上方或下方新建空白行
 - smooth-scroll : 平缓滚动
+- cython-mode : cython模式
