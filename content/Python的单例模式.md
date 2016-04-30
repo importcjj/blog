@@ -1,6 +1,6 @@
 Title: Python单例模式的实现
 Category: Python
-Tag: singleton, decorator
+Tags: singleton, decorator
 Date: 2016-04-26 16:10:27
 Modified: 2016-04-26 18:37:29
 Author: importcjj
