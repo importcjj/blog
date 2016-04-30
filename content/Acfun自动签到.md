@@ -1,15 +1,15 @@
-Title: 使用crontab+curl实现简单的Acfun自动签到
+Title: 简单的Acfun自动签到
 Category: sundry
-Tag: shell, contab, curl
+Tags: shell, contab, curl
 Date: 2016-04-30 23:38:20
 Author: importcjj
 
-## 1.概述
+### 1.概述
 
 Acfun有一个签到机制，每天签到可以领取经验和香蕉。之前在玩supervisor，celerybeat和rabbitmq的时候搞了一个自动签到的定时任务，但是由于服务器的原因，每天都会出问题。而且前段时间，那台服务器也到期了，所以现在有必要再搞一个简单的自动签到任务了。：）
 
 
-## 2. 签到
+### 2. 签到
 
 为了简便，这里就不使用Python了。直接curl搞定吧！上代码：
 
@@ -22,7 +22,7 @@ curl --cookie cookies -d "channel=0&date=`date +%s`000" http://www.acfun.tv/weba
 简单说明一下， A站签到要求先登录，所以我们脚本的第一步使用自己的账户密码登录并且把cookie存放在本地文件中。然后第二步直接读取cookie完成签到。其实问题就在于签到请求需要带有date参数，它其实是JavaScript的时间戳。是不是很简单？：）
 
 
-## 3. 自动化
+### 3. 自动化
 
 使用linux的crontab来完成定时任务。在*unix下为当前用户添加一个crontab任务吧。
 
