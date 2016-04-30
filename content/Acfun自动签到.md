@@ -4,6 +4,8 @@ Tags: shell, contab, curl
 Date: 2016-04-30 23:38:20
 Author: importcjj
 
+![acfun](http://7xsw69.com1.z0.glb.clouddn.com/acfun.jpg)
+
 ### 1.概述
 
 Acfun有一个签到机制，每天签到可以领取经验和香蕉。之前在玩supervisor，celerybeat和rabbitmq的时候搞了一个自动签到的定时任务，但是由于服务器的原因，每天都会出问题。而且前段时间，那台服务器也到期了，所以现在有必要再搞一个简单的自动签到任务了。：）
