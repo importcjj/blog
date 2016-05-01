@@ -4,9 +4,9 @@ from __future__ import unicode_literals
 
 AUTHOR = u'Jiaju.chen'
 SITENAME = u'Signal'
-SITEURL = 'http://www.importcjj.com'
+# SITEURL = 'http://www.importcjj.com'
 
-THEME = 'yake'
+THEME = 'theme/yake'
 PATH = 'content'
 
 TIMEZONE = 'Asia/Shanghai'
