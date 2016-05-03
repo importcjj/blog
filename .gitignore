@@ -61,3 +61,6 @@ theme/
 
 # pelican output
 output/
+
+# pyenv local version file
+.python-version
