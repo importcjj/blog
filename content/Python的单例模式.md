@@ -1,6 +1,6 @@
 Title: Python单例模式的实现
 Category: Python
-Tags: singleton, decorator
+Tags: singleton, 装饰器
 Date: 2016-04-26 16:10:27
 Modified: 2016-04-26 18:37:29
 Author: importcjj
@@ -85,7 +85,7 @@ if __name__ == '__main__':
 
 class Singleton(type):
 	_instances = {}
-	def __cal__(self):
+	def __cal__(self, *args, **kwargs):
 		if self not in self._instances:
 			self._instances[self] = super(Singleton, self).__call__(*args, *kwargs)
 		return self._instances[self]
@@ -111,5 +111,5 @@ if __name__ == '__main__':
 # 使用元类是最好的，因为Test的行为都没有被改变
 # 所以isinstance, type等函数的调用都没有影响
 # 不过理解起来可能会有一些困难了
-# 因为我觉得自己理解的还有写不够透彻
+# 因为我觉得自己理解的还有一些不够通透
 ```
