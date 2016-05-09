@@ -1,5 +1,5 @@
 Title: Golang中三种import方式
-Category: go
+Category: Go
 Tags: golang, import
 Date: 2016-03-27 03:37:03
 Authors: importcjj
