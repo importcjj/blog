@@ -27,8 +27,8 @@ func IsValidIDCode(id string) bool {
 		return false
 	}
 
-	var sum int = 0
-	var lastByte byte = idBytes[17]
+	sum := 0
+	lastByte := idBytes[17]
 	idBytes = idBytes[:17]
 
 	for i, b := range idBytes {
