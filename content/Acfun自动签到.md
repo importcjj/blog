@@ -26,7 +26,7 @@ curl --cookie cookies -d "channel=0&date=`date +%s`000" http://www.acfun.tv/weba
 
 ### 3. 自动化
 
-使用linux的crontab来完成定时任务。在*unix下为当前用户添加一个crontab任务吧。
+使用linux的crontab来完成定时任务。在*nix下为当前用户添加一个crontab任务吧。
 
 1. 开始编辑 `crontab -e`
 2. 添加一行 `0 1 * * * sh /path/to/checkin.sh > /path/to/checkin.log`
