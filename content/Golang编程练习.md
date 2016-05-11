@@ -76,7 +76,7 @@ func main() {
 
 func IntQuickSort(slice []int, left, right int) {
 
-	if right - left == 1 {
+	if right - left <= 1 {
 		return
 	}
 
