@@ -101,7 +101,7 @@ func IntQuickSort(slice []int, left, right int) {
 
 ```
 
-##### 3. 排序至归并排序
+##### 3. 排序之归并排序
 
 ![merge sort](http://7xsw69.com1.z0.glb.clouddn.com/Merge-sort-example-300px.gif)
 
