@@ -104,6 +104,7 @@ func IntQuickSort(slice []int, left, right int) {
 ##### 3. 排序至归并排序
 
 ![merge sort](http://7xsw69.com1.z0.glb.clouddn.com/Merge-sort-example-300px.gif)
+
 上图非常清楚的表现了归并排序的过程: 先不停的对半分组，直到分成一个数字一组， 然后相邻的两组作比较，归并成有序的一组，不断向上归并。
 
 ```go
