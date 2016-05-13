@@ -169,3 +169,28 @@ func main() {
 	fmt.Println(slice)
 }
 ```
+
+##### 4. 排序之插入排序
+
+![insertion sort](http://7xsw69.com1.z0.glb.clouddn.com/Insertion-sort-example-300px.gif)
+
+如上图所示，插入排序的过程很简单: 遍历后边的无序数字，将他们插入前边已经排好序的序列中。插入方式就是取出数字后，按照从后往前的顺序跟前面有序序列中的数字比较，如果大于等于它，就把这些数字向后移一位，直到找到比它小的(或者超出边界), 然后将该数字插入到该位置。
+
+```go
+package sort
+
+func IntInsertionSort(slice []int, left, right int) {
+	if right-left <= 0 {
+		return
+	}
+	for i := left + 1; i <= right; i++ {
+		temp := slice[i]
+		
+		j := i
+		for ; j > left && temp < slice[j-1]; j-- {
+			slice[j] = slice[j-1]
+		}
+		slice[j] = temp
+	}
+}
+```
