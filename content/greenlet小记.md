@@ -2,248 +2,13 @@ Title: Greenlet: 轻量级并发编程
 Category: Python
 Tags: concurrent, gevent
 Date: 2016-05-18 14:07:45
+Authors: importcjj
 
 #### 动机
 
-greenlet这个包拆分自Stackless。Stackless是一个CPython的版本，支持一种叫做tasklets的微线程。Tasklets会以一种伪并发的方式运行(通常运行在单个或者一些系统级的线程中)，它们之间通过channels来同步数据。
+greenlet这个包拆分自Stackless。Stackless是一个CPython的版本，实现并支持一种叫做tasklets的微线程。Tasklets会以一种伪并发的方式运行(通常运行在单个或者一些系统级的线程中)，它们之间通过channels来同步数据。
 
 一个greenlet，从另一方面来说，依然是一种很原始的没有隐式调度的微线程。换句话说，就是协程(coroutine)。这在你想要完全控制代码的运行时是非常有用的。你可以在greenlet之上构建采用自定义调度方式的微线程。然而，使用greenlet来制作先进的控制流结构是很有用的。举个例子，我们可以重新创造生成器。和Python自带的生成器所不同的是，我们的生成器可以调用网状的方法，而且这些网状的方法也可以yield出值。(另外，你不需要再使用**yield**这个关键词了）
-
-以下greenlets官方给出的两种实现，可选择跳过。
-
-##### 1. 简单的生成器
-
-```python
-import unittest
-from greenlet import greenlet
-
-
-class genlet(greenlet):
-
-    def __init__(self, *args, **kwds):
-        self.args = args
-        self.kwds = kwds
-
-    def run(self):
-        fn, = self.fn
-        fn(*self.args, **self.kwds)
-
-    def __iter__(self):
-        return self
-
-    def __next__(self):
-        self.parent = greenlet.getcurrent()
-        result = self.switch()
-        if self:
-            return result
-        else:
-            raise StopIteration
-
-    # Hack: Python < 2.6 compatibility
-    next = __next__
-
-
-def Yield(value):
-    g = greenlet.getcurrent()
-    while not isinstance(g, genlet):
-        if g is None:
-            raise RuntimeError('yield outside a genlet')
-        g = g.parent
-    g.parent.switch(value)
-
-
-def generator(func):
-    class generator(genlet):
-        fn = (func,)
-    return generator
-
-# ____________________________________________________________
-
-
-class GeneratorTests(unittest.TestCase):
-    def test_generator(self):
-        seen = []
-
-        def g(n):
-            for i in range(n):
-                seen.append(i)
-                Yield(i)
-        g = generator(g)
-        for k in range(3):
-            for j in g(5):
-                seen.append(j)
-        self.assertEqual(seen, 3 * [0, 0, 1, 1, 2, 2, 3, 3, 4, 4])
-```
-
-##### 2. 网状调用生成器
-
-```python
-import unittest
-from greenlet import greenlet
-
-
-class genlet(greenlet):
-
-    def __init__(self, *args, **kwds):
-        self.args = args
-        self.kwds = kwds
-        self.child = None
-
-    def run(self):
-        fn, = self.fn
-        fn(*self.args, **self.kwds)
-
-    def __iter__(self):
-        return self
-
-    def set_child(self, child):
-        self.child = child
-
-    def __next__(self):
-        if self.child:
-            child = self.child
-            while child.child:
-                tmp = child
-                child = child.child
-                tmp.child = None
-
-            result = child.switch()
-        else:
-            self.parent = greenlet.getcurrent()
-            result = self.switch()
-
-        if self:
-            return result
-        else:
-            raise StopIteration
-
-    # Hack: Python < 2.6 compatibility
-    next = __next__
-
-
-def Yield(value, level=1):
-    g = greenlet.getcurrent()
-
-    while level != 0:
-        if not isinstance(g, genlet):
-            raise RuntimeError('yield outside a genlet')
-        if level > 1:
-            g.parent.set_child(g)
-        g = g.parent
-        level -= 1
-
-    g.switch(value)
-
-
-def Genlet(func):
-    class Genlet(genlet):
-        fn = (func,)
-    return Genlet
-
-# ____________________________________________________________
-
-
-def g1(n, seen):
-    for i in range(n):
-        seen.append(i + 1)
-        yield i
-
-
-def g2(n, seen):
-    for i in range(n):
-        seen.append(i + 1)
-        Yield(i)
-
-g2 = Genlet(g2)
-
-
-def nested(i):
-    Yield(i)
-
-
-def g3(n, seen):
-    for i in range(n):
-        seen.append(i + 1)
-        nested(i)
-g3 = Genlet(g3)
-
-
-def a(n):
-    if n == 0:
-        return
-    for ii in ax(n - 1):
-        Yield(ii)
-    Yield(n)
-ax = Genlet(a)
-
-
-def perms(l):
-    if len(l) > 1:
-        for e in l:
-            # No syntactical sugar for generator expressions
-            [Yield([e] + p) for p in perms([x for x in l if x != e])]
-    else:
-        Yield(l)
-perms = Genlet(perms)
-
-
-def gr1(n):
-    for ii in range(1, n):
-        Yield(ii)
-        Yield(ii * ii, 2)
-
-gr1 = Genlet(gr1)
-
-
-def gr2(n, seen):
-    for ii in gr1(n):
-        seen.append(ii)
-
-gr2 = Genlet(gr2)
-
-
-class NestedGeneratorTests(unittest.TestCase):
-    def test_layered_genlets(self):
-        seen = []
-        for ii in gr2(5, seen):
-            seen.append(ii)
-        self.assertEqual(seen, [1, 1, 2, 4, 3, 9, 4, 16])
-
-    def test_permutations(self):
-        gen_perms = perms(list(range(4)))
-        permutations = list(gen_perms)
-        self.assertEqual(len(permutations), 4 * 3 * 2 * 1)
-        self.assertTrue([0, 1, 2, 3] in permutations)
-        self.assertTrue([3, 2, 1, 0] in permutations)
-        res = []
-        for ii in zip(perms(list(range(4))), perms(list(range(3)))):
-            res.append(ii)
-        self.assertEqual(
-            res,
-            [([0, 1, 2, 3], [0, 1, 2]), ([0, 1, 3, 2], [0, 2, 1]),
-             ([0, 2, 1, 3], [1, 0, 2]), ([0, 2, 3, 1], [1, 2, 0]),
-             ([0, 3, 1, 2], [2, 0, 1]), ([0, 3, 2, 1], [2, 1, 0])])
-        # XXX Test to make sure we are working as a generator expression
-
-    def test_genlet_simple(self):
-        for g in [g1, g2, g3]:
-            seen = []
-            for k in range(3):
-                for j in g(5, seen):
-                    seen.append(j)
-            self.assertEqual(seen, 3 * [1, 0, 2, 1, 3, 2, 4, 3, 5, 4])
-
-    def test_genlet_bad(self):
-        try:
-            Yield(10)
-        except RuntimeError:
-            pass
-
-    def test_nested_genlets(self):
-        seen = []
-        for ii in ax(5):
-            seen.append(ii)
-```
 
 #### 举例
 
@@ -431,13 +196,15 @@ greenlet可以和Python的线程结合使用；这种情况下，每一个线程
 
 Greenlet不参与垃圾回收；greenlet中的循环引用将不会被发现，循环保存对于greenlet的引用可能会导致内存泄露。
 
-Tracing support
-Standard Python tracing and profiling doesn’t work as expected when used with greenlet since stack and frame switching happens on the same Python thread. It is difficult to detect greenlet switching reliably with conventional methods, so to improve support for debugging, tracing and profiling greenlet based code there are new functions in the greenlet module:
+#### 调用跟踪支持
+
+标准的Python调用跟踪和性能分析在greenlet中不能正常工作，这是因为栈和frame的切换发生在同一个线程之中。使用传统的方法来发现可靠的greenlet切换操作是很困难的，所以greenlet模块为基于greenlet的代码提供了新的调试，追踪和分析功能:
 
 `greenlet.gettrace()`
-Returns a previously set tracing function, or None.
-greenlet.settrace(callback)
-Sets a new tracing function and returns a previous tracing function, or None. The callback is called on various events and is expected to have the following signature:
+返回先前设定的调用跟踪函数，如果没有则返回None。
+
+`greenlet.settrace(callback)`
+设定新的调用跟踪函数并返回之前设定的调用跟踪函数，如果没有则返回None。回调函数会被不同的事件所调用，并且需要行如：
 
 ```python
 def callback(event, args):
@@ -457,3 +224,240 @@ def callback(event, args):
         return
 ```
 如果事件类型既有**'switch'**又有**'throw'**, 那么对于参数元组args的解包就非常重要。这样的话，API就可以像`sys.settrace()`那样被扩展为更多的事件类型。
+
+#### 两个官方给出的例子
+
+
+##### 1. 简单的生成器
+
+```python
+import unittest
+from greenlet import greenlet
+
+
+class genlet(greenlet):
+
+    def __init__(self, *args, **kwds):
+        self.args = args
+        self.kwds = kwds
+
+    def run(self):
+        fn, = self.fn
+        fn(*self.args, **self.kwds)
+
+    def __iter__(self):
+        return self
+
+    def __next__(self):
+        self.parent = greenlet.getcurrent()
+        result = self.switch()
+        if self:
+            return result
+        else:
+            raise StopIteration
+
+    # Hack: Python < 2.6 compatibility
+    next = __next__
+
+
+def Yield(value):
+    g = greenlet.getcurrent()
+    while not isinstance(g, genlet):
+        if g is None:
+            raise RuntimeError('yield outside a genlet')
+        g = g.parent
+    g.parent.switch(value)
+
+
+def generator(func):
+    class generator(genlet):
+        fn = (func,)
+    return generator
+
+
+class GeneratorTests(unittest.TestCase):
+    def test_generator(self):
+        seen = []
+
+        def g(n):
+            for i in range(n):
+                seen.append(i)
+                Yield(i)
+        g = generator(g)
+        for k in range(3):
+            for j in g(5):
+                seen.append(j)
+        self.assertEqual(seen, 3 * [0, 0, 1, 1, 2, 2, 3, 3, 4, 4])
+```
+
+##### 2. 网状调用生成器
+
+```python
+import unittest
+from greenlet import greenlet
+
+
+class genlet(greenlet):
+
+    def __init__(self, *args, **kwds):
+        self.args = args
+        self.kwds = kwds
+        self.child = None
+
+    def run(self):
+        fn, = self.fn
+        fn(*self.args, **self.kwds)
+
+    def __iter__(self):
+        return self
+
+    def set_child(self, child):
+        self.child = child
+
+    def __next__(self):
+        if self.child:
+            child = self.child
+            while child.child:
+                tmp = child
+                child = child.child
+                tmp.child = None
+
+            result = child.switch()
+        else:
+            self.parent = greenlet.getcurrent()
+            result = self.switch()
+
+        if self:
+            return result
+        else:
+            raise StopIteration
+
+    # Hack: Python < 2.6 compatibility
+    next = __next__
+
+
+def Yield(value, level=1):
+    g = greenlet.getcurrent()
+
+    while level != 0:
+        if not isinstance(g, genlet):
+            raise RuntimeError('yield outside a genlet')
+        if level > 1:
+            g.parent.set_child(g)
+        g = g.parent
+        level -= 1
+
+    g.switch(value)
+
+
+def Genlet(func):
+    class Genlet(genlet):
+        fn = (func,)
+    return Genlet
+
+
+def g1(n, seen):
+    for i in range(n):
+        seen.append(i + 1)
+        yield i
+
+
+def g2(n, seen):
+    for i in range(n):
+        seen.append(i + 1)
+        Yield(i)
+
+g2 = Genlet(g2)
+
+
+def nested(i):
+    Yield(i)
+
+
+def g3(n, seen):
+    for i in range(n):
+        seen.append(i + 1)
+        nested(i)
+g3 = Genlet(g3)
+
+
+def a(n):
+    if n == 0:
+        return
+    for ii in ax(n - 1):
+        Yield(ii)
+    Yield(n)
+ax = Genlet(a)
+
+
+def perms(l):
+    if len(l) > 1:
+        for e in l:
+            # No syntactical sugar for generator expressions
+            [Yield([e] + p) for p in perms([x for x in l if x != e])]
+    else:
+        Yield(l)
+perms = Genlet(perms)
+
+
+def gr1(n):
+    for ii in range(1, n):
+        Yield(ii)
+        Yield(ii * ii, 2)
+
+gr1 = Genlet(gr1)
+
+
+def gr2(n, seen):
+    for ii in gr1(n):
+        seen.append(ii)
+
+gr2 = Genlet(gr2)
+
+
+class NestedGeneratorTests(unittest.TestCase):
+    def test_layered_genlets(self):
+        seen = []
+        for ii in gr2(5, seen):
+            seen.append(ii)
+        self.assertEqual(seen, [1, 1, 2, 4, 3, 9, 4, 16])
+
+    def test_permutations(self):
+        gen_perms = perms(list(range(4)))
+        permutations = list(gen_perms)
+        self.assertEqual(len(permutations), 4 * 3 * 2 * 1)
+        self.assertTrue([0, 1, 2, 3] in permutations)
+        self.assertTrue([3, 2, 1, 0] in permutations)
+        res = []
+        for ii in zip(perms(list(range(4))), perms(list(range(3)))):
+            res.append(ii)
+        self.assertEqual(
+            res,
+            [([0, 1, 2, 3], [0, 1, 2]), ([0, 1, 3, 2], [0, 2, 1]),
+             ([0, 2, 1, 3], [1, 0, 2]), ([0, 2, 3, 1], [1, 2, 0]),
+             ([0, 3, 1, 2], [2, 0, 1]), ([0, 3, 2, 1], [2, 1, 0])])
+        # XXX Test to make sure we are working as a generator expression
+
+    def test_genlet_simple(self):
+        for g in [g1, g2, g3]:
+            seen = []
+            for k in range(3):
+                for j in g(5, seen):
+                    seen.append(j)
+            self.assertEqual(seen, 3 * [1, 0, 2, 1, 3, 2, 4, 3, 5, 4])
+
+    def test_genlet_bad(self):
+        try:
+            Yield(10)
+        except RuntimeError:
+            pass
+
+    def test_nested_genlets(self):
+        seen = []
+        for ii in ax(5):
+            seen.append(ii)
+```
+
+#### 结尾
+
+了解greenlet主要是为了深入了解gevent做铺垫，翻译呢主要是为了加深自己的记忆：）
