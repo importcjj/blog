@@ -38,7 +38,7 @@ curl --cookie cookies -d "channel=0&date=`date +%s`000" http://www.acfun.tv/weba
 
 ## 4. 结束
 
-感觉好水啊！
+哎，感觉好水啊！
 
 
 
