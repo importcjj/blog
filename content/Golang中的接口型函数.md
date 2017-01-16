@@ -4,7 +4,9 @@ Tags: Go
 Date: 2017-01-16 11:22:11
 Author: importcjj
 
-```package main
+```golang
+
+package main
 
 import (
 	"fmt"
