@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width">
+        <title>Python单层装饰器小记</title>
+        <link rel="stylesheet" href="https://importcjj.github.io/theme/css/main.css" />
+        <script type="text/javascript" src="https://importcjj.github.io/theme/js/jquery-1.12.3.min.js"></script>
+
+        <!--[if IE]>
+            <script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+</head>
+
+<body id="index" class="home">
+<!-- <a href="https://github.com/importcjj">
+<img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" alt="Fork me on GitHub" />
+</a>
+ -->
+        <input id="header-toggle" type="checkbox">
+        <header id="banner" class="body">
+                <h1><a href="https://importcjj.github.io/">Signal </a></h1>
+                <nav><ul>
+                    <li><a href="https://importcjj.github.io/category/centos.html">CentOS</a></li>
+                    <li><a href="https://importcjj.github.io/category/docker.html">Docker</a></li>
+                    <li><a href="https://importcjj.github.io/category/emacs.html">Emacs</a></li>
+                    <li><a href="https://importcjj.github.io/category/git.html">git</a></li>
+                    <li><a href="https://importcjj.github.io/category/github.html">github</a></li>
+                    <li><a href="https://importcjj.github.io/category/go.html">Go</a></li>
+                    <li><a href="https://importcjj.github.io/category/markdown.html">Markdown</a></li>
+                    <li class="active"><a href="https://importcjj.github.io/category/python.html">Python</a></li>
+                    <li><a href="https://importcjj.github.io/category/sundry.html">sundry</a></li>
+                    <li><a href="https://importcjj.github.io/category/tool.html">Tool</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
+        <aside class="side-bar">
+            <ul>
+                <li><a href="https://importcjj.github.io/"><i class="fa fa-info fa-lg"></i></a></li>
+                <li><a href="https://importcjj.github.io/categories.html"><i class="fa fa-book fa-lg"></i></a></li>
+                <li><a href="https://importcjj.github.io/archives.html"><i class="fa fa-archive fa-lg"></i></a></li>
+                <li><a href="https://importcjj.github.io/tags.html"><i class="fa fa-tags fa-lg"></i></a></li>
+                <li><a href="https://importcjj.github.io/authors.html"><i class="fa fa-users fa-lg"></i></a></li>
+<li><a href="https://github.com/importcjj"><i class="fa fa-github fa-lg"></i></a></li>            </ul>
+        </aside>
+        <div class="tool-btns">
+            <label id="header-toggle-btn" class='tool-btn' for="header-toggle"><i class="fa fa-bars"></i></label>
+            <label id="back-to-top" class="tool-btn"><i class="fa fa-arrow-up"></i></label>
+        </div>
+        <div class="content">
+<section id="content" class="body">
+  <article>
+    <div>
+    </div>
+
+    <div class="entry-content markdown-body markdown">
+<footer class="post-info">
+        <div class="meta">
+        <a class="category" href="https://importcjj.github.io/category/python.html">Python</a>
+        <address class="vcard author">
+                        <a class="url fn" href="https://importcjj.github.io/author/importcjj.html">importcjj</a>
+        </address>
+        <abbr class="published" title="2016-03-26T17:50:50+08:00">
+                · 26 三月 2016
+        </abbr>
+        </div>
+        <h1 class="entry-title"><a href="https://importcjj.github.io/pythondan-ceng-zhuang-shi-qi-xiao-ji.html">Python单层装饰器小记</a></h1>
+<p class="tags"><a><i class="fa fa-tags"></i> </a><a href="https://importcjj.github.io/tag/zhuang-shi-qi.html">装饰器</a> <a href="https://importcjj.github.io/tag/python.html">Python</a> </p>
+</footer><!-- /.post-info -->      <div class="post-body"> <h4>解释器什么时候处理装饰器？</h4>
+<p>答: Python解释器加载代码的时候.</p>
+<p>例如, sleep.py 代码如下</p>
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">functools</span>
+<span class="kn">import</span> <span class="nn">time</span>
+
+
+<span class="k">def</span> <span class="nf">timer</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;handle decorator&quot;</span><span class="p">)</span>
+
+    <span class="nd">@functools.wraps</span><span class="p">(</span><span class="n">func</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">wrapper</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="n">start</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+        <span class="n">rtn</span> <span class="o">=</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="n">cost</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="n">start</span>
+        <span class="k">print</span><span class="p">(</span><span class="s2">&quot;cost </span><span class="si">%f</span><span class="s2"> s&quot;</span><span class="p">)</span> <span class="o">%</span> <span class="n">cost</span>
+        <span class="k">return</span> <span class="n">rtn</span>
+    <span class="k">return</span> <span class="n">wrapper</span>
+
+
+<span class="nd">@timer</span>
+<span class="k">def</span> <span class="nf">sleep</span><span class="p">(</span><span class="n">seconds</span><span class="p">):</span>
+    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="n">seconds</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">seconds</span>
+</pre></div>
+
+
+<p>以上代码只是定义了一个装饰器和一个使用该装饰器的函数，当运行<code>python sleep.py</code>的时候会打印<code>hanle decorator</code>。当解释器在加载处理代码的时候遇到了"@"的时候，回去调用timer这个函数，并把sleep这个参数当做参数传给timer。这个过程相当于:</p>
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">sleep</span><span class="p">(</span><span class="n">seconds</span><span class="p">):</span>
+    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="n">seconds</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">seconds</span>
+<span class="n">sleep</span> <span class="o">=</span> <span class="n">timer</span><span class="p">(</span><span class="n">sleep</span><span class="p">)</span>
+</pre></div>
+
+
+<h4>装饰器和闭包？</h4>
+<blockquote>
+<p>在计算机科学中，闭包（英语：Closure），又称词法闭包（Lexical Closure）或函数闭包（function closures），是引用了自由变量的函数。这个被引用的自由变量将和这个函数一同存在，即使已经离开了创造它的环境也不例外。所以，有另一种说法认为闭包是由函数和与其相关的引用环境组合而成的实体。闭包在运行时可以有多个实例，不同的引用环境和相同的函数组合可以产生不同的实例。
+</p>
+</blockquote>
+<p>我们不去深究到底什么才是闭包的正确定义。姑且认为就是引用了自由变量的函数。如果在一个内部函数里，对在外部作用域（但不是在全局作用域）的变量进行引用，那么内部函数就被认为是闭包。粗暴的理解为<strong>函数套函数，内层函数引用了外层函数的变量，即使外层函数结束了，内层函数函数仍可以访问该变量</strong>。</p>
+<p>在装饰器的用法中，表现为如下方式:</p>
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">functools</span>
+<span class="kn">import</span> <span class="nn">time</span>
+
+
+<span class="k">def</span> <span class="nf">timer</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;handle decorator&quot;</span><span class="p">)</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="n">func</span><span class="o">.</span><span class="n">func_name</span>
+
+    <span class="nd">@functools.wraps</span><span class="p">(</span><span class="n">func</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">wrapper</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="k">print</span> <span class="n">name</span><span class="p">,</span> <span class="nb">id</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+        <span class="n">start</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+        <span class="n">rtn</span> <span class="o">=</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="n">cost</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="n">start</span>
+        <span class="k">print</span><span class="p">(</span><span class="s2">&quot;costs </span><span class="si">%f</span><span class="s2"> s&quot;</span><span class="p">)</span> <span class="o">%</span> <span class="n">cost</span>
+        <span class="k">return</span> <span class="n">rtn</span>
+    <span class="k">return</span> <span class="n">wrapper</span>
+
+
+<span class="nd">@timer</span>
+<span class="k">def</span> <span class="nf">sleep</span><span class="p">(</span><span class="n">seconds</span><span class="p">):</span>
+    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="n">seconds</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">seconds</span>
+
+
+<span class="nd">@timer</span>
+<span class="k">def</span> <span class="nf">sleep2</span><span class="p">(</span><span class="n">seconds</span><span class="p">):</span>
+    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="n">seconds</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">seconds</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="k">print</span> <span class="n">sleep</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+    <span class="k">print</span> <span class="n">sleep</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+    <span class="k">print</span> <span class="n">sleep2</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+    <span class="k">print</span> <span class="n">sleep2</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+
+<span class="c1"># 运行结果:</span>
+<span class="n">handle</span> <span class="n">decorator</span>
+<span class="n">handle</span> <span class="n">decorator</span>
+<span class="c1"># print sleep(2)</span>
+<span class="n">sleep</span> <span class="mi">4402047952</span>
+<span class="n">costs</span> <span class="mf">2.005124</span> <span class="n">s</span>
+<span class="mi">2</span>
+<span class="c1"># print sleep(3)</span>
+<span class="n">sleep</span> <span class="mi">4402047952</span>
+<span class="n">costs</span> <span class="mf">3.005203</span> <span class="n">s</span>
+<span class="mi">3</span>
+<span class="c1"># print sleep2(2)</span>
+<span class="n">sleep2</span> <span class="mi">4402048048</span>
+<span class="n">costs</span> <span class="mf">2.005205</span> <span class="n">s</span>
+<span class="mi">2</span>
+<span class="c1"># print sleep2(3)</span>
+<span class="n">sleep2</span> <span class="mi">4402048048</span>
+<span class="n">costs</span> <span class="mf">3.000412</span> <span class="n">s</span>
+<span class="mi">3</span>
+</pre></div>
+
+
+<p>可以看到:</p>
+<ol>
+<li>sleep是可以访问timer函数中的name变量。</li>
+<li>同一个函数的多次调用，name变量是同一个(id相同)。</li>
+<li>函数<strong>sleep</strong>和<strong>sleep2</strong>所引用的name变量不是同一个，因为timer装饰这两个函数，被调用了两次，声明了两个不同的name变量。</li>
+</ol>
+<p>利用以上三点特性，我们可以在装饰器中为被装饰函数开辟一个"存放数据空间"，来看一种应用方式:</p>
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">functools</span>
+<span class="kn">import</span> <span class="nn">time</span>
+
+
+<span class="k">def</span> <span class="nf">cache</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
+    <span class="n">caches</span> <span class="o">=</span> <span class="p">{}</span>
+
+    <span class="nd">@functools.wraps</span><span class="p">(</span><span class="n">func</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">wrapper</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">n</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">caches</span><span class="p">:</span>
+            <span class="n">caches</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="o">=</span> <span class="n">func</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">caches</span><span class="p">[</span><span class="n">n</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">wrapper</span>
+
+
+<span class="nd">@cache</span>
+<span class="k">def</span> <span class="nf">fib</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="n">fib</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="n">fib</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">2</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">fib2</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="n">fib2</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="n">fib2</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">2</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">fib3</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">xrange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+        <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">,</span> <span class="n">a</span>
+    <span class="k">return</span> <span class="n">a</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">start</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">xrange</span><span class="p">(</span><span class="mi">10000</span><span class="p">):</span>
+        <span class="n">fib</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>
+    <span class="k">print</span> <span class="s2">&quot;cache fib without cache spends </span><span class="si">%f</span><span class="s2"> s&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="n">start</span><span class="p">,)</span>
+
+    <span class="n">start</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">xrange</span><span class="p">(</span><span class="mi">10000</span><span class="p">):</span>
+        <span class="n">fib2</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>
+    <span class="k">print</span> <span class="s2">&quot;no cache fib spends </span><span class="si">%f</span><span class="s2"> s&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="n">start</span><span class="p">,)</span>
+
+    <span class="n">start</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">xrange</span><span class="p">(</span><span class="mi">10000</span><span class="p">):</span>
+        <span class="n">fib3</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>
+    <span class="k">print</span> <span class="s2">&quot;fib3 spends </span><span class="si">%f</span><span class="s2"> s&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="n">start</span><span class="p">,)</span>
+
+<span class="c1"># 运行结果</span>
+<span class="n">cache</span> <span class="n">fib</span> <span class="n">without</span> <span class="n">cache</span> <span class="n">spends</span> <span class="mf">0.003719</span> <span class="n">s</span>
+<span class="n">no</span> <span class="n">cache</span> <span class="n">fib</span> <span class="n">spends</span> <span class="mf">31.374117</span> <span class="n">s</span>
+<span class="n">fib3</span> <span class="n">spends</span> <span class="mf">0.016529</span> <span class="n">s</span>
+</pre></div>
+
+
+<p>递归通常比非递归实现对程序执行的效率影响更大一些，我们带缓冲的递归fib却比非递归版本的fib3耗时更少！</p>
+<p>这</p>
+<h4>类装饰器</h4>
+<p>我们在创建一个class的时候可以选择重写以下三个方法：</p>
+<ul>
+<li>__new__(cls, <em>args, </em>*kwargs)   创建实例</li>
+<li>__init__(self, <em>args, </em>*kwargs)  初始化实例</li>
+<li>__call__(self, <em>args, </em>*kwargs)  把实例当函数一样调用</li>
+</ul>
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">functools</span>
+<span class="kn">import</span> <span class="nn">time</span>
+
+
+<span class="k">class</span> <span class="nc">Timer</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">names</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="k">def</span> <span class="fm">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">func</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">func</span><span class="o">.</span><span class="n">func_name</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">names</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">names</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">func</span><span class="o">.</span><span class="n">func_name</span><span class="p">)</span>
+
+        <span class="nd">@functools.wraps</span><span class="p">(</span><span class="n">func</span><span class="p">)</span>
+        <span class="k">def</span> <span class="nf">wrapper</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+            <span class="k">print</span> <span class="bp">self</span><span class="o">.</span><span class="n">names</span>
+            <span class="n">start</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+            <span class="n">rtn</span> <span class="o">=</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+            <span class="k">print</span> <span class="s2">&quot;</span><span class="si">%s</span><span class="s2"> spends </span><span class="si">%f</span><span class="s2"> s&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">func</span><span class="o">.</span><span class="n">func_name</span><span class="p">,</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="n">start</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">rtn</span>
+        <span class="k">return</span> <span class="n">wrapper</span>
+
+<span class="n">timer</span> <span class="o">=</span> <span class="n">Timer</span><span class="p">()</span>
+
+
+<span class="nd">@timer</span>
+<span class="k">def</span> <span class="nf">sleep</span><span class="p">(</span><span class="n">seconds</span><span class="p">):</span>
+    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="n">seconds</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">seconds</span>
+
+
+<span class="nd">@timer</span>
+<span class="k">def</span> <span class="nf">sleep2</span><span class="p">(</span><span class="n">seconds</span><span class="p">):</span>
+    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="n">seconds</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">seconds</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">sleep</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+    <span class="n">sleep2</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+
+<span class="err">＃</span> <span class="err">运行结果</span>
+<span class="p">[</span><span class="s1">&#39;sleep&#39;</span><span class="p">,</span> <span class="s1">&#39;sleep2&#39;</span><span class="p">]</span>
+<span class="n">sleep</span> <span class="n">spends</span> <span class="mf">5.000244</span> <span class="n">s</span>
+<span class="p">[</span><span class="s1">&#39;sleep&#39;</span><span class="p">,</span> <span class="s1">&#39;sleep2&#39;</span><span class="p">]</span>
+<span class="n">sleep2</span> <span class="n">spends</span> <span class="mf">5.004623</span> <span class="n">s</span>
+</pre></div>
+
+
+<p>想要使用类来做装饰器，先要准备一个实例，然后调用这个实例。除了这点要注意外，还要注意的是，用类实现的装饰器，可以让所有被装饰的函数共享变量，这种变量就是实例的内部变量。</p> </div>
+    </div><!-- /.entry-content -->
+    <p class="copyright">©版权所有, 转载请注明出处</p>
+    <div class="comments">
+      <div id="disqus_thread"></div>
+      <script type="text/javascript">
+        var disqus_shortname = 'importcjj';
+        var disqus_identifier = 'pythondan-ceng-zhuang-shi-qi-xiao-ji.html';
+        var disqus_url = 'https://importcjj.github.io/pythondan-ceng-zhuang-shi-qi-xiao-ji.html';
+        (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//importcjj.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+      </script>
+      <noscript>Please enable JavaScript to view the comments.</noscript>
+    </div>
+
+  </article>
+</section>
+        <section id="extras" class="body animated" style="opacity: 0">
+                <div class="blogroll">
+                        <h2>Links</h2>
+                        <ul>
+                            <li>
+                                <a class="link-name" href="http://chihiro.moe">Slade</a>
+                                <a class="link-href">http://chihiro.moe</a>
+                            </li>
+                            <li>
+                                <a class="link-name" href="http://shenyizhou.github.io">无主之地</a>
+                                <a class="link-href">http://shenyizhou.github.io</a>
+                            </li>
+                            <li>
+                                <a class="link-name" href="http://yuan0.github.io">Junifer</a>
+                                <a class="link-href">http://yuan0.github.io</a>
+                            </li>
+                            <li>
+                                <a class="link-name" href="http://getpelican.com/">Pelican</a>
+                                <a class="link-href">http://getpelican.com/</a>
+                            </li>
+                            <li>
+                                <a class="link-name" href="http://python.org/">Python.org</a>
+                                <a class="link-href">http://python.org/</a>
+                            </li>
+                            <li>
+                                <a class="link-name" href="http://jinja.pocoo.org/">Jinja2</a>
+                                <a class="link-href">http://jinja.pocoo.org/</a>
+                            </li>
+                            <li>
+                                <a class="link-name" href="http://dongweiming.github.io/Expert-Python/#1">Expert-python</a>
+                                <a class="link-href">http://dongweiming.github.io/Expert-Python/#1</a>
+                            </li>
+                        </ul>
+                </div><!-- /.blogroll -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body animated" style="opacity: 0">
+                <p>Proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
+                </p><!-- /#about -->
+                <p>The theme is by <a href="https://github.com/importcjj/yake">importcjj</a>, thanks!</p>
+                <p>托管于 <a href="https://github.com">github</a> 和 <a href="https://coding.net/">coding</a>,  
+                并借助 <a href="https://travis-ci.com/">travis ci</a> 完成自动编译发布.
+                </p>
+                <img src="https://travis-ci.org/importcjj/importcjj.github.io.svg?branch=master"/>
+        </footer><!-- /#contentinfo -->
+        </div>
+
+<script type="text/javascript">
+// index animate
+$('.animated').map(function(i, node) {
+    var timeout = (i + 1) * 270;
+    console.log(timeout);
+    setTimeout(function(){
+        $(node).addClass('fadeInLeft');
+        $(node).css('opacity', 1);
+    }, timeout);
+}.bind(this));
+
+
+// back to page top
+(function() {
+    // var $ = function(id) {return document.getElementById(id)};
+    // var scrollTop = function() {return document.documentElement.scrollTop || document.body.scrollTop};
+    // var backToTop = function() {
+    //     var fromTop = scrollTop();
+    //     if(fromTop){
+    //         window.scrollBy(0, -40);
+    //         window.timeout = setTimeout(backToTop, 5);
+    //     } else{
+    //         clearTimeout(window.timeout);
+    //     }
+    // };
+
+    // $('back-to-top').onclick = function(evt) {backToTop()};
+    $('#back-to-top').click(function() {
+        $('body').animate({'scrollTop': 0}, 800);
+    });
+
+    window.onscroll = function(evt) {
+        if($('body').scrollTop() > 500) {
+            $('#back-to-top').css('display','block');
+        } else {
+            $('#back-to-top').css('display', 'none');}
+    };
+
+}())
+</script><script type="text/javascript">
+    var disqus_shortname = 'importcjj';
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = 'https://' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+</script>
+</body>
+</html>

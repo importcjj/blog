@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width">
+        <title>Golang编程练习</title>
+        <link rel="stylesheet" href="https://importcjj.github.io/theme/css/main.css" />
+        <script type="text/javascript" src="https://importcjj.github.io/theme/js/jquery-1.12.3.min.js"></script>
+
+        <!--[if IE]>
+            <script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+</head>
+
+<body id="index" class="home">
+<!-- <a href="https://github.com/importcjj">
+<img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" alt="Fork me on GitHub" />
+</a>
+ -->
+        <input id="header-toggle" type="checkbox">
+        <header id="banner" class="body">
+                <h1><a href="https://importcjj.github.io/">Signal </a></h1>
+                <nav><ul>
+                    <li><a href="https://importcjj.github.io/category/centos.html">CentOS</a></li>
+                    <li><a href="https://importcjj.github.io/category/docker.html">Docker</a></li>
+                    <li><a href="https://importcjj.github.io/category/emacs.html">Emacs</a></li>
+                    <li><a href="https://importcjj.github.io/category/git.html">git</a></li>
+                    <li><a href="https://importcjj.github.io/category/github.html">github</a></li>
+                    <li class="active"><a href="https://importcjj.github.io/category/go.html">Go</a></li>
+                    <li><a href="https://importcjj.github.io/category/markdown.html">Markdown</a></li>
+                    <li><a href="https://importcjj.github.io/category/python.html">Python</a></li>
+                    <li><a href="https://importcjj.github.io/category/sundry.html">sundry</a></li>
+                    <li><a href="https://importcjj.github.io/category/tool.html">Tool</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
+        <aside class="side-bar">
+            <ul>
+                <li><a href="https://importcjj.github.io/"><i class="fa fa-info fa-lg"></i></a></li>
+                <li><a href="https://importcjj.github.io/categories.html"><i class="fa fa-book fa-lg"></i></a></li>
+                <li><a href="https://importcjj.github.io/archives.html"><i class="fa fa-archive fa-lg"></i></a></li>
+                <li><a href="https://importcjj.github.io/tags.html"><i class="fa fa-tags fa-lg"></i></a></li>
+                <li><a href="https://importcjj.github.io/authors.html"><i class="fa fa-users fa-lg"></i></a></li>
+<li><a href="https://github.com/importcjj"><i class="fa fa-github fa-lg"></i></a></li>            </ul>
+        </aside>
+        <div class="tool-btns">
+            <label id="header-toggle-btn" class='tool-btn' for="header-toggle"><i class="fa fa-bars"></i></label>
+            <label id="back-to-top" class="tool-btn"><i class="fa fa-arrow-up"></i></label>
+        </div>
+        <div class="content">
+<section id="content" class="body">
+  <article>
+    <div>
+    </div>
+
+    <div class="entry-content markdown-body markdown">
+<footer class="post-info">
+        <div class="meta">
+        <a class="category" href="https://importcjj.github.io/category/go.html">Go</a>
+        <address class="vcard author">
+                        <a class="url fn" href="https://importcjj.github.io/author/importcjj.html">importcjj</a>
+        </address>
+        <abbr class="published" title="2016-05-10T02:04:13+08:00">
+                · 10 五月 2016
+        </abbr>
+        </div>
+        <h1 class="entry-title"><a href="https://importcjj.github.io/golangbian-cheng-lian-xi.html">Golang编程练习</a></h1>
+<p class="tags"><a><i class="fa fa-tags"></i> </a><a href="https://importcjj.github.io/tag/go.html">Go</a> </p>
+</footer><!-- /.post-info -->      <div class="post-body"> <p>完整代码 <a href="https://github.com/importcjj/fooutils">戳这里</a></p>
+<h5>1. 验证给定字符串是否为合法身份证号码</h5>
+<p>算法：前17位纯数字分别乘以相应的因子，然后求和后除以11取余数。使用该余数取得校验字节数组中相位位置的字节与身份证最后一位字节做比较。如果相等即为合法身份证！</p>
+<div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nx">main</span>
+
+<span class="kn">import</span> <span class="s">&quot;fmt&quot;</span>
+<span class="kn">import</span> <span class="s">&quot;strconv&quot;</span>
+
+<span class="kd">var</span> <span class="p">(</span>
+    <span class="nx">Factories</span>    <span class="p">[</span><span class="mi">17</span><span class="p">]</span><span class="kt">int</span> <span class="p">=</span> <span class="p">[</span><span class="mi">17</span><span class="p">]</span><span class="kt">int</span><span class="p">{</span><span class="mi">7</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">}</span>
+    <span class="nx">ValidateBits</span> <span class="p">[]</span><span class="kt">byte</span>  <span class="p">=</span> <span class="p">[]</span><span class="nb">byte</span><span class="p">(</span><span class="s">&quot;10X98765432&quot;</span><span class="p">)</span>
+<span class="p">)</span>
+
+<span class="kd">func</span> <span class="nx">IsValidIDCode</span><span class="p">(</span><span class="nx">id</span> <span class="kt">string</span><span class="p">)</span> <span class="kt">bool</span> <span class="p">{</span>
+    <span class="nx">idBytes</span> <span class="o">:=</span> <span class="p">[]</span><span class="nb">byte</span><span class="p">(</span><span class="nx">id</span><span class="p">)</span>
+    <span class="k">if</span> <span class="nx">length</span> <span class="o">:=</span> <span class="nb">len</span><span class="p">(</span><span class="nx">idBytes</span><span class="p">);</span> <span class="nx">length</span> <span class="o">!=</span> <span class="mi">18</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="kc">false</span>
+    <span class="p">}</span>
+
+    <span class="nx">sum</span> <span class="o">:=</span> <span class="mi">0</span>
+    <span class="nx">lastByte</span> <span class="o">:=</span> <span class="nx">idBytes</span><span class="p">[</span><span class="mi">17</span><span class="p">]</span>
+    <span class="nx">idBytes</span> <span class="p">=</span> <span class="nx">idBytes</span><span class="p">[:</span><span class="mi">17</span><span class="p">]</span>
+
+    <span class="k">for</span> <span class="nx">i</span><span class="p">,</span> <span class="nx">b</span> <span class="o">:=</span> <span class="k">range</span> <span class="nx">idBytes</span> <span class="p">{</span>
+        <span class="nx">value</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">strconv</span><span class="p">.</span><span class="nx">Atoi</span><span class="p">(</span><span class="nb">string</span><span class="p">(</span><span class="nx">b</span><span class="p">))</span>
+        <span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="kc">false</span>
+        <span class="p">}</span>
+        <span class="nx">sum</span> <span class="o">+=</span> <span class="nx">value</span> <span class="o">*</span> <span class="nx">Factories</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span>
+    <span class="p">}</span>
+
+    <span class="nx">index</span> <span class="o">:=</span> <span class="nx">sum</span> <span class="o">%</span> <span class="mi">11</span>
+    <span class="k">if</span> <span class="nx">ValidateBits</span><span class="p">[</span><span class="nx">index</span><span class="p">]</span> <span class="o">==</span> <span class="nx">lastByte</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="kc">true</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="kc">false</span>
+<span class="p">}</span>
+
+<span class="kd">func</span> <span class="nx">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">myID</span> <span class="o">:=</span> <span class="s">&quot;身份证号码&quot;</span>
+    <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">IsValidIDCode</span><span class="p">(</span><span class="nx">myID</span><span class="p">))</span>
+<span class="p">}</span>
+</pre></div>
+
+
+<h5>2. 排序之快速排序</h5>
+<p>快速排序的本质其实很简单: 在一趟排序中，在需要排序的序列中选出一个基准数(pivot), 然后将比它的数放左边， 比它小的放右边。然后采用分治和递归，再去分别对小数序列和大数序列排序。</p>
+<p>以前学的一种实现使用while循环，老是在right, left等于的时候搞不清楚啊。在参考了wiki百科之后，发现以下写法清晰易懂。
+允许随便选取一个基准（不过我写的时候，默认使用第一位了), 先把基准放置到最后一位，然后遍历前n-1个数，把小于基准数的数往前放，同时使用一个游标来记录。遍历完之后，将基准数交换到游标处。自此，基准数之前全是小于基准数的，之后都是小于等于基本数的。然后分别继续递归。</p>
+<div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nx">main</span>
+
+<span class="kn">import</span> <span class="s">&quot;fmt&quot;</span>
+
+<span class="kd">func</span> <span class="nx">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">a</span> <span class="o">:=</span> <span class="p">[]</span><span class="kt">int</span><span class="p">{</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">}</span>
+
+    <span class="nx">IntQuickSort</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">9</span><span class="p">)</span>
+    <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">a</span><span class="p">)</span>
+<span class="p">}</span>
+
+
+
+<span class="kd">func</span> <span class="nx">IntQuickSort</span><span class="p">(</span><span class="nx">slice</span> <span class="p">[]</span><span class="kt">int</span><span class="p">,</span> <span class="nx">left</span><span class="p">,</span> <span class="nx">right</span> <span class="kt">int</span><span class="p">)</span> <span class="p">{</span>
+
+    <span class="k">if</span> <span class="nx">right</span> <span class="o">-</span> <span class="nx">left</span> <span class="o">&lt;=</span> <span class="mi">1</span> <span class="p">{</span>
+        <span class="k">return</span>
+    <span class="p">}</span>
+
+    <span class="c1">// 默认将第一位作为基准位</span>
+    <span class="nx">pivotIndex</span> <span class="o">:=</span> <span class="nx">left</span>
+
+    <span class="c1">// 把基准交换到最后一位</span>
+    <span class="nx">slice</span><span class="p">[</span><span class="nx">pivotIndex</span><span class="p">],</span> <span class="nx">slice</span><span class="p">[</span><span class="nx">right</span><span class="p">]</span> <span class="p">=</span> <span class="nx">slice</span><span class="p">[</span><span class="nx">right</span><span class="p">],</span> <span class="nx">slice</span><span class="p">[</span><span class="nx">pivotIndex</span><span class="p">]</span>
+
+    <span class="nx">storeIndex</span> <span class="o">:=</span> <span class="nx">left</span>
+    <span class="k">for</span> <span class="nx">i</span> <span class="o">:=</span> <span class="nx">left</span><span class="p">;</span> <span class="nx">i</span> <span class="p">&lt;</span> <span class="nx">right</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="nx">slice</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="p">&lt;</span> <span class="nx">slice</span><span class="p">[</span><span class="nx">right</span><span class="p">]</span> <span class="p">{</span>
+            <span class="nx">slice</span><span class="p">[</span><span class="nx">storeIndex</span><span class="p">],</span> <span class="nx">slice</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="p">=</span> <span class="nx">slice</span><span class="p">[</span><span class="nx">i</span><span class="p">],</span> <span class="nx">slice</span><span class="p">[</span><span class="nx">storeIndex</span><span class="p">]</span>
+            <span class="nx">storeIndex</span> <span class="o">++</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="nx">slice</span><span class="p">[</span><span class="nx">storeIndex</span><span class="p">],</span> <span class="nx">slice</span><span class="p">[</span><span class="nx">right</span><span class="p">]</span> <span class="p">=</span> <span class="nx">slice</span><span class="p">[</span><span class="nx">right</span><span class="p">],</span> <span class="nx">slice</span><span class="p">[</span><span class="nx">storeIndex</span><span class="p">]</span>
+
+    <span class="nx">IntQuickSort</span><span class="p">(</span><span class="nx">slice</span><span class="p">,</span> <span class="nx">left</span><span class="p">,</span> <span class="nx">storeIndex</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+    <span class="nx">IntQuickSort</span><span class="p">(</span><span class="nx">slice</span><span class="p">,</span> <span class="nx">storeIndex</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="nx">right</span><span class="p">)</span>
+<span class="p">}</span>
+</pre></div>
+
+
+<h5>3. 排序之归并排序</h5>
+<p><img alt="merge sort" src="http://7xsw69.com1.z0.glb.clouddn.com/Merge-sort-example-300px.gif" /></p>
+<p>上图非常清楚的表现了归并排序的过程: 先不停的对半分组，直到分成一个数字一组， 然后相邻的两组作比较，归并成有序的一组，不断向上归并。</p>
+<div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nx">main</span>
+
+<span class="kn">import</span> <span class="s">&quot;fmt&quot;</span>
+
+<span class="kd">func</span> <span class="nx">IntMergeSort</span><span class="p">(</span><span class="nx">slice</span> <span class="p">[]</span><span class="kt">int</span><span class="p">,</span> <span class="nx">left</span><span class="p">,</span> <span class="nx">right</span> <span class="kt">int</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="nx">left</span> <span class="o">&gt;=</span> <span class="nx">right</span> <span class="p">{</span>
+        <span class="k">return</span>
+    <span class="p">}</span>
+    <span class="nx">cache</span> <span class="o">:=</span> <span class="nb">make</span><span class="p">([]</span><span class="kt">int</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="nx">slice</span><span class="p">))</span>
+    <span class="nx">intMergeSort</span><span class="p">(</span><span class="nx">slice</span><span class="p">,</span> <span class="nx">cache</span><span class="p">,</span> <span class="nx">left</span><span class="p">,</span> <span class="nx">right</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="kd">func</span> <span class="nx">intMergeSort</span><span class="p">(</span><span class="nx">slice</span><span class="p">,</span> <span class="nx">cache</span> <span class="p">[]</span><span class="kt">int</span><span class="p">,</span> <span class="nx">left</span><span class="p">,</span> <span class="nx">right</span> <span class="kt">int</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">length</span> <span class="o">:=</span> <span class="nx">right</span> <span class="o">-</span> <span class="nx">left</span>
+    <span class="k">if</span> <span class="nx">length</span> <span class="o">&lt;=</span> <span class="mi">0</span> <span class="p">{</span>
+        <span class="k">return</span>
+    <span class="p">}</span>
+
+    <span class="nx">middle</span> <span class="o">:=</span> <span class="nx">length</span><span class="o">&gt;&gt;</span><span class="mi">1</span> <span class="o">+</span> <span class="nx">left</span>
+
+    <span class="nx">left1</span><span class="p">,</span> <span class="nx">right1</span> <span class="o">:=</span> <span class="nx">left</span><span class="p">,</span> <span class="nx">middle</span>
+    <span class="nx">left2</span><span class="p">,</span> <span class="nx">right2</span> <span class="o">:=</span> <span class="nx">middle</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="nx">right</span>
+
+    <span class="nx">intMergeSort</span><span class="p">(</span><span class="nx">slice</span><span class="p">,</span> <span class="nx">cache</span><span class="p">,</span> <span class="nx">left1</span><span class="p">,</span> <span class="nx">right1</span><span class="p">)</span>
+    <span class="nx">intMergeSort</span><span class="p">(</span><span class="nx">slice</span><span class="p">,</span> <span class="nx">cache</span><span class="p">,</span> <span class="nx">left2</span><span class="p">,</span> <span class="nx">right2</span><span class="p">)</span>
+
+    <span class="nx">index</span> <span class="o">:=</span> <span class="nx">left</span>
+    <span class="k">for</span> <span class="nx">left1</span> <span class="o">&lt;=</span> <span class="nx">right1</span> <span class="o">&amp;&amp;</span> <span class="nx">left2</span> <span class="o">&lt;=</span> <span class="nx">right2</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="nx">slice</span><span class="p">[</span><span class="nx">left1</span><span class="p">]</span> <span class="p">&lt;</span> <span class="nx">slice</span><span class="p">[</span><span class="nx">left2</span><span class="p">]</span> <span class="p">{</span>
+            <span class="nx">cache</span><span class="p">[</span><span class="nx">index</span><span class="p">]</span> <span class="p">=</span> <span class="nx">slice</span><span class="p">[</span><span class="nx">left1</span><span class="p">]</span>
+            <span class="nx">left1</span><span class="o">++</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="nx">cache</span><span class="p">[</span><span class="nx">index</span><span class="p">]</span> <span class="p">=</span> <span class="nx">slice</span><span class="p">[</span><span class="nx">left2</span><span class="p">]</span>
+            <span class="nx">left2</span><span class="o">++</span>
+        <span class="p">}</span>
+        <span class="nx">index</span><span class="o">++</span>
+
+    <span class="p">}</span>
+
+    <span class="k">for</span> <span class="nx">left1</span> <span class="o">&lt;=</span> <span class="nx">right1</span> <span class="p">{</span>
+        <span class="nx">cache</span><span class="p">[</span><span class="nx">index</span><span class="p">]</span> <span class="p">=</span> <span class="nx">slice</span><span class="p">[</span><span class="nx">left1</span><span class="p">]</span>
+        <span class="nx">left1</span><span class="o">++</span>
+        <span class="nx">index</span><span class="o">++</span>
+    <span class="p">}</span>
+    <span class="k">for</span> <span class="nx">left2</span> <span class="o">&lt;=</span> <span class="nx">right2</span> <span class="p">{</span>
+        <span class="nx">cache</span><span class="p">[</span><span class="nx">index</span><span class="p">]</span> <span class="p">=</span> <span class="nx">slice</span><span class="p">[</span><span class="nx">left2</span><span class="p">]</span>
+        <span class="nx">left2</span><span class="o">++</span>
+        <span class="nx">index</span><span class="o">++</span>
+    <span class="p">}</span>
+
+    <span class="k">for</span> <span class="nx">i</span> <span class="o">:=</span> <span class="nx">left</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;=</span> <span class="nx">right</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span> <span class="p">{</span>
+        <span class="nx">slice</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="p">=</span> <span class="nx">cache</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">func</span> <span class="nx">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">slice</span> <span class="o">:=</span> <span class="p">[]</span><span class="kt">int</span><span class="p">{</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">9</span><span class="p">}</span>
+    <span class="nx">IntMergeSort</span><span class="p">(</span><span class="nx">slice</span><span class="p">)</span>
+    <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">slice</span><span class="p">)</span>
+<span class="p">}</span>
+</pre></div>
+
+
+<h5>4. 排序之插入排序</h5>
+<p><img alt="insertion sort" src="http://7xsw69.com1.z0.glb.clouddn.com/Insertion-sort-example-300px.gif" /></p>
+<p>如上图所示，插入排序的过程很简单: 遍历后边的无序数字，将他们插入前边已经排好序的序列中。插入方式就是取出数字后，按照从后往前的顺序跟前面有序序列中的数字比较，如果大于等于它，就把这些数字向后移一位，直到找到比它小的(或者超出边界), 然后将该数字插入到该位置。</p>
+<div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nx">sort</span>
+
+<span class="kd">func</span> <span class="nx">IntInsertionSort</span><span class="p">(</span><span class="nx">slice</span> <span class="p">[]</span><span class="kt">int</span><span class="p">,</span> <span class="nx">left</span><span class="p">,</span> <span class="nx">right</span> <span class="kt">int</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="nx">right</span><span class="o">-</span><span class="nx">left</span> <span class="o">&lt;=</span> <span class="mi">0</span> <span class="p">{</span>
+        <span class="k">return</span>
+    <span class="p">}</span>
+    <span class="k">for</span> <span class="nx">i</span> <span class="o">:=</span> <span class="nx">left</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;=</span> <span class="nx">right</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span> <span class="p">{</span>
+        <span class="nx">temp</span> <span class="o">:=</span> <span class="nx">slice</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span>
+
+        <span class="nx">j</span> <span class="o">:=</span> <span class="nx">i</span>
+        <span class="k">for</span> <span class="p">;</span> <span class="nx">j</span> <span class="p">&gt;</span> <span class="nx">left</span> <span class="o">&amp;&amp;</span> <span class="nx">temp</span> <span class="p">&lt;</span> <span class="nx">slice</span><span class="p">[</span><span class="nx">j</span><span class="o">-</span><span class="mi">1</span><span class="p">];</span> <span class="nx">j</span><span class="o">--</span> <span class="p">{</span>
+            <span class="nx">slice</span><span class="p">[</span><span class="nx">j</span><span class="p">]</span> <span class="p">=</span> <span class="nx">slice</span><span class="p">[</span><span class="nx">j</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+        <span class="p">}</span>
+        <span class="nx">slice</span><span class="p">[</span><span class="nx">j</span><span class="p">]</span> <span class="p">=</span> <span class="nx">temp</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div> </div>
+    </div><!-- /.entry-content -->
+    <p class="copyright">©版权所有, 转载请注明出处</p>
+    <div class="comments">
+      <div id="disqus_thread"></div>
+      <script type="text/javascript">
+        var disqus_shortname = 'importcjj';
+        var disqus_identifier = 'golangbian-cheng-lian-xi.html';
+        var disqus_url = 'https://importcjj.github.io/golangbian-cheng-lian-xi.html';
+        (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//importcjj.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+      </script>
+      <noscript>Please enable JavaScript to view the comments.</noscript>
+    </div>
+
+  </article>
+</section>
+        <section id="extras" class="body animated" style="opacity: 0">
+                <div class="blogroll">
+                        <h2>Links</h2>
+                        <ul>
+                            <li>
+                                <a class="link-name" href="http://chihiro.moe">Slade</a>
+                                <a class="link-href">http://chihiro.moe</a>
+                            </li>
+                            <li>
+                                <a class="link-name" href="http://shenyizhou.github.io">无主之地</a>
+                                <a class="link-href">http://shenyizhou.github.io</a>
+                            </li>
+                            <li>
+                                <a class="link-name" href="http://yuan0.github.io">Junifer</a>
+                                <a class="link-href">http://yuan0.github.io</a>
+                            </li>
+                            <li>
+                                <a class="link-name" href="http://getpelican.com/">Pelican</a>
+                                <a class="link-href">http://getpelican.com/</a>
+                            </li>
+                            <li>
+                                <a class="link-name" href="http://python.org/">Python.org</a>
+                                <a class="link-href">http://python.org/</a>
+                            </li>
+                            <li>
+                                <a class="link-name" href="http://jinja.pocoo.org/">Jinja2</a>
+                                <a class="link-href">http://jinja.pocoo.org/</a>
+                            </li>
+                            <li>
+                                <a class="link-name" href="http://dongweiming.github.io/Expert-Python/#1">Expert-python</a>
+                                <a class="link-href">http://dongweiming.github.io/Expert-Python/#1</a>
+                            </li>
+                        </ul>
+                </div><!-- /.blogroll -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body animated" style="opacity: 0">
+                <p>Proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
+                </p><!-- /#about -->
+                <p>The theme is by <a href="https://github.com/importcjj/yake">importcjj</a>, thanks!</p>
+                <p>托管于 <a href="https://github.com">github</a> 和 <a href="https://coding.net/">coding</a>,  
+                并借助 <a href="https://travis-ci.com/">travis ci</a> 完成自动编译发布.
+                </p>
+                <img src="https://travis-ci.org/importcjj/importcjj.github.io.svg?branch=master"/>
+        </footer><!-- /#contentinfo -->
+        </div>
+
+<script type="text/javascript">
+// index animate
+$('.animated').map(function(i, node) {
+    var timeout = (i + 1) * 270;
+    console.log(timeout);
+    setTimeout(function(){
+        $(node).addClass('fadeInLeft');
+        $(node).css('opacity', 1);
+    }, timeout);
+}.bind(this));
+
+
+// back to page top
+(function() {
+    // var $ = function(id) {return document.getElementById(id)};
+    // var scrollTop = function() {return document.documentElement.scrollTop || document.body.scrollTop};
+    // var backToTop = function() {
+    //     var fromTop = scrollTop();
+    //     if(fromTop){
+    //         window.scrollBy(0, -40);
+    //         window.timeout = setTimeout(backToTop, 5);
+    //     } else{
+    //         clearTimeout(window.timeout);
+    //     }
+    // };
+
+    // $('back-to-top').onclick = function(evt) {backToTop()};
+    $('#back-to-top').click(function() {
+        $('body').animate({'scrollTop': 0}, 800);
+    });
+
+    window.onscroll = function(evt) {
+        if($('body').scrollTop() > 500) {
+            $('#back-to-top').css('display','block');
+        } else {
+            $('#back-to-top').css('display', 'none');}
+    };
+
+}())
+</script><script type="text/javascript">
+    var disqus_shortname = 'importcjj';
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = 'https://' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+</script>
+</body>
+</html>
