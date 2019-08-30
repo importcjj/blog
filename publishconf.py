@@ -2,9 +2,9 @@
 # -*- coding: utf-8 -*- #
 from __future__ import unicode_literals
 
-AUTHOR = u'Jiaju.chen'
+AUTHOR = u'importcjj'
 SITENAME = u'Signal'
-SITEURL = 'https://importcjj.github.io/blog'
+SITEURL = 'https://importcjj.github.io'
 
 THEME = 'yake'
 PATH = 'content'
@@ -38,7 +38,7 @@ SOCIAL = (('You can add links in your config file', '#'),
 
 DEFAULT_PAGINATION = 10
 DISQUS_SITENAME = 'importcjj'
-BUILD_STATUS_URL = 'https://travis-ci.org/importcjj/blog.svg?branch=master'
+BUILD_STATUS_URL = 'https://travis-ci.org/importcjj/importcjj.github.io.svg?branch=master'
 
 # Uncomment following line if you want document-relative URLs when developing
 # RELATIVE_URLS = True
