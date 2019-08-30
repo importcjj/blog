@@ -121,7 +121,7 @@ cf_upload: publish
 
 github: publish
 ifeq ($(TRAVIS_PULL_REQUEST), false)
-	ghp-import -n $(OUTPUTDIR)
+	ghp-import -b master -n $(OUTPUTDIR)
 	@git push -fq https://${GH_TOKEN}@github.com/$(TRAVIS_REPO_SLUG).git gh-pages > /dev/null
 	# @git push -fq https://${CODING_USER}:${CODING_PASSWD}@git.coding.net/${CODING_USER}/${CODING_REPO}.git gh-pages > /dev/null
 endif
