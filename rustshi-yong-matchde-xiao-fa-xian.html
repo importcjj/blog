@@ -3,7 +3,7 @@
 <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width">
-        <title>Signal - markdown</title>
+        <title>Rust使用match的小发现</title>
         <link rel="stylesheet" href="https://importcjj.github.io/theme/css/main.css" />
         <script type="text/javascript" src="https://importcjj.github.io/theme/js/jquery-1.12.3.min.js"></script>
 
@@ -29,7 +29,7 @@
                     <li><a href="https://importcjj.github.io/category/go.html">Go</a></li>
                     <li><a href="https://importcjj.github.io/category/markdown.html">Markdown</a></li>
                     <li><a href="https://importcjj.github.io/category/python.html">Python</a></li>
-                    <li><a href="https://importcjj.github.io/category/rust.html">Rust</a></li>
+                    <li class="active"><a href="https://importcjj.github.io/category/rust.html">Rust</a></li>
                     <li><a href="https://importcjj.github.io/category/sundry.html">sundry</a></li>
                     <li><a href="https://importcjj.github.io/category/tool.html">Tool</a></li>
                 </ul></nav>
@@ -48,25 +48,62 @@
             <label id="back-to-top" class="tool-btn"><i class="fa fa-arrow-up"></i></label>
         </div>
         <div class="content">
-    <ul id="posts-list" class="hfeed">
+<section id="content" class="body">
+  <article>
+    <div>
+    </div>
 
-            <li class="animated" style="opacity: 0"><aside id="featured" class="body">
-                <article>
+    <div class="entry-content markdown-body markdown">
 <footer class="post-info">
         <div class="meta">
-        <a class="category" href="https://importcjj.github.io/category/markdown.html">Markdown</a>
+        <a class="category" href="https://importcjj.github.io/category/rust.html">Rust</a>
         <address class="vcard author">
                         <a class="url fn" href="https://importcjj.github.io/author/importcjj.html">importcjj</a>
         </address>
-        <abbr class="published" title="2016-03-27T03:37:03+08:00">
-                · 27 三月 2016
+        <abbr class="published" title="2019-09-04T16:02:14+08:00">
+                · 04 九月 2019
         </abbr>
         </div>
-        <h1 class="entry-title"><a href="https://importcjj.github.io/markdownyu-fa-shuo-ming.html">MarkDown语法说明</a></h1>
-<p class="tags"><a><i class="fa fa-tags"></i> </a><a href="https://importcjj.github.io/tag/markdown.html">markdown</a> </p>
-</footer><!-- /.post-info -->                </article>
-            </aside></li><!-- /#featured -->
-    </ul><!-- /#posts-list -->
+        <h1 class="entry-title"><a href="https://importcjj.github.io/rustshi-yong-matchde-xiao-fa-xian.html">Rust使用match的小发现</a></h1>
+<p class="tags"><a><i class="fa fa-tags"></i> </a><a href="https://importcjj.github.io/tag/rust.html">rust</a> </p>
+</footer><!-- /.post-info -->      <div class="post-body"> <p>今天在读一个库的代码时候，发现了之前使用match的时候没有注意的一个地方。</p>
+<div class="highlight"><pre><span></span><span class="k">enum</span> <span class="nc">Foo</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">One</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="n">Two</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="n">Three</span><span class="p">,</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+
+<span class="k">fn</span> <span class="nf">main</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">foo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Foo</span>::<span class="n">One</span><span class="p">;</span><span class="w"></span>
+
+<span class="w">    </span><span class="k">match</span><span class="w"> </span><span class="n">foo</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">Foo</span>::<span class="n">One</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">println</span><span class="o">!</span><span class="p">(</span><span class="s">&quot;It&#39;s one&quot;</span><span class="p">),</span><span class="w"></span>
+<span class="w">        </span><span class="n">others</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">println</span><span class="o">!</span><span class="p">(</span><span class="s">&quot;It&#39;s others&quot;</span><span class="p">),</span><span class="w"></span>
+<span class="w">    </span><span class="p">};</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+
+
+<p>这里没有使用<code>_</code>去匹配其他分支，而是随意指定了一个名字<code>others</code>。貌似对可读性有一定提升。</p> </div>
+    </div><!-- /.entry-content -->
+    <p class="copyright">©版权所有, 转载请注明出处</p>
+    <div class="comments">
+      <div id="disqus_thread"></div>
+      <script type="text/javascript">
+        var disqus_shortname = 'importcjj';
+        var disqus_identifier = 'rustshi-yong-matchde-xiao-fa-xian.html';
+        var disqus_url = 'https://importcjj.github.io/rustshi-yong-matchde-xiao-fa-xian.html';
+        (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//importcjj.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+      </script>
+      <noscript>Please enable JavaScript to view the comments.</noscript>
+    </div>
+
+  </article>
+</section>
         <section id="extras" class="body animated" style="opacity: 0">
                 <div class="blogroll">
                         <h2>Links</h2>
