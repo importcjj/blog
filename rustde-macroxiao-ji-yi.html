@@ -103,7 +103,7 @@
 </pre></div>
 
 
-<p>这下我们可以让<code>hello</code>接收多个参数了, 每个参数都会被展开成一句<code>print!</code>代码。如果你观察仔细的话，会发现我们在定义模式的时候有一个逗号，但是使用的参数<code>macro</code>后面没有逗号，但是规则确认正常匹配。超级方便有木有！</p>
+<p>这下我们可以让<code>hello</code>接收多个参数了, 每个参数都会被展开成一句<code>print!</code>代码。如果你观察仔细的话，会发现我们在定义模式的时候有一个逗号，但是使用的参数<code>macro</code>后面没有逗号，但是规则却能正常匹配，超级方便有木有！</p>
 <p>到目前为止，我们使用的方式还是停留在函数调用的形式，接下来来一个复杂一点的例子。我相信很多人都接触过rpc，那么接下来就来定义我们自己的rpc client。</p>
 <p>首先我们确定我们想要的形式</p>
 <div class="highlight"><pre><span></span><span class="k">pub</span><span class="w"> </span><span class="k">struct</span> <span class="nc">Ping</span><span class="w"> </span><span class="p">{}</span><span class="w"></span>
@@ -225,6 +225,24 @@
 <span class="w">                    </span><span class="p">}</span><span class="w"></span>
 <span class="w">                </span><span class="p">)</span><span class="o">*</span><span class="w"></span>
 <span class="w">            </span><span class="p">}</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+
+
+<p>友情提示，可以使用cargo的小工具<code>expand</code>展开宏代码，得到</p>
+<div class="highlight"><pre><span></span><span class="k">pub</span><span class="w"> </span><span class="k">mod</span> <span class="nn">demo</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">use</span><span class="w"> </span><span class="k">super</span>::<span class="n">Message</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">use</span><span class="w"> </span><span class="k">super</span>::<span class="n">Ping</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">use</span><span class="w"> </span><span class="k">super</span>::<span class="n">Pong</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">pub</span><span class="w"> </span><span class="k">struct</span> <span class="nc">Client</span><span class="w"> </span><span class="p">{}</span><span class="w"></span>
+<span class="w">    </span><span class="k">impl</span><span class="w"> </span><span class="n">Client</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">pub</span><span class="w"> </span><span class="k">fn</span> <span class="nf">new</span><span class="p">()</span><span class="w"> </span>-&gt; <span class="nc">Self</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="n">Client</span><span class="w"> </span><span class="p">{}</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"></span>
+<span class="w">        </span><span class="k">pub</span><span class="w"> </span><span class="k">fn</span> <span class="nf">ping</span><span class="p">(</span><span class="o">&amp;</span><span class="bp">self</span><span class="p">,</span><span class="w"> </span><span class="n">_input</span>: <span class="nc">Ping</span><span class="p">)</span><span class="w"> </span>-&gt; <span class="nc">Pong</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="n">Pong</span>::<span class="n">decode</span><span class="p">()</span><span class="w"></span>
 <span class="w">        </span><span class="p">}</span><span class="w"></span>
 <span class="w">    </span><span class="p">}</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
