@@ -1,72 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width">
-        <title>supervisor+celery+celerybeat的简单使用</title>
-        <link rel="stylesheet" href="https://importcjj.github.io/theme/css/main.css" />
-        <script type="text/javascript" src="https://importcjj.github.io/theme/js/jquery-1.12.3.min.js"></script>
-
-        <!--[if IE]>
-            <script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-        <![endif]-->
+		<title>Signal &mdash; supervisor+celery+celerybeat的简单使用</title>
+		<meta charset="utf-8" />
+		<link rel="profile" href="http://gmpg.org/xfn/11" />
+		<link rel="stylesheet" type="text/css" href="https://importcjj.github.io/theme/css/style.css" />
+		<link rel='stylesheet' id='oswald-css'  href='http://fonts.googleapis.com/css?family=Oswald&#038;ver=3.3.2' type='text/css' media='all' />
+		<style type="text/css">
+			body.custom-background { background-color: #f5f5f5; }
+		</style>
+		<link rel="alternate" type="application/atom+xml"
+			title="Signal — Flux Atom"
+			href="https://importcjj.github.io/" /> 
+		<!--[if lte IE 8]><script src="https://importcjj.github.io/theme/js/html5shiv.js"></script><![endif]-->
 </head>
 
-<body id="index" class="home">
-<!-- <a href="https://github.com/importcjj">
-<img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" alt="Fork me on GitHub" />
-</a>
- -->
-        <input id="header-toggle" type="checkbox">
-        <header id="banner" class="body">
-                <h1><a href="https://importcjj.github.io/">Signal </a></h1>
-                <nav><ul>
-                    <li><a href="https://importcjj.github.io/category/centos.html">CentOS</a></li>
-                    <li><a href="https://importcjj.github.io/category/docker.html">Docker</a></li>
-                    <li><a href="https://importcjj.github.io/category/emacs.html">Emacs</a></li>
-                    <li><a href="https://importcjj.github.io/category/git.html">git</a></li>
-                    <li><a href="https://importcjj.github.io/category/github.html">github</a></li>
-                    <li><a href="https://importcjj.github.io/category/go.html">Go</a></li>
-                    <li><a href="https://importcjj.github.io/category/markdown.html">Markdown</a></li>
-                    <li class="active"><a href="https://importcjj.github.io/category/python.html">Python</a></li>
-                    <li><a href="https://importcjj.github.io/category/rust.html">Rust</a></li>
-                    <li><a href="https://importcjj.github.io/category/sundry.html">sundry</a></li>
-                    <li><a href="https://importcjj.github.io/category/tool.html">Tool</a></li>
-                </ul></nav>
-        </header><!-- /#banner -->
-        <aside class="side-bar">
-            <ul>
-                <li><a href="https://importcjj.github.io/"><i class="fa fa-info fa-lg"></i></a></li>
-                <li><a href="https://importcjj.github.io/categories.html"><i class="fa fa-book fa-lg"></i></a></li>
-                <li><a href="https://importcjj.github.io/archives.html"><i class="fa fa-archive fa-lg"></i></a></li>
-                <li><a href="https://importcjj.github.io/tags.html"><i class="fa fa-tags fa-lg"></i></a></li>
-                <li><a href="https://importcjj.github.io/authors.html"><i class="fa fa-users fa-lg"></i></a></li>
-<li><a href="https://github.com/importcjj"><i class="fa fa-github fa-lg"></i></a></li>            </ul>
-        </aside>
-        <div class="tool-btns">
-            <label id="header-toggle-btn" class='tool-btn' for="header-toggle"><i class="fa fa-bars"></i></label>
-            <label id="back-to-top" class="tool-btn"><i class="fa fa-arrow-up"></i></label>
-        </div>
-        <div class="content">
-<section id="content" class="body">
-  <article>
-    <div>
-    </div>
+<body class="home blog custom-background " >
+	<div id="container">
+		<div id="header">
+				<h1 id="site-title"><a href="https://importcjj.github.io">Signal</a></h1>
+		</div><!-- /#banner -->
+		
+		<div id="menu">
+			<div class="menu-navigation-container">
+				<ul id="menu-navigation" class="menu">
+						<li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://importcjj.github.io/category/centos.html">CentOS</a></li>
+						<li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://importcjj.github.io/category/docker.html">Docker</a></li>
+						<li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://importcjj.github.io/category/emacs.html">Emacs</a></li>
+						<li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://importcjj.github.io/category/git.html">git</a></li>
+						<li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://importcjj.github.io/category/github.html">github</a></li>
+						<li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://importcjj.github.io/category/go.html">Go</a></li>
+						<li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://importcjj.github.io/category/markdown.html">Markdown</a></li>
+						<li class="active" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://importcjj.github.io/category/python.html">Python</a></li>
+						<li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://importcjj.github.io/category/rust.html">Rust</a></li>
+						<li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://importcjj.github.io/category/sundry.html">sundry</a></li>
+						<li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://importcjj.github.io/category/tool.html">Tool</a></li>
+						<li  class="active" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="http://chihiro.moe">Slade</a></li>
+						<li  class="active" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="http://shenyizhou.github.io">无主之地</a></li>
+						<li  class="active" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="http://yuan0.github.io">Junifer</a></li>
+						<li  class="active" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="http://getpelican.com/">Pelican</a></li>
+						<li  class="active" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="http://python.org/">Python.org</a></li>
+						<li  class="active" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="http://jinja.pocoo.org/">Jinja2</a></li>
+						<li  class="active" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="http://dongweiming.github.io/Expert-Python/#1">Expert-python</a></li>
 
-    <div class="entry-content markdown-body markdown">
-<footer class="post-info">
-        <div class="meta">
-        <a class="category" href="https://importcjj.github.io/category/python.html">Python</a>
-        <address class="vcard author">
-                        <a class="url fn" href="https://importcjj.github.io/author/importcjj.html">importcjj</a>
-        </address>
-        <abbr class="published" title="2016-03-27T03:37:03+08:00">
-                · 27 三月 2016
-        </abbr>
-        </div>
-        <h1 class="entry-title"><a href="https://importcjj.github.io/supervisorcelerycelerybeatde-jian-dan-shi-yong.html">supervisor+celery+celerybeat的简单使用</a></h1>
-<p class="tags"><a><i class="fa fa-tags"></i> </a><a href="https://importcjj.github.io/tag/supervisor.html">supervisor</a> <a href="https://importcjj.github.io/tag/celery.html">celery</a> <a href="https://importcjj.github.io/tag/python.html">Python</a> </p>
-</footer><!-- /.post-info -->      <div class="post-body"> <h2>1. 提前准备</h2>
+				</ul>
+			</div> <!--/#menu-navigation-container-->
+		</div><!-- /#menu -->
+		
+		<div class="page-title">
+		</div>
+	
+		<div id="contents">
+
+<div class="post type-post status-publish format-standard hentry category-general" id="post">
+	<div class="entry-meta">
+		<div class="date"><a href="https://importcjj.github.io/supervisorcelerycelerybeatde-jian-dan-shi-yong.html">日 27 三月 2016</a></div>
+		<span class="byline">By <a href="https://importcjj.github.io/author/importcjj.html">importcjj</a></span>
+			<div class="comments"><a href="https://importcjj.github.io/supervisorcelerycelerybeatde-jian-dan-shi-yong.html#disqus_thread" title="Comment on supervisor+celery+celerybeat的简单使用">comments</a></div>
+			<span class="cat-links"><a href="https://importcjj.github.io/category/python.html" title="View all posts in Python" rel="category tag">Python</a></span>
+	</div> <!-- /#entry-meta -->
+	<div class="main">
+		<h2 class="entry-title">
+			<a href="https://importcjj.github.io/supervisorcelerycelerybeatde-jian-dan-shi-yong.html" title="Permalink to supervisor+celery+celerybeat的简单使用" rel="bookmark">supervisor+celery+celerybeat的简单使用</a>
+		</h2>
+		<div class="entry-content">
+			<h2>1. 提前准备</h2>
 <p>略去相关工具的安装过程，其实都挺简单的!</p>
 <p>celery作为异步任务队列, 需要一个中间人来协助celery存放和消耗任务信息。我们选择rabbitmq来做消息代理人。使用celery之前, 需要使用创建一个rabbitmq的管理员账号和一个能让该账号访问的vhost.</p>
 <p><strong><a href="">Rabbitmq的安装配置以及网页管理插件</a></strong></p>
@@ -471,120 +469,44 @@
 <h2>5. 结束语</h2>
 <p>上文中只是简单介绍了supervisor 、celery、 celerybeat的简单运用。如果有兴趣的话可以自己去深入了解!</p>
 <p><strong>本篇文章到此结束，原创手打！ </strong></p>
-<p><strong>人生苦短， 我用python!</strong></p> </div>
-    </div><!-- /.entry-content -->
-    <p class="copyright">©版权所有, 转载请注明出处</p>
-    <div class="comments">
-      <div id="disqus_thread"></div>
-      <script type="text/javascript">
-        var disqus_shortname = 'importcjj';
-        var disqus_identifier = 'supervisorcelerycelerybeatde-jian-dan-shi-yong.html';
-        var disqus_url = 'https://importcjj.github.io/supervisorcelerycelerybeatde-jian-dan-shi-yong.html';
-        (function() {
-        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-        dsq.src = '//importcjj.disqus.com/embed.js';
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-        })();
-      </script>
-      <noscript>Please enable JavaScript to view the comments.</noscript>
-    </div>
+<p><strong>人生苦短， 我用python!</strong></p>
+		</div> <!--/#entry-content-->
+    		<span class="tag-links"><strong>Tagged</strong>
+ <a href="https://importcjj.github.io/tag/celery.html" rel="tag">celery</a>,  <a href="https://importcjj.github.io/tag/python.html" rel="tag">Python</a>,  <a href="https://importcjj.github.io/tag/supervisor.html" rel="tag">supervisor</a>    		</span>
+	</div> <!--/#main-->
+</div>  <!--/#post-->
+	<div id="comments">
+		<div id="respond">
+			<div id="disqus_thread"></div>
+	        <script type="text/javascript">
+	            var disqus_shortname = 'importcjj';
+	
+	            /* * * DON'T EDIT BELOW THIS LINE * * */
+	            (function() {
+	                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+	                dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+	                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+	            })();
+	        </script>
+	        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+	        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+		</div><!-- #respond -->					
+</div><!-- #comments -->
 
-  </article>
-</section>
-        <section id="extras" class="body animated" style="opacity: 0">
-                <div class="blogroll">
-                        <h2>Links</h2>
-                        <ul>
-                            <li>
-                                <a class="link-name" href="http://chihiro.moe">Slade</a>
-                                <a class="link-href">http://chihiro.moe</a>
-                            </li>
-                            <li>
-                                <a class="link-name" href="http://shenyizhou.github.io">无主之地</a>
-                                <a class="link-href">http://shenyizhou.github.io</a>
-                            </li>
-                            <li>
-                                <a class="link-name" href="http://yuan0.github.io">Junifer</a>
-                                <a class="link-href">http://yuan0.github.io</a>
-                            </li>
-                            <li>
-                                <a class="link-name" href="http://getpelican.com/">Pelican</a>
-                                <a class="link-href">http://getpelican.com/</a>
-                            </li>
-                            <li>
-                                <a class="link-name" href="http://python.org/">Python.org</a>
-                                <a class="link-href">http://python.org/</a>
-                            </li>
-                            <li>
-                                <a class="link-name" href="http://jinja.pocoo.org/">Jinja2</a>
-                                <a class="link-href">http://jinja.pocoo.org/</a>
-                            </li>
-                            <li>
-                                <a class="link-name" href="http://dongweiming.github.io/Expert-Python/#1">Expert-python</a>
-                                <a class="link-href">http://dongweiming.github.io/Expert-Python/#1</a>
-                            </li>
-                        </ul>
-                </div><!-- /.blogroll -->
-        </section><!-- /#extras -->
-
-        <footer id="contentinfo" class="body animated" style="opacity: 0">
-                <p>Proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
-                </p><!-- /#about -->
-                <p>The theme is by <a href="https://github.com/importcjj/yake">importcjj</a>, thanks!</p>
-                <p>托管于 <a href="https://github.com">github</a> 和 <a href="https://coding.net/">coding</a>,  
-                并借助 <a href="https://travis-ci.com/">travis ci</a> 完成自动编译发布.
-                </p>
-                <img src="https://travis-ci.org/importcjj/importcjj.github.io.svg?branch=master"/>
-        </footer><!-- /#contentinfo -->
-        </div>
-
+		</div>
+		
+		<div id="footer">
+			<p>Powered by <a href="http://getpelican.com">Pelican</a>, theme by <a href="http://bunnyman.info">tBunnyMan</a>.</p>
 <script type="text/javascript">
-// index animate
-$('.animated').map(function(i, node) {
-    var timeout = (i + 1) * 270;
-    console.log(timeout);
-    setTimeout(function(){
-        $(node).addClass('fadeInLeft');
-        $(node).css('opacity', 1);
-    }, timeout);
-}.bind(this));
-
-
-// back to page top
-(function() {
-    // var $ = function(id) {return document.getElementById(id)};
-    // var scrollTop = function() {return document.documentElement.scrollTop || document.body.scrollTop};
-    // var backToTop = function() {
-    //     var fromTop = scrollTop();
-    //     if(fromTop){
-    //         window.scrollBy(0, -40);
-    //         window.timeout = setTimeout(backToTop, 5);
-    //     } else{
-    //         clearTimeout(window.timeout);
-    //     }
-    // };
-
-    // $('back-to-top').onclick = function(evt) {backToTop()};
-    $('#back-to-top').click(function() {
-        $('body').animate({'scrollTop': 0}, 800);
-    });
-
-    window.onscroll = function(evt) {
-        if($('body').scrollTop() > 500) {
-            $('#back-to-top').css('display','block');
-        } else {
-            $('#back-to-top').css('display', 'none');}
-    };
-
-}())
-</script><script type="text/javascript">
     var disqus_shortname = 'importcjj';
     (function () {
         var s = document.createElement('script'); s.async = true;
         s.type = 'text/javascript';
-        s.src = 'https://' + disqus_shortname + '.disqus.com/count.js';
+        s.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
         (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
     }());
-</script>
+</script>		</div><!-- /#footer -->
+	</div><!-- /#container -->
+	<div style="display:none"></div>
 </body>
 </html>

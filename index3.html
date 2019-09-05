@@ -1,246 +1,1011 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width">
-        <title>Signal</title>
-        <link rel="stylesheet" href="https://importcjj.github.io/theme/css/main.css" />
-        <script type="text/javascript" src="https://importcjj.github.io/theme/js/jquery-1.12.3.min.js"></script>
-
-        <!--[if IE]>
-            <script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-        <![endif]-->
+		<title>Signal</title>
+		<meta charset="utf-8" />
+		<link rel="profile" href="http://gmpg.org/xfn/11" />
+		<link rel="stylesheet" type="text/css" href="https://importcjj.github.io/theme/css/style.css" />
+		<link rel='stylesheet' id='oswald-css'  href='http://fonts.googleapis.com/css?family=Oswald&#038;ver=3.3.2' type='text/css' media='all' />
+		<style type="text/css">
+			body.custom-background { background-color: #f5f5f5; }
+		</style>
+		<link rel="alternate" type="application/atom+xml"
+			title="Signal — Flux Atom"
+			href="https://importcjj.github.io/" /> 
+		<!--[if lte IE 8]><script src="https://importcjj.github.io/theme/js/html5shiv.js"></script><![endif]-->
 </head>
 
-<body id="index" class="home">
-<!-- <a href="https://github.com/importcjj">
-<img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" alt="Fork me on GitHub" />
-</a>
- -->
-        <input id="header-toggle" type="checkbox">
-        <header id="banner" class="body">
-                <h1><a href="https://importcjj.github.io/">Signal </a></h1>
-                <nav><ul>
-                    <li><a href="https://importcjj.github.io/category/centos.html">CentOS</a></li>
-                    <li><a href="https://importcjj.github.io/category/docker.html">Docker</a></li>
-                    <li><a href="https://importcjj.github.io/category/emacs.html">Emacs</a></li>
-                    <li><a href="https://importcjj.github.io/category/git.html">git</a></li>
-                    <li><a href="https://importcjj.github.io/category/github.html">github</a></li>
-                    <li><a href="https://importcjj.github.io/category/go.html">Go</a></li>
-                    <li><a href="https://importcjj.github.io/category/markdown.html">Markdown</a></li>
-                    <li><a href="https://importcjj.github.io/category/python.html">Python</a></li>
-                    <li><a href="https://importcjj.github.io/category/rust.html">Rust</a></li>
-                    <li><a href="https://importcjj.github.io/category/sundry.html">sundry</a></li>
-                    <li><a href="https://importcjj.github.io/category/tool.html">Tool</a></li>
-                </ul></nav>
-        </header><!-- /#banner -->
-        <aside class="side-bar">
-            <ul>
-                <li><a href="https://importcjj.github.io/"><i class="fa fa-info fa-lg"></i></a></li>
-                <li><a href="https://importcjj.github.io/categories.html"><i class="fa fa-book fa-lg"></i></a></li>
-                <li><a href="https://importcjj.github.io/archives.html"><i class="fa fa-archive fa-lg"></i></a></li>
-                <li><a href="https://importcjj.github.io/tags.html"><i class="fa fa-tags fa-lg"></i></a></li>
-                <li><a href="https://importcjj.github.io/authors.html"><i class="fa fa-users fa-lg"></i></a></li>
-<li><a href="https://github.com/importcjj"><i class="fa fa-github fa-lg"></i></a></li>            </ul>
-        </aside>
-        <div class="tool-btns">
-            <label id="header-toggle-btn" class='tool-btn' for="header-toggle"><i class="fa fa-bars"></i></label>
-            <label id="back-to-top" class="tool-btn"><i class="fa fa-arrow-up"></i></label>
-        </div>
-        <div class="content">
-    <ul id="posts-list" class="hfeed">
+<body class="home blog custom-background " >
+	<div id="container">
+		<div id="header">
+				<h1 id="site-title"><a href="https://importcjj.github.io">Signal</a></h1>
+		</div><!-- /#banner -->
+		
+		<div id="menu">
+			<div class="menu-navigation-container">
+				<ul id="menu-navigation" class="menu">
+						<li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://importcjj.github.io/category/centos.html">CentOS</a></li>
+						<li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://importcjj.github.io/category/docker.html">Docker</a></li>
+						<li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://importcjj.github.io/category/emacs.html">Emacs</a></li>
+						<li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://importcjj.github.io/category/git.html">git</a></li>
+						<li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://importcjj.github.io/category/github.html">github</a></li>
+						<li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://importcjj.github.io/category/go.html">Go</a></li>
+						<li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://importcjj.github.io/category/markdown.html">Markdown</a></li>
+						<li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://importcjj.github.io/category/python.html">Python</a></li>
+						<li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://importcjj.github.io/category/rust.html">Rust</a></li>
+						<li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://importcjj.github.io/category/sundry.html">sundry</a></li>
+						<li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://importcjj.github.io/category/tool.html">Tool</a></li>
+						<li  class="active" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="http://chihiro.moe">Slade</a></li>
+						<li  class="active" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="http://shenyizhou.github.io">无主之地</a></li>
+						<li  class="active" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="http://yuan0.github.io">Junifer</a></li>
+						<li  class="active" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="http://getpelican.com/">Pelican</a></li>
+						<li  class="active" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="http://python.org/">Python.org</a></li>
+						<li  class="active" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="http://jinja.pocoo.org/">Jinja2</a></li>
+						<li  class="active" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="http://dongweiming.github.io/Expert-Python/#1">Expert-python</a></li>
 
-                <section id="content" class="body">
-                    <ol id="posts-list" class="hfeed" start="9">
-            <li class="animated" style="opacity: 0"><article class="hentry">
+				</ul>
+			</div> <!--/#menu-navigation-container-->
+		</div><!-- /#menu -->
+		
+		<div class="page-title">
+		</div>
+	
+		<div id="contents">
+<div class="post type-post status-publish format-standard hentry category-general" id="post">
+	<div class="entry-meta">
+		<div class="date"><a href="https://importcjj.github.io/supervisorcelerycelerybeatde-jian-dan-shi-yong.html">日 27 三月 2016</a></div>
+		<span class="byline">By <a href="https://importcjj.github.io/author/importcjj.html">importcjj</a></span>
+			<div class="comments"><a href="https://importcjj.github.io/supervisorcelerycelerybeatde-jian-dan-shi-yong.html#disqus_thread" title="Comment on supervisor+celery+celerybeat的简单使用">comments</a></div>
+			<span class="cat-links"><a href="https://importcjj.github.io/category/python.html" title="View all posts in Python" rel="category tag">Python</a></span>
+	</div> <!-- /#entry-meta -->
+	<div class="main">
+		<h2 class="entry-title">
+			<a href="https://importcjj.github.io/supervisorcelerycelerybeatde-jian-dan-shi-yong.html" title="Permalink to supervisor+celery+celerybeat的简单使用" rel="bookmark">supervisor+celery+celerybeat的简单使用</a>
+		</h2>
+		<div class="entry-content">
+			<h2>1. 提前准备</h2>
+<p>略去相关工具的安装过程，其实都挺简单的!</p>
+<p>celery作为异步任务队列, 需要一个中间人来协助celery存放和消耗任务信息。我们选择rabbitmq来做消息代理人。使用celery之前, 需要使用创建一个rabbitmq的管理员账号和一个能让该账号访问的vhost.</p>
+<p><strong><a href="">Rabbitmq的安装配置以及网页管理插件</a></strong></p>
+<p>假设准备的rabbitmq的信息如下:</p>
+<div class="highlight"><pre><span></span><span class="n">SETTINGS</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;user&#39;</span><span class="p">:</span> <span class="s1">&#39;www-data&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;password&#39;</span><span class="p">:</span> <span class="s1">&#39;www-data&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;host&#39;</span><span class="p">:</span> <span class="s1">&#39;127.0.0.1&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;port&#39;</span><span class="p">:</span> <span class="s1">&#39;5672&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;vhost&#39;</span><span class="p">:</span> <span class="s1">&#39;t_celery&#39;</span>
+<span class="p">}</span>
+</pre></div>
 
-                <div class="entry-content">
-<footer class="post-info">
-        <div class="meta">
-        <a class="category" href="https://importcjj.github.io/category/python.html">Python</a>
-        <address class="vcard author">
-                        <a class="url fn" href="https://importcjj.github.io/author/importcjj.html">importcjj</a>
-        </address>
-        <abbr class="published" title="2016-03-27T03:37:03+08:00">
-                · 27 三月 2016
-        </abbr>
-        </div>
-        <h1 class="entry-title"><a href="https://importcjj.github.io/supervisorcelerycelerybeatde-jian-dan-shi-yong.html">supervisor+celery+celerybeat的简单使用</a></h1>
-<p class="tags"><a><i class="fa fa-tags"></i> </a><a href="https://importcjj.github.io/tag/supervisor.html">supervisor</a> <a href="https://importcjj.github.io/tag/celery.html">celery</a> <a href="https://importcjj.github.io/tag/python.html">Python</a> </p>
-</footer><!-- /.post-info -->                </div><!-- /.entry-content -->
-            </article></li>
 
-            <li class="animated" style="opacity: 0"><article class="hentry">
+<h3>示例项目结构</h3>
+<div class="highlight"><pre><span></span><span class="n">test</span><span class="p">.</span><span class="n">celery</span><span class="o">/</span>
+    <span class="o">|-</span> <span class="n">env</span><span class="o">/</span>
+    <span class="o">|-</span> <span class="n">src</span><span class="o">/</span>
+        <span class="o">|-</span> <span class="n">__init__</span><span class="p">.</span><span class="n">py</span>
+        <span class="o">|-</span> <span class="n">app</span><span class="p">.</span><span class="n">py</span>
+        <span class="o">|-</span> <span class="n">task</span><span class="p">.</span><span class="n">py</span>
+</pre></div>
 
-                <div class="entry-content">
-<footer class="post-info">
-        <div class="meta">
-        <a class="category" href="https://importcjj.github.io/category/python.html">Python</a>
-        <address class="vcard author">
-                        <a class="url fn" href="https://importcjj.github.io/author/importcjj.html">importcjj</a>
-        </address>
-        <abbr class="published" title="2016-03-27T03:37:03+08:00">
-                · 27 三月 2016
-        </abbr>
-        </div>
-        <h1 class="entry-title"><a href="https://importcjj.github.io/zhong-duan-jin-du-tiao-de-jian-dan-yuan-li.html">终端进度条的简单原理</a></h1>
-<p class="tags"><a><i class="fa fa-tags"></i> </a><a href="https://importcjj.github.io/tag/python.html">Python</a> </p>
-</footer><!-- /.post-info -->                </div><!-- /.entry-content -->
-            </article></li>
 
-            <li class="animated" style="opacity: 0"><article class="hentry">
+<h2>2. celery实例及任务</h2>
+<h3>2.1 生成实例</h3>
+<div class="highlight"><pre><span></span><span class="c1"># -*- coding: utf-8 -*-</span>
 
-                <div class="entry-content">
-<footer class="post-info">
-        <div class="meta">
-        <a class="category" href="https://importcjj.github.io/category/python.html">Python</a>
-        <address class="vcard author">
-                        <a class="url fn" href="https://importcjj.github.io/author/importcjj.html">importcjj</a>
-        </address>
-        <abbr class="published" title="2016-03-26T17:50:50+08:00">
-                · 26 三月 2016
-        </abbr>
-        </div>
-        <h1 class="entry-title"><a href="https://importcjj.github.io/pythondan-ceng-zhuang-shi-qi-xiao-ji.html">Python单层装饰器小记</a></h1>
-<p class="tags"><a><i class="fa fa-tags"></i> </a><a href="https://importcjj.github.io/tag/zhuang-shi-qi.html">装饰器</a> <a href="https://importcjj.github.io/tag/python.html">Python</a> </p>
-</footer><!-- /.post-info -->                </div><!-- /.entry-content -->
-            </article></li>
+<span class="c1"># filename: app.py</span>
 
-            <li class="animated" style="opacity: 0"><article class="hentry">
+<span class="kn">from</span> <span class="nn">celery</span> <span class="kn">import</span> <span class="n">Celery</span>
 
-                <div class="entry-content">
-<footer class="post-info">
-        <div class="meta">
-        <a class="category" href="https://importcjj.github.io/category/python.html">Python</a>
-        <address class="vcard author">
-                        <a class="url fn" href="https://importcjj.github.io/author/importcjj.html">importcjj</a>
-        </address>
-        <abbr class="published" title="2016-03-26T17:50:50+08:00">
-                · 26 三月 2016
-        </abbr>
-        </div>
-        <h1 class="entry-title"><a href="https://importcjj.github.io/pythonde-metaclassxiao-ji.html">Python的metaclass小记</a></h1>
-<p class="tags"><a><i class="fa fa-tags"></i> </a><a href="https://importcjj.github.io/tag/metaclass.html">metaclass</a> <a href="https://importcjj.github.io/tag/python.html">Python</a> </p>
-</footer><!-- /.post-info -->                </div><!-- /.entry-content -->
-            </article></li>
+<span class="n">CELERY_CONFIG</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;CELERY_TIMEZONE&#39;</span><span class="p">:</span> <span class="s1">&#39;Asia/Shanghai&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;CELERY_ENABLE_UTC&#39;</span><span class="p">:</span> <span class="bp">True</span><span class="p">,</span>
+    <span class="c1"># content</span>
+    <span class="s1">&#39;CELERY_TASK_SERIALIZER&#39;</span><span class="p">:</span> <span class="s1">&#39;json&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;CELERY_RESULT_SERIALIZER&#39;</span><span class="p">:</span> <span class="s1">&#39;json&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;CELERY_ACCEPT_CONTENT&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;json&#39;</span><span class="p">],</span>
+    <span class="s1">&#39;CELERYD_MAX_TASKS_PER_CHILD&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+<span class="p">}</span>
 
-            <li class="animated" style="opacity: 0"><article class="hentry">
+<span class="c1"># 第一个参数是实例的名称,  也可以使用模块的名字.</span>
+<span class="c1"># broker参数是消息代理人url.</span>
+<span class="c1"># 还有一个backend参数，当我们需要拿到异步任务的返回时需要用到.</span>
+<span class="c1"># 这里就直接略过了.</span>
+<span class="n">app</span> <span class="o">=</span> <span class="n">Celery</span><span class="p">(</span>
+    <span class="s1">&#39;test_celery&#39;</span><span class="p">,</span>
+    <span class="n">broker</span><span class="o">=</span><span class="s1">&#39;amqp://{user}:{password}@{host}:{port}/{vhost}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+        <span class="o">**</span><span class="n">SETTINGS</span><span class="p">)</span>
+<span class="p">)</span>
+<span class="n">app</span><span class="o">.</span><span class="n">conf</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="o">**</span><span class="n">CELERY_CONFIG</span><span class="p">)</span>
+</pre></div>
 
-                <div class="entry-content">
-<footer class="post-info">
-        <div class="meta">
-        <a class="category" href="https://importcjj.github.io/category/centos.html">CentOS</a>
-        <address class="vcard author">
-                        <a class="url fn" href="https://importcjj.github.io/author/importcjj.html">importcjj</a>
-        </address>
-        <abbr class="published" title="2016-03-26T17:50:50+08:00">
-                · 26 三月 2016
-        </abbr>
-        </div>
-        <h1 class="entry-title"><a href="https://importcjj.github.io/sheng-ji-centosde-pythonban-ben.html">升级CentOS的Python版本</a></h1>
-<p class="tags"><a><i class="fa fa-tags"></i> </a><a href="https://importcjj.github.io/tag/centos.html">CentOS</a> <a href="https://importcjj.github.io/tag/python.html">Python</a> <a href="https://importcjj.github.io/tag/yun-wei.html">运维</a> </p>
-</footer><!-- /.post-info -->                </div><!-- /.entry-content -->
-            </article></li>
-<p class="paginator">
-        <a href="https://importcjj.github.io/index2.html">&laquo;</a>
-    Page 3 / 3
+
+<h3>2.2 定义Task</h3>
+<div class="highlight"><pre><span></span><span class="c1"># -*- coding: utf-8 -*-</span>
+
+<span class="c1"># filename: task.py</span>
+
+<span class="kn">from</span> <span class="nn">src.app</span> <span class="kn">import</span> <span class="n">app</span>
+
+<span class="nd">@app.task</span><span class="p">(</span><span class="n">queue</span><span class="o">=</span><span class="s1">&#39;test_celey_queue&#39;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span> <span class="o">+</span> <span class="n">c</span>
+</pre></div>
+
+
+<p>注意, 我们给app.task这个装饰器传了queue这个参数, 这样当异步执行的时候,这个task会被丢到名称为test_celery_queue的队列中, 然后被为这个队列工作的worker拿到并执行。当然， 我们也可以在CELERY_CONFIG中配置:</p>
+<div class="highlight"><pre><span></span><span class="n">CELERY_ROUTES</span> <span class="o">=</span> <span class="p">{</span>
+     <span class="s1">&#39;src.task.add&#39;</span><span class="p">:</span> <span class="s1">&#39;test_celery_queue&#39;</span><span class="p">,</span>
+<span class="p">}</span>
+</pre></div>
+
+
+<p>如果我们不指定queue的话，celery会默认自己指定一个队列。task的队列一定要对应的worke， 否者就会只生产不消费， 这些task就永远不会被执行了。</p>
+<h3>2.3 启动worker</h3>
+<p>我们需要在项目路径下，也就是test.celery文件下运行python解释器， 否者python解释器无法找到 <strong>src</strong> 这个包。 或者直接将项目路径添加到PYTHONPATH变量，就像这样<code>export PYTHONPATH=/data/test.celery</code></p>
+<p>然后再启动worker：</p>
+<div class="highlight"><pre><span></span>celery worker -A src.task --loglevel<span class="o">=</span>info -Q test_celery_queue -f /data/test.celery/celery.log
+</pre></div>
+
+
+<h5>参数解析</h5>
+<ol>
+<li>
+<ul>
+<li>A src.task 指定celery实例, celery会到src.task中找app实例</li>
+</ul>
+</li>
+<li>worker 告知celery要启动worker.</li>
+<li>--loglevel=info 日志的级别是info.</li>
+<li>-Q test_celery_queue 为该worker指定一个消息队列, worker只取该队列中的任务。可以指定多个队列.</li>
+<li>-f 日志文件输出位置</li>
+<li>-P</li>
+</ol>
+<p>更多可配置参数s通过 <code>celery worker -h</code>  查看。</p>
+<h3>2.4 验证正确性</h3>
+<h5>在一个终端显示日志</h5>
+<div class="highlight"><pre><span></span><span class="n">tail</span> <span class="o">-</span><span class="n">f</span> <span class="o">/</span><span class="k">data</span><span class="o">/</span><span class="n">test</span><span class="p">.</span><span class="n">celery</span><span class="o">/</span><span class="n">celery</span><span class="p">.</span><span class="n">log</span>
+</pre></div>
+
+
+<h5>另一个终端启动python的交互解释器</h5>
+<h6>注：如果没有设置PYTHONPATH， 那就要在我们的项目文件夹下启动</h6>
+<div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">src.task</span> <span class="kn">import</span> <span class="n">add</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">add</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
+<span class="mi">10</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">add</span><span class="o">.</span><span class="n">delay</span><span class="p">()</span>
+<span class="o">&lt;</span><span class="n">AsyncResult</span><span class="p">:</span> <span class="n">fe9b4b75</span><span class="o">-</span><span class="mi">6</span><span class="n">ba8</span><span class="o">-</span><span class="mi">44</span><span class="n">aa</span><span class="o">-</span><span class="n">adb2</span><span class="o">-</span><span class="mi">92</span><span class="n">d63c8ba1c6</span><span class="o">&gt;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">add</span><span class="o">.</span><span class="n">delay</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<span class="o">&lt;</span><span class="n">AsyncResult</span><span class="p">:</span> <span class="n">e6dfcdbb</span><span class="o">-</span><span class="mi">7</span><span class="n">a19</span><span class="o">-</span><span class="mi">4</span><span class="n">fb2</span><span class="o">-</span><span class="n">aa5e</span><span class="o">-</span><span class="mi">841</span><span class="n">b8f393874</span><span class="o">&gt;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">add</span><span class="o">.</span><span class="n">apply_async</span><span class="p">(</span><span class="n">args</span><span class="o">=</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
+<span class="o">&lt;</span><span class="n">AsyncResult</span><span class="p">:</span> <span class="mi">34</span><span class="n">cf6a59</span><span class="o">-</span><span class="mi">35</span><span class="n">db</span><span class="o">-</span><span class="mi">40</span><span class="n">d3</span><span class="o">-</span><span class="n">a218</span><span class="o">-</span><span class="mi">6703</span><span class="n">eb04336b</span><span class="o">&gt;</span>
+</pre></div>
+
+
+<p>如果一切正常的话，运行第二、三、四条命令的时候会看到有日志输出。而且第二条命令会有错误日志，提示缺少参数。</p>
+<h5>用法说明</h5>
+<p>如果直接调用某一个task, 那么该task就跟普通的函数一样, 会同步运行并直接返回结果。想要异步执行, 就要使用 <strong>delay</strong> 或者 <strong>apply_async</strong> 。</p>
+<ul>
+<li><strong>delay:</strong> 相对简单，怎么给<strong>add</strong>传参，就怎么传给它。比如:</li>
+</ul>
+<p><code>add.delay(4, 5, 9)</code> 或者 <code>add.delay(4 , 5, c=19)</code>等. </p>
+<ul>
+<li><strong>apply_async:</strong> 列举几个常用的参数:</li>
+</ul>
+<div class="highlight"><pre><span></span>  <span class="o">*</span> <span class="n">args</span><span class="p">:</span> <span class="err">传给</span><span class="n">task</span><span class="err">的参数</span><span class="p">.</span>
+  <span class="o">*</span> <span class="n">kwargs</span><span class="p">:</span> <span class="err">传给</span><span class="n">task</span><span class="err">的参数</span><span class="p">.</span>
+  <span class="o">*</span> <span class="n">countdown</span><span class="err">：</span> <span class="err">延时执行的秒数</span><span class="p">.</span><span class="n">countdown</span><span class="o">=</span><span class="mi">10</span><span class="err">表示</span><span class="mi">10</span><span class="n">s</span><span class="err">后执行</span><span class="p">.</span>
+  <span class="o">*</span> <span class="n">eta</span><span class="p">:</span> <span class="n">datetime</span><span class="err">类型</span><span class="p">,</span> <span class="err">执行的日期</span><span class="p">.</span>
+  <span class="o">*</span> <span class="n">queue</span><span class="p">:</span> <span class="err">指定任务消息要去的队列</span><span class="p">.</span>
+  <span class="o">*</span> <span class="p">...</span>
+</pre></div>
+
+
+<h2>3. celery beat</h2>
+<p>我们以定时发邮件为例子</p>
+<h3>3.1 添加发邮件的task</h3>
+<p>在task.py的基础上修改:</p>
+<div class="highlight"><pre><span></span><span class="c1"># -*- coding: utf-8 -*-</span>
+
+<span class="kn">from</span> <span class="nn">src.app</span> <span class="kn">import</span> <span class="n">app</span>
+<span class="kn">from</span> <span class="nn">posts</span> <span class="kn">import</span> <span class="n">Posts</span>
+<span class="kn">import</span> <span class="nn">time</span>
+
+<span class="nd">@app.task</span><span class="p">(</span><span class="n">queue</span><span class="o">=</span><span class="s1">&#39;test_celery_queue&#39;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span> <span class="o">+</span> <span class="n">c</span>
+
+<span class="nd">@app.task</span>
+<span class="k">def</span> <span class="nf">sendmail</span><span class="p">():</span>
+    <span class="n">post</span> <span class="o">=</span> <span class="n">Posts</span><span class="p">(</span><span class="s1">&#39;smtp.qq.com&#39;</span><span class="p">,</span> <span class="s1">&#39;emailname@qq.com&#39;</span><span class="p">,</span> <span class="s1">&#39;password&#39;</span><span class="p">,</span> <span class="n">port</span><span class="o">=</span><span class="mi">465</span><span class="p">)</span>
+    <span class="k">with</span> <span class="n">post</span><span class="p">(</span><span class="n">ssl</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span> <span class="k">as</span> <span class="n">mail</span><span class="p">:</span>
+        <span class="n">mail</span><span class="o">.</span><span class="n">text</span><span class="p">(</span>
+            <span class="n">recipient</span> <span class="o">=</span><span class="s1">&#39;receive@163.com,</span>
+            <span class="n">subject</span><span class="o">=</span><span class="s1">&#39;send by celery beat&#39;</span><span class="p">,</span>
+            <span class="n">content</span><span class="o">=</span><span class="n">time</span><span class="o">.</span><span class="n">ctime</span><span class="p">()</span>
+        <span class="p">)</span>
+</pre></div>
+
+
+<p>由于Python标准库发邮件有点繁琐，我这里使用了自己简单封装的<a href="https://github.com/importcjj/Posts">posts</a>来发送邮件。邮件的内容就是执行任务的时间。</p>
+<h3>3.2 配置定时任务的schedule</h3>
+<div class="highlight"><pre><span></span><span class="c1"># -*- coding: utf-8 -*-</span>
+
+<span class="kn">from</span> <span class="nn">celery</span> <span class="kn">import</span> <span class="n">Celery</span>
+<span class="kn">from</span> <span class="nn">celery.schedules</span> <span class="kn">import</span> <span class="n">crontab</span>
+<span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">timedelta</span>
+
+<span class="n">CELERYBEAT_SCHEDULE</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;send-email-every-30-minutes&#39;</span><span class="p">:</span> <span class="p">{</span>    <span class="c1"># 定时任务的名字</span>
+        <span class="s1">&#39;task&#39;</span><span class="p">:</span> <span class="s1">&#39;src.task.sendmail&#39;</span><span class="p">,</span>     <span class="c1"># 具体对应的Task</span>
+        <span class="s1">&#39;schedule&#39;</span><span class="p">:</span>  <span class="n">timedelta</span><span class="p">(</span><span class="n">seconds</span><span class="o">=</span><span class="mi">30</span><span class="p">),</span><span class="c1"># 定时设置，这里表示30s执行一次</span>
+        <span class="c1"># &#39;args&#39;: () ,       # 传给Task的参数</span>
+        <span class="s1">&#39;options&#39;</span><span class="p">:</span> <span class="p">{</span>     <span class="c1"># 设置Task的一些属性, 参见apply_async的参数</span>
+            <span class="s1">&#39;queue&#39;</span><span class="p">:</span><span class="s1">&#39;test_celery_queue&#39;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="n">CELERY_CONFIG</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;CELERY_TIMEZONE&#39;</span><span class="p">:</span> <span class="s1">&#39;Asia/Shanghai&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;CELERY_ENABLE_UTC&#39;</span><span class="p">:</span> <span class="bp">True</span><span class="p">,</span>
+    <span class="c1"># content</span>
+    <span class="s1">&#39;CELERY_TASK_SERIALIZER&#39;</span><span class="p">:</span> <span class="s1">&#39;json&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;CELERY_RESULT_SERIALIZER&#39;</span><span class="p">:</span> <span class="s1">&#39;json&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;CELERY_ACCEPT_CONTENT&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;json&#39;</span><span class="p">],</span>
+    <span class="s1">&#39;CELERYD_MAX_TASKS_PER_CHILD&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="s1">&#39;CELERYBEAT_SCHEDULE&#39;</span><span class="p">:</span> <span class="n">CELERYBEAT_SCHEDULE</span>     <span class="c1"># 启动beat，传入相关参数.</span>
+<span class="p">}</span>
+<span class="n">SETTINGS</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;user&#39;</span><span class="p">:</span> <span class="s1">&#39;www-data&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;password&#39;</span><span class="p">:</span> <span class="s1">&#39;www-data&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;host&#39;</span><span class="p">:</span> <span class="s1">&#39;127.0.0.1&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;port&#39;</span><span class="p">:</span> <span class="s1">&#39;5672&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;vhost&#39;</span><span class="p">:</span> <span class="s1">&#39;t_celery&#39;</span>
+<span class="p">}</span>
+
+<span class="n">app</span> <span class="o">=</span> <span class="n">Celery</span><span class="p">(</span>
+    <span class="s1">&#39;test_celery&#39;</span><span class="p">,</span>
+    <span class="n">broker</span><span class="o">=</span><span class="s1">&#39;amqp://{user}:{password}@{host}:{port}/{vhost}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+        <span class="o">**</span><span class="n">SETTINGS</span><span class="p">)</span>
+<span class="p">)</span>
+<span class="n">app</span><span class="o">.</span><span class="n">conf</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="o">**</span><span class="n">CELERY_CONFIG</span><span class="p">)</span>
+</pre></div>
+
+
+<p>参数 <strong>schedule</strong> 说明, 通常使用两种方式来指定：</p>
+<ol>
+<li>datetime.timedelta: 用这种方式来指定 秒 级别.</li>
+<li>celery.shedules.crontab: 用这种方式指定 分钟 以上级别.</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>Example</th>
+<th>表示</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>timedelta(seconds=30)</td>
+<td>30秒执行一次</td>
+</tr>
+<tr>
+<td>crontab()</td>
+<td>每分钟执行一次</td>
+</tr>
+<tr>
+<td>crontab(minute=0, hour=0)</td>
+<td>凌晨执行一次</td>
+</tr>
+<tr>
+<td>crontab(minute=0, hour='*/3')</td>
+<td>从凌晨开始。每三个小时执行一次</td>
+</tr>
+<tr>
+<td>crontab(minute=0,hour='0,3,6,9,12,15,18,21')</td>
+<td>同上</td>
+</tr>
+<tr>
+<td>crontab(minute='*/15')</td>
+<td>每15分钟执行一次</td>
+</tr>
+<tr>
+<td>crontab(day_of_week='sunday')</td>
+<td>在周日，每分钟执行一次</td>
+</tr>
+<tr>
+<td>crontab(minute='<em>',hour='</em>', day_of_week='sun')</td>
+<td>同上</td>
+</tr>
+<tr>
+<td>crontab(minute=0, hour='*/5')</td>
+<td>每5小时执行一次,0,5,10,15,20</td>
+</tr>
+<tr>
+<td>crontab(0, 0, day_of_month='2')</td>
+<td>每个月第二天执行一次</td>
+</tr>
+<tr>
+<td>crontab(0, 0, day_of_month='1-7,15-21')</td>
+<td>每月的1-7号和15-21号执行</td>
+</tr>
+<tr>
+<td>crontab(0, 0, day_of_month='11', month_of_year='5')</td>
+<td>5月份的11号执行一次</td>
+</tr>
+<tr>
+<td>crontab(0, 0,month_of_year='*/3')</td>
+<td>每个季度的第一个月执行一次</td>
+</tr>
+</tbody>
+</table>
+<p>更多用法详见 <strong><a href="http://docs.celeryproject.org/en/latest/userguide/periodic-tasks.html#crontab-schedules">官方文档</a></strong></p>
+<h3>3.3 启动celery beat</h3>
+<div class="highlight"><pre><span></span>celery beat -A src.app --loglevel<span class="o">=</span>info --logfile<span class="o">=</span>/data/test.celery/celery.beat.log
+</pre></div>
+
+
+<p>更多可配置参数通过 <code>celery beat -h</code>  查看。</p>
+<h3>3.4 验证正确性</h3>
+<h5>一个页面显示celery beat 的输入日志</h5>
+<div class="highlight"><pre><span></span><span class="n">tail</span> <span class="o">-</span><span class="n">f</span> <span class="o">/</span><span class="k">data</span><span class="o">/</span><span class="n">test</span><span class="p">.</span><span class="n">celery</span><span class="o">/</span><span class="n">celery</span><span class="p">.</span><span class="n">beat</span><span class="p">.</span><span class="n">log</span>
+</pre></div>
+
+
+<h5>一个终端页面显示 celery worker 输出日志</h5>
+<div class="highlight"><pre><span></span><span class="n">tail</span> <span class="o">-</span><span class="n">f</span> <span class="o">/</span><span class="k">data</span><span class="o">/</span><span class="n">test</span><span class="p">.</span><span class="n">celery</span><span class="o">/</span><span class="n">celery</span><span class="p">.</span><span class="n">log</span>
+</pre></div>
+
+
+<p>如果分别能看到产生和消耗任务的日志输出。那就成功了。</p>
+<h2>4. supervisor</h2>
+<h3>4.1 (supervisord)配置并启动supervisor</h3>
+<p>启动supervisor的命令是 <strong>supervisord</strong>。我们可以使用 <strong>-c</strong> 参数来指定其配置文件的位置。比如:</p>
+<p><code>supervisord -c supervisord.conf</code></p>
+<p>supervisor的配置文件 supervisord.conf:</p>
+<div class="highlight"><pre><span></span><span class="k">[unix_http_server]</span>
+<span class="na">file</span><span class="o">=</span><span class="s">/var/run/supervisor.sock                   ; (the path to the socket file)</span>
+
+<span class="k">[supervisord]</span>
+<span class="na">logfile</span><span class="o">=</span><span class="s">/data/log/supervisor/syslog         ; (main log file;default $CWD/supervisord.log)</span>
+<span class="na">loglevel</span><span class="o">=</span><span class="s">info                               ; (log level;default info; others: debug,warn,trace)</span>
+<span class="na">pidfile</span><span class="o">=</span><span class="s">/var/run/supervisord.pid                ; (supervisord pidfile;default supervisord.pid)</span>
+<span class="na">nodaemon</span><span class="o">=</span><span class="s">false                              ; (start in foreground if true;default false)</span>
+<span class="na">minfds</span><span class="o">=</span><span class="s">1024                               ; (min. avail startup file descriptors;default 1024)</span>
+<span class="na">minprocs</span><span class="o">=</span><span class="s">1024                             ; (min. avail process descriptors;default 200)</span>
+<span class="na">nocleanup</span><span class="o">=</span><span class="s">false</span>
+<span class="na">umask</span><span class="o">=</span><span class="s">022</span>
+<span class="na">user</span><span class="o">=</span><span class="s">root</span>
+
+<span class="k">[supervisorctl]</span>
+<span class="na">serverurl</span><span class="o">=</span><span class="s">unix:///var/run/supervisor.sock   ; use a unix:// URL  for a unix socket</span>
+
+<span class="k">[rpcinterface:supervisor]</span>
+<span class="na">supervisor.rpcinterface_factory</span> <span class="o">=</span> <span class="s">supervisor.rpcinterface:make_main_rpcinterface</span>
+
+<span class="k">[include]</span>
+<span class="na">files</span> <span class="o">=</span> <span class="s">/etc/supervisord.d/*.ini</span>
+</pre></div>
+
+
+<h3>4.2 配置具体项目</h3>
+<p>我们会为不同的程序编写独立的ini配置文件，然后放置到一个统一的路径(比如 /etc/supervisord.d/)下让supervisor读取.具体项目的配置文件 test.celery.ini 如下</p>
+<div class="highlight"><pre><span></span><span class="k">[group:test_celery]</span>
+<span class="na">programs</span> <span class="o">=</span> <span class="s">test_celery.async,test_celery.beat</span>
+
+<span class="k">[program:test_celery.async]</span>
+<span class="na">command</span><span class="o">=</span><span class="s">/data/test.celery/env/bin/celery worker -A src.app --loglevel=info -Q test_celery_queue</span>
+<span class="na">numprocs</span><span class="o">=</span><span class="s">1</span>
+<span class="na">numprocs_start</span><span class="o">=</span><span class="s">0</span>
+<span class="na">priority</span><span class="o">=</span><span class="s">999</span>
+<span class="na">autostart</span><span class="o">=</span><span class="s">true</span>
+<span class="na">startsecs</span><span class="o">=</span><span class="s">3</span>
+<span class="na">startretries</span><span class="o">=</span><span class="s">3</span>
+<span class="na">exitcodes</span><span class="o">=</span><span class="s">0,2</span>
+<span class="na">stopsignal</span><span class="o">=</span><span class="s">QUIT</span>
+<span class="na">stopwaitsecs</span><span class="o">=</span><span class="s">60</span>
+<span class="na">directory</span><span class="o">=</span><span class="s">/data/test.celery</span>
+<span class="na">user</span><span class="o">=</span><span class="s">www-data</span>
+<span class="na">stopasgroup</span><span class="o">=</span><span class="s">false</span>
+<span class="na">killasgroup</span><span class="o">=</span><span class="s">false</span>
+<span class="na">redirect_stderr</span><span class="o">=</span><span class="s">true</span>
+<span class="na">stdout_logfile</span><span class="o">=</span><span class="s">/data/log/test.celery/test_celery.log</span>
+<span class="na">stdout_logfile_maxbytes</span><span class="o">=</span><span class="s">250MB</span>
+<span class="na">stdout_logfile_backups</span><span class="o">=</span><span class="s">10</span>
+<span class="na">stderr_logfile</span><span class="o">=</span><span class="s">/data/log/test.celery/test_celery.err</span>
+<span class="na">stderr_logfile_maxbytes</span><span class="o">=</span><span class="s">250MB</span>
+<span class="na">stderr_logfile_backups</span><span class="o">=</span><span class="s">10</span>
+<span class="na">environment</span><span class="o">=</span><span class="s">PYTHONPATH=&#39;/data/test.celery/&#39;;C_FORCE_ROOT=&quot;true&quot;</span>
+
+<span class="k">[program:test_celery.beat]</span>
+<span class="na">command</span><span class="o">=</span><span class="s">/data/test.celery/env/bin/celery beat -A src.app --loglevel=info</span>
+<span class="na">numprocs</span><span class="o">=</span><span class="s">1</span>
+<span class="na">numprocs_start</span><span class="o">=</span><span class="s">0</span>
+<span class="na">priority</span><span class="o">=</span><span class="s">999</span>
+<span class="na">autostart</span><span class="o">=</span><span class="s">true</span>
+<span class="na">startsecs</span><span class="o">=</span><span class="s">3</span>
+<span class="na">startretries</span><span class="o">=</span><span class="s">3</span>
+<span class="na">exitcodes</span><span class="o">=</span><span class="s">0,2</span>
+<span class="na">stopsignal</span><span class="o">=</span><span class="s">QUIT</span>
+<span class="na">stopwaitsecs</span><span class="o">=</span><span class="s">60</span>
+<span class="na">directory</span><span class="o">=</span><span class="s">/data/test.celery</span>
+<span class="na">user</span><span class="o">=</span><span class="s">www-data</span>
+<span class="na">stopasgroup</span><span class="o">=</span><span class="s">false</span>
+<span class="na">killasgroup</span><span class="o">=</span><span class="s">false</span>
+<span class="na">redirect_stderr</span><span class="o">=</span><span class="s">true</span>
+<span class="na">stdout_logfile</span><span class="o">=</span><span class="s">/data/log/test.celery/test_celery.beat.log</span>
+<span class="na">stdout_logfile_maxbytes</span><span class="o">=</span><span class="s">250MB</span>
+<span class="na">stdout_logfile_backups</span><span class="o">=</span><span class="s">10</span>
+<span class="na">stderr_logfile</span><span class="o">=</span><span class="s">/data/log/test.celery/test_celery.beat.err</span>
+<span class="na">stderr_logfile_maxbytes</span><span class="o">=</span><span class="s">250MB</span>
+<span class="na">stderr_logfile_backups</span><span class="o">=</span><span class="s">10</span>
+<span class="na">environment</span><span class="o">=</span><span class="s">PYTHONPATH=&#39;/data/test.celery/&#39;;C_FORCE_ROOT=&quot;true&quot;</span>
+</pre></div>
+
+
+<h4>简单说明</h4>
+<ul>
+<li><strong>test_celery.async</strong> 和 <strong>test_celery.beat</strong> 是两个program，分别对应worker和beat，而它们又同属于 <strong>test_celery</strong> 这个组，这样便于同时管理。</li>
+<li>注意到command参数了吗？因为我使用了<strong>virtualenv</strong>来隔离每个项目的包环境，所以需要明确指出 <strong>celery命令</strong>所在的目录(如果全局安装了celery就必要了), 这也是为什么上文项目结构中会有一个 <strong>env</strong> 文件夹的原因。</li>
+<li>使用了虚拟环境之后, 通常需要先激活环境 <code>source /data/test.celery/env/bin/activate</code></li>
+<li><strong>environment</strong> 下设置 PYTHONPATH 我们在上文中提到过。总之，你要让Python知道你项目包得位置，设置PYTHONPATH 只是一种方式。</li>
+</ul>
+<h3>4.3 (supervisorctl) 管理程序进程</h3>
+<p>通过 <code>sudo supervisorctl</code> 可以进入管理客户端。我们可以使用各种命令管理程序的进程:  </p>
+<p>常用的命令有:</p>
+<ul>
+<li>status \<program-name>  查看状态</li>
+<li>restart \<program-name> 重新启动</li>
+<li>start \<program-name>    启动</li>
+<li>stop \<prorgram-name>   停止</li>
+<li>update                                    更新配置</li>
+</ul>
+<p>也可以不进入来管理 ，例如每次更新玩配置，我们可以使其快速生效:</p>
+<div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">supervisorctl</span> <span class="k">update</span> 
+</pre></div>
+
+
+<p>​   </p>
+<h2>5. 结束语</h2>
+<p>上文中只是简单介绍了supervisor 、celery、 celerybeat的简单运用。如果有兴趣的话可以自己去深入了解!</p>
+<p><strong>本篇文章到此结束，原创手打！ </strong></p>
+<p><strong>人生苦短， 我用python!</strong></p>
+		</div> <!--/#entry-content-->
+    		<span class="tag-links"><strong>Tagged</strong>
+ <a href="https://importcjj.github.io/tag/celery.html" rel="tag">celery</a>,  <a href="https://importcjj.github.io/tag/python.html" rel="tag">Python</a>,  <a href="https://importcjj.github.io/tag/supervisor.html" rel="tag">supervisor</a>    		</span>
+	</div> <!--/#main-->
+</div>  <!--/#post--><div class="post type-post status-publish format-standard hentry category-general" id="post">
+	<div class="entry-meta">
+		<div class="date"><a href="https://importcjj.github.io/zhong-duan-jin-du-tiao-de-jian-dan-yuan-li.html">日 27 三月 2016</a></div>
+		<span class="byline">By <a href="https://importcjj.github.io/author/importcjj.html">importcjj</a></span>
+			<div class="comments"><a href="https://importcjj.github.io/zhong-duan-jin-du-tiao-de-jian-dan-yuan-li.html#disqus_thread" title="Comment on 终端进度条的简单原理">comments</a></div>
+			<span class="cat-links"><a href="https://importcjj.github.io/category/python.html" title="View all posts in Python" rel="category tag">Python</a></span>
+	</div> <!-- /#entry-meta -->
+	<div class="main">
+		<h2 class="entry-title">
+			<a href="https://importcjj.github.io/zhong-duan-jin-du-tiao-de-jian-dan-yuan-li.html" title="Permalink to 终端进度条的简单原理" rel="bookmark">终端进度条的简单原理</a>
+		</h2>
+		<div class="entry-content">
+			<h4>进度条</h4>
+<p>每次使用pip安装一些第三方库时，总会在终端或者命令行中看到进度条，能够让用户等待时得到当前任务的进度。今天偶然在知乎看到一个帖子中提到了这个有趣的功能。</p>
+<h4>实现方式</h4>
+<p>一般情况下命令行和终端的输出总是由上往下一行一行输出。如果我们需要实现进度条的效果的效果的话，就需要每次输出都在同一行上，不断地用后来的输出去覆盖之前的输出，从而模拟出一种动态变化的效果。那究竟怎样实现呢？答案就是使用<strong>反杠r</strong>。</p>
+<p><strong>反杠n</strong>是换行，<strong>反杠r</strong>就只是把输出光标移到行首，而不换行。根据这个思路，我们先做个倒计时来玩玩。</p>
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+
+<span class="k">def</span> <span class="nf">CountDown</span><span class="p">(</span><span class="n">total_sec</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">xrange</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+        <span class="c1"># 不能换行哈</span>
+        <span class="k">print</span> <span class="s1">&#39;</span><span class="si">%4d</span><span class="se">\\</span><span class="s1">r&#39;</span> <span class="o">%</span> <span class="n">i</span><span class="p">,</span>
+        <span class="n">sys</span><span class="o">.</span><span class="n">stdout</span><span class="o">.</span><span class="n">flush</span><span class="p">()</span>
+        <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+    <span class="c1"># 防止输出被之后的输出覆盖</span>
+    <span class="k">print</span>
+
+<span class="n">CountDown</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+
+
+<p>结果让我失望了，因为倒计时效果没有出现，而是等待10秒后直接出现0</p>
+<h5>为什么？</h5>
+<p>输出是有缓存机制的，输出缓存（即所谓的行缓冲区）是根据换行符来写数据的，看到换行符，就会从缓存打印数据。</p>
+<p>修改代码前，先看下命令行和终端中的输出方式：</p>
+<div class="highlight"><pre><span></span><span class="c1"># print方式</span>
+<span class="k">print</span> <span class="s1">&#39;ProcessBar&#39;</span>
+
+<span class="c1"># stdout方式</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="n">sys</span><span class="o">.</span><span class="n">stdout</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;ProcessBar</span><span class="se">\\</span><span class="s1">n&#39;</span><span class="p">)</span>
+</pre></div>
+
+
+<p><strong>print</strong>使用的较为普遍,但以上两种方式其实是等价的，无非是print自带默认自带换行。我们可以借助sys模块中stdout中的flush强制取出缓冲区的内容。</p>
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+
+<span class="k">def</span> <span class="nf">CountDown</span><span class="p">(</span><span class="n">total_sec</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">xrange</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+        <span class="c1"># 默认不换行</span>
+        <span class="c1"># 也可以 print &#39;%4d\\r&#39; % i,</span>
+        <span class="n">sys</span><span class="o">.</span><span class="n">stdout</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%4d</span><span class="se">\\</span><span class="s1">r&#39;</span> <span class="o">%</span> <span class="n">i</span><span class="p">)</span>
+        <span class="c1"># 强制打印</span>
+        <span class="n">sys</span><span class="o">.</span><span class="n">stdout</span><span class="o">.</span><span class="n">flush</span><span class="p">()</span>
+        <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+    <span class="c1"># 防止最后结果被之后的输出覆盖</span>
+    <span class="k">print</span>
+
+<span class="n">CountDown</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+
+
+<p>成功实现。接下来来实现进度条！</p>
+<div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env python</span>
+<span class="c1">#-*-coding=utf-8-*-</span>
+
+<span class="kn">import</span> <span class="nn">sys</span>
+
+<span class="k">class</span> <span class="nc">ProcessBar</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">end</span><span class="p">,</span> <span class="n">char</span><span class="o">=</span><span class="s1">&#39;#&#39;</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        @param end : 总大小</span>
+<span class="sd">        @param char : 进度条的符号</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">end</span> <span class="o">=</span> <span class="n">end</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">char</span> <span class="o">=</span> <span class="n">char</span>
+
+    <span class="k">def</span> <span class="nf">show</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">count</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        @param count : 当前进度</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># 百分比</span>
+        <span class="n">percent</span> <span class="o">=</span> <span class="n">count</span> <span class="o">*</span> <span class="mi">100</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">end</span>
+        <span class="c1"># 符号数量</span>
+        <span class="n">s_num</span> <span class="o">=</span> <span class="n">percent</span> <span class="o">/</span> <span class="mi">10</span>
+        <span class="n">sys</span><span class="o">.</span><span class="n">stdout</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%3d%%</span><span class="s1">=&gt;|</span><span class="si">%-10s</span><span class="s1">|</span><span class="se">\\</span><span class="s1">r&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">percent</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">char</span> <span class="o">*</span> <span class="n">s_num</span><span class="p">))</span>
+        <span class="n">sys</span><span class="o">.</span><span class="n">stdout</span><span class="o">.</span><span class="n">flush</span><span class="p">()</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="kn">import</span> <span class="nn">time</span>
+    <span class="n">pb</span> <span class="o">=</span> <span class="n">ProcessBar</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">xrange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">101</span><span class="p">):</span>
+        <span class="n">pb</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+        <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.1</span><span class="p">)</span>
+    <span class="k">print</span> <span class="s2">&quot;</span><span class="se">\\</span><span class="s2">ncompleted&quot;</span>
+</pre></div>
+
+
+<p>一个简单的进度条做好了，感觉还不错！</p>
+<p>还有一种方法那就是使用<strong>反杠b</strong>来回退，有空试试。</p>
+<h4>扩展</h4>
+<p>每次输出都需要flush感觉很麻烦？
+几种方式轻松解决!</p>
+<ol>
+<li><strong>python -u ProcessBar.py</strong> 带参数<strong>u</strong>来运行文件</li>
+<li><strong>PYTHONUNBUFFERED=1 python ProcessBar.py</strong> 与方法一等效</li>
+<li><strong>#!/usr/bin/env python -u</strong> linux、unix需要直接运行的方式的话，可以在py文件开头加上<strong>-u</strong></li>
+<li>使用<strong>stderr.write(str)</strong>输出，因为stderr不使用缓冲区</li>
+</ol>
+		</div> <!--/#entry-content-->
+    		<span class="tag-links"><strong>Tagged</strong>
+ <a href="https://importcjj.github.io/tag/python.html" rel="tag">Python</a>    		</span>
+	</div> <!--/#main-->
+</div>  <!--/#post--><div class="post type-post status-publish format-standard hentry category-general" id="post">
+	<div class="entry-meta">
+		<div class="date"><a href="https://importcjj.github.io/pythondan-ceng-zhuang-shi-qi-xiao-ji.html">六 26 三月 2016</a></div>
+		<span class="byline">By <a href="https://importcjj.github.io/author/importcjj.html">importcjj</a></span>
+			<div class="comments"><a href="https://importcjj.github.io/pythondan-ceng-zhuang-shi-qi-xiao-ji.html#disqus_thread" title="Comment on Python单层装饰器小记">comments</a></div>
+			<span class="cat-links"><a href="https://importcjj.github.io/category/python.html" title="View all posts in Python" rel="category tag">Python</a></span>
+	</div> <!-- /#entry-meta -->
+	<div class="main">
+		<h2 class="entry-title">
+			<a href="https://importcjj.github.io/pythondan-ceng-zhuang-shi-qi-xiao-ji.html" title="Permalink to Python单层装饰器小记" rel="bookmark">Python单层装饰器小记</a>
+		</h2>
+		<div class="entry-content">
+			<h4>解释器什么时候处理装饰器？</h4>
+<p>答: Python解释器加载代码的时候.</p>
+<p>例如, sleep.py 代码如下</p>
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">functools</span>
+<span class="kn">import</span> <span class="nn">time</span>
+
+
+<span class="k">def</span> <span class="nf">timer</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;handle decorator&quot;</span><span class="p">)</span>
+
+    <span class="nd">@functools.wraps</span><span class="p">(</span><span class="n">func</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">wrapper</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="n">start</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+        <span class="n">rtn</span> <span class="o">=</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="n">cost</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="n">start</span>
+        <span class="k">print</span><span class="p">(</span><span class="s2">&quot;cost </span><span class="si">%f</span><span class="s2"> s&quot;</span><span class="p">)</span> <span class="o">%</span> <span class="n">cost</span>
+        <span class="k">return</span> <span class="n">rtn</span>
+    <span class="k">return</span> <span class="n">wrapper</span>
+
+
+<span class="nd">@timer</span>
+<span class="k">def</span> <span class="nf">sleep</span><span class="p">(</span><span class="n">seconds</span><span class="p">):</span>
+    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="n">seconds</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">seconds</span>
+</pre></div>
+
+
+<p>以上代码只是定义了一个装饰器和一个使用该装饰器的函数，当运行<code>python sleep.py</code>的时候会打印<code>hanle decorator</code>。当解释器在加载处理代码的时候遇到了"@"的时候，回去调用timer这个函数，并把sleep这个参数当做参数传给timer。这个过程相当于:</p>
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">sleep</span><span class="p">(</span><span class="n">seconds</span><span class="p">):</span>
+    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="n">seconds</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">seconds</span>
+<span class="n">sleep</span> <span class="o">=</span> <span class="n">timer</span><span class="p">(</span><span class="n">sleep</span><span class="p">)</span>
+</pre></div>
+
+
+<h4>装饰器和闭包？</h4>
+<blockquote>
+<p>在计算机科学中，闭包（英语：Closure），又称词法闭包（Lexical Closure）或函数闭包（function closures），是引用了自由变量的函数。这个被引用的自由变量将和这个函数一同存在，即使已经离开了创造它的环境也不例外。所以，有另一种说法认为闭包是由函数和与其相关的引用环境组合而成的实体。闭包在运行时可以有多个实例，不同的引用环境和相同的函数组合可以产生不同的实例。
 </p>
-                </section><!-- /#content -->
-    </ul><!-- /#posts-list -->
-        <section id="extras" class="body animated" style="opacity: 0">
-                <div class="blogroll">
-                        <h2>Links</h2>
-                        <ul>
-                            <li>
-                                <a class="link-name" href="http://chihiro.moe">Slade</a>
-                                <a class="link-href">http://chihiro.moe</a>
-                            </li>
-                            <li>
-                                <a class="link-name" href="http://shenyizhou.github.io">无主之地</a>
-                                <a class="link-href">http://shenyizhou.github.io</a>
-                            </li>
-                            <li>
-                                <a class="link-name" href="http://yuan0.github.io">Junifer</a>
-                                <a class="link-href">http://yuan0.github.io</a>
-                            </li>
-                            <li>
-                                <a class="link-name" href="http://getpelican.com/">Pelican</a>
-                                <a class="link-href">http://getpelican.com/</a>
-                            </li>
-                            <li>
-                                <a class="link-name" href="http://python.org/">Python.org</a>
-                                <a class="link-href">http://python.org/</a>
-                            </li>
-                            <li>
-                                <a class="link-name" href="http://jinja.pocoo.org/">Jinja2</a>
-                                <a class="link-href">http://jinja.pocoo.org/</a>
-                            </li>
-                            <li>
-                                <a class="link-name" href="http://dongweiming.github.io/Expert-Python/#1">Expert-python</a>
-                                <a class="link-href">http://dongweiming.github.io/Expert-Python/#1</a>
-                            </li>
-                        </ul>
-                </div><!-- /.blogroll -->
-        </section><!-- /#extras -->
+</blockquote>
+<p>我们不去深究到底什么才是闭包的正确定义。姑且认为就是引用了自由变量的函数。如果在一个内部函数里，对在外部作用域（但不是在全局作用域）的变量进行引用，那么内部函数就被认为是闭包。粗暴的理解为<strong>函数套函数，内层函数引用了外层函数的变量，即使外层函数结束了，内层函数函数仍可以访问该变量</strong>。</p>
+<p>在装饰器的用法中，表现为如下方式:</p>
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">functools</span>
+<span class="kn">import</span> <span class="nn">time</span>
 
-        <footer id="contentinfo" class="body animated" style="opacity: 0">
-                <p>Proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
-                </p><!-- /#about -->
-                <p>The theme is by <a href="https://github.com/importcjj/yake">importcjj</a>, thanks!</p>
-                <p>托管于 <a href="https://github.com">github</a> 和 <a href="https://coding.net/">coding</a>,  
-                并借助 <a href="https://travis-ci.com/">travis ci</a> 完成自动编译发布.
-                </p>
-                <img src="https://travis-ci.org/importcjj/importcjj.github.io.svg?branch=master"/>
-        </footer><!-- /#contentinfo -->
-        </div>
 
+<span class="k">def</span> <span class="nf">timer</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;handle decorator&quot;</span><span class="p">)</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="n">func</span><span class="o">.</span><span class="n">func_name</span>
+
+    <span class="nd">@functools.wraps</span><span class="p">(</span><span class="n">func</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">wrapper</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="k">print</span> <span class="n">name</span><span class="p">,</span> <span class="nb">id</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+        <span class="n">start</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+        <span class="n">rtn</span> <span class="o">=</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="n">cost</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="n">start</span>
+        <span class="k">print</span><span class="p">(</span><span class="s2">&quot;costs </span><span class="si">%f</span><span class="s2"> s&quot;</span><span class="p">)</span> <span class="o">%</span> <span class="n">cost</span>
+        <span class="k">return</span> <span class="n">rtn</span>
+    <span class="k">return</span> <span class="n">wrapper</span>
+
+
+<span class="nd">@timer</span>
+<span class="k">def</span> <span class="nf">sleep</span><span class="p">(</span><span class="n">seconds</span><span class="p">):</span>
+    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="n">seconds</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">seconds</span>
+
+
+<span class="nd">@timer</span>
+<span class="k">def</span> <span class="nf">sleep2</span><span class="p">(</span><span class="n">seconds</span><span class="p">):</span>
+    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="n">seconds</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">seconds</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="k">print</span> <span class="n">sleep</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+    <span class="k">print</span> <span class="n">sleep</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+    <span class="k">print</span> <span class="n">sleep2</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+    <span class="k">print</span> <span class="n">sleep2</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+
+<span class="c1"># 运行结果:</span>
+<span class="n">handle</span> <span class="n">decorator</span>
+<span class="n">handle</span> <span class="n">decorator</span>
+<span class="c1"># print sleep(2)</span>
+<span class="n">sleep</span> <span class="mi">4402047952</span>
+<span class="n">costs</span> <span class="mf">2.005124</span> <span class="n">s</span>
+<span class="mi">2</span>
+<span class="c1"># print sleep(3)</span>
+<span class="n">sleep</span> <span class="mi">4402047952</span>
+<span class="n">costs</span> <span class="mf">3.005203</span> <span class="n">s</span>
+<span class="mi">3</span>
+<span class="c1"># print sleep2(2)</span>
+<span class="n">sleep2</span> <span class="mi">4402048048</span>
+<span class="n">costs</span> <span class="mf">2.005205</span> <span class="n">s</span>
+<span class="mi">2</span>
+<span class="c1"># print sleep2(3)</span>
+<span class="n">sleep2</span> <span class="mi">4402048048</span>
+<span class="n">costs</span> <span class="mf">3.000412</span> <span class="n">s</span>
+<span class="mi">3</span>
+</pre></div>
+
+
+<p>可以看到:</p>
+<ol>
+<li>sleep是可以访问timer函数中的name变量。</li>
+<li>同一个函数的多次调用，name变量是同一个(id相同)。</li>
+<li>函数<strong>sleep</strong>和<strong>sleep2</strong>所引用的name变量不是同一个，因为timer装饰这两个函数，被调用了两次，声明了两个不同的name变量。</li>
+</ol>
+<p>利用以上三点特性，我们可以在装饰器中为被装饰函数开辟一个"存放数据空间"，来看一种应用方式:</p>
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">functools</span>
+<span class="kn">import</span> <span class="nn">time</span>
+
+
+<span class="k">def</span> <span class="nf">cache</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
+    <span class="n">caches</span> <span class="o">=</span> <span class="p">{}</span>
+
+    <span class="nd">@functools.wraps</span><span class="p">(</span><span class="n">func</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">wrapper</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">n</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">caches</span><span class="p">:</span>
+            <span class="n">caches</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="o">=</span> <span class="n">func</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">caches</span><span class="p">[</span><span class="n">n</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">wrapper</span>
+
+
+<span class="nd">@cache</span>
+<span class="k">def</span> <span class="nf">fib</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="n">fib</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="n">fib</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">2</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">fib2</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="n">fib2</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="n">fib2</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">2</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">fib3</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">xrange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+        <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">,</span> <span class="n">a</span>
+    <span class="k">return</span> <span class="n">a</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">start</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">xrange</span><span class="p">(</span><span class="mi">10000</span><span class="p">):</span>
+        <span class="n">fib</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>
+    <span class="k">print</span> <span class="s2">&quot;cache fib without cache spends </span><span class="si">%f</span><span class="s2"> s&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="n">start</span><span class="p">,)</span>
+
+    <span class="n">start</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">xrange</span><span class="p">(</span><span class="mi">10000</span><span class="p">):</span>
+        <span class="n">fib2</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>
+    <span class="k">print</span> <span class="s2">&quot;no cache fib spends </span><span class="si">%f</span><span class="s2"> s&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="n">start</span><span class="p">,)</span>
+
+    <span class="n">start</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">xrange</span><span class="p">(</span><span class="mi">10000</span><span class="p">):</span>
+        <span class="n">fib3</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>
+    <span class="k">print</span> <span class="s2">&quot;fib3 spends </span><span class="si">%f</span><span class="s2"> s&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="n">start</span><span class="p">,)</span>
+
+<span class="c1"># 运行结果</span>
+<span class="n">cache</span> <span class="n">fib</span> <span class="n">without</span> <span class="n">cache</span> <span class="n">spends</span> <span class="mf">0.003719</span> <span class="n">s</span>
+<span class="n">no</span> <span class="n">cache</span> <span class="n">fib</span> <span class="n">spends</span> <span class="mf">31.374117</span> <span class="n">s</span>
+<span class="n">fib3</span> <span class="n">spends</span> <span class="mf">0.016529</span> <span class="n">s</span>
+</pre></div>
+
+
+<p>递归通常比非递归实现对程序执行的效率影响更大一些，我们带缓冲的递归fib却比非递归版本的fib3耗时更少！</p>
+<p>这</p>
+<h4>类装饰器</h4>
+<p>我们在创建一个class的时候可以选择重写以下三个方法：</p>
+<ul>
+<li>__new__(cls, <em>args, </em>*kwargs)   创建实例</li>
+<li>__init__(self, <em>args, </em>*kwargs)  初始化实例</li>
+<li>__call__(self, <em>args, </em>*kwargs)  把实例当函数一样调用</li>
+</ul>
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">functools</span>
+<span class="kn">import</span> <span class="nn">time</span>
+
+
+<span class="k">class</span> <span class="nc">Timer</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">names</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="k">def</span> <span class="fm">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">func</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">func</span><span class="o">.</span><span class="n">func_name</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">names</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">names</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">func</span><span class="o">.</span><span class="n">func_name</span><span class="p">)</span>
+
+        <span class="nd">@functools.wraps</span><span class="p">(</span><span class="n">func</span><span class="p">)</span>
+        <span class="k">def</span> <span class="nf">wrapper</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+            <span class="k">print</span> <span class="bp">self</span><span class="o">.</span><span class="n">names</span>
+            <span class="n">start</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+            <span class="n">rtn</span> <span class="o">=</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+            <span class="k">print</span> <span class="s2">&quot;</span><span class="si">%s</span><span class="s2"> spends </span><span class="si">%f</span><span class="s2"> s&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">func</span><span class="o">.</span><span class="n">func_name</span><span class="p">,</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="n">start</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">rtn</span>
+        <span class="k">return</span> <span class="n">wrapper</span>
+
+<span class="n">timer</span> <span class="o">=</span> <span class="n">Timer</span><span class="p">()</span>
+
+
+<span class="nd">@timer</span>
+<span class="k">def</span> <span class="nf">sleep</span><span class="p">(</span><span class="n">seconds</span><span class="p">):</span>
+    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="n">seconds</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">seconds</span>
+
+
+<span class="nd">@timer</span>
+<span class="k">def</span> <span class="nf">sleep2</span><span class="p">(</span><span class="n">seconds</span><span class="p">):</span>
+    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="n">seconds</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">seconds</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">sleep</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+    <span class="n">sleep2</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+
+<span class="err">＃</span> <span class="err">运行结果</span>
+<span class="p">[</span><span class="s1">&#39;sleep&#39;</span><span class="p">,</span> <span class="s1">&#39;sleep2&#39;</span><span class="p">]</span>
+<span class="n">sleep</span> <span class="n">spends</span> <span class="mf">5.000244</span> <span class="n">s</span>
+<span class="p">[</span><span class="s1">&#39;sleep&#39;</span><span class="p">,</span> <span class="s1">&#39;sleep2&#39;</span><span class="p">]</span>
+<span class="n">sleep2</span> <span class="n">spends</span> <span class="mf">5.004623</span> <span class="n">s</span>
+</pre></div>
+
+
+<p>想要使用类来做装饰器，先要准备一个实例，然后调用这个实例。除了这点要注意外，还要注意的是，用类实现的装饰器，可以让所有被装饰的函数共享变量，这种变量就是实例的内部变量。</p>
+		</div> <!--/#entry-content-->
+    		<span class="tag-links"><strong>Tagged</strong>
+ <a href="https://importcjj.github.io/tag/python.html" rel="tag">Python</a>,  <a href="https://importcjj.github.io/tag/zhuang-shi-qi.html" rel="tag">装饰器</a>    		</span>
+	</div> <!--/#main-->
+</div>  <!--/#post--><div class="post type-post status-publish format-standard hentry category-general" id="post">
+	<div class="entry-meta">
+		<div class="date"><a href="https://importcjj.github.io/pythonde-metaclassxiao-ji.html">六 26 三月 2016</a></div>
+		<span class="byline">By <a href="https://importcjj.github.io/author/importcjj.html">importcjj</a></span>
+			<div class="comments"><a href="https://importcjj.github.io/pythonde-metaclassxiao-ji.html#disqus_thread" title="Comment on Python的metaclass小记">comments</a></div>
+			<span class="cat-links"><a href="https://importcjj.github.io/category/python.html" title="View all posts in Python" rel="category tag">Python</a></span>
+	</div> <!-- /#entry-meta -->
+	<div class="main">
+		<h2 class="entry-title">
+			<a href="https://importcjj.github.io/pythonde-metaclassxiao-ji.html" title="Permalink to Python的metaclass小记" rel="bookmark">Python的metaclass小记</a>
+		</h2>
+		<div class="entry-content">
+			<p>使用metaclass的时候可以使用<strong>metaclass</strong>的<code>__new__</code>和<code>__init__</code>去改变所定义的类的相关属性，因为这两个方法是在类定义的时候被调用，他们所需的参数也与使用<code>type(name, bases, dict)</code>动态声明类相同。而使用<strong>metaclass</strong>的<code>__call__</code>可以影响我们所声明的类产生实例的过程，因为当我们使用class_name()去产生实例的时候，相当于call了这个class，而这个class又是metaclass的实例，所以其实调用了metaclass的__call__</p>
+<p>注意: 通过<code>super</code>来调用父类的<code>__new__</code>时，第一个参数需要是该class，这点是不同于调用<code>__init__</code>等其他父类方法的。因为<code>__new__</code>是个静态方法。还有一个小问题就是当父类是object的时候，也就是调用<code>object.__new__()</code>只传一个cls参数就可以了，至于为什么，请戳<a href="https://mail.python.org/pipermail/python-dev/2008-February/076854.html">here</a>
+和<a href="http://bugs.python.org/issue1683368">here</a>。 如果你重写了<code>__new__</code>而没有重写<code>__init__</code>，那么给<code>object.__new__</code>传额外的参数会直接报错, 如果两个都重写了会报出<strong>DeprecationWarning</strong>，可以继续运行。</p>
+<div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Meta</span><span class="p">(</span><span class="nb">type</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="fm">__new__</span><span class="p">(</span><span class="n">meta</span><span class="p">,</span> <span class="n">cls_name</span><span class="p">,</span> <span class="n">base_clses</span><span class="p">,</span> <span class="n">cls_attrs</span><span class="p">):</span>
+        <span class="k">print</span> <span class="s2">&quot;============Meta_new==============&quot;</span>
+        <span class="k">print</span> <span class="s2">&quot;meta&quot;</span><span class="p">,</span> <span class="n">meta</span>
+        <span class="k">print</span> <span class="s2">&quot;class name&quot;</span><span class="p">,</span> <span class="n">cls_name</span>
+        <span class="k">print</span> <span class="s2">&quot;base classes&quot;</span><span class="p">,</span> <span class="n">base_clses</span>
+        <span class="k">print</span> <span class="s2">&quot;class attrs&quot;</span><span class="p">,</span> <span class="n">cls_attrs</span>
+        <span class="n">instance</span> <span class="o">=</span> <span class="nb">super</span><span class="p">(</span><span class="n">Meta</span><span class="p">,</span> <span class="n">meta</span><span class="p">)</span><span class="o">.</span><span class="fm">__new__</span><span class="p">(</span><span class="n">meta</span><span class="p">,</span> <span class="n">cls_name</span><span class="p">,</span> <span class="n">base_clses</span><span class="p">,</span> <span class="n">cls_attrs</span><span class="p">)</span>
+        <span class="k">print</span> <span class="s2">&quot;=============Meta_new============&quot;</span>
+        <span class="k">return</span> <span class="n">instance</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="n">cls_obj</span><span class="p">,</span> <span class="n">cls_name</span><span class="p">,</span> <span class="n">base_clses</span><span class="p">,</span> <span class="n">cls_attrs</span><span class="p">):</span>
+        <span class="k">print</span> <span class="s2">&quot;============Meta_init============&quot;</span>
+        <span class="k">print</span> <span class="s1">&#39;class obj&#39;</span><span class="p">,</span> <span class="n">cls_obj</span>
+        <span class="k">print</span> <span class="s2">&quot;class name&quot;</span><span class="p">,</span> <span class="n">cls_name</span>
+        <span class="k">print</span> <span class="s2">&quot;base classes&quot;</span><span class="p">,</span> <span class="n">base_clses</span>
+        <span class="k">print</span> <span class="s2">&quot;class attrs&quot;</span><span class="p">,</span> <span class="n">cls_attrs</span>
+        <span class="k">print</span> <span class="s2">&quot;============Meta_init===========&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__call__</span><span class="p">(</span><span class="n">cls_obj</span><span class="p">,</span>  <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="k">print</span> <span class="s2">&quot;=============Meta_call==========&quot;</span>
+        <span class="k">print</span> <span class="s2">&quot;class obj&quot;</span><span class="p">,</span> <span class="n">cls_obj</span>
+        <span class="n">instance</span> <span class="o">=</span> <span class="nb">super</span><span class="p">(</span><span class="n">Meta</span><span class="p">,</span> <span class="n">cls_obj</span><span class="p">)</span><span class="o">.</span><span class="fm">__call__</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="k">print</span> <span class="s2">&quot;=============Meta_call==========&quot;</span>
+        <span class="k">return</span> <span class="n">instance</span>
+
+
+<span class="k">class</span> <span class="nc">Foo</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="vm">__metaclass__</span> <span class="o">=</span> <span class="n">Meta</span>
+
+    <span class="k">def</span> <span class="fm">__new__</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
+        <span class="k">print</span> <span class="bp">cls</span>
+        <span class="k">print</span> <span class="s1">&#39;Foo.__new__&#39;</span>
+        <span class="k">return</span> <span class="nb">super</span><span class="p">(</span><span class="n">Foo</span><span class="p">,</span> <span class="bp">cls</span><span class="p">)</span><span class="o">.</span><span class="fm">__new__</span><span class="p">(</span><span class="bp">cls</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">print</span> <span class="s1">&#39;Foo.__init__&#39;</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">Foo</span><span class="p">()</span>
+    <span class="k">print</span> <span class="nb">type</span><span class="o">.</span><span class="fm">__call__</span><span class="p">(</span><span class="n">Foo</span><span class="p">)</span>
+</pre></div>
+
+
+<p>输出</p>
+<div class="highlight"><pre><span></span><span class="o">============</span><span class="n">Meta_new</span><span class="o">==============</span>
+<span class="n">meta</span> <span class="o">&lt;</span><span class="k">class</span> <span class="s1">&#39;__main__.Meta&#39;</span><span class="o">&gt;</span>
+<span class="k">class</span> <span class="n">name</span> <span class="n">Foo</span>
+<span class="n">base</span> <span class="n">classes</span> <span class="p">(</span><span class="o">&lt;</span><span class="k">type</span> <span class="s1">&#39;object&#39;</span><span class="o">&gt;</span><span class="p">,)</span>
+<span class="k">class</span> <span class="n">attrs</span> <span class="err">{</span><span class="s1">&#39;__module__&#39;</span><span class="p">:</span> <span class="s1">&#39;__main__&#39;</span><span class="p">,</span> <span class="s1">&#39;__metaclass__&#39;</span><span class="p">:</span> <span class="o">&lt;</span><span class="k">class</span> <span class="s1">&#39;__main__.Meta&#39;</span><span class="o">&gt;</span><span class="p">,</span> <span class="s1">&#39;__new__&#39;</span><span class="p">:</span> <span class="o">&lt;</span><span class="k">function</span> <span class="n">__new__</span> <span class="k">at</span> <span class="mi">0</span><span class="n">x1091ad578</span><span class="o">&gt;</span><span class="p">,</span> <span class="s1">&#39;__init__&#39;</span><span class="p">:</span> <span class="o">&lt;</span><span class="k">function</span> <span class="n">__init__</span> <span class="k">at</span> <span class="mi">0</span><span class="n">x1091b9578</span><span class="o">&gt;</span><span class="err">}</span>
+<span class="o">=============</span><span class="n">Meta_new</span><span class="o">============</span>
+<span class="o">============</span><span class="n">Meta_init</span><span class="o">============</span>
+<span class="k">class</span> <span class="n">obj</span> <span class="o">&lt;</span><span class="k">class</span> <span class="s1">&#39;__main__.Foo&#39;</span><span class="o">&gt;</span>
+<span class="k">class</span> <span class="n">name</span> <span class="n">Foo</span>
+<span class="n">base</span> <span class="n">classes</span> <span class="p">(</span><span class="o">&lt;</span><span class="k">type</span> <span class="s1">&#39;object&#39;</span><span class="o">&gt;</span><span class="p">,)</span>
+<span class="k">class</span> <span class="n">attrs</span> <span class="err">{</span><span class="s1">&#39;__module__&#39;</span><span class="p">:</span> <span class="s1">&#39;__main__&#39;</span><span class="p">,</span> <span class="s1">&#39;__metaclass__&#39;</span><span class="p">:</span> <span class="o">&lt;</span><span class="k">class</span> <span class="s1">&#39;__main__.Meta&#39;</span><span class="o">&gt;</span><span class="p">,</span> <span class="s1">&#39;__new__&#39;</span><span class="p">:</span> <span class="o">&lt;</span><span class="k">function</span> <span class="n">__new__</span> <span class="k">at</span> <span class="mi">0</span><span class="n">x1091ad578</span><span class="o">&gt;</span><span class="p">,</span> <span class="s1">&#39;__init__&#39;</span><span class="p">:</span> <span class="o">&lt;</span><span class="k">function</span> <span class="n">__init__</span> <span class="k">at</span> <span class="mi">0</span><span class="n">x1091b9578</span><span class="o">&gt;</span><span class="err">}</span>
+<span class="o">============</span><span class="n">Meta_init</span><span class="o">===========</span>
+<span class="o">=============</span><span class="n">Meta_call</span><span class="o">==========</span>
+<span class="k">class</span> <span class="n">obj</span> <span class="o">&lt;</span><span class="k">class</span> <span class="s1">&#39;__main__.Foo&#39;</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="k">class</span> <span class="s1">&#39;__main__.Foo&#39;</span><span class="o">&gt;</span>
+<span class="n">Foo</span><span class="p">.</span><span class="n">__new__</span>
+<span class="n">Foo</span><span class="p">.</span><span class="n">__init__</span>
+<span class="o">=============</span><span class="n">Meta_call</span><span class="o">==========</span>
+<span class="o">&lt;</span><span class="k">class</span> <span class="s1">&#39;__main__.Foo&#39;</span><span class="o">&gt;</span>
+<span class="n">Foo</span><span class="p">.</span><span class="n">__new__</span>
+<span class="n">Foo</span><span class="p">.</span><span class="n">__init__</span>
+<span class="o">&lt;</span><span class="n">__main__</span><span class="p">.</span><span class="n">Foo</span> <span class="k">object</span> <span class="k">at</span> <span class="mi">0</span><span class="n">x1091b6910</span><span class="o">&gt;</span>
+</pre></div>
+		</div> <!--/#entry-content-->
+    		<span class="tag-links"><strong>Tagged</strong>
+ <a href="https://importcjj.github.io/tag/metaclass.html" rel="tag">metaclass</a>,  <a href="https://importcjj.github.io/tag/python.html" rel="tag">Python</a>    		</span>
+	</div> <!--/#main-->
+</div>  <!--/#post--><div class="post type-post status-publish format-standard hentry category-general" id="post">
+	<div class="entry-meta">
+		<div class="date"><a href="https://importcjj.github.io/sheng-ji-centosde-pythonban-ben.html">六 26 三月 2016</a></div>
+		<span class="byline">By <a href="https://importcjj.github.io/author/importcjj.html">importcjj</a></span>
+			<div class="comments"><a href="https://importcjj.github.io/sheng-ji-centosde-pythonban-ben.html#disqus_thread" title="Comment on 升级CentOS的Python版本">comments</a></div>
+			<span class="cat-links"><a href="https://importcjj.github.io/category/centos.html" title="View all posts in CentOS" rel="category tag">CentOS</a></span>
+	</div> <!-- /#entry-meta -->
+	<div class="main">
+		<h2 class="entry-title">
+			<a href="https://importcjj.github.io/sheng-ji-centosde-pythonban-ben.html" title="Permalink to 升级CentOS的Python版本" rel="bookmark">升级CentOS的Python版本</a>
+		</h2>
+		<div class="entry-content">
+			<p>服务器(centos)上默认的python版本是python2.6，但是平时使用的是2.7，故手动升级一下吧。</p>
+<p>下载最新版本<a href="https://www.python.org/ftp/python/2.7.10/Python-2.7.10.tgz">Python-2.7.10</a></p>
+<div class="highlight"><pre><span></span>wget https://www.python.org/ftp/python/2.7.10/Python-2.7.10.tgz
+
+tar -zxvf Python-2.7.10.tgz
+</pre></div>
+
+
+<p>提前安装依赖</p>
+<div class="highlight"><pre><span></span>yum install zlib
+yum install zlib-devel
+yum install openssl -y
+yum install openssl-devel -y
+</pre></div>
+
+
+<p>配置编译安装替换</p>
+<div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">Python</span><span class="o">-</span><span class="mi">2</span><span class="p">.</span><span class="mi">7</span><span class="p">.</span><span class="mi">10</span>
+<span class="p">.</span><span class="o">/</span><span class="n">configure</span> <span class="c1">--prefix=/usr/local/python2.7</span>
+</pre></div>
+
+
+<p>修改配置</p>
+<div class="highlight"><pre><span></span><span class="nv">cd</span> <span class="nv">Python</span><span class="o">-</span><span class="mi">2</span>.<span class="mi">7</span>.<span class="mi">10</span>
+<span class="nv">vim</span> <span class="nv">Modules</span><span class="o">/</span><span class="nv">Setup</span>
+去掉<span class="mi">456</span>行左右
+#<span class="nv">zlib</span> <span class="nv">zlibmodule</span>.<span class="nv">c</span> <span class="o">-</span><span class="nv">I</span>$<span class="ss">(</span><span class="nv">prefix</span><span class="ss">)</span><span class="o">/</span><span class="k">include</span> <span class="o">-</span><span class="nv">L</span>$<span class="ss">(</span><span class="nv">exec_prefix</span><span class="ss">)</span><span class="o">/</span><span class="nv">lib</span> <span class="o">-</span><span class="nv">lz</span>的注释
+</pre></div>
+
+
+<p>Go on...</p>
+<div class="highlight"><pre><span></span>make
+make install
+rm /usr/bin/python
+ln -s /usr/local/bin/python2.7 /usr/bin/python
+</pre></div>
+
+
+<p>修复yum</p>
+<div class="highlight"><pre><span></span>vim /usr/bin/yum
+将
+<span class="c1">#!/usr/bin/python</span>
+替换为
+<span class="c1">#!/usr/bin/python2.6(根据版本而定)</span>
+</pre></div>
+
+
+<p>安装pip</p>
+<div class="highlight"><pre><span></span>wget https://bootstrap.pypa.io/get-pip.py
+python get-pip.py
+</pre></div>
+
+
+<p>这里比较坑的一点是，以后安装的带有命令行命令的第三方库都不能直接在终端通过命令调用，而是需要使用绝对路径或者在/usr/bin中创建链接才能正常使用。关于这点我暂时还不知道如何优雅的解决它。</p>
+		</div> <!--/#entry-content-->
+    		<span class="tag-links"><strong>Tagged</strong>
+ <a href="https://importcjj.github.io/tag/centos.html" rel="tag">CentOS</a>,  <a href="https://importcjj.github.io/tag/python.html" rel="tag">Python</a>,  <a href="https://importcjj.github.io/tag/yun-wei.html" rel="tag">运维</a>    		</span>
+	</div> <!--/#main-->
+</div>  <!--/#post--><div class="navigation">
+		<div class="nav-previous">
+				<a href="https://importcjj.github.io/index2.html">
+			<span class="meta-nav">&larr;</span> Newer posts</a>
+		</div>		
+</div>
+		</div>
+		
+		<div id="footer">
+			<p>Powered by <a href="http://getpelican.com">Pelican</a>, theme by <a href="http://bunnyman.info">tBunnyMan</a>.</p>
 <script type="text/javascript">
-// index animate
-$('.animated').map(function(i, node) {
-    var timeout = (i + 1) * 270;
-    console.log(timeout);
-    setTimeout(function(){
-        $(node).addClass('fadeInLeft');
-        $(node).css('opacity', 1);
-    }, timeout);
-}.bind(this));
-
-
-// back to page top
-(function() {
-    // var $ = function(id) {return document.getElementById(id)};
-    // var scrollTop = function() {return document.documentElement.scrollTop || document.body.scrollTop};
-    // var backToTop = function() {
-    //     var fromTop = scrollTop();
-    //     if(fromTop){
-    //         window.scrollBy(0, -40);
-    //         window.timeout = setTimeout(backToTop, 5);
-    //     } else{
-    //         clearTimeout(window.timeout);
-    //     }
-    // };
-
-    // $('back-to-top').onclick = function(evt) {backToTop()};
-    $('#back-to-top').click(function() {
-        $('body').animate({'scrollTop': 0}, 800);
-    });
-
-    window.onscroll = function(evt) {
-        if($('body').scrollTop() > 500) {
-            $('#back-to-top').css('display','block');
-        } else {
-            $('#back-to-top').css('display', 'none');}
-    };
-
-}())
-</script><script type="text/javascript">
     var disqus_shortname = 'importcjj';
     (function () {
         var s = document.createElement('script'); s.async = true;
         s.type = 'text/javascript';
-        s.src = 'https://' + disqus_shortname + '.disqus.com/count.js';
+        s.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
         (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
     }());
-</script>
+</script>		</div><!-- /#footer -->
+	</div><!-- /#container -->
+	<div style="display:none"></div>
 </body>
 </html>
