@@ -3,7 +3,7 @@
 <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width">
-        <title>Signal - rust</title>
+        <title>Rust的macro小记(一)</title>
         <link rel="stylesheet" href="https://importcjj.github.io/theme/css/main.css" />
         <script type="text/javascript" src="https://importcjj.github.io/theme/js/jquery-1.12.3.min.js"></script>
 
@@ -29,7 +29,7 @@
                     <li><a href="https://importcjj.github.io/category/go.html">Go</a></li>
                     <li><a href="https://importcjj.github.io/category/markdown.html">Markdown</a></li>
                     <li><a href="https://importcjj.github.io/category/python.html">Python</a></li>
-                    <li><a href="https://importcjj.github.io/category/rust.html">Rust</a></li>
+                    <li class="active"><a href="https://importcjj.github.io/category/rust.html">Rust</a></li>
                     <li><a href="https://importcjj.github.io/category/sundry.html">sundry</a></li>
                     <li><a href="https://importcjj.github.io/category/tool.html">Tool</a></li>
                 </ul></nav>
@@ -48,10 +48,12 @@
             <label id="back-to-top" class="tool-btn"><i class="fa fa-arrow-up"></i></label>
         </div>
         <div class="content">
-    <ul id="posts-list" class="hfeed">
+<section id="content" class="body">
+  <article>
+    <div>
+    </div>
 
-            <li class="animated" style="opacity: 0"><aside id="featured" class="body">
-                <article>
+    <div class="entry-content markdown-body markdown">
 <footer class="post-info">
         <div class="meta">
         <a class="category" href="https://importcjj.github.io/category/rust.html">Rust</a>
@@ -64,28 +66,85 @@
         </div>
         <h1 class="entry-title"><a href="https://importcjj.github.io/rustde-macroxiao-ji-yi.html">Rust的macro小记(一)</a></h1>
 <p class="tags"><a><i class="fa fa-tags"></i> </a><a href="https://importcjj.github.io/tag/rust.html">rust</a> </p>
-</footer><!-- /.post-info -->                </article>
-            </aside></li><!-- /#featured -->
+</footer><!-- /.post-info -->      <div class="post-body"> <p>这篇记录一下Rust中的Function-like macros，也就是形如println!(...)形式的宏。</p>
+<p>先来一个简单的</p>
+<div class="highlight"><pre><span></span><span class="n">macro_rules</span><span class="o">!</span><span class="w"> </span><span class="n">hello</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="p">()</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">println</span><span class="o">!</span><span class="p">(</span><span class="s">&quot;Hello, World!&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 
-            <li class="animated" style="opacity: 0"><article class="hentry">
+<span class="k">fn</span> <span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">hello</span><span class="o">!</span><span class="p">();</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
 
-                <div class="entry-content">
-<footer class="post-info">
-        <div class="meta">
-        <a class="category" href="https://importcjj.github.io/category/rust.html">Rust</a>
-        <address class="vcard author">
-                        <a class="url fn" href="https://importcjj.github.io/author/importcjj.html">importcjj</a>
-        </address>
-        <abbr class="published" title="2019-09-04T16:02:14+08:00">
-                · 04 九月 2019
-        </abbr>
-        </div>
-        <h1 class="entry-title"><a href="https://importcjj.github.io/rustshi-yong-matchde-xiao-fa-xian.html">Rust使用match的小发现</a></h1>
-<p class="tags"><a><i class="fa fa-tags"></i> </a><a href="https://importcjj.github.io/tag/rust.html">rust</a> </p>
-</footer><!-- /.post-info -->                </div><!-- /.entry-content -->
-            </article></li>
-                </section><!-- /#content -->
-    </ul><!-- /#posts-list -->
+
+<p>上面这个简单的例子中， 定义了一个叫做hello的宏，匹配规则为空。作用就是在使用该宏的地方，插入代码<code>println!("Hello, World!");</code>。
+接下来我们加入匹配规则，来让这个宏更加的灵活.</p>
+<div class="highlight"><pre><span></span><span class="n">macro_rules</span><span class="o">!</span><span class="w"> </span><span class="n">hello</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="p">()</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">println</span><span class="o">!</span><span class="p">(</span><span class="s">&quot;Hello, World!&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="p">};</span><span class="w"></span>
+<span class="w">    </span><span class="p">(</span><span class="cp">$name</span>:<span class="nc">expr</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">println</span><span class="o">!</span><span class="p">(</span><span class="s">&quot;Hello, {}!&quot;</span><span class="p">,</span><span class="w"> </span><span class="cp">$name</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+
+<span class="k">fn</span> <span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">hello</span><span class="o">!</span><span class="p">();</span><span class="w"></span>
+<span class="w">    </span><span class="n">hello</span><span class="o">!</span><span class="p">(</span><span class="s">&quot;rust&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+
+
+<p>现在增加了一个匹配规则，这样编译器在在工作时会按规则匹配，使用不同的代码分支。那可不可以让<code>hello</code>支持多个参数呢?
+当然可以！宏的匹配规则支持重复模式!</p>
+<ul>
+<li><code>*</code> 模式重复零次或多次</li>
+<li><code>+</code> 模式重复一次或多次</li>
+<li><code>?</code> 模式出现零次或一次</li>
+</ul>
+<p>让我们来稍加改造一下:</p>
+<div class="highlight"><pre><span></span><span class="n">macro_rules</span><span class="o">!</span><span class="w"> </span><span class="n">hello</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="p">()</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">println</span><span class="o">!</span><span class="p">(</span><span class="s">&quot;Hello, World!&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="p">};</span><span class="w"></span>
+<span class="w">    </span><span class="p">(</span><span class="cp">$($name</span>:<span class="nc">expr</span><span class="p">),</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="cp">$(</span><span class="w"></span>
+<span class="w">            </span><span class="n">println</span><span class="o">!</span><span class="p">(</span><span class="s">&quot;Hello, {}!&quot;</span><span class="p">,</span><span class="w"> </span><span class="cp">$name</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="p">)</span><span class="o">*</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+
+<span class="k">fn</span> <span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">hello</span><span class="o">!</span><span class="p">();</span><span class="w"></span>
+<span class="w">    </span><span class="n">hello</span><span class="o">!</span><span class="p">(</span><span class="s">&quot;rust&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">hello</span><span class="o">!</span><span class="p">(</span><span class="s">&quot;rust&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;macro&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+
+
+<p>这下我们可以让<code>hello</code>接收多个参数了, 每个参数都会被展开成一句<code>print!</code>代码。如果你观察仔细的话，会发现我们在定义模式的时候有一个逗号，但是使用的参数<code>macro</code>后面没有逗号，但是规则确认正常匹配。超级方便有木有！</p> </div>
+    </div><!-- /.entry-content -->
+    <p class="copyright">©版权所有, 转载请注明出处</p>
+    <div class="comments">
+      <div id="disqus_thread"></div>
+      <script type="text/javascript">
+        var disqus_shortname = 'importcjj';
+        var disqus_identifier = 'rustde-macroxiao-ji-yi.html';
+        var disqus_url = 'https://importcjj.github.io/rustde-macroxiao-ji-yi.html';
+        (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//importcjj.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+      </script>
+      <noscript>Please enable JavaScript to view the comments.</noscript>
+    </div>
+
+  </article>
+</section>
         <section id="extras" class="body animated" style="opacity: 0">
                 <div class="blogroll">
                         <h2>Links</h2>
