@@ -1,44 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+        <title>Signal <small>rust</small></title>
+        <!-- Fonts -->
+        <link href='http://fonts.googleapis.com/css?family=Inconsolata' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=The+Girl+Next+Door' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Marcellus' rel='stylesheet' type='text/css'>
+        
+        <!-- CSS -->
+        <link rel="stylesheet" href="https://importcjj.github.io/theme/css/main.css" type="text/css" />
+        <link rel="stylesheet" href="https://importcjj.github.io/theme/css/pygments.css" type="text/css" />
+        <link rel="stylesheet" href="https://importcjj.github.io/theme/css/font-awesome.css" type="text/css" />
         <meta charset="utf-8" />
-        <title>Signal - rust</title>
-        <link rel="stylesheet" href="https://importcjj.github.io/theme/css/main.css" />
+      
 
-        <!--[if IE]>
-            <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-        <![endif]-->
+        <!-- Javascript-->
+        <script async src="http://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
+        <script async type="text/javascript"> 
+        $(function() {
+            function invisibleMenu() {
+                var now = 0;
+                var pixels = 300;
+                var opacity = -1;
+
+                var move = function() {
+                    now = $(window).scrollTop();
+                    if (now > pixels && opacity !== 0)
+                        opacity = 0;
+                    else if (now < pixels){
+                        // Depends on the position not if scrolls down or up
+                        opacity = (1 - now/pixels);
+                    }
+                    $("div.navigation").css({"opacity": opacity});
+                }
+                $(window).scroll(move);
+                move();
+            }
+            invisibleMenu();
+          });
+          </script> 
 </head>
 
 <body id="index" class="home">
-<a href="https://github.com/importcjj">
-<img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub" />
-</a>
+     <div class="navigation">
+        <ol class="nav">
+          <li><a href="https://importcjj.github.io">Blog</a> </li>
+          <li><a href="https://importcjj.github.io/archives.html">Archive</a></li>
+          <li class="current"><a href="https://importcjj.github.io/tags.html">Tags</a> </li>
+          <li><a href="https://importcjj.github.io/">RSS</a> </li>
+        </ol>
+      </div>
         <header id="banner" class="body">
-                <h1><a href="https://importcjj.github.io/">Signal </a></h1>
-                <nav><ul>
-                    <li><a href="https://importcjj.github.io/category/centos.html">CentOS</a></li>
-                    <li><a href="https://importcjj.github.io/category/docker.html">Docker</a></li>
-                    <li><a href="https://importcjj.github.io/category/emacs.html">Emacs</a></li>
-                    <li><a href="https://importcjj.github.io/category/git.html">git</a></li>
-                    <li><a href="https://importcjj.github.io/category/github.html">github</a></li>
-                    <li><a href="https://importcjj.github.io/category/go.html">Go</a></li>
-                    <li><a href="https://importcjj.github.io/category/markdown.html">Markdown</a></li>
-                    <li><a href="https://importcjj.github.io/category/python.html">Python</a></li>
-                    <li><a href="https://importcjj.github.io/category/rust.html">Rust</a></li>
-                    <li><a href="https://importcjj.github.io/category/sundry.html">sundry</a></li>
-                    <li><a href="https://importcjj.github.io/category/tool.html">Tool</a></li>
-                </ul>
-                </nav>
+                <div class="banner"><a href="https://importcjj.github.io">Signal <strong></strong></a></div>
         </header><!-- /#banner -->
-
-            <aside id="featured" class="body">
-                <article>
-                    <h1 class="entry-title"><a href="https://importcjj.github.io/rustde-macroxiao-ji-yi.html">Rust的macro小记(一)</a></h1>
-<footer class="post-info">
-        <span>四 05 九月 2019</span>
-<span>| tags: <a href="https://importcjj.github.io/tag/rust.html">rust</a></span>
-</footer><!-- /.post-info --><p>这篇记录一下Rust中的Function-like macros，也就是形如println!(...)形式的宏。</p>
+        <nav id="menu"><ul>
+        </ul></nav><!-- /#menu -->
+        <div class="box">
+        
+<section id="content">
+<div class="posts">
+    <ol id="post-list">
+        
+        <li>
+            <article class="archive">
+                <header> 
+                    <h1 class="archive-entry-title">
+                        <a href="https://importcjj.github.io/rustde-macroxiao-ji-yi.html" rel="bookmark" title="Permalink to Rust的macro小记(一)">Rust的macro小记(一)</a>
+                    </h1> 
+                </header>
+                <footer class="post-info">
+                    <abbr>
+                      四 05 九月 2019 
+                         By <a class="url fn" href="https://importcjj.github.io/author/importcjj.html">importcjj</a>
+  
+                    </abbr>
+                    <div class="entry-summary"> <p>这篇记录一下Rust中的Function-like macros，也就是形如println!(...)形式的宏。</p>
 <p>先来一个简单的</p>
 <div class="highlight"><pre><span></span><span class="n">macro_rules</span><span class="o">!</span><span class="w"> </span><span class="n">hello</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="p">()</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
@@ -77,171 +113,27 @@
 <li><code>+</code> 模式重复一次或多次</li>
 <li><code>?</code> 模式出现零次或一次</li>
 </ul>
-<p>让我们来稍加改造一下:</p>
-<div class="highlight"><pre><span></span><span class="n">macro_rules</span><span class="o">!</span><span class="w"> </span><span class="n">hello</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="p">()</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="n">println</span><span class="o">!</span><span class="p">(</span><span class="s">&quot;Hello, World!&quot;</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="p">};</span><span class="w"></span>
-<span class="w">    </span><span class="p">(</span><span class="cp">$($name</span>:<span class="nc">expr</span><span class="p">),</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="cp">$(</span><span class="w"></span>
-<span class="w">            </span><span class="n">println</span><span class="o">!</span><span class="p">(</span><span class="s">&quot;Hello, {}!&quot;</span><span class="p">,</span><span class="w"> </span><span class="cp">$name</span><span class="p">);</span><span class="w"></span>
-<span class="w">        </span><span class="p">)</span><span class="o">*</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
-
-<span class="k">fn</span> <span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="n">hello</span><span class="o">!</span><span class="p">();</span><span class="w"></span>
-<span class="w">    </span><span class="n">hello</span><span class="o">!</span><span class="p">(</span><span class="s">&quot;rust&quot;</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="n">hello</span><span class="o">!</span><span class="p">(</span><span class="s">&quot;rust&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;macro&quot;</span><span class="p">);</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
-</pre></div>
-
-
-<p>这下我们可以让<code>hello</code>接收多个参数了, 每个参数都会被展开成一句<code>print!</code>代码。如果你观察仔细的话，会发现我们在定义模式的时候有一个逗号，但是使用的参数<code>macro</code>后面没有逗号，但是规则确认正常匹配。超级方便有木有！</p>
-<p>到目前为止，我们使用的方式还是停留在函数调用的形式，接下来来一个复杂一点的例子。我相信很多人都接触过rpc，那么接下来就来定义我们自己的rpc client。</p>
-<p>首先我们确定我们想要的形式</p>
-<div class="highlight"><pre><span></span><span class="k">pub</span><span class="w"> </span><span class="k">struct</span> <span class="nc">Ping</span><span class="w"> </span><span class="p">{}</span><span class="w"></span>
-
-
-<span class="k">pub</span><span class="w"> </span><span class="k">struct</span> <span class="nc">Pong</span><span class="w"> </span><span class="p">{}</span><span class="w"></span>
-
-<span class="n">service</span><span class="o">!</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="n">service</span><span class="w"> </span><span class="n">demo</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="n">rpc</span><span class="w"> </span><span class="n">ping</span><span class="p">(</span><span class="n">Ping</span><span class="p">)</span><span class="w"> </span><span class="n">returns</span><span class="w"> </span><span class="p">(</span><span class="n">Pong</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
-
-<span class="k">fn</span> <span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="k">use</span><span class="w"> </span><span class="bp">self</span>::<span class="n">demo</span>::<span class="p">{</span><span class="n">Client</span><span class="p">};</span><span class="w"></span>
-<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Client</span>::<span class="n">new</span><span class="p">();</span><span class="w"></span>
-<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">rsp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">c</span><span class="p">.</span><span class="n">ping</span><span class="p">(</span><span class="n">Ping</span><span class="p">{});</span><span class="w"></span>
-<span class="w">    </span><span class="n">assert</span><span class="o">!</span><span class="p">(</span><span class="n">rsp</span><span class="p">,</span><span class="w"> </span><span class="n">Pong</span><span class="p">{});</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
-</pre></div>
-
-
-<p>好，我们已经知道想要的形式了，接下来就让我们实现我们的<code>service</code>宏吧!</p>
-<div class="highlight"><pre><span></span><span class="n">macro_rules</span><span class="o">!</span><span class="w"> </span><span class="n">service</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="p">(</span><span class="w"></span>
-<span class="w">        </span><span class="n">service</span><span class="w"> </span><span class="cp">$srv_name</span>:<span class="nc">ident</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">            </span><span class="cp">$(</span><span class="n">rpc</span><span class="w"> </span><span class="cp">$method_name</span>:<span class="nc">ident</span><span class="p">(</span><span class="cp">$input</span>:<span class="nc">tt</span><span class="p">)</span><span class="w"> </span><span class="n">returns</span><span class="w"> </span><span class="p">(</span><span class="cp">$output</span>:<span class="nc">tt</span><span class="p">);)</span><span class="o">*</span><span class="w"></span>
-<span class="w">        </span><span class="p">}</span><span class="w"></span>
-<span class="w">    </span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
-</pre></div>
-
-
-<p>这部分我们定义了宏的<code>rule</code>， 可以看到是对应我们之前提出的使用形式的。而且，再规则的内层使用重复的形式允许我们定义多个rpc方法。在这里给出参数的含义</p>
-<ul>
-<li>$srv_name: service的名称</li>
-<li>$method_name: rpc方法的名称</li>
-<li>$input: rpc方法的输入参数</li>
-<li>$output: rpc方法的输出结果</li>
-</ul>
-<p>然后，我们来定义宏的输出部分</p>
-<div class="highlight"><pre><span></span><span class="n">macro_rules</span><span class="o">!</span><span class="w"> </span><span class="n">service</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="p">(</span><span class="w"></span>
-<span class="w">        </span><span class="n">service</span><span class="w"> </span><span class="cp">$srv_name</span>:<span class="nc">ident</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">            </span><span class="cp">$(</span><span class="n">rpc</span><span class="w"> </span><span class="cp">$method_name</span>:<span class="nc">ident</span><span class="p">(</span><span class="cp">$input</span>:<span class="nc">tt</span><span class="p">)</span><span class="w"> </span><span class="n">returns</span><span class="w"> </span><span class="p">(</span><span class="cp">$output</span>:<span class="nc">tt</span><span class="p">);)</span><span class="o">*</span><span class="w"></span>
-<span class="w">        </span><span class="p">}</span><span class="w"></span>
-<span class="w">    </span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="k">pub</span><span class="w"> </span><span class="k">mod</span> <span class="cp">$srv_name</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">            </span><span class="cp">$(</span><span class="k">use</span><span class="w"> </span><span class="k">super</span>::<span class="cp">$input</span><span class="p">;)</span><span class="o">*</span><span class="w"></span>
-<span class="w">            </span><span class="cp">$(</span><span class="k">use</span><span class="w"> </span><span class="k">super</span>::<span class="cp">$output</span><span class="p">;)</span><span class="o">*</span><span class="w"></span>
-
-
-<span class="w">            </span><span class="k">pub</span><span class="w"> </span><span class="k">struct</span> <span class="nc">Client</span><span class="p">{</span><span class="w"></span>
-
-<span class="w">            </span><span class="p">}</span><span class="w"></span>
-
-<span class="w">            </span><span class="k">impl</span><span class="w"> </span><span class="n">Client</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">                </span><span class="k">pub</span><span class="w"> </span><span class="k">fn</span> <span class="nf">new</span><span class="p">()</span><span class="w"> </span>-&gt; <span class="nc">Self</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">                    </span><span class="n">Client</span><span class="w"> </span><span class="p">{}</span><span class="w">    </span>
-<span class="w">                </span><span class="p">}</span><span class="w"></span>
-
-<span class="w">                </span><span class="cp">$(</span><span class="w"></span>
-<span class="w">                    </span><span class="k">pub</span><span class="w"> </span><span class="k">fn</span> <span class="cp">$method_name</span><span class="p">(</span><span class="o">&amp;</span><span class="bp">self</span><span class="p">,</span><span class="w"> </span><span class="n">_input</span>: <span class="cp">$input</span><span class="p">)</span><span class="w"> </span>-&gt; <span class="cp">$output</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">                    </span><span class="p">}</span><span class="w"></span>
-<span class="w">                </span><span class="p">)</span><span class="o">*</span><span class="w"></span>
-<span class="w">            </span><span class="p">}</span><span class="w"></span>
-<span class="w">        </span><span class="p">}</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
-</pre></div>
-
-
-<p>到了这里，基本完成了输出部分的主体代码。现在遇到了一个问题，就是如何实现结果的返回呢。在实际使用中，client会接收的远程服务返回的字节数据，然后使用特定的protocol来完成结果的解码，所以我们的输入输出类型均要实现解码编码的功能，由于例子的ping方法简单，所以只在这里为方法的返回类型pong实现一个简易的解码函数.</p>
-<div class="highlight"><pre><span></span><span class="k">pub</span><span class="w"> </span><span class="k">trait</span><span class="w"> </span><span class="n">Message</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="k">fn</span> <span class="nf">decode</span><span class="p">()</span><span class="w"> </span>-&gt; <span class="nc">Self</span><span class="p">;</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
-
-<span class="k">pub</span><span class="w"> </span><span class="k">struct</span> <span class="nc">Pong</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-
-<span class="p">}</span><span class="w"></span>
-
-<span class="k">impl</span><span class="w"> </span><span class="n">Message</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">Pong</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="k">fn</span> <span class="nf">decode</span><span class="p">()</span><span class="w"> </span>-&gt; <span class="nc">Self</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="n">Pong</span><span class="p">{}</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
-</pre></div>
-
-
-<p>我们定义了一个trait <code>Message</code>, 目前只有一个decode方法。这里的decode方法简化了参数， 正常情况下会输入字节数据进行反序列化。然后，我们又为<code>Pong</code>实现了<code>Message</code>。接下来就是使用它们的时候了。</p>
-<div class="highlight"><pre><span></span><span class="n">macro_rules</span><span class="o">!</span><span class="w"> </span><span class="n">service</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="p">(</span><span class="w"></span>
-<span class="w">        </span><span class="n">service</span><span class="w"> </span><span class="cp">$srv_name</span>:<span class="nc">ident</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">            </span><span class="cp">$(</span><span class="n">rpc</span><span class="w"> </span><span class="cp">$method_name</span>:<span class="nc">ident</span><span class="p">(</span><span class="cp">$input</span>:<span class="nc">tt</span><span class="p">)</span><span class="w"> </span><span class="n">returns</span><span class="w"> </span><span class="p">(</span><span class="cp">$output</span>:<span class="nc">tt</span><span class="p">);)</span><span class="o">*</span><span class="w"></span>
-<span class="w">        </span><span class="p">}</span><span class="w"></span>
-<span class="w">    </span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="k">pub</span><span class="w"> </span><span class="k">mod</span> <span class="cp">$srv_name</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">            </span><span class="c1">// 引入Message</span>
-<span class="w">            </span><span class="k">use</span><span class="w"> </span><span class="k">super</span>::<span class="n">Message</span><span class="p">;</span><span class="w"></span>
-<span class="w">            </span><span class="cp">$(</span><span class="k">use</span><span class="w"> </span><span class="k">super</span>::<span class="cp">$input</span><span class="p">;)</span><span class="o">*</span><span class="w"></span>
-<span class="w">            </span><span class="cp">$(</span><span class="k">use</span><span class="w"> </span><span class="k">super</span>::<span class="cp">$output</span><span class="p">;)</span><span class="o">*</span><span class="w"></span>
-
-
-<span class="w">            </span><span class="k">pub</span><span class="w"> </span><span class="k">struct</span> <span class="nc">Client</span><span class="p">{</span><span class="w"></span>
-
-<span class="w">            </span><span class="p">}</span><span class="w"></span>
-
-<span class="w">            </span><span class="k">impl</span><span class="w"> </span><span class="n">Client</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">                </span><span class="k">pub</span><span class="w"> </span><span class="k">fn</span> <span class="nf">new</span><span class="p">()</span><span class="w"> </span>-&gt; <span class="nc">Self</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">                    </span><span class="n">Client</span><span class="w"> </span><span class="p">{}</span><span class="w">    </span>
-<span class="w">                </span><span class="p">}</span><span class="w"></span>
-
-<span class="w">                </span><span class="cp">$(</span><span class="w"></span>
-<span class="w">                    </span><span class="k">pub</span><span class="w"> </span><span class="k">fn</span> <span class="cp">$method_name</span><span class="p">(</span><span class="o">&amp;</span><span class="bp">self</span><span class="p">,</span><span class="w"> </span><span class="n">_input</span>: <span class="cp">$input</span><span class="p">)</span><span class="w"> </span>-&gt; <span class="cp">$output</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">                        </span><span class="c1">// TODO call the remote server</span>
-<span class="w">                        </span><span class="cp">$output</span>::<span class="n">decode</span><span class="p">();</span><span class="w"></span>
-<span class="w">                    </span><span class="p">}</span><span class="w"></span>
-<span class="w">                </span><span class="p">)</span><span class="o">*</span><span class="w"></span>
-<span class="w">            </span><span class="p">}</span><span class="w"></span>
-<span class="w">        </span><span class="p">}</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
-</pre></div>
-
-
-<p>终于顺利完成啦!</p><p><a href="https://importcjj.github.io/rustde-macroxiao-ji-yi.html#disqus_thread">comments</a></p>                </article>
-            </aside><!-- /#featured -->
-                <section id="content" class="body">
-                    <h1>Other articles</h1>
-                    <ol id="posts-list" class="hfeed">
-
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="https://importcjj.github.io/rustshi-yong-matchde-xiao-fa-xian.html" rel="bookmark"
-                           title="Permalink to Rust使用match的小发现">Rust使用match的小发现</a></h1>
+<p>让我们来稍加改造一下 ...</p>
+                    <a href="https://importcjj.github.io/rustde-macroxiao-ji-yi.html">read more</a></div>
+                </footer><!-- /.post-info -->
+                <!-- /.entry-content -->
+            </article>
+        </li>
+        
+        <li>
+            <article class="archive">
+                <header> 
+                    <h1 class="archive-entry-title">
+                        <a href="https://importcjj.github.io/rustshi-yong-matchde-xiao-fa-xian.html" rel="bookmark" title="Permalink to Rust使用match的小发现">Rust使用match的小发现</a>
+                    </h1> 
                 </header>
-
-                <div class="entry-content">
-<footer class="post-info">
-        <span>三 04 九月 2019</span>
-<span>| tags: <a href="https://importcjj.github.io/tag/rust.html">rust</a></span>
-</footer><!-- /.post-info -->                <p>今天在读一个库的代码时候，发现了之前使用match的时候没有注意的一个地方。</p>
+                <footer class="post-info">
+                    <abbr>
+                      三 04 九月 2019 
+                         By <a class="url fn" href="https://importcjj.github.io/author/importcjj.html">importcjj</a>
+  
+                    </abbr>
+                    <div class="entry-summary"> <p>今天在读一个库的代码时候，发现了之前使用match的时候没有注意的一个地方。</p>
 <div class="highlight"><pre><span></span><span class="k">enum</span> <span class="nc">Foo</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="n">One</span><span class="p">,</span><span class="w"></span>
 <span class="w">    </span><span class="n">Two</span><span class="p">,</span><span class="w"></span>
@@ -260,49 +152,41 @@
 
 
 <p>这里没有使用<code>_</code>去匹配其他分支，而是随意指定了一个名字<code>others</code>。貌似对可读性有一定提升。</p>
-                <a class="readmore" href="https://importcjj.github.io/rustshi-yong-matchde-xiao-fa-xian.html">read more</a>
-<p><a href="https://importcjj.github.io/rustshi-yong-matchde-xiao-fa-xian.html#disqus_thread">comments</a></p>                </div><!-- /.entry-content -->
-            </article></li>
-            </ol><!-- /#posts-list -->
+                    <a href="https://importcjj.github.io/rustshi-yong-matchde-xiao-fa-xian.html">read more</a></div>
+                </footer><!-- /.post-info -->
+                <!-- /.entry-content -->
+            </article>
+        </li>
+    </ol><!-- /#posts-list -->
+</div>
 <p class="paginator">
     Page 1 / 1
 </p>
-            </section><!-- /#content -->
-        <section id="extras" class="body">
-                <div class="blogroll">
-                        <h2>blogroll</h2>
-                        <ul>
-                            <li><a href="http://chihiro.moe">Slade</a></li>
-                            <li><a href="http://shenyizhou.github.io">无主之地</a></li>
-                            <li><a href="http://yuan0.github.io">Junifer</a></li>
-                            <li><a href="http://getpelican.com/">Pelican</a></li>
-                            <li><a href="http://python.org/">Python.org</a></li>
-                            <li><a href="http://jinja.pocoo.org/">Jinja2</a></li>
-                            <li><a href="http://dongweiming.github.io/Expert-Python/#1">Expert-python</a></li>
-                        </ul>
-                </div><!-- /.blogroll -->
+</section><!-- /#content -->
+            <hr/>
+            <footer id="contentinfo" class="footer">
+                <div>
+                    <a href="https://importcjj.github.io">importcjj</a> (2012)
+                </div>
+                <div>
+                    This work is licensed under <a rel="license" href="http://opensource.org/licenses/bsd-3-clause">3 clause BSD</a>. Source code available on <a rel="source code" href="https://github.com/slok/blog">Github</a>
+                </div>
+                <div>
+                    powered by <a href="http://getpelican.com/">Pelican</a>
+                    and <a href="http://python.org">Python</a>. 
+                    <a href="http://github.com/slok/iris">Theme</a> by <a href="http://xlarrakoetxea.org">Xabier Larrakoetxea</a> based on <a href="http://flask.pocoo.org/">Flask</a> theme
+                </div>
+                <div>
+                    Social icons (font awesome) by <a href="http://fortawesome.github.com/Font-Awesome/"> fort awesome</a>.
+                    <a href="http://www.google.com/webfonts/specimen/The+Girl+Next+Door">Title</a>, <a href="http://www.google.com/webfonts/specimen/Marcellus">headers</a> and <a href="http://www.google.com/webfonts/specimen/Inconsolata">source code</a> fonts by google fonts
+                </div>
                 <div class="social">
-                        <h2>social</h2>
-                        <ul>
+                        <a href="#"><i class="icon-You can add links in your config file"></i>  </a>
+                        <a href="#"><i class="icon-Another social link"></i>  </a>
+                </div>
+            </footer><!-- /#contentinfo -->
+        </div>
+        <!--Add statistycs-->
 
-                            <li><a href="#">You can add links in your config file</a></li>
-                            <li><a href="#">Another social link</a></li>
-                        </ul>
-                </div><!-- /.social -->
-        </section><!-- /#extras -->
-
-        <footer id="contentinfo" class="body">
-                <p>Powered by <a href="http://getpelican.com/">Pelican</a>. Theme <a href="https://github.com/blueicefield/pelican-blueidea/">blueidea</a>, inspired by the default theme.</p>
-        </footer><!-- /#contentinfo -->
-
-<script type="text/javascript">
-    var disqus_shortname = 'importcjj';
-    (function () {
-        var s = document.createElement('script'); s.async = true;
-        s.type = 'text/javascript';
-        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
-        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
-    }());
-</script>
 </body>
 </html>

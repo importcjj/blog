@@ -1,44 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+        <title>Signal <small>Go</small></title>
+        <!-- Fonts -->
+        <link href='http://fonts.googleapis.com/css?family=Inconsolata' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=The+Girl+Next+Door' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Marcellus' rel='stylesheet' type='text/css'>
+        
+        <!-- CSS -->
+        <link rel="stylesheet" href="https://importcjj.github.io/theme/css/main.css" type="text/css" />
+        <link rel="stylesheet" href="https://importcjj.github.io/theme/css/pygments.css" type="text/css" />
+        <link rel="stylesheet" href="https://importcjj.github.io/theme/css/font-awesome.css" type="text/css" />
         <meta charset="utf-8" />
-        <title>Signal - Go</title>
-        <link rel="stylesheet" href="https://importcjj.github.io/theme/css/main.css" />
+      
 
-        <!--[if IE]>
-            <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-        <![endif]-->
+        <!-- Javascript-->
+        <script async src="http://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
+        <script async type="text/javascript"> 
+        $(function() {
+            function invisibleMenu() {
+                var now = 0;
+                var pixels = 300;
+                var opacity = -1;
+
+                var move = function() {
+                    now = $(window).scrollTop();
+                    if (now > pixels && opacity !== 0)
+                        opacity = 0;
+                    else if (now < pixels){
+                        // Depends on the position not if scrolls down or up
+                        opacity = (1 - now/pixels);
+                    }
+                    $("div.navigation").css({"opacity": opacity});
+                }
+                $(window).scroll(move);
+                move();
+            }
+            invisibleMenu();
+          });
+          </script> 
 </head>
 
 <body id="index" class="home">
-<a href="https://github.com/importcjj">
-<img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub" />
-</a>
+     <div class="navigation">
+        <ol class="nav">
+          <li><a href="https://importcjj.github.io">Blog</a> </li>
+          <li><a href="https://importcjj.github.io/archives.html">Archive</a></li>
+          <li class="current"><a href="https://importcjj.github.io/tags.html">Tags</a> </li>
+          <li><a href="https://importcjj.github.io/">RSS</a> </li>
+        </ol>
+      </div>
         <header id="banner" class="body">
-                <h1><a href="https://importcjj.github.io/">Signal </a></h1>
-                <nav><ul>
-                    <li><a href="https://importcjj.github.io/category/centos.html">CentOS</a></li>
-                    <li><a href="https://importcjj.github.io/category/docker.html">Docker</a></li>
-                    <li><a href="https://importcjj.github.io/category/emacs.html">Emacs</a></li>
-                    <li><a href="https://importcjj.github.io/category/git.html">git</a></li>
-                    <li><a href="https://importcjj.github.io/category/github.html">github</a></li>
-                    <li><a href="https://importcjj.github.io/category/go.html">Go</a></li>
-                    <li><a href="https://importcjj.github.io/category/markdown.html">Markdown</a></li>
-                    <li><a href="https://importcjj.github.io/category/python.html">Python</a></li>
-                    <li><a href="https://importcjj.github.io/category/rust.html">Rust</a></li>
-                    <li><a href="https://importcjj.github.io/category/sundry.html">sundry</a></li>
-                    <li><a href="https://importcjj.github.io/category/tool.html">Tool</a></li>
-                </ul>
-                </nav>
+                <div class="banner"><a href="https://importcjj.github.io">Signal <strong></strong></a></div>
         </header><!-- /#banner -->
-
-            <aside id="featured" class="body">
-                <article>
-                    <h1 class="entry-title"><a href="https://importcjj.github.io/golangjie-kou-xing-han-shu.html">Golang接口型函数</a></h1>
-<footer class="post-info">
-        <span>一 16 一月 2017</span>
-<span>| tags: <a href="https://importcjj.github.io/tag/go.html">Go</a></span>
-</footer><!-- /.post-info --><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nx">main</span>
+        <nav id="menu"><ul>
+        </ul></nav><!-- /#menu -->
+        <div class="box">
+        
+<section id="content">
+<div class="posts">
+    <ol id="post-list">
+        
+        <li>
+            <article class="archive">
+                <header> 
+                    <h1 class="archive-entry-title">
+                        <a href="https://importcjj.github.io/golangjie-kou-xing-han-shu.html" rel="bookmark" title="Permalink to Golang接口型函数">Golang接口型函数</a>
+                    </h1> 
+                </header>
+                <footer class="post-info">
+                    <abbr>
+                      一 16 一月 2017 
+                         By <a class="url fn" href="https://importcjj.github.io/author/importcjj.html">importcjj</a>
+  
+                    </abbr>
+                    <div class="entry-summary"> <div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nx">main</span>
 
 <span class="kn">import</span> <span class="p">(</span>
     <span class="s">&quot;fmt&quot;</span>
@@ -60,37 +96,27 @@
     <span class="p">}</span>
 <span class="p">}</span>
 
-<span class="kd">func</span> <span class="nx">EachFunc</span><span class="p">(</span><span class="nx">m</span> <span class="kd">map</span><span class="p">[</span><span class="kd">interface</span><span class="p">{}]</span><span class="kd">interface</span><span class="p">{},</span> <span class="nx">f</span> <span class="kd">func</span><span class="p">(</span><span class="nx">k</span><span class="p">,</span> <span class="nx">v</span> <span class="kd">interface</span><span class="p">{}))</span> <span class="p">{</span>
-    <span class="nx">Each</span><span class="p">(</span><span class="nx">m</span><span class="p">,</span> <span class="nx">HandlerFunc</span><span class="p">(</span><span class="nx">f</span><span class="p">))</span>
-<span class="p">}</span>
-
-<span class="kd">func</span> <span class="nx">SayHello</span><span class="p">(</span><span class="nx">name</span><span class="p">,</span> <span class="nx">age</span> <span class="kd">interface</span><span class="p">{})</span> <span class="p">{</span>
-    <span class="nx">fmt</span><span class="p">.</span><span class="nx">Printf</span><span class="p">(</span><span class="s">&quot;Hello, I am %s, %d years old!\n&quot;</span><span class="p">,</span> <span class="nx">name</span><span class="p">,</span> <span class="nx">age</span><span class="p">)</span>
-<span class="p">}</span>
-
-<span class="kd">func</span> <span class="nx">main</span><span class="p">()</span> <span class="p">{</span>
-    <span class="nx">students</span> <span class="o">:=</span> <span class="nb">make</span><span class="p">(</span><span class="kd">map</span><span class="p">[</span><span class="kd">interface</span><span class="p">{}]</span><span class="kd">interface</span><span class="p">{})</span>
-    <span class="nx">students</span><span class="p">[</span><span class="s">&quot;Marry&quot;</span><span class="p">]</span> <span class="p">=</span> <span class="mi">20</span>
-    <span class="nx">students</span><span class="p">[</span><span class="s">&quot;Tom&quot;</span><span class="p">]</span> <span class="p">=</span> <span class="mi">23</span>
-    <span class="nx">EachFunc</span><span class="p">(</span><span class="nx">students</span><span class="p">,</span> <span class="nx">SayHello</span><span class="p">)</span>
-<span class="p">}</span>
-</pre></div><p><a href="https://importcjj.github.io/golangjie-kou-xing-han-shu.html#disqus_thread">comments</a></p>                </article>
-            </aside><!-- /#featured -->
-                <section id="content" class="body">
-                    <h1>Other articles</h1>
-                    <ol id="posts-list" class="hfeed">
-
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="https://importcjj.github.io/golangbian-cheng-lian-xi.html" rel="bookmark"
-                           title="Permalink to Golang编程练习">Golang编程练习</a></h1>
+<span class="kd">func</span> <span class="nx">EachFunc</span><span class="p">(</span><span class="nx">m</span> <span class="kd">map</span><span class="p">[</span><span class="kd">interface</span><span class="p">{}]</span><span class="kd">interface ...</span></pre></div>
+                    <a href="https://importcjj.github.io/golangjie-kou-xing-han-shu.html">read more</a></div>
+                </footer><!-- /.post-info -->
+                <!-- /.entry-content -->
+            </article>
+        </li>
+        
+        <li>
+            <article class="archive">
+                <header> 
+                    <h1 class="archive-entry-title">
+                        <a href="https://importcjj.github.io/golangbian-cheng-lian-xi.html" rel="bookmark" title="Permalink to Golang编程练习">Golang编程练习</a>
+                    </h1> 
                 </header>
-
-                <div class="entry-content">
-<footer class="post-info">
-        <span>二 10 五月 2016</span>
-<span>| tags: <a href="https://importcjj.github.io/tag/go.html">Go</a></span>
-</footer><!-- /.post-info -->                <p>完整代码 <a href="https://github.com/importcjj/fooutils">戳这里</a></p>
+                <footer class="post-info">
+                    <abbr>
+                      二 10 五月 2016 
+                         By <a class="url fn" href="https://importcjj.github.io/author/importcjj.html">importcjj</a>
+  
+                    </abbr>
+                    <div class="entry-summary"> <p>完整代码 <a href="https://github.com/importcjj/fooutils">戳这里</a></p>
 <h5>1. 验证给定字符串是否为合法身份证号码</h5>
 <p>算法：前17位纯数字分别乘以相应的因子，然后求和后除以11取余数。使用该余数取得校验字节数组中相位位置的字节与身份证最后一位字节做比较。如果相等即为合法身份证！</p>
 <div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nx">main</span>
@@ -105,49 +131,41 @@
 
 <span class="kd">func</span> <span class="nx">IsValidIDCode</span><span class="p">(</span><span class="nx">id</span> <span class="kt">string</span><span class="p">)</span> <span class="kt">bool</span> <span class="p">{</span>
     <span class="nx">idBytes</span> <span class="o">:=</span> <span class="p">[]</span><span class="nb">byte</span><span class="p">(</span><span class="nx">id ...</span></pre></div>
-                <a class="readmore" href="https://importcjj.github.io/golangbian-cheng-lian-xi.html">read more</a>
-<p><a href="https://importcjj.github.io/golangbian-cheng-lian-xi.html#disqus_thread">comments</a></p>                </div><!-- /.entry-content -->
-            </article></li>
-            </ol><!-- /#posts-list -->
+                    <a href="https://importcjj.github.io/golangbian-cheng-lian-xi.html">read more</a></div>
+                </footer><!-- /.post-info -->
+                <!-- /.entry-content -->
+            </article>
+        </li>
+    </ol><!-- /#posts-list -->
+</div>
 <p class="paginator">
     Page 1 / 1
 </p>
-            </section><!-- /#content -->
-        <section id="extras" class="body">
-                <div class="blogroll">
-                        <h2>blogroll</h2>
-                        <ul>
-                            <li><a href="http://chihiro.moe">Slade</a></li>
-                            <li><a href="http://shenyizhou.github.io">无主之地</a></li>
-                            <li><a href="http://yuan0.github.io">Junifer</a></li>
-                            <li><a href="http://getpelican.com/">Pelican</a></li>
-                            <li><a href="http://python.org/">Python.org</a></li>
-                            <li><a href="http://jinja.pocoo.org/">Jinja2</a></li>
-                            <li><a href="http://dongweiming.github.io/Expert-Python/#1">Expert-python</a></li>
-                        </ul>
-                </div><!-- /.blogroll -->
+</section><!-- /#content -->
+            <hr/>
+            <footer id="contentinfo" class="footer">
+                <div>
+                    <a href="https://importcjj.github.io">importcjj</a> (2012)
+                </div>
+                <div>
+                    This work is licensed under <a rel="license" href="http://opensource.org/licenses/bsd-3-clause">3 clause BSD</a>. Source code available on <a rel="source code" href="https://github.com/slok/blog">Github</a>
+                </div>
+                <div>
+                    powered by <a href="http://getpelican.com/">Pelican</a>
+                    and <a href="http://python.org">Python</a>. 
+                    <a href="http://github.com/slok/iris">Theme</a> by <a href="http://xlarrakoetxea.org">Xabier Larrakoetxea</a> based on <a href="http://flask.pocoo.org/">Flask</a> theme
+                </div>
+                <div>
+                    Social icons (font awesome) by <a href="http://fortawesome.github.com/Font-Awesome/"> fort awesome</a>.
+                    <a href="http://www.google.com/webfonts/specimen/The+Girl+Next+Door">Title</a>, <a href="http://www.google.com/webfonts/specimen/Marcellus">headers</a> and <a href="http://www.google.com/webfonts/specimen/Inconsolata">source code</a> fonts by google fonts
+                </div>
                 <div class="social">
-                        <h2>social</h2>
-                        <ul>
+                        <a href="#"><i class="icon-You can add links in your config file"></i>  </a>
+                        <a href="#"><i class="icon-Another social link"></i>  </a>
+                </div>
+            </footer><!-- /#contentinfo -->
+        </div>
+        <!--Add statistycs-->
 
-                            <li><a href="#">You can add links in your config file</a></li>
-                            <li><a href="#">Another social link</a></li>
-                        </ul>
-                </div><!-- /.social -->
-        </section><!-- /#extras -->
-
-        <footer id="contentinfo" class="body">
-                <p>Powered by <a href="http://getpelican.com/">Pelican</a>. Theme <a href="https://github.com/blueicefield/pelican-blueidea/">blueidea</a>, inspired by the default theme.</p>
-        </footer><!-- /#contentinfo -->
-
-<script type="text/javascript">
-    var disqus_shortname = 'importcjj';
-    (function () {
-        var s = document.createElement('script'); s.async = true;
-        s.type = 'text/javascript';
-        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
-        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
-    }());
-</script>
 </body>
 </html>

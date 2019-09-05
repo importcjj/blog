@@ -1,44 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+        <title>Signal <small>生成器</small></title>
+        <!-- Fonts -->
+        <link href='http://fonts.googleapis.com/css?family=Inconsolata' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=The+Girl+Next+Door' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Marcellus' rel='stylesheet' type='text/css'>
+        
+        <!-- CSS -->
+        <link rel="stylesheet" href="https://importcjj.github.io/theme/css/main.css" type="text/css" />
+        <link rel="stylesheet" href="https://importcjj.github.io/theme/css/pygments.css" type="text/css" />
+        <link rel="stylesheet" href="https://importcjj.github.io/theme/css/font-awesome.css" type="text/css" />
         <meta charset="utf-8" />
-        <title>Signal - 生成器</title>
-        <link rel="stylesheet" href="https://importcjj.github.io/theme/css/main.css" />
+      
 
-        <!--[if IE]>
-            <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-        <![endif]-->
+        <!-- Javascript-->
+        <script async src="http://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
+        <script async type="text/javascript"> 
+        $(function() {
+            function invisibleMenu() {
+                var now = 0;
+                var pixels = 300;
+                var opacity = -1;
+
+                var move = function() {
+                    now = $(window).scrollTop();
+                    if (now > pixels && opacity !== 0)
+                        opacity = 0;
+                    else if (now < pixels){
+                        // Depends on the position not if scrolls down or up
+                        opacity = (1 - now/pixels);
+                    }
+                    $("div.navigation").css({"opacity": opacity});
+                }
+                $(window).scroll(move);
+                move();
+            }
+            invisibleMenu();
+          });
+          </script> 
 </head>
 
 <body id="index" class="home">
-<a href="https://github.com/importcjj">
-<img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub" />
-</a>
+     <div class="navigation">
+        <ol class="nav">
+          <li><a href="https://importcjj.github.io">Blog</a> </li>
+          <li><a href="https://importcjj.github.io/archives.html">Archive</a></li>
+          <li class="current"><a href="https://importcjj.github.io/tags.html">Tags</a> </li>
+          <li><a href="https://importcjj.github.io/">RSS</a> </li>
+        </ol>
+      </div>
         <header id="banner" class="body">
-                <h1><a href="https://importcjj.github.io/">Signal </a></h1>
-                <nav><ul>
-                    <li><a href="https://importcjj.github.io/category/centos.html">CentOS</a></li>
-                    <li><a href="https://importcjj.github.io/category/docker.html">Docker</a></li>
-                    <li><a href="https://importcjj.github.io/category/emacs.html">Emacs</a></li>
-                    <li><a href="https://importcjj.github.io/category/git.html">git</a></li>
-                    <li><a href="https://importcjj.github.io/category/github.html">github</a></li>
-                    <li><a href="https://importcjj.github.io/category/go.html">Go</a></li>
-                    <li><a href="https://importcjj.github.io/category/markdown.html">Markdown</a></li>
-                    <li><a href="https://importcjj.github.io/category/python.html">Python</a></li>
-                    <li><a href="https://importcjj.github.io/category/rust.html">Rust</a></li>
-                    <li><a href="https://importcjj.github.io/category/sundry.html">sundry</a></li>
-                    <li><a href="https://importcjj.github.io/category/tool.html">Tool</a></li>
-                </ul>
-                </nav>
+                <div class="banner"><a href="https://importcjj.github.io">Signal <strong></strong></a></div>
         </header><!-- /#banner -->
-
-            <aside id="featured" class="body">
-                <article>
-                    <h1 class="entry-title"><a href="https://importcjj.github.io/python-yieldxiao-ji.html">Python yield小记</a></h1>
-<footer class="post-info">
-        <span>日 27 三月 2016</span>
-<span>| tags: <a href="https://importcjj.github.io/tag/yield.html">yield</a><a href="https://importcjj.github.io/tag/sheng-cheng-qi.html">生成器</a><a href="https://importcjj.github.io/tag/python.html">Python</a></span>
-</footer><!-- /.post-info --><h4>yeild</h4>
+        <nav id="menu"><ul>
+        </ul></nav><!-- /#menu -->
+        <div class="box">
+        
+<section id="content">
+<div class="posts">
+    <ol id="post-list">
+        
+        <li>
+            <article class="archive">
+                <header> 
+                    <h1 class="archive-entry-title">
+                        <a href="https://importcjj.github.io/python-yieldxiao-ji.html" rel="bookmark" title="Permalink to Python yield小记">Python yield小记</a>
+                    </h1> 
+                </header>
+                <footer class="post-info">
+                    <abbr>
+                      日 27 三月 2016 
+                         By <a class="url fn" href="https://importcjj.github.io/author/importcjj.html">importcjj</a>
+  
+                    </abbr>
+                    <div class="entry-summary"> <h4>yeild</h4>
 <p><em>yield</em> 一般搭配函数来定义一个Generator(生成器)</p>
 <p>一个简单的例子:</p>
 <div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f</span><span class="p">():</span>
@@ -55,138 +91,42 @@
 <span class="n">Today</span> <span class="ow">is</span> <span class="mf">7.21</span>
 <span class="mi">6</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">i</span><span class="o">.</span><span class="n">next</span><span class="p">()</span>
-<span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">):</span>
-  <span class="n">File</span> <span class="s2">&quot;&lt;stdin&gt;&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">1</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">StopIteration</span>
-</pre></div>
-
-
-<p>生成器调next()或send()方法后会执行函数体内的语句，执行到yield语句后停止, 并返回yield语句的参数，上例中就是 6。再次使用next()或send()会从停止处继续执行，由于之后已经没有yield了，所以会raise StopTteration异常。</p>
-<p>有时候可能会遇到这样的情况</p>
-<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f</span><span class="p">():</span>
-    <span class="n">m</span> <span class="o">=</span> <span class="mi">5</span>
-    <span class="n">m</span> <span class="o">=</span> <span class="k">yield</span> <span class="mi">6</span>
-    <span class="k">print</span> <span class="s2">&quot;m = &quot;</span><span class="p">,</span> <span class="n">m</span>
-</pre></div>
-
-
-<p>上例中 m 会得到（yield 6）这个式子的值。那么，这个值是多少呢？取决于i.next()和i.send(value)。如果是next，则是None。send的话就是value。</p>
-<p><em>can't send non-None value to a just-started generator</em> 第一次调用只能是
-i.next()或者i.send(None)</p>
-<p>这里需要注意一点，第一次next会在执行(yield 6)后停止，并不会执行m的赋值(重新绑定，毕竟python不太一样)。m的值是轮到下一个next或send来改变的。</p>
-<div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="k">def</span> <span class="nf">f</span><span class="p">():</span>
-<span class="o">...</span>     <span class="n">m</span> <span class="o">=</span> <span class="mi">5</span> 
-<span class="o">...</span>     <span class="n">m</span> <span class="o">=</span> <span class="k">yield</span> <span class="mi">6</span>
-<span class="o">...</span>     <span class="k">print</span> <span class="s2">&quot;m = &quot;</span><span class="p">,</span> <span class="n">m</span>
-<span class="o">...</span> 
-<span class="o">&gt;&gt;&gt;</span> <span class="n">i</span> <span class="o">=</span> <span class="n">f</span><span class="p">()</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">i</span><span class="o">.</span><span class="n">next</span><span class="p">()</span>
-<span class="mi">6</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">i</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="mi">7</span><span class="p">)</span>
-<span class="n">m</span> <span class="o">=</span>  <span class="mi">7</span>
-<span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">):</span>
-  <span class="n">File</span> <span class="s2">&quot;&lt;stdin&gt;&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">1</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">StopIteration</span>
-</pre></div>
-
-
-<h4>使用</h4>
-<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">fibonacci</span><span class="p">(</span><span class="n">i</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;关于斐波那契数列的生成器</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-    <span class="k">if</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
-        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">,</span> <span class="n">i</span>
-    <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-        <span class="k">yield</span> <span class="mi">0</span>
-
-    <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span>
-    <span class="k">while</span> <span class="n">count</span> <span class="o">&lt;=</span> <span class="n">i</span><span class="p">:</span>
-        <span class="k">yield</span> <span class="n">a</span>
-        <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">b</span><span class="p">,</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
-        <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
-
-<span class="o">&gt;&gt;&gt;</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">fibonacci</span><span class="p">(</span><span class="mi">13</span><span class="p">):</span>
-<span class="o">...</span>     <span class="k">print</span> <span class="n">i</span><span class="p">,</span>
-<span class="o">...</span> 
-<span class="mi">0</span> <span class="mi">1</span> <span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span> <span class="mi">5</span> <span class="mi">8</span> <span class="mi">13</span> <span class="mi">21</span> <span class="mi">34</span> <span class="mi">55</span> <span class="mi">89</span> <span class="mi">144</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">fibonacci</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
-<span class="o">...</span>     <span class="k">print</span> <span class="n">i</span><span class="p">,</span>
-<span class="o">...</span> 
-<span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">):</span>
-  <span class="n">File</span> <span class="s2">&quot;&lt;stdin&gt;&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">1</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-  <span class="n">File</span> <span class="s2">&quot;_yield.py&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">5</span><span class="p">,</span> <span class="ow">in</span> <span class="n">fibonacci</span>
-    <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">,</span> <span class="n">i</span>
-<span class="ne">ValueError</span><span class="p">:</span> <span class="o">-</span><span class="mi">1</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">fibonacci</span><span class="p">(</span><span class="mi">0</span><span class="p">):</span>
-<span class="o">...</span>     <span class="k">print</span> <span class="n">i</span><span class="p">,</span>
-<span class="o">...</span> 
-<span class="mi">0</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">fibonacci</span><span class="p">(</span><span class="mi">1</span><span class="p">):</span>
-<span class="o">...</span>     <span class="k">print</span> <span class="n">i</span>
-<span class="o">...</span> 
-<span class="mi">0</span> <span class="mi">1</span>
-</pre></div>
-
-
-<p>随便写了一个关于斐波拉切数列的生成器，并且遍历了它。</p>
-<h4>终止生成器</h4>
-<div class="highlight"><pre><span></span><span class="n">fib</span> <span class="o">=</span> <span class="n">fibonacci</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span>
-<span class="n">fib</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
-</pre></div>
-
-
-<div class="highlight"><pre><span></span><span class="n">fib</span><span class="o">.</span><span class="n">throw</span><span class="p">(</span><span class="ne">GeneratorExit</span><span class="p">)</span>
-<span class="c1"># GeneratorExit 继承自 BaseException</span>
-</pre></div>
-
-
-<p>使用这两种方法之后，再去访问生成器的方法，会触发StopIteration异常。遍历的话也不会返回有效值。</p>
-<h4>最后</h4>
-<p>关于yield暂时只想到这些，以后可能补充。生成器不一定还能通过别的方式定义。比如</p>
-<div class="highlight"><pre><span></span><span class="p">(</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">6</span><span class="p">))</span>
-</pre></div><p><a href="https://importcjj.github.io/python-yieldxiao-ji.html#disqus_thread">comments</a></p>                </article>
+<span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last ...</span></pre></div>
+                    <a href="https://importcjj.github.io/python-yieldxiao-ji.html">read more</a></div>
+                </footer><!-- /.post-info -->
+                <!-- /.entry-content -->
+            </article>
+        </li>
+    </ol><!-- /#posts-list -->
+</div>
 <p class="paginator">
     Page 1 / 1
 </p>
-            </aside><!-- /#featured -->
-            </ol><!-- /#posts-list -->
-            </section><!-- /#content -->
-        <section id="extras" class="body">
-                <div class="blogroll">
-                        <h2>blogroll</h2>
-                        <ul>
-                            <li><a href="http://chihiro.moe">Slade</a></li>
-                            <li><a href="http://shenyizhou.github.io">无主之地</a></li>
-                            <li><a href="http://yuan0.github.io">Junifer</a></li>
-                            <li><a href="http://getpelican.com/">Pelican</a></li>
-                            <li><a href="http://python.org/">Python.org</a></li>
-                            <li><a href="http://jinja.pocoo.org/">Jinja2</a></li>
-                            <li><a href="http://dongweiming.github.io/Expert-Python/#1">Expert-python</a></li>
-                        </ul>
-                </div><!-- /.blogroll -->
+</section><!-- /#content -->
+            <hr/>
+            <footer id="contentinfo" class="footer">
+                <div>
+                    <a href="https://importcjj.github.io">importcjj</a> (2012)
+                </div>
+                <div>
+                    This work is licensed under <a rel="license" href="http://opensource.org/licenses/bsd-3-clause">3 clause BSD</a>. Source code available on <a rel="source code" href="https://github.com/slok/blog">Github</a>
+                </div>
+                <div>
+                    powered by <a href="http://getpelican.com/">Pelican</a>
+                    and <a href="http://python.org">Python</a>. 
+                    <a href="http://github.com/slok/iris">Theme</a> by <a href="http://xlarrakoetxea.org">Xabier Larrakoetxea</a> based on <a href="http://flask.pocoo.org/">Flask</a> theme
+                </div>
+                <div>
+                    Social icons (font awesome) by <a href="http://fortawesome.github.com/Font-Awesome/"> fort awesome</a>.
+                    <a href="http://www.google.com/webfonts/specimen/The+Girl+Next+Door">Title</a>, <a href="http://www.google.com/webfonts/specimen/Marcellus">headers</a> and <a href="http://www.google.com/webfonts/specimen/Inconsolata">source code</a> fonts by google fonts
+                </div>
                 <div class="social">
-                        <h2>social</h2>
-                        <ul>
+                        <a href="#"><i class="icon-You can add links in your config file"></i>  </a>
+                        <a href="#"><i class="icon-Another social link"></i>  </a>
+                </div>
+            </footer><!-- /#contentinfo -->
+        </div>
+        <!--Add statistycs-->
 
-                            <li><a href="#">You can add links in your config file</a></li>
-                            <li><a href="#">Another social link</a></li>
-                        </ul>
-                </div><!-- /.social -->
-        </section><!-- /#extras -->
-
-        <footer id="contentinfo" class="body">
-                <p>Powered by <a href="http://getpelican.com/">Pelican</a>. Theme <a href="https://github.com/blueicefield/pelican-blueidea/">blueidea</a>, inspired by the default theme.</p>
-        </footer><!-- /#contentinfo -->
-
-<script type="text/javascript">
-    var disqus_shortname = 'importcjj';
-    (function () {
-        var s = document.createElement('script'); s.async = true;
-        s.type = 'text/javascript';
-        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
-        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
-    }());
-</script>
 </body>
 </html>
