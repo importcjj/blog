@@ -1,80 +1,51 @@
-<!DOCTYPE html>
+<?xml version="1.0" encoding="utf-8"?>
+<!doctype html>
 <html lang="en">
-<head>
+    <head>
         <title>Signal</title>
-        <!-- Fonts -->
-        <link href='http://fonts.googleapis.com/css?family=Inconsolata' rel='stylesheet' type='text/css'>
-        <link href='http://fonts.googleapis.com/css?family=The+Girl+Next+Door' rel='stylesheet' type='text/css'>
-        <link href='http://fonts.googleapis.com/css?family=Marcellus' rel='stylesheet' type='text/css'>
-        
-        <!-- CSS -->
-        <link rel="stylesheet" href="https://importcjj.github.io/theme/css/main.css" type="text/css" />
-        <link rel="stylesheet" href="https://importcjj.github.io/theme/css/pygments.css" type="text/css" />
-        <link rel="stylesheet" href="https://importcjj.github.io/theme/css/font-awesome.css" type="text/css" />
+
+        <!-- meta -->
         <meta charset="utf-8" />
-      
+        <meta name="author" content="importcjj" />
 
-        <!-- Javascript-->
-        <script async src="http://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
-        <script async type="text/javascript"> 
-        $(function() {
-            function invisibleMenu() {
-                var now = 0;
-                var pixels = 300;
-                var opacity = -1;
+        <!-- Feeds -->
 
-                var move = function() {
-                    now = $(window).scrollTop();
-                    if (now > pixels && opacity !== 0)
-                        opacity = 0;
-                    else if (now < pixels){
-                        // Depends on the position not if scrolls down or up
-                        opacity = (1 - now/pixels);
-                    }
-                    $("div.navigation").css({"opacity": opacity});
-                }
-                $(window).scroll(move);
-                move();
-            }
-            invisibleMenu();
-          });
-          </script> 
-</head>
+        <!-- Style -->
+        <link href="https://fonts.googleapis.com/css?family=Linden+Hill:400,400italic" rel="stylesheet" type="text/css" />
+        <link rel="stylesheet" href="https://importcjj.github.io/theme/css/main.css" type="text/css" />
+        <link rel="shortcut icon" href="https://importcjj.github.io/theme/favicon.ico" />
 
-<body id="index" class="home">
-     <div class="navigation">
-        <ol class="nav">
-          <li class="current"><a href="https://importcjj.github.io">Blog</a> </li>
-          <li><a href="https://importcjj.github.io/archives.html">Archive</a></li>
-          <li><a href="https://importcjj.github.io/tags.html">Tags</a> </li>
-          <li><a href="https://importcjj.github.io/">RSS</a> </li>
-        </ol>
-      </div>
-        <header id="banner" class="body">
-                <div class="banner"><a href="https://importcjj.github.io">Signal <strong></strong></a></div>
-        </header><!-- /#banner -->
-        <nav id="menu"><ul>
-        </ul></nav><!-- /#menu -->
-        <div class="box">
-        
+        <!-- Google analytics -->
+
+    </head>
+    <body>
+        <div id="wrapper">
+          <div id="blogtitle">
+            <a href="https://importcjj.github.io/">Signal</a>
+         </div>
+
+          <!-- Blogroll -->
+          <ul id="mainnav">
+            <li><a href="http://chihiro.moe">Slade</a></li>
+            <li><a href="http://shenyizhou.github.io">无主之地</a></li>
+            <li><a href="http://yuan0.github.io">Junifer</a></li>
+            <li><a href="http://getpelican.com/">Pelican</a></li>
+            <li><a href="http://python.org/">Python.org</a></li>
+            <li><a href="http://jinja.pocoo.org/">Jinja2</a></li>
+            <li><a href="http://dongweiming.github.io/Expert-Python/#1">Expert-python</a></li>
+          </ul>
+
+          <div class="clearboth"></div>
+          <div id="content">
 <section id="content">
-<div class="posts">
-    <ol id="post-list">
-        
-        <li>
-            <article class="archive">
-                <header> 
-                    <h1 class="archive-entry-title">
-                        <a href="https://importcjj.github.io/markdownyu-fa-shuo-ming.html" rel="bookmark" title="Permalink to MarkDown语法说明">MarkDown语法说明</a>
-                    </h1> 
-                </header>
-                <footer class="post-info">
-                    <abbr>
-                      日 27 三月 2016 
-                         By <a class="url fn" href="https://importcjj.github.io/author/importcjj.html">importcjj</a>
-  
-                    </abbr>
-                    <div class="entry-summary"> <p>本篇博文参考<a href="http://blog.csdn.net/lanxuezaipiao/article/details/44307757">这里</a></p>
+<h2>Articles in the Markdown category</h2>
+
+  <div class="row">
+    <div class=article-overview>
+      <div class=date>日 27 三月 2016</div>
+      <div class=detail>
+        <h1><a href="https://importcjj.github.io/markdownyu-fa-shuo-ming.html" title="Permalink to MarkDown语法说明">MarkDown语法说明</a></h1>
+        <div class=summary><p>本篇博文参考<a href="http://blog.csdn.net/lanxuezaipiao/article/details/44307757">这里</a></p>
 <blockquote>
 <p>Markdown 是一种轻量级标记语言，它允许人们使用易读易写的纯文本格式编写文档，然后转换成格式丰富的HTML页面。
 <br></p>
@@ -114,42 +85,47 @@
 <p><code>空格</code>：多个空格或者一个回车符(只能显示一个空格)</p>
 <p><code>多空格</code>：\&nbsp;</p>
 <p><code>段内换行</code>：双空格 + 回车符</p>
-<p><code>另起一段 ...</code></p>
-                    <a href="https://importcjj.github.io/markdownyu-fa-shuo-ming.html">read more</a></div>
-                </footer><!-- /.post-info -->
-                <!-- /.entry-content -->
-            </article>
-        </li>
-    </ol><!-- /#posts-list -->
-</div>
-<p class="paginator">
-    Page 1 / 1
-</p>
-</section><!-- /#content -->
-            <hr/>
-            <footer id="contentinfo" class="footer">
-                <div>
-                    <a href="https://importcjj.github.io">importcjj</a> (2012)
-                </div>
-                <div>
-                    This work is licensed under <a rel="license" href="http://opensource.org/licenses/bsd-3-clause">3 clause BSD</a>. Source code available on <a rel="source code" href="https://github.com/slok/blog">Github</a>
-                </div>
-                <div>
-                    powered by <a href="http://getpelican.com/">Pelican</a>
-                    and <a href="http://python.org">Python</a>. 
-                    <a href="http://github.com/slok/iris">Theme</a> by <a href="http://xlarrakoetxea.org">Xabier Larrakoetxea</a> based on <a href="http://flask.pocoo.org/">Flask</a> theme
-                </div>
-                <div>
-                    Social icons (font awesome) by <a href="http://fortawesome.github.com/Font-Awesome/"> fort awesome</a>.
-                    <a href="http://www.google.com/webfonts/specimen/The+Girl+Next+Door">Title</a>, <a href="http://www.google.com/webfonts/specimen/Marcellus">headers</a> and <a href="http://www.google.com/webfonts/specimen/Inconsolata">source code</a> fonts by google fonts
-                </div>
-                <div class="social">
-                        <a href="#"><i class="icon-You can add links in your config file"></i>  </a>
-                        <a href="#"><i class="icon-Another social link"></i>  </a>
-                </div>
-            </footer><!-- /#contentinfo -->
-        </div>
-        <!--Add statistycs-->
+<p><code>另起一段 ...</code></p></div>
+      </div>
 
-</body>
+      <!-- tags list -->
+	  <div class="tags">
+        <a class="tag" href="https://importcjj.github.io/tag/markdown.html">markdown</a>
+      </div>
+    </div>
+  </div><!-- /.row -->
+
+</section><!-- /#content -->
+          </div>
+        </div>
+
+        <!-- footer -->
+        <div class=footer>
+          <div class="textwidget">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          </div>
+
+          <p>
+            Carburize with <a href="http://blog.getpelican.com">pelican</a></p>
+          <p><a href="https://github.com/badele/pelican-theme-jesuislibre">jesuislibre</a> theme, inspired by <a href="http://blog.dbrgn.ch">dbrng</a> blog</p>
+          <p><a href="http://bruno.adele.im">about author</a></p>
+      </div>
+
+
+     </body>
 </html>

@@ -1,121 +1,99 @@
-<!DOCTYPE html>
+<?xml version="1.0" encoding="utf-8"?>
+<!doctype html>
 <html lang="en">
-<head>
+    <head>
         <title>Signal <small>shell</small></title>
-        <!-- Fonts -->
-        <link href='http://fonts.googleapis.com/css?family=Inconsolata' rel='stylesheet' type='text/css'>
-        <link href='http://fonts.googleapis.com/css?family=The+Girl+Next+Door' rel='stylesheet' type='text/css'>
-        <link href='http://fonts.googleapis.com/css?family=Marcellus' rel='stylesheet' type='text/css'>
-        
-        <!-- CSS -->
-        <link rel="stylesheet" href="https://importcjj.github.io/theme/css/main.css" type="text/css" />
-        <link rel="stylesheet" href="https://importcjj.github.io/theme/css/pygments.css" type="text/css" />
-        <link rel="stylesheet" href="https://importcjj.github.io/theme/css/font-awesome.css" type="text/css" />
+
+        <!-- meta -->
         <meta charset="utf-8" />
-      
+        <meta name="author" content="importcjj" />
 
-        <!-- Javascript-->
-        <script async src="http://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
-        <script async type="text/javascript"> 
-        $(function() {
-            function invisibleMenu() {
-                var now = 0;
-                var pixels = 300;
-                var opacity = -1;
+        <!-- Feeds -->
 
-                var move = function() {
-                    now = $(window).scrollTop();
-                    if (now > pixels && opacity !== 0)
-                        opacity = 0;
-                    else if (now < pixels){
-                        // Depends on the position not if scrolls down or up
-                        opacity = (1 - now/pixels);
-                    }
-                    $("div.navigation").css({"opacity": opacity});
-                }
-                $(window).scroll(move);
-                move();
-            }
-            invisibleMenu();
-          });
-          </script> 
-</head>
+        <!-- Style -->
+        <link href="https://fonts.googleapis.com/css?family=Linden+Hill:400,400italic" rel="stylesheet" type="text/css" />
+        <link rel="stylesheet" href="https://importcjj.github.io/theme/css/main.css" type="text/css" />
+        <link rel="shortcut icon" href="https://importcjj.github.io/theme/favicon.ico" />
 
-<body id="index" class="home">
-     <div class="navigation">
-        <ol class="nav">
-          <li><a href="https://importcjj.github.io">Blog</a> </li>
-          <li><a href="https://importcjj.github.io/archives.html">Archive</a></li>
-          <li class="current"><a href="https://importcjj.github.io/tags.html">Tags</a> </li>
-          <li><a href="https://importcjj.github.io/">RSS</a> </li>
-        </ol>
-      </div>
-        <header id="banner" class="body">
-                <div class="banner"><a href="https://importcjj.github.io">Signal <strong></strong></a></div>
-        </header><!-- /#banner -->
-        <nav id="menu"><ul>
-        </ul></nav><!-- /#menu -->
-        <div class="box">
-        
+        <!-- Google analytics -->
+
+    </head>
+    <body>
+        <div id="wrapper">
+          <div id="blogtitle">
+            <a href="https://importcjj.github.io/">Signal</a>
+         </div>
+
+          <!-- Blogroll -->
+          <ul id="mainnav">
+            <li><a href="http://chihiro.moe">Slade</a></li>
+            <li><a href="http://shenyizhou.github.io">无主之地</a></li>
+            <li><a href="http://yuan0.github.io">Junifer</a></li>
+            <li><a href="http://getpelican.com/">Pelican</a></li>
+            <li><a href="http://python.org/">Python.org</a></li>
+            <li><a href="http://jinja.pocoo.org/">Jinja2</a></li>
+            <li><a href="http://dongweiming.github.io/Expert-Python/#1">Expert-python</a></li>
+          </ul>
+
+          <div class="clearboth"></div>
+          <div id="content">
 <section id="content">
-<div class="posts">
-    <ol id="post-list">
-        
-        <li>
-            <article class="archive">
-                <header> 
-                    <h1 class="archive-entry-title">
-                        <a href="https://importcjj.github.io/jian-dan-de-acfunzi-dong-qian-dao.html" rel="bookmark" title="Permalink to 简单的Acfun自动签到">简单的Acfun自动签到</a>
-                    </h1> 
-                </header>
-                <footer class="post-info">
-                    <abbr>
-                      六 30 四月 2016 
-                         By <a class="url fn" href="https://importcjj.github.io/author/importcjj.html">importcjj</a>
-  
-                    </abbr>
-                    <div class="entry-summary"> <p><img alt="acfun" src="http://7xsw69.com1.z0.glb.clouddn.com/acfun.jpg" /></p>
+
+
+  <div class="row">
+    <div class=article-overview>
+      <div class=date>六 30 四月 2016</div>
+      <div class=detail>
+        <h1><a href="https://importcjj.github.io/jian-dan-de-acfunzi-dong-qian-dao.html" title="Permalink to 简单的Acfun自动签到">简单的Acfun自动签到</a></h1>
+        <div class=summary><p><img alt="acfun" src="http://7xsw69.com1.z0.glb.clouddn.com/acfun.jpg" /></p>
 <h3>1.概述</h3>
 <p>Acfun有一个签到机制，每天签到可以领取经验和香蕉。之前在玩supervisor，celerybeat和rabbitmq的时候搞了一个自动签到的定时任务，但是由于服务器的原因，每天都会出问题。而且前段时间，那台服务器也到期了，所以现在有必要再搞一个简单的自动签到任务了。：）</p>
 <h3>2. 签到</h3>
 <p>为了简便，这里就不使用Python了。直接curl搞定吧！上代码：</p>
 <div class="highlight"><pre><span></span>curl --cookie-jar cookies -d <span class="s2">&quot;username=name&amp;password=passwd&quot;</span> http://www.acfun.tv/login.aspx <span class="o">&amp;&amp;</span> <span class="nb">echo</span>
-curl --cookie cookies -d <span class="s2">&quot;channel=0&amp;date=`date +%s`000&quot;</span> http://www.acfun.tv/webapi/record/actions/signin ...</pre></div>
-                    <a href="https://importcjj.github.io/jian-dan-de-acfunzi-dong-qian-dao.html">read more</a></div>
-                </footer><!-- /.post-info -->
-                <!-- /.entry-content -->
-            </article>
-        </li>
-    </ol><!-- /#posts-list -->
-</div>
-<p class="paginator">
-    Page 1 / 1
-</p>
-</section><!-- /#content -->
-            <hr/>
-            <footer id="contentinfo" class="footer">
-                <div>
-                    <a href="https://importcjj.github.io">importcjj</a> (2012)
-                </div>
-                <div>
-                    This work is licensed under <a rel="license" href="http://opensource.org/licenses/bsd-3-clause">3 clause BSD</a>. Source code available on <a rel="source code" href="https://github.com/slok/blog">Github</a>
-                </div>
-                <div>
-                    powered by <a href="http://getpelican.com/">Pelican</a>
-                    and <a href="http://python.org">Python</a>. 
-                    <a href="http://github.com/slok/iris">Theme</a> by <a href="http://xlarrakoetxea.org">Xabier Larrakoetxea</a> based on <a href="http://flask.pocoo.org/">Flask</a> theme
-                </div>
-                <div>
-                    Social icons (font awesome) by <a href="http://fortawesome.github.com/Font-Awesome/"> fort awesome</a>.
-                    <a href="http://www.google.com/webfonts/specimen/The+Girl+Next+Door">Title</a>, <a href="http://www.google.com/webfonts/specimen/Marcellus">headers</a> and <a href="http://www.google.com/webfonts/specimen/Inconsolata">source code</a> fonts by google fonts
-                </div>
-                <div class="social">
-                        <a href="#"><i class="icon-You can add links in your config file"></i>  </a>
-                        <a href="#"><i class="icon-Another social link"></i>  </a>
-                </div>
-            </footer><!-- /#contentinfo -->
-        </div>
-        <!--Add statistycs-->
+curl --cookie cookies -d <span class="s2">&quot;channel=0&amp;date=`date +%s`000&quot;</span> http://www.acfun.tv/webapi/record/actions/signin ...</pre></div></div>
+      </div>
 
-</body>
+      <!-- tags list -->
+	  <div class="tags">
+        <a class="tag" href="https://importcjj.github.io/tag/shell.html">shell</a>
+        <a class="tag" href="https://importcjj.github.io/tag/contab.html">contab</a>
+        <a class="tag" href="https://importcjj.github.io/tag/curl.html">curl</a>
+      </div>
+    </div>
+  </div><!-- /.row -->
+
+</section><!-- /#content -->
+          </div>
+        </div>
+
+        <!-- footer -->
+        <div class=footer>
+          <div class="textwidget">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          </div>
+
+          <p>
+            Carburize with <a href="http://blog.getpelican.com">pelican</a></p>
+          <p><a href="https://github.com/badele/pelican-theme-jesuislibre">jesuislibre</a> theme, inspired by <a href="http://blog.dbrgn.ch">dbrng</a> blog</p>
+          <p><a href="http://bruno.adele.im">about author</a></p>
+      </div>
+
+
+     </body>
 </html>

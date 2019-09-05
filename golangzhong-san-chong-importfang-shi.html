@@ -1,76 +1,51 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-        <title>Signal</title>
-        <!-- Fonts -->
-        <link href='http://fonts.googleapis.com/css?family=Inconsolata' rel='stylesheet' type='text/css'>
-        <link href='http://fonts.googleapis.com/css?family=The+Girl+Next+Door' rel='stylesheet' type='text/css'>
-        <link href='http://fonts.googleapis.com/css?family=Marcellus' rel='stylesheet' type='text/css'>
-        
-        <!-- CSS -->
-        <link rel="stylesheet" href="https://importcjj.github.io/theme/css/main.css" type="text/css" />
-        <link rel="stylesheet" href="https://importcjj.github.io/theme/css/pygments.css" type="text/css" />
-        <link rel="stylesheet" href="https://importcjj.github.io/theme/css/font-awesome.css" type="text/css" />
+    <head>
+        <title>Golang中三种import方式</title>
+
+        <!-- meta -->
         <meta charset="utf-8" />
-      
+        <meta name="author" content="importcjj" />
 
-        <!-- Javascript-->
-        <script async src="http://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
-        <script async type="text/javascript"> 
-        $(function() {
-            function invisibleMenu() {
-                var now = 0;
-                var pixels = 300;
-                var opacity = -1;
+        <!-- Feeds -->
 
-                var move = function() {
-                    now = $(window).scrollTop();
-                    if (now > pixels && opacity !== 0)
-                        opacity = 0;
-                    else if (now < pixels){
-                        // Depends on the position not if scrolls down or up
-                        opacity = (1 - now/pixels);
-                    }
-                    $("div.navigation").css({"opacity": opacity});
-                }
-                $(window).scroll(move);
-                move();
-            }
-            invisibleMenu();
-          });
-          </script> 
-</head>
+        <!-- Style -->
+        <link href="https://fonts.googleapis.com/css?family=Linden+Hill:400,400italic" rel="stylesheet" type="text/css" />
+        <link rel="stylesheet" href="https://importcjj.github.io/theme/css/main.css" type="text/css" />
+        <link rel="shortcut icon" href="https://importcjj.github.io/theme/favicon.ico" />
 
-<body id="index" class="home">
-     <div class="navigation">
-        <ol class="nav">
-          <li class="current"><a href="https://importcjj.github.io">Blog</a> </li>
-          <li><a href="https://importcjj.github.io/archives.html">Archive</a></li>
-          <li><a href="https://importcjj.github.io/tags.html">Tags</a> </li>
-          <li><a href="">RSS</a> </li>
-        </ol>
-      </div>
-        <header id="banner" class="body">
-                <div class="banner"><a href="https://importcjj.github.io">Signal <strong></strong></a></div>
-        </header><!-- /#banner -->
-        <nav id="menu"><ul>
-        </ul></nav><!-- /#menu -->
-        <div class="box">
-<section id="content" class="body">
-  <header class="post">
-    <h1 class="entry-title">
-      Golang中三种import方式
-    </h1>
-  </header>
-  <footer class="post-info">
-    <abbr>
-      日 27 三月 2016 
-         By <a class="url fn" href="https://importcjj.github.io/author/importcjj.html">importcjj</a>
-  
-    </abbr>
-  </footer><!-- /.post-info -->
-  <div class="entry-content">
-    <h4>1. 点方式</h4>
+        <!-- Google analytics -->
+
+    </head>
+    <body>
+        <div id="wrapper">
+          <div id="blogtitle">
+            <a href="https://importcjj.github.io/">Signal</a>
+         </div>
+
+          <!-- Blogroll -->
+          <ul id="mainnav">
+            <li><a href="http://chihiro.moe">Slade</a></li>
+            <li><a href="http://shenyizhou.github.io">无主之地</a></li>
+            <li><a href="http://yuan0.github.io">Junifer</a></li>
+            <li><a href="http://getpelican.com/">Pelican</a></li>
+            <li><a href="http://python.org/">Python.org</a></li>
+            <li><a href="http://jinja.pocoo.org/">Jinja2</a></li>
+            <li><a href="http://dongweiming.github.io/Expert-Python/#1">Expert-python</a></li>
+          </ul>
+
+          <div class="clearboth"></div>
+          <div id="content">
+
+<h1>Golang中三种import方式</h1>
+<div class=date>日 27 三月 2016
+ / <span class="tags">
+  <a class="tag" href="https://importcjj.github.io/tag/golang.html">golang</a>
+  <a class="tag" href="https://importcjj.github.io/tag/import.html">import</a>
+</span>
+</div>
+
+<h4>1. 点方式</h4>
 <p>有时候会看到如下的方式导入包    <code>import( . "fmt" )</code></p>
 <p>这个点操作的含义就是这个包导入之后在你调用这个包的函数时，你可以省略前缀的包名，也就是前面你调用的<code>fmt.Println("hello world")</code>  可以省略的写成<code>Println("hello world")</code></p>
 <h4>2. 别名方式</h4>
@@ -79,10 +54,19 @@
 <h4>3.  _方式</h4>
 <p>_操作其实只是引入该包。当导入一个包时，它所有的init()函数就会被执行，但有些时候并非真的需要使用这些包，仅仅是希望它的init()函数被执行而已。这个时候就可以使用_操作引用该包了。即使用_操作引用包是无法通过包名来调用包中的导出函数，而是只是为了简单的调用其init函数()。</p>
 <p>比如 <code>import (_ "github.com/mattn/go-sqlite3")</code>只是为了调用该包中的init函数来注册该数据库驱动而已，并需要该包中的其他内容。</p>
-  </div><!-- /.entry-content -->
+<div class="author">
+  <a href="">
+    <img src="" alt="importcjj" width="128" height="108"/>
+  </a>
+  <div class="infos">
+    <h3>A propos de <a href="">importcjj</a></h3>	
+    <p></p>
+  </div>
+</div>
+<h2>Comments</h2>
 <div id="disqus_thread"></div>
 <script type="text/javascript">
-    var disqus_shortname = 'importcjj'; 
+    var disqus_shortname = 'importcjj';
 
     (function() {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
@@ -91,31 +75,38 @@
     })();
 </script>
 <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-</section>
-            <hr/>
-            <footer id="contentinfo" class="footer">
-                <div>
-                    <a href="https://importcjj.github.io">importcjj</a> (2012)
-                </div>
-                <div>
-                    This work is licensed under <a rel="license" href="http://opensource.org/licenses/bsd-3-clause">3 clause BSD</a>. Source code available on <a rel="source code" href="https://github.com/slok/blog">Github</a>
-                </div>
-                <div>
-                    powered by <a href="http://getpelican.com/">Pelican</a>
-                    and <a href="http://python.org">Python</a>. 
-                    <a href="http://github.com/slok/iris">Theme</a> by <a href="http://xlarrakoetxea.org">Xabier Larrakoetxea</a> based on <a href="http://flask.pocoo.org/">Flask</a> theme
-                </div>
-                <div>
-                    Social icons (font awesome) by <a href="http://fortawesome.github.com/Font-Awesome/"> fort awesome</a>.
-                    <a href="http://www.google.com/webfonts/specimen/The+Girl+Next+Door">Title</a>, <a href="http://www.google.com/webfonts/specimen/Marcellus">headers</a> and <a href="http://www.google.com/webfonts/specimen/Inconsolata">source code</a> fonts by google fonts
-                </div>
-                <div class="social">
-                        <a href="#"><i class="icon-You can add links in your config file"></i>  </a>
-                        <a href="#"><i class="icon-Another social link"></i>  </a>
-                </div>
-            </footer><!-- /#contentinfo -->
-        </div>
-        <!--Add statistycs-->
 
-</body>
+
+          </div>
+        </div>
+
+        <!-- footer -->
+        <div class=footer>
+          <div class="textwidget">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          </div>
+
+          <p>
+            Carburize with <a href="http://blog.getpelican.com">pelican</a></p>
+          <p><a href="https://github.com/badele/pelican-theme-jesuislibre">jesuislibre</a> theme, inspired by <a href="http://blog.dbrgn.ch">dbrng</a> blog</p>
+          <p><a href="http://bruno.adele.im">about author</a></p>
+      </div>
+
+
+     </body>
 </html>

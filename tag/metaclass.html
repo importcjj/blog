@@ -1,117 +1,94 @@
-<!DOCTYPE html>
+<?xml version="1.0" encoding="utf-8"?>
+<!doctype html>
 <html lang="en">
-<head>
+    <head>
         <title>Signal <small>metaclass</small></title>
-        <!-- Fonts -->
-        <link href='http://fonts.googleapis.com/css?family=Inconsolata' rel='stylesheet' type='text/css'>
-        <link href='http://fonts.googleapis.com/css?family=The+Girl+Next+Door' rel='stylesheet' type='text/css'>
-        <link href='http://fonts.googleapis.com/css?family=Marcellus' rel='stylesheet' type='text/css'>
-        
-        <!-- CSS -->
-        <link rel="stylesheet" href="https://importcjj.github.io/theme/css/main.css" type="text/css" />
-        <link rel="stylesheet" href="https://importcjj.github.io/theme/css/pygments.css" type="text/css" />
-        <link rel="stylesheet" href="https://importcjj.github.io/theme/css/font-awesome.css" type="text/css" />
+
+        <!-- meta -->
         <meta charset="utf-8" />
-      
+        <meta name="author" content="importcjj" />
 
-        <!-- Javascript-->
-        <script async src="http://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
-        <script async type="text/javascript"> 
-        $(function() {
-            function invisibleMenu() {
-                var now = 0;
-                var pixels = 300;
-                var opacity = -1;
+        <!-- Feeds -->
 
-                var move = function() {
-                    now = $(window).scrollTop();
-                    if (now > pixels && opacity !== 0)
-                        opacity = 0;
-                    else if (now < pixels){
-                        // Depends on the position not if scrolls down or up
-                        opacity = (1 - now/pixels);
-                    }
-                    $("div.navigation").css({"opacity": opacity});
-                }
-                $(window).scroll(move);
-                move();
-            }
-            invisibleMenu();
-          });
-          </script> 
-</head>
+        <!-- Style -->
+        <link href="https://fonts.googleapis.com/css?family=Linden+Hill:400,400italic" rel="stylesheet" type="text/css" />
+        <link rel="stylesheet" href="https://importcjj.github.io/theme/css/main.css" type="text/css" />
+        <link rel="shortcut icon" href="https://importcjj.github.io/theme/favicon.ico" />
 
-<body id="index" class="home">
-     <div class="navigation">
-        <ol class="nav">
-          <li><a href="https://importcjj.github.io">Blog</a> </li>
-          <li><a href="https://importcjj.github.io/archives.html">Archive</a></li>
-          <li class="current"><a href="https://importcjj.github.io/tags.html">Tags</a> </li>
-          <li><a href="https://importcjj.github.io/">RSS</a> </li>
-        </ol>
-      </div>
-        <header id="banner" class="body">
-                <div class="banner"><a href="https://importcjj.github.io">Signal <strong></strong></a></div>
-        </header><!-- /#banner -->
-        <nav id="menu"><ul>
-        </ul></nav><!-- /#menu -->
-        <div class="box">
-        
+        <!-- Google analytics -->
+
+    </head>
+    <body>
+        <div id="wrapper">
+          <div id="blogtitle">
+            <a href="https://importcjj.github.io/">Signal</a>
+         </div>
+
+          <!-- Blogroll -->
+          <ul id="mainnav">
+            <li><a href="http://chihiro.moe">Slade</a></li>
+            <li><a href="http://shenyizhou.github.io">无主之地</a></li>
+            <li><a href="http://yuan0.github.io">Junifer</a></li>
+            <li><a href="http://getpelican.com/">Pelican</a></li>
+            <li><a href="http://python.org/">Python.org</a></li>
+            <li><a href="http://jinja.pocoo.org/">Jinja2</a></li>
+            <li><a href="http://dongweiming.github.io/Expert-Python/#1">Expert-python</a></li>
+          </ul>
+
+          <div class="clearboth"></div>
+          <div id="content">
 <section id="content">
-<div class="posts">
-    <ol id="post-list">
-        
-        <li>
-            <article class="archive">
-                <header> 
-                    <h1 class="archive-entry-title">
-                        <a href="https://importcjj.github.io/pythonde-metaclassxiao-ji.html" rel="bookmark" title="Permalink to Python的metaclass小记">Python的metaclass小记</a>
-                    </h1> 
-                </header>
-                <footer class="post-info">
-                    <abbr>
-                      六 26 三月 2016 
-                         By <a class="url fn" href="https://importcjj.github.io/author/importcjj.html">importcjj</a>
-  
-                    </abbr>
-                    <div class="entry-summary"> <p>使用metaclass的时候可以使用<strong>metaclass</strong>的<code>__new__</code>和<code>__init__</code>去改变所定义的类的相关属性，因为这两个方法是在类定义的时候被调用，他们所需的参数也与使用<code>type(name, bases, dict)</code>动态声明类相同。而使用<strong>metaclass</strong>的<code>__call__</code>可以影响我们所声明的类产生实例的过程，因为当我们使用class_name()去产生实例的时候，相当于call了这个class，而这个class又是metaclass的实例，所以其实调用了metaclass的__call__</p>
-<p>注意: 通过<code>super</code>来调用父类的<code>__new__</code>时，第一个参数需要是该class，这点是不同于调用<code>__init__</code>等其他父类方法的。因为<code>__new__</code>是个静态方法。还有一个小问题就是当父类是object的时候，也就是调用<code>object.__new__()</code>只传一个cls参数就可以了，至于为什么，请戳<a href="https://mail.python.org/pipermail/python-dev/2008-February/076854.html">here</a>
-和<a href="http://bugs.python.org/issue1683368">here</a>。 如果你重写了<code>__new__</code>而没有重写 ...</p>
-                    <a href="https://importcjj.github.io/pythonde-metaclassxiao-ji.html">read more</a></div>
-                </footer><!-- /.post-info -->
-                <!-- /.entry-content -->
-            </article>
-        </li>
-    </ol><!-- /#posts-list -->
-</div>
-<p class="paginator">
-    Page 1 / 1
-</p>
-</section><!-- /#content -->
-            <hr/>
-            <footer id="contentinfo" class="footer">
-                <div>
-                    <a href="https://importcjj.github.io">importcjj</a> (2012)
-                </div>
-                <div>
-                    This work is licensed under <a rel="license" href="http://opensource.org/licenses/bsd-3-clause">3 clause BSD</a>. Source code available on <a rel="source code" href="https://github.com/slok/blog">Github</a>
-                </div>
-                <div>
-                    powered by <a href="http://getpelican.com/">Pelican</a>
-                    and <a href="http://python.org">Python</a>. 
-                    <a href="http://github.com/slok/iris">Theme</a> by <a href="http://xlarrakoetxea.org">Xabier Larrakoetxea</a> based on <a href="http://flask.pocoo.org/">Flask</a> theme
-                </div>
-                <div>
-                    Social icons (font awesome) by <a href="http://fortawesome.github.com/Font-Awesome/"> fort awesome</a>.
-                    <a href="http://www.google.com/webfonts/specimen/The+Girl+Next+Door">Title</a>, <a href="http://www.google.com/webfonts/specimen/Marcellus">headers</a> and <a href="http://www.google.com/webfonts/specimen/Inconsolata">source code</a> fonts by google fonts
-                </div>
-                <div class="social">
-                        <a href="#"><i class="icon-You can add links in your config file"></i>  </a>
-                        <a href="#"><i class="icon-Another social link"></i>  </a>
-                </div>
-            </footer><!-- /#contentinfo -->
-        </div>
-        <!--Add statistycs-->
 
-</body>
+
+  <div class="row">
+    <div class=article-overview>
+      <div class=date>六 26 三月 2016</div>
+      <div class=detail>
+        <h1><a href="https://importcjj.github.io/pythonde-metaclassxiao-ji.html" title="Permalink to Python的metaclass小记">Python的metaclass小记</a></h1>
+        <div class=summary><p>使用metaclass的时候可以使用<strong>metaclass</strong>的<code>__new__</code>和<code>__init__</code>去改变所定义的类的相关属性，因为这两个方法是在类定义的时候被调用，他们所需的参数也与使用<code>type(name, bases, dict)</code>动态声明类相同。而使用<strong>metaclass</strong>的<code>__call__</code>可以影响我们所声明的类产生实例的过程，因为当我们使用class_name()去产生实例的时候，相当于call了这个class，而这个class又是metaclass的实例，所以其实调用了metaclass的__call__</p>
+<p>注意: 通过<code>super</code>来调用父类的<code>__new__</code>时，第一个参数需要是该class，这点是不同于调用<code>__init__</code>等其他父类方法的。因为<code>__new__</code>是个静态方法。还有一个小问题就是当父类是object的时候，也就是调用<code>object.__new__()</code>只传一个cls参数就可以了，至于为什么，请戳<a href="https://mail.python.org/pipermail/python-dev/2008-February/076854.html">here</a>
+和<a href="http://bugs.python.org/issue1683368">here</a>。 如果你重写了<code>__new__</code>而没有重写 ...</p></div>
+      </div>
+
+      <!-- tags list -->
+	  <div class="tags">
+        <a class="tag" href="https://importcjj.github.io/tag/metaclass.html">metaclass</a>
+        <a class="tag" href="https://importcjj.github.io/tag/python.html">Python</a>
+      </div>
+    </div>
+  </div><!-- /.row -->
+
+</section><!-- /#content -->
+          </div>
+        </div>
+
+        <!-- footer -->
+        <div class=footer>
+          <div class="textwidget">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          </div>
+
+          <p>
+            Carburize with <a href="http://blog.getpelican.com">pelican</a></p>
+          <p><a href="https://github.com/badele/pelican-theme-jesuislibre">jesuislibre</a> theme, inspired by <a href="http://blog.dbrgn.ch">dbrng</a> blog</p>
+          <p><a href="http://bruno.adele.im">about author</a></p>
+      </div>
+
+
+     </body>
 </html>

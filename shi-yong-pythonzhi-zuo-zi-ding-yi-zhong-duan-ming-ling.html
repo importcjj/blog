@@ -1,76 +1,50 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-        <title>Signal</title>
-        <!-- Fonts -->
-        <link href='http://fonts.googleapis.com/css?family=Inconsolata' rel='stylesheet' type='text/css'>
-        <link href='http://fonts.googleapis.com/css?family=The+Girl+Next+Door' rel='stylesheet' type='text/css'>
-        <link href='http://fonts.googleapis.com/css?family=Marcellus' rel='stylesheet' type='text/css'>
-        
-        <!-- CSS -->
-        <link rel="stylesheet" href="https://importcjj.github.io/theme/css/main.css" type="text/css" />
-        <link rel="stylesheet" href="https://importcjj.github.io/theme/css/pygments.css" type="text/css" />
-        <link rel="stylesheet" href="https://importcjj.github.io/theme/css/font-awesome.css" type="text/css" />
+    <head>
+        <title>使用Python制作自定义终端命令</title>
+
+        <!-- meta -->
         <meta charset="utf-8" />
-      
+        <meta name="author" content="importcjj" />
 
-        <!-- Javascript-->
-        <script async src="http://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
-        <script async type="text/javascript"> 
-        $(function() {
-            function invisibleMenu() {
-                var now = 0;
-                var pixels = 300;
-                var opacity = -1;
+        <!-- Feeds -->
 
-                var move = function() {
-                    now = $(window).scrollTop();
-                    if (now > pixels && opacity !== 0)
-                        opacity = 0;
-                    else if (now < pixels){
-                        // Depends on the position not if scrolls down or up
-                        opacity = (1 - now/pixels);
-                    }
-                    $("div.navigation").css({"opacity": opacity});
-                }
-                $(window).scroll(move);
-                move();
-            }
-            invisibleMenu();
-          });
-          </script> 
-</head>
+        <!-- Style -->
+        <link href="https://fonts.googleapis.com/css?family=Linden+Hill:400,400italic" rel="stylesheet" type="text/css" />
+        <link rel="stylesheet" href="https://importcjj.github.io/theme/css/main.css" type="text/css" />
+        <link rel="shortcut icon" href="https://importcjj.github.io/theme/favicon.ico" />
 
-<body id="index" class="home">
-     <div class="navigation">
-        <ol class="nav">
-          <li class="current"><a href="https://importcjj.github.io">Blog</a> </li>
-          <li><a href="https://importcjj.github.io/archives.html">Archive</a></li>
-          <li><a href="https://importcjj.github.io/tags.html">Tags</a> </li>
-          <li><a href="">RSS</a> </li>
-        </ol>
-      </div>
-        <header id="banner" class="body">
-                <div class="banner"><a href="https://importcjj.github.io">Signal <strong></strong></a></div>
-        </header><!-- /#banner -->
-        <nav id="menu"><ul>
-        </ul></nav><!-- /#menu -->
-        <div class="box">
-<section id="content" class="body">
-  <header class="post">
-    <h1 class="entry-title">
-      使用Python制作自定义终端命令
-    </h1>
-  </header>
-  <footer class="post-info">
-    <abbr>
-      日 27 三月 2016 
-         By <a class="url fn" href="https://importcjj.github.io/author/importcjj.html">importcjj</a>
-  
-    </abbr>
-  </footer><!-- /.post-info -->
-  <div class="entry-content">
-    <h3>介绍</h3>
+        <!-- Google analytics -->
+
+    </head>
+    <body>
+        <div id="wrapper">
+          <div id="blogtitle">
+            <a href="https://importcjj.github.io/">Signal</a>
+         </div>
+
+          <!-- Blogroll -->
+          <ul id="mainnav">
+            <li><a href="http://chihiro.moe">Slade</a></li>
+            <li><a href="http://shenyizhou.github.io">无主之地</a></li>
+            <li><a href="http://yuan0.github.io">Junifer</a></li>
+            <li><a href="http://getpelican.com/">Pelican</a></li>
+            <li><a href="http://python.org/">Python.org</a></li>
+            <li><a href="http://jinja.pocoo.org/">Jinja2</a></li>
+            <li><a href="http://dongweiming.github.io/Expert-Python/#1">Expert-python</a></li>
+          </ul>
+
+          <div class="clearboth"></div>
+          <div id="content">
+
+<h1>使用Python制作自定义终端命令</h1>
+<div class=date>日 27 三月 2016
+ / <span class="tags">
+  <a class="tag" href="https://importcjj.github.io/tag/python.html">Python</a>
+</span>
+</div>
+
+<h3>介绍</h3>
 <p>首先，拿pip举个例子，pip是我们使用较多的python包管理工具。当我们安装pip之后，直接在终端中就可以使用pip这个命令。那你有没有想过这是如何实现的？</p>
 <p>其实，pip这个命令最终调用了python所在文件夹bin目录的pip文件。为什么说最终？因为使用系统默认的python安装pip时，可能会在/usr/local/bin或者/usr/bin下创建软链接。如果使用了virtualenv，那么pip文件就在env/bin下。那么pip文件到底是什么呢？答案就是，是一个具有执行权限的python文件，只不过去掉了.py的后缀.</p>
 <p>也许你会兴高采烈的去尝试一发，在bin文件下创建xxx.py，打上一句 print “hello world”, 然后去掉.py的后缀, 再使用chmod a+x xxx来赋予它执行的权限。打开终端，敲下xxx。最后你只会得到print: command not found的错误提示。为什么？因为操作系统不知道这是一个py文件。思考一下，我们平时运行py文件都需要打上python xxx.py形式的命令，其实我们告诉了操作系统这是一个python文件（哪怕是有.py后缀），需要使用python解释器来解释运行该文件。现在，我们没有指定解释器了，自然就无法顺利的作为py脚本来运行了，它被错误的认为是shell脚本了。而shell编程中只有echo，没有print命令。</p>
@@ -141,10 +115,19 @@
 <p>接着安装, <code>python setup.py</code> install 或者 <code>pip install</code> . 这两种方式随便哪种都可以，安装完成后在终端中输入hello命令试试，有没有显示hello world？</p>
 <h3>结尾</h3>
 <p>说了这么多，提醒一点，并不是所有的python包都是通过上述方式来提供终端命令的，不过这是一种很普遍很简便的方式！</p>
-  </div><!-- /.entry-content -->
+<div class="author">
+  <a href="">
+    <img src="" alt="importcjj" width="128" height="108"/>
+  </a>
+  <div class="infos">
+    <h3>A propos de <a href="">importcjj</a></h3>	
+    <p></p>
+  </div>
+</div>
+<h2>Comments</h2>
 <div id="disqus_thread"></div>
 <script type="text/javascript">
-    var disqus_shortname = 'importcjj'; 
+    var disqus_shortname = 'importcjj';
 
     (function() {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
@@ -153,31 +136,38 @@
     })();
 </script>
 <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-</section>
-            <hr/>
-            <footer id="contentinfo" class="footer">
-                <div>
-                    <a href="https://importcjj.github.io">importcjj</a> (2012)
-                </div>
-                <div>
-                    This work is licensed under <a rel="license" href="http://opensource.org/licenses/bsd-3-clause">3 clause BSD</a>. Source code available on <a rel="source code" href="https://github.com/slok/blog">Github</a>
-                </div>
-                <div>
-                    powered by <a href="http://getpelican.com/">Pelican</a>
-                    and <a href="http://python.org">Python</a>. 
-                    <a href="http://github.com/slok/iris">Theme</a> by <a href="http://xlarrakoetxea.org">Xabier Larrakoetxea</a> based on <a href="http://flask.pocoo.org/">Flask</a> theme
-                </div>
-                <div>
-                    Social icons (font awesome) by <a href="http://fortawesome.github.com/Font-Awesome/"> fort awesome</a>.
-                    <a href="http://www.google.com/webfonts/specimen/The+Girl+Next+Door">Title</a>, <a href="http://www.google.com/webfonts/specimen/Marcellus">headers</a> and <a href="http://www.google.com/webfonts/specimen/Inconsolata">source code</a> fonts by google fonts
-                </div>
-                <div class="social">
-                        <a href="#"><i class="icon-You can add links in your config file"></i>  </a>
-                        <a href="#"><i class="icon-Another social link"></i>  </a>
-                </div>
-            </footer><!-- /#contentinfo -->
-        </div>
-        <!--Add statistycs-->
 
-</body>
+
+          </div>
+        </div>
+
+        <!-- footer -->
+        <div class=footer>
+          <div class="textwidget">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          </div>
+
+          <p>
+            Carburize with <a href="http://blog.getpelican.com">pelican</a></p>
+          <p><a href="https://github.com/badele/pelican-theme-jesuislibre">jesuislibre</a> theme, inspired by <a href="http://blog.dbrgn.ch">dbrng</a> blog</p>
+          <p><a href="http://bruno.adele.im">about author</a></p>
+      </div>
+
+
+     </body>
 </html>
