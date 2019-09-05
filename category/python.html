@@ -1,1755 +1,322 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-		<title>Signal &mdash; Articles in Category Python</title>
-		<meta charset="utf-8" />
-		<link rel="profile" href="http://gmpg.org/xfn/11" />
-		<link rel="stylesheet" type="text/css" href="https://importcjj.github.io/theme/css/style.css" />
-		<link rel='stylesheet' id='oswald-css'  href='http://fonts.googleapis.com/css?family=Oswald&#038;ver=3.3.2' type='text/css' media='all' />
-		<style type="text/css">
-			body.custom-background { background-color: #f5f5f5; }
-		</style>
-		<link rel="alternate" type="application/atom+xml"
-			title="Signal — Flux Atom"
-			href="https://importcjj.github.io/" /> 
-		<!--[if lte IE 8]><script src="https://importcjj.github.io/theme/js/html5shiv.js"></script><![endif]-->
+        <title>Signal</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta charset="utf-8" />
+        <!-- twitter card metadata -->
+        <!-- OG Tags -->
+<meta property="og:url" content="https://importcjj.github.io/category/Python"/>
+<meta property="og:title" content="Signal | Python" />
+        <!-- favicon -->
+        <!-- moment.js for date formatting -->
+        <script src="https://importcjj.github.io/theme/js/moment.js"></script>
+        <!-- css -->
+        <link rel="stylesheet" type="text/css" href="https://importcjj.github.io/theme/css/main.css" />
+		<script>
+			
+                /*! grunt-grunticon Stylesheet Loader - v2.1.2 | https://github.com/filamentgroup/grunticon | (c) 2015 Scott Jehl, Filament Group, Inc. | MIT license. */
+    
+    (function(e){function t(t,n,r,o){"use strict";function a(){for(var e,n=0;u.length>n;n++)u[n].href&&u[n].href.indexOf(t)>-1&&(e=!0);e?i.media=r||"all":setTimeout(a)}var i=e.document.createElement("link"),l=n||e.document.getElementsByTagName("script")[0],u=e.document.styleSheets;return i.rel="stylesheet",i.href=t,i.media="only x",i.onload=o||null,l.parentNode.insertBefore(i,l),a(),i}var n=function(r,o){"use strict";if(r&&3===r.length){var a=e.navigator,i=e.Image,l=!(!document.createElementNS||!document.createElementNS("http://www.w3.org/2000/svg","svg").createSVGRect||!document.implementation.hasFeature("http://www.w3.org/TR/SVG11/feature#Image","1.1")||e.opera&&-1===a.userAgent.indexOf("Chrome")||-1!==a.userAgent.indexOf("Series40")),u=new i;u.onerror=function(){n.method="png",n.href=r[2],t(r[2])},u.onload=function(){var e=1===u.width&&1===u.height,a=r[e&&l?0:e?1:2];n.method=e&&l?"svg":e?"datapng":"png",n.href=a,t(a,null,null,o)},u.src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==",document.documentElement.className+=" grunticon"}};n.loadCSS=t,e.grunticon=n})(this);(function(e,t){"use strict";var n=t.document,r="grunticon:",o=function(e){if(n.attachEvent?"complete"===n.readyState:"loading"!==n.readyState)e();else{var t=!1;n.addEventListener("readystatechange",function(){t||(t=!0,e())},!1)}},a=function(e){return t.document.querySelector('link[href$="'+e+'"]')},c=function(e){var t,n,o,a,c,i,u={};if(t=e.sheet,!t)return u;n=t.cssRules?t.cssRules:t.rules;for(var l=0;n.length>l;l++)o=n[l].cssText,a=r+n[l].selectorText,c=o.split(");")[0].match(/US\-ASCII\,([^"']+)/),c&&c[1]&&(i=decodeURIComponent(c[1]),u[a]=i);return u},i=function(e){var t,o,a;o="data-grunticon-embed";for(var c in e)if(a=c.slice(r.length),t=n.querySelectorAll(a+"["+o+"]"),t.length)for(var i=0;t.length>i;i++)t[i].innerHTML=e[c],t[i].style.backgroundImage="none",t[i].removeAttribute(o);return t},u=function(t){"svg"===e.method&&o(function(){i(c(a(e.href))),"function"==typeof t&&t()})};e.embedIcons=i,e.getCSS=a,e.getIcons=c,e.ready=o,e.svgLoadedCallback=u,e.embedSVG=u})(grunticon,this);
+                
+                grunticon(["https://importcjj.github.io/theme/css/icons.data.svg.css", "https://importcjj.github.io/theme/css/icons.data.png.css", "https://importcjj.github.io/theme/css/icons.fallback.css"]);
+            </script>
+        <noscript><link href="https://importcjj.github.io/theme/css/icons.fallback.css" rel="stylesheet"></noscript>
+        <!-- menu toggle javascript -->
+        <script type="text/javascript">
+            document.addEventListener("DOMContentLoaded", initMenu);
+            
+            function initMenu(){
+                var menu = document.getElementById("menu");
+                var menulink = document.getElementById("menu-link");
+                menulink.addEventListener("click", function toggleMenu(){
+                        window.event.preventDefault();
+                        menulink.classList.toggle('active');
+                        menu.classList.toggle('active');              
+                    });
+            };
+        </script>
 </head>
-
-<body class="home blog custom-background " >
-	<div id="container">
-		<div id="header">
-				<h1 id="site-title"><a href="https://importcjj.github.io">Signal</a></h1>
-		</div><!-- /#banner -->
-		
-		<div id="menu">
-			<div class="menu-navigation-container">
-				<ul id="menu-navigation" class="menu">
-						<li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://importcjj.github.io/category/centos.html">CentOS</a></li>
-						<li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://importcjj.github.io/category/docker.html">Docker</a></li>
-						<li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://importcjj.github.io/category/emacs.html">Emacs</a></li>
-						<li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://importcjj.github.io/category/git.html">git</a></li>
-						<li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://importcjj.github.io/category/github.html">github</a></li>
-						<li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://importcjj.github.io/category/go.html">Go</a></li>
-						<li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://importcjj.github.io/category/markdown.html">Markdown</a></li>
-						<li class="active" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://importcjj.github.io/category/python.html">Python</a></li>
-						<li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://importcjj.github.io/category/rust.html">Rust</a></li>
-						<li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://importcjj.github.io/category/sundry.html">sundry</a></li>
-						<li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://importcjj.github.io/category/tool.html">Tool</a></li>
-						<li  class="active" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="http://chihiro.moe">Slade</a></li>
-						<li  class="active" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="http://shenyizhou.github.io">无主之地</a></li>
-						<li  class="active" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="http://yuan0.github.io">Junifer</a></li>
-						<li  class="active" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="http://getpelican.com/">Pelican</a></li>
-						<li  class="active" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="http://python.org/">Python.org</a></li>
-						<li  class="active" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="http://jinja.pocoo.org/">Jinja2</a></li>
-						<li  class="active" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="http://dongweiming.github.io/Expert-Python/#1">Expert-python</a></li>
-
-				</ul>
-			</div> <!--/#menu-navigation-container-->
-		</div><!-- /#menu -->
-		
-		<div class="page-title">
+<body>
+<a href="https://github.com/importcjj">
+<img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" alt="Fork me on GitHub" />
+</a>
+    <div role="banner" id="masthead">
+        <header>
+            <h1><a href="/">'s Blog</a></h1>
+            <a href="#menu" id="menu-link">more stuff</a>
+            <nav id="menu">
+                <ul>
+                            <li><a href="https://importcjj.github.io/category/centos.html">CentOS</a></li>
+                            <li><a href="https://importcjj.github.io/category/docker.html">Docker</a></li>
+                            <li><a href="https://importcjj.github.io/category/emacs.html">Emacs</a></li>
+                            <li><a href="https://importcjj.github.io/category/git.html">git</a></li>
+                            <li><a href="https://importcjj.github.io/category/github.html">github</a></li>
+                            <li><a href="https://importcjj.github.io/category/go.html">Go</a></li>
+                            <li><a href="https://importcjj.github.io/category/markdown.html">Markdown</a></li>
+                            <li class="active"><a href="https://importcjj.github.io/category/python.html">Python</a></li>
+                            <li><a href="https://importcjj.github.io/category/rust.html">Rust</a></li>
+                            <li><a href="https://importcjj.github.io/category/sundry.html">sundry</a></li>
+                            <li><a href="https://importcjj.github.io/category/tool.html">Tool</a></li>
+                </ul>
+            </nav>
+        </header>
+    </div>
+        <div class="page" role="main">
 <div class="page-title">
-	<h2>Filed under <span>Python</span> &hellip;</h2>
+    <h1>Python</h1>
 </div>
-		</div>
-	
-		<div id="contents">
-<div class="post type-post status-publish format-standard hentry category-general" id="post">
-	<div class="entry-meta">
-		<div class="date"><a href="https://importcjj.github.io/greenlet-qing-liang-ji-bing-fa-bian-cheng.html">三 18 五月 2016</a></div>
-		<span class="byline">By <a href="https://importcjj.github.io/author/importcjj.html">importcjj</a></span>
-			<div class="comments"><a href="https://importcjj.github.io/greenlet-qing-liang-ji-bing-fa-bian-cheng.html#disqus_thread" title="Comment on Greenlet: 轻量级并发编程">comments</a></div>
-			<span class="cat-links"><a href="https://importcjj.github.io/category/python.html" title="View all posts in Python" rel="category tag">Python</a></span>
-	</div> <!-- /#entry-meta -->
-	<div class="main">
-		<h2 class="entry-title">
-			<a href="https://importcjj.github.io/greenlet-qing-liang-ji-bing-fa-bian-cheng.html" title="Permalink to Greenlet: 轻量级并发编程" rel="bookmark">Greenlet: 轻量级并发编程</a>
-		</h2>
-		<div class="entry-content">
-			<h4>动机</h4>
-<p>greenlet这个包拆分自Stackless。Stackless是一个CPython的版本，实现并支持一种叫做tasklets的微线程。Tasklets会以一种伪并发的方式运行(通常运行在单个或者一些系统级的线程中)，它们之间通过channels来同步数据。</p>
-<p>一个greenlet，从另一方面来说，依然是一种很原始的没有隐式调度的微线程。换句话说，就是协程(coroutine)。这在你想要完全控制代码的运行时是非常有用的。你可以在greenlet之上构建采用自定义调度方式的微线程。然而，使用greenlet来制作先进的控制流结构是很有用的。举个例子，我们可以重新创造生成器。和Python自带的生成器所不同的是，我们的生成器可以调用网状的方法，而且这些网状的方法也可以yield出值。(另外，你不需要再使用<strong>yield</strong>这个关键词了）</p>
-<h4>举例</h4>
-<p>我们来思考一个程序，用户可以在一个类终端控制台中输入命令来控制该程序。假设命令是一个字符一个字符的输入。在这样一个系统中，通常会存在如下一个循环:</p>
-<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">process_commands</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">):</span>
-    <span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
-        <span class="n">line</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
-        <span class="k">while</span> <span class="ow">not</span> <span class="n">line</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">):</span>
-            <span class="n">line</span> <span class="o">+=</span> <span class="n">read_next_char</span><span class="p">()</span>
-        <span class="k">if</span> <span class="n">line</span> <span class="o">==</span> <span class="s1">&#39;quit</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">:</span>
-            <span class="k">print</span> <span class="s2">&quot;are you sure?&quot;</span>
-            <span class="k">if</span> <span class="n">read_next_char</span><span class="p">()</span> <span class="o">!=</span> <span class="s1">&#39;y&#39;</span><span class="p">:</span>
-                <span class="k">continue</span>    <span class="c1"># ignore the command</span>
-        <span class="n">process_command</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
-</pre></div>
-
-
-<p>如果现在假设你想要将这个程序插入到用户界面中。大部分的用户界面工具都是基于事件驱动的，它们会在用户输入一个字符后调用回调函数。在这种设定下，编写上述代码所需的read_next_char()函数是非常难的，将会有如下两个冲突的函数:</p>
-<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">event_keyworn</span><span class="p">(</span><span class="n">key</span><span class="p">):</span>
-    <span class="err">??</span>
-
-<span class="k">def</span> <span class="nf">read_next_char</span><span class="p">():</span>
-    <span class="err">??应该等待下一个</span><span class="n">event_keydown</span><span class="p">()</span><span class="err">函数的调用</span>
-</pre></div>
-
-
-<p>显然，上述情况在串行运行是不可能的。你也许想到了使用多个线程来完成。使用Greenlets作为替代方法，可以免去关联锁和程序退出的相关问题。你可以在程序运行主干中分裂出一个greenlet来专门运行process_commands()函数，你可以使用如下方式来交换用户的按键情况：</p>
-<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">event_keydown</span><span class="p">(</span><span class="n">key</span><span class="p">):</span>
-    <span class="c1"># 跳转至g_processor, 并且把用户所按键发送给g_processor</span>
-    <span class="n">g_processor</span><span class="o">.</span><span class="n">switch</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
-
-<span class="k">def</span> <span class="nf">process_commands</span><span class="p">():</span>
-    <span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
-        <span class="n">line</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
-        <span class="k">while</span> <span class="ow">not</span> <span class="n">line</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">):</span>
-            <span class="n">line</span> <span class="o">+=</span> <span class="n">read_next_char</span><span class="p">()</span>
-        <span class="k">if</span> <span class="n">line</span> <span class="o">==</span> <span class="s1">&#39;quit</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">:</span>
-            <span class="k">print</span> <span class="s2">&quot;are you sure?&quot;</span>
-            <span class="k">if</span> <span class="n">read_next_char</span><span class="p">()</span> <span class="o">!=</span> <span class="s1">&#39;y&#39;</span><span class="p">:</span>
-                <span class="k">continue</span>    <span class="c1"># ignore the command</span>
-        <span class="n">process_command</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
-
-<span class="k">def</span> <span class="nf">read_next_char</span><span class="p">():</span>
-    <span class="c1"># 在这个例子里，g_self就是g_processor</span>
-    <span class="n">g_self</span> <span class="o">=</span> <span class="n">greenlet</span><span class="o">.</span><span class="n">getcurrent</span><span class="p">()</span>
-    <span class="c1"># 跳转到父greenlet(主greenlet)中，等待下一个按键</span>
-    <span class="n">next_char</span> <span class="o">=</span> <span class="n">g_self</span><span class="o">.</span><span class="n">parent</span><span class="o">.</span><span class="n">switch</span><span class="p">()</span>
-    <span class="k">return</span> <span class="n">next_char</span>
-
-<span class="n">g_processor</span> <span class="o">=</span> <span class="n">greenlet</span><span class="p">(</span><span class="n">process_commands</span><span class="p">)</span>
-<span class="n">g_processor</span><span class="o">.</span><span class="n">switch</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">)</span>   <span class="c1"># input arguments to process_commands()</span>
-
-<span class="n">gui</span><span class="o">.</span><span class="n">mainloop</span><span class="p">()</span>
-</pre></div>
-
-
-<p>在这个例子中，执行过程如下: 当read_next_char()被调用时，身处于g_processor这个greenlet中，所以它的父greenlet也就是派生g_processor的根greenlet。当它显示切换回父greenlet的时候，程序会重新回到顶层继续GUI事件监听循环。当事件监听循环回调event_keydown()函数的时候, 又切换回g_processor，这意味着程序会跳转到目标greenlet之前被挂起的地方继续执行-在这个例子里，将会跳转会read_next_char()函数中调用switch()的地方继续执行，并且在event_keydown()中调用switch()时所给的参数key会被做为返回值，并赋值给变量next_char。</p>
-<p>注意，read_next_char()函数在被挂起和恢复时，它的调用栈会得到保护。所以它会在process_commands()中的不同位置返回，这主要取决于它原先被调用的位置。这使程序的执行逻辑以一种很好的控制流得以保持。我们不需要完全重写process_commands()来使其转化为状态机。</p>
-<h4>使用</h4>
-<h5>简介</h5>
-<p>一个greenlet其实是一个独立的微伪线程。把它想象成一个小型的frame栈。最外层的frame就是你调用的初始函数，最里层的frame就是greenlet目前正停留的frame。在你使用greenlets的时候，就是通过创建大量的这种栈，并且在它们之间跳跃执行。跳跃(切换)永远都是显式的。一个greenlet必须显式切换至目标greenlet，这样会使前者的执行被挂起，而目标greenlet会在之前挂起的地方被恢复过来继续执行。greenlets之间的跳跃被称为<strong>切换</strong>。</p>
-<p>当你创建了一个greenlet，它会的到一个初始的空栈；当第一次切换到这个greenlet的时候，它开始执行一个指定的函数，在这个函数中又可能会调用其他函数，切换至其他greenlet。最终当最外层的函数执行完毕后，整个greenlet的调用栈再次变空，那么这个greenlet就死了。greenlet也可能死于未被捕获的异常。</p>
-<p>举个例子:</p>
-<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">greenlet</span> <span class="kn">import</span> <span class="n">greenlet</span>
-
-<span class="k">def</span> <span class="nf">test1</span><span class="p">():</span>
-    <span class="k">print</span> <span class="mi">12</span>
-    <span class="n">gr2</span><span class="o">.</span><span class="n">switch</span><span class="p">()</span>
-    <span class="k">print</span> <span class="mi">34</span>
-
-<span class="k">def</span> <span class="nf">test2</span><span class="p">():</span>
-    <span class="k">print</span> <span class="mi">56</span>
-    <span class="n">gr1</span><span class="o">.</span><span class="n">switch</span><span class="p">()</span>
-    <span class="k">print</span> <span class="mi">78</span>
-
-<span class="n">gr1</span> <span class="o">=</span> <span class="n">greenlet</span><span class="p">(</span><span class="n">test1</span><span class="p">)</span>
-<span class="n">gr2</span> <span class="o">=</span> <span class="n">greenlet</span><span class="p">(</span><span class="n">test2</span><span class="p">)</span>
-<span class="n">gr1</span><span class="o">.</span><span class="n">switch</span><span class="p">()</span>
-</pre></div>
-
-
-<p>最后一行跳转至函数test1，打印出12。又跳转至函数test2，打印了56。重新跳转会test1，打印了34。 然后test1所在的greenlet执行完成并且死亡。此时，程序回到最开始的gr1.switch()继续执行。注意，78将永远不会被执行。</p>
-<h4>父级</h4>
-<p>让我们看看当某个greenlet死亡的的时候，程序会如何执行。每一个greenlet都会有一个父greenlet。顾名思义，父greenlet就是分裂出子greenlet的greenlet(不过可以随时通过greenlet.parent来修改某一个greenlet的父greenlet)。当greenlet结束的时候，程序会回到他的父greenlet继续执行。这样，所有的greenlet形成树结构。树的根节点其实是隐式的<strong>主greenlet</strong>，所以不在用户自定义的greenlet中执行的代码都会在主greenlet中被执行。</p>
-<p>在上面的例子中，gr1和gr2的父greenlet都是最外层的主greenlet，不论是它们中谁结束了，程序就会回到主greenlet继续执行。</p>
-<p>greenlet未被捕获的异常也会往外抛给父级greenlet。举个例子，如果上面例子中的函数test2包含一个拼写错误，那么所产生的<strong>NameError</strong>异常会干死gr2，程序便会直接回到主greenlet执行。而traceback会包含test2，但不会包含test1。记住，switch不是调用，而是在多个并行的栈容器之间切换执行。父级表示了它的栈在逻辑上是在当前greenlet的下方的。</p>
-<h4>实例</h4>
-<p><code>greenlet.greenlet</code>是greenlet类型， 它支持以下操作:</p>
-<p><code>greenlet(run=None, parent=None)</code>
-创建新的greenlet对象(不会运行)。<code>run</code>参数执行需要执行的函数，<code>parent</code>指定它的父级greenlet，默任的话就是当前的greenlet。</p>
-<p><code>greenlet.getcurrent()</code>
-返回当前所在的greenlet（即调用该函数的greenlet)</p>
-<p><code>greenlet.GreenletExit</code>
-这个特定的异常并不会被往外抛给其父级greenlet；使用它可以杀死一个greenlet。</p>
-<p><code>greenlet</code>类也可以被继承。greenlet的run属性一般是在greenlet创建时被设置，调用<code>run</code>可以启动该greenlet。但当你定义greenlet的子类时，重写其<code>run</code>方法比在构造函数中传入<code>run</code>参数来的有意义。</p>
-<h4>切换</h4>
-<p>greenlet之间的切换发生在某个greenlet的switch函数被调用的时候，亦或是某个greenlet结束的时候(程序会返回父级greenlet继续执行)。在切换期间，一个对象或异常会被发送给目标greenlet。这可以作为一种方便的方法在greenlet之间传递信息。比如:</p>
-<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">test1</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
-    <span class="n">z</span> <span class="o">=</span> <span class="n">gr2</span><span class="o">.</span><span class="n">switch</span><span class="p">(</span><span class="n">x</span><span class="o">+</span><span class="n">y</span><span class="p">)</span>
-    <span class="k">print</span> <span class="n">z</span>
-
-<span class="k">def</span> <span class="nf">test2</span><span class="p">(</span><span class="n">u</span><span class="p">):</span>
-    <span class="k">print</span> <span class="n">u</span>
-    <span class="n">gr1</span><span class="o">.</span><span class="n">switch</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
-
-<span class="n">gr1</span> <span class="o">=</span> <span class="n">greenlet</span><span class="p">(</span><span class="n">test1</span><span class="p">)</span>
-<span class="n">gr2</span> <span class="o">=</span> <span class="n">greenlet</span><span class="p">(</span><span class="n">test2</span><span class="p">)</span>
-<span class="n">gr1</span><span class="o">.</span><span class="n">switch</span><span class="p">(</span><span class="s2">&quot;hello&quot;</span><span class="p">,</span> <span class="s2">&quot; world&quot;</span><span class="p">)</span>
-</pre></div>
-
-
-<p>上述程序将会打印"hello, world"和42。值的注意的是，函数test1和函数test2的参数不是在greenlet被创建时所提供，而是在第一次切换到它们执行时提供。</p>
-<p><code>g.switch(*args, **kwargs)</code>
-将执行权切换给greenlet <strong>g</strong>, 并将指定参数发送给它。特别的是，如果g还没有启动，那么此时g将会启动。</p>
-<p><strong>greenlet之死</strong>
-如果greenlet的run函数执行完了，函数的返回值将会被发送给其父级。如果run函数被异常所终止，则异常也会被抛给其父级(除非是greenlet.GreenletExit异常，该异常会被捕获，函数执行结束并返回父级)。</p>
-<p>除了上述之外，目标greenlet通常接收对象作为调用之前已被挂起的greenlet的switch()函数的返回值。实际上，尽管对于switch()函数的调用不会立即返回，但是仍然会在未来的某个时刻返回(可能是别的greenlet切换时给出的参数，也可能是之前switch的greenlet的函数返回值)。此时，程序会回到之前被挂起的位于对于switch()函数的调用处。这表示 x = g.switch(y) 会把y发送给greenlet <strong>g</strong>，然后过段时间之后，会接收到一个对象并赋值给x。</p>
-<p>注意，对于任何已死greenlet的切换操作都会走到它们的父辈，或者父父辈，以此类推。最后的父级greenlet就是整棵树的根节点<strong>main</strong>greenlet，因为它永远不会死亡。</p>
-<h4>greenlet的属性和方法</h4>
-<p><code>g.switch(*args, **kwargs)</code>
-切换至greenlet <strong>g</strong>。</p>
-<p><code>g.run</code>
-greenlet启动时将会执行的函数。当greenlet <strong>g</strong> 启动后该属性将不复存在。</p>
-<p><code>g.parent</code>
-父级greenlet。该属性可修改，但是不允许形成循环父子结构。</p>
-<p><code>g.gr_frame</code>
-The current top frame, or None.
-当前顶层frame，没有则是None。</p>
-<p><code>g.dead</code>
-如果greenlet <strong>g</strong>已经执行结束了，则返回True。</p>
-<p><code>bool(g)</code>
-如果greenlet <strong>g</strong>还活着，则返回True，结束活着还未开始都是False。</p>
-<p><code>g.throw([typ, [val, [tb]]])</code>
-切换至greenlet <strong>g</strong>，不过会立刻在g中抛出给定的异常。如果没有指定任何参数，那么默认抛出<code>greenlet.GreenletExit</code>，那么g就结束了。调用这个函数就相当于下面的过程:</p>
-<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">raiser</span><span class="p">():</span>
-    <span class="k">raise</span> <span class="n">typ</span><span class="p">,</span> <span class="n">val</span><span class="p">,</span> <span class="n">tb</span>
-<span class="n">g_raiser</span> <span class="o">=</span> <span class="n">greenlet</span><span class="p">(</span><span class="n">raiser</span><span class="p">,</span> <span class="n">parent</span><span class="o">=</span><span class="n">g</span><span class="p">)</span>
-<span class="n">g_raiser</span><span class="o">.</span><span class="n">switch</span><span class="p">()</span>
-</pre></div>
-
-
-<p>注意，上述代码对于<code>greenlet.GreenletExit</code>无效，因为该异常不会被抛给父级greenlet <strong>g</strong>。</p>
-<h4>greenlets和Python线程</h4>
-<p>greenlet可以和Python的线程结合使用；这种情况下，每一个线程将包含一个主greenlet和大量子greenlet，形成树形结构。对于属于不同线程的greenlets，混合或者切换操作是不可能的。</p>
-<h4>greenlet的垃圾回收</h4>
-<p>如果对于一个greenlet对象的所有引用都不存在了(包括来自其他greenlet的parent属性的引用)，然后就没有办法再切换到这个greenlet了。这种情况下，<code>GreenletExit</code>异常就会在该greenlet中产生，这是一个greenlet唯一的一种异步获取执行权的情况。你可以使用<code>try:finally:</code>语句块来清理该greenlet所占有的资源。这个特性同时也支持那种使用死循环接收并处理数据的编码风格。当对于greenlet的最后一个引用被干掉后，死循环就会自动终止了。</p>
-<p>通过在某处保存对于某个greenlet的新引用可以认为这个greenlet可以正常死亡或重新恢复。只要捕获并忽略<code>GreenletExit</code>异常就可以让这个greenlet进入死循环。</p>
-<p>Greenlet不参与垃圾回收；greenlet中的循环引用将不会被发现，循环保存对于greenlet的引用可能会导致内存泄露。</p>
-<h4>调用跟踪支持</h4>
-<p>标准的Python调用跟踪和性能分析在greenlet中不能正常工作，这是因为栈和frame的切换发生在同一个线程之中。使用传统的方法来发现可靠的greenlet切换操作是很困难的，所以greenlet模块为基于greenlet的代码提供了新的调试，追踪和分析功能:</p>
-<p><code>greenlet.gettrace()</code>
-返回先前设定的调用跟踪函数，如果没有则返回None。</p>
-<p><code>greenlet.settrace(callback)</code>
-设定新的调用跟踪函数并返回之前设定的调用跟踪函数，如果没有则返回None。回调函数会被不同的事件所调用，并且需要行如：</p>
-<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">callback</span><span class="p">(</span><span class="n">event</span><span class="p">,</span> <span class="n">args</span><span class="p">):</span>
-    <span class="k">if</span> <span class="n">event</span> <span class="o">==</span> <span class="s1">&#39;switch&#39;</span><span class="p">:</span>
-        <span class="n">origin</span><span class="p">,</span> <span class="n">target</span> <span class="o">=</span> <span class="n">args</span>
-        <span class="c1"># Handle a switch from origin to target.</span>
-        <span class="c1"># Note that callback is running in the context of target</span>
-        <span class="c1"># greenlet and any exceptions will be passed as if</span>
-        <span class="c1"># target.throw() was used instead of a switch.</span>
-        <span class="k">return</span>
-    <span class="k">if</span> <span class="n">event</span> <span class="o">==</span> <span class="s1">&#39;throw&#39;</span><span class="p">:</span>
-        <span class="n">origin</span><span class="p">,</span> <span class="n">target</span> <span class="o">=</span> <span class="n">args</span>
-        <span class="c1"># Handle a throw from origin to target.</span>
-        <span class="c1"># Note that callback is running in the context of target</span>
-        <span class="c1"># greenlet and any exceptions will replace the original, as</span>
-        <span class="c1"># if target.throw() was used with the replacing exception.</span>
-        <span class="k">return</span>
-</pre></div>
-
-
-<p>如果事件类型既有<strong>'switch'</strong>又有<strong>'throw'</strong>, 那么对于参数元组args的解包就非常重要。这样的话，API就可以像<code>sys.settrace()</code>那样被扩展为更多的事件类型。</p>
-<h4>两个官方给出的例子</h4>
-<h5>1. 简单的生成器</h5>
-<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">unittest</span>
-<span class="kn">from</span> <span class="nn">greenlet</span> <span class="kn">import</span> <span class="n">greenlet</span>
-
-
-<span class="k">class</span> <span class="nc">genlet</span><span class="p">(</span><span class="n">greenlet</span><span class="p">):</span>
-
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwds</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">args</span> <span class="o">=</span> <span class="n">args</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">kwds</span> <span class="o">=</span> <span class="n">kwds</span>
-
-    <span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="n">fn</span><span class="p">,</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">fn</span>
-        <span class="n">fn</span><span class="p">(</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="bp">self</span><span class="o">.</span><span class="n">kwds</span><span class="p">)</span>
-
-    <span class="k">def</span> <span class="fm">__iter__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="bp">self</span>
-
-    <span class="k">def</span> <span class="nf">__next__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">parent</span> <span class="o">=</span> <span class="n">greenlet</span><span class="o">.</span><span class="n">getcurrent</span><span class="p">()</span>
-        <span class="n">result</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">switch</span><span class="p">()</span>
-        <span class="k">if</span> <span class="bp">self</span><span class="p">:</span>
-            <span class="k">return</span> <span class="n">result</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="k">raise</span> <span class="ne">StopIteration</span>
-
-    <span class="c1"># Hack: Python &lt; 2.6 compatibility</span>
-    <span class="nb">next</span> <span class="o">=</span> <span class="n">__next__</span>
-
-
-<span class="k">def</span> <span class="nf">Yield</span><span class="p">(</span><span class="n">value</span><span class="p">):</span>
-    <span class="n">g</span> <span class="o">=</span> <span class="n">greenlet</span><span class="o">.</span><span class="n">getcurrent</span><span class="p">()</span>
-    <span class="k">while</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">g</span><span class="p">,</span> <span class="n">genlet</span><span class="p">):</span>
-        <span class="k">if</span> <span class="n">g</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
-            <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="s1">&#39;yield outside a genlet&#39;</span><span class="p">)</span>
-        <span class="n">g</span> <span class="o">=</span> <span class="n">g</span><span class="o">.</span><span class="n">parent</span>
-    <span class="n">g</span><span class="o">.</span><span class="n">parent</span><span class="o">.</span><span class="n">switch</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
-
-
-<span class="k">def</span> <span class="nf">generator</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
-    <span class="k">class</span> <span class="nc">generator</span><span class="p">(</span><span class="n">genlet</span><span class="p">):</span>
-        <span class="n">fn</span> <span class="o">=</span> <span class="p">(</span><span class="n">func</span><span class="p">,)</span>
-    <span class="k">return</span> <span class="n">generator</span>
-
-
-<span class="k">class</span> <span class="nc">GeneratorTests</span><span class="p">(</span><span class="n">unittest</span><span class="o">.</span><span class="n">TestCase</span><span class="p">):</span>
-    <span class="k">def</span> <span class="nf">test_generator</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="n">seen</span> <span class="o">=</span> <span class="p">[]</span>
-
-        <span class="k">def</span> <span class="nf">g</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-            <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-                <span class="n">seen</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
-                <span class="n">Yield</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
-        <span class="n">g</span> <span class="o">=</span> <span class="n">generator</span><span class="p">(</span><span class="n">g</span><span class="p">)</span>
-        <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
-            <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">g</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
-                <span class="n">seen</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">j</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">seen</span><span class="p">,</span> <span class="mi">3</span> <span class="o">*</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span>
-</pre></div>
-
-
-<h5>2. 网状调用生成器</h5>
-<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">unittest</span>
-<span class="kn">from</span> <span class="nn">greenlet</span> <span class="kn">import</span> <span class="n">greenlet</span>
-
-
-<span class="k">class</span> <span class="nc">genlet</span><span class="p">(</span><span class="n">greenlet</span><span class="p">):</span>
-
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwds</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">args</span> <span class="o">=</span> <span class="n">args</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">kwds</span> <span class="o">=</span> <span class="n">kwds</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">child</span> <span class="o">=</span> <span class="bp">None</span>
-
-    <span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="n">fn</span><span class="p">,</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">fn</span>
-        <span class="n">fn</span><span class="p">(</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="bp">self</span><span class="o">.</span><span class="n">kwds</span><span class="p">)</span>
-
-    <span class="k">def</span> <span class="fm">__iter__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="bp">self</span>
-
-    <span class="k">def</span> <span class="nf">set_child</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">child</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">child</span> <span class="o">=</span> <span class="n">child</span>
-
-    <span class="k">def</span> <span class="nf">__next__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">child</span><span class="p">:</span>
-            <span class="n">child</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">child</span>
-            <span class="k">while</span> <span class="n">child</span><span class="o">.</span><span class="n">child</span><span class="p">:</span>
-                <span class="n">tmp</span> <span class="o">=</span> <span class="n">child</span>
-                <span class="n">child</span> <span class="o">=</span> <span class="n">child</span><span class="o">.</span><span class="n">child</span>
-                <span class="n">tmp</span><span class="o">.</span><span class="n">child</span> <span class="o">=</span> <span class="bp">None</span>
-
-            <span class="n">result</span> <span class="o">=</span> <span class="n">child</span><span class="o">.</span><span class="n">switch</span><span class="p">()</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">parent</span> <span class="o">=</span> <span class="n">greenlet</span><span class="o">.</span><span class="n">getcurrent</span><span class="p">()</span>
-            <span class="n">result</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">switch</span><span class="p">()</span>
-
-        <span class="k">if</span> <span class="bp">self</span><span class="p">:</span>
-            <span class="k">return</span> <span class="n">result</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="k">raise</span> <span class="ne">StopIteration</span>
-
-    <span class="c1"># Hack: Python &lt; 2.6 compatibility</span>
-    <span class="nb">next</span> <span class="o">=</span> <span class="n">__next__</span>
-
-
-<span class="k">def</span> <span class="nf">Yield</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
-    <span class="n">g</span> <span class="o">=</span> <span class="n">greenlet</span><span class="o">.</span><span class="n">getcurrent</span><span class="p">()</span>
-
-    <span class="k">while</span> <span class="n">level</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
-        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">g</span><span class="p">,</span> <span class="n">genlet</span><span class="p">):</span>
-            <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="s1">&#39;yield outside a genlet&#39;</span><span class="p">)</span>
-        <span class="k">if</span> <span class="n">level</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
-            <span class="n">g</span><span class="o">.</span><span class="n">parent</span><span class="o">.</span><span class="n">set_child</span><span class="p">(</span><span class="n">g</span><span class="p">)</span>
-        <span class="n">g</span> <span class="o">=</span> <span class="n">g</span><span class="o">.</span><span class="n">parent</span>
-        <span class="n">level</span> <span class="o">-=</span> <span class="mi">1</span>
-
-    <span class="n">g</span><span class="o">.</span><span class="n">switch</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
-
-
-<span class="k">def</span> <span class="nf">Genlet</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
-    <span class="k">class</span> <span class="nc">Genlet</span><span class="p">(</span><span class="n">genlet</span><span class="p">):</span>
-        <span class="n">fn</span> <span class="o">=</span> <span class="p">(</span><span class="n">func</span><span class="p">,)</span>
-    <span class="k">return</span> <span class="n">Genlet</span>
-
-
-<span class="k">def</span> <span class="nf">g1</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">seen</span><span class="p">):</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-        <span class="n">seen</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
-        <span class="k">yield</span> <span class="n">i</span>
-
-
-<span class="k">def</span> <span class="nf">g2</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">seen</span><span class="p">):</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-        <span class="n">seen</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
-        <span class="n">Yield</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
-
-<span class="n">g2</span> <span class="o">=</span> <span class="n">Genlet</span><span class="p">(</span><span class="n">g2</span><span class="p">)</span>
-
-
-<span class="k">def</span> <span class="nf">nested</span><span class="p">(</span><span class="n">i</span><span class="p">):</span>
-    <span class="n">Yield</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
-
-
-<span class="k">def</span> <span class="nf">g3</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">seen</span><span class="p">):</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-        <span class="n">seen</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
-        <span class="n">nested</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
-<span class="n">g3</span> <span class="o">=</span> <span class="n">Genlet</span><span class="p">(</span><span class="n">g3</span><span class="p">)</span>
-
-
-<span class="k">def</span> <span class="nf">a</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-    <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-        <span class="k">return</span>
-    <span class="k">for</span> <span class="n">ii</span> <span class="ow">in</span> <span class="n">ax</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">):</span>
-        <span class="n">Yield</span><span class="p">(</span><span class="n">ii</span><span class="p">)</span>
-    <span class="n">Yield</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
-<span class="n">ax</span> <span class="o">=</span> <span class="n">Genlet</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
-
-
-<span class="k">def</span> <span class="nf">perms</span><span class="p">(</span><span class="n">l</span><span class="p">):</span>
-    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">l</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
-        <span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="n">l</span><span class="p">:</span>
-            <span class="c1"># No syntactical sugar for generator expressions</span>
-            <span class="p">[</span><span class="n">Yield</span><span class="p">([</span><span class="n">e</span><span class="p">]</span> <span class="o">+</span> <span class="n">p</span><span class="p">)</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">perms</span><span class="p">([</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">l</span> <span class="k">if</span> <span class="n">x</span> <span class="o">!=</span> <span class="n">e</span><span class="p">])]</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="n">Yield</span><span class="p">(</span><span class="n">l</span><span class="p">)</span>
-<span class="n">perms</span> <span class="o">=</span> <span class="n">Genlet</span><span class="p">(</span><span class="n">perms</span><span class="p">)</span>
-
-
-<span class="k">def</span> <span class="nf">gr1</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-    <span class="k">for</span> <span class="n">ii</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
-        <span class="n">Yield</span><span class="p">(</span><span class="n">ii</span><span class="p">)</span>
-        <span class="n">Yield</span><span class="p">(</span><span class="n">ii</span> <span class="o">*</span> <span class="n">ii</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
-
-<span class="n">gr1</span> <span class="o">=</span> <span class="n">Genlet</span><span class="p">(</span><span class="n">gr1</span><span class="p">)</span>
-
-
-<span class="k">def</span> <span class="nf">gr2</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">seen</span><span class="p">):</span>
-    <span class="k">for</span> <span class="n">ii</span> <span class="ow">in</span> <span class="n">gr1</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-        <span class="n">seen</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">ii</span><span class="p">)</span>
-
-<span class="n">gr2</span> <span class="o">=</span> <span class="n">Genlet</span><span class="p">(</span><span class="n">gr2</span><span class="p">)</span>
-
-
-<span class="k">class</span> <span class="nc">NestedGeneratorTests</span><span class="p">(</span><span class="n">unittest</span><span class="o">.</span><span class="n">TestCase</span><span class="p">):</span>
-    <span class="k">def</span> <span class="nf">test_layered_genlets</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="n">seen</span> <span class="o">=</span> <span class="p">[]</span>
-        <span class="k">for</span> <span class="n">ii</span> <span class="ow">in</span> <span class="n">gr2</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="n">seen</span><span class="p">):</span>
-            <span class="n">seen</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">ii</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">seen</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">16</span><span class="p">])</span>
-
-    <span class="k">def</span> <span class="nf">test_permutations</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="n">gen_perms</span> <span class="o">=</span> <span class="n">perms</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">)))</span>
-        <span class="n">permutations</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">gen_perms</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">permutations</span><span class="p">),</span> <span class="mi">4</span> <span class="o">*</span> <span class="mi">3</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">*</span> <span class="mi">1</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">assertTrue</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span> <span class="ow">in</span> <span class="n">permutations</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">assertTrue</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span> <span class="ow">in</span> <span class="n">permutations</span><span class="p">)</span>
-        <span class="n">res</span> <span class="o">=</span> <span class="p">[]</span>
-        <span class="k">for</span> <span class="n">ii</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">perms</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">))),</span> <span class="n">perms</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">)))):</span>
-            <span class="n">res</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">ii</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span>
-            <span class="n">res</span><span class="p">,</span>
-            <span class="p">[([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]),</span> <span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">]),</span>
-             <span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">]),</span> <span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">]),</span>
-             <span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]),</span> <span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">])])</span>
-        <span class="c1"># XXX Test to make sure we are working as a generator expression</span>
-
-    <span class="k">def</span> <span class="nf">test_genlet_simple</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">for</span> <span class="n">g</span> <span class="ow">in</span> <span class="p">[</span><span class="n">g1</span><span class="p">,</span> <span class="n">g2</span><span class="p">,</span> <span class="n">g3</span><span class="p">]:</span>
-            <span class="n">seen</span> <span class="o">=</span> <span class="p">[]</span>
-            <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
-                <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">g</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="n">seen</span><span class="p">):</span>
-                    <span class="n">seen</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">j</span><span class="p">)</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">seen</span><span class="p">,</span> <span class="mi">3</span> <span class="o">*</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span>
-
-    <span class="k">def</span> <span class="nf">test_genlet_bad</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">try</span><span class="p">:</span>
-            <span class="n">Yield</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
-        <span class="k">except</span> <span class="ne">RuntimeError</span><span class="p">:</span>
-            <span class="k">pass</span>
-
-    <span class="k">def</span> <span class="nf">test_nested_genlets</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="n">seen</span> <span class="o">=</span> <span class="p">[]</span>
-        <span class="k">for</span> <span class="n">ii</span> <span class="ow">in</span> <span class="n">ax</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
-            <span class="n">seen</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">ii</span><span class="p">)</span>
-</pre></div>
-
-
-<h4>结尾</h4>
-<p>了解greenlet主要是为了深入了解gevent做铺垫，翻译呢主要是为了加深自己的记忆：）</p>
-		</div> <!--/#entry-content-->
-    		<span class="tag-links"><strong>Tagged</strong>
- <a href="https://importcjj.github.io/tag/concurrent.html" rel="tag">concurrent</a>,  <a href="https://importcjj.github.io/tag/gevent.html" rel="tag">gevent</a>    		</span>
-	</div> <!--/#main-->
-</div>  <!--/#post--><div class="post type-post status-publish format-standard hentry category-general" id="post">
-	<div class="entry-meta">
-		<div class="date"><a href="https://importcjj.github.io/pythondan-li-mo-shi-de-shi-xian.html">二 26 四月 2016</a></div>
-		<span class="byline">By <a href="https://importcjj.github.io/author/importcjj.html">importcjj</a></span>
-			<div class="comments"><a href="https://importcjj.github.io/pythondan-li-mo-shi-de-shi-xian.html#disqus_thread" title="Comment on Python单例模式的实现">comments</a></div>
-			<span class="cat-links"><a href="https://importcjj.github.io/category/python.html" title="View all posts in Python" rel="category tag">Python</a></span>
-	</div> <!-- /#entry-meta -->
-	<div class="main">
-		<h2 class="entry-title">
-			<a href="https://importcjj.github.io/pythondan-li-mo-shi-de-shi-xian.html" title="Permalink to Python单例模式的实现" rel="bookmark">Python单例模式的实现</a>
-		</h2>
-		<div class="entry-content">
-			<h4>由于实现的方式很多，先来3种。</h4>
-<h4>1. 类实例实现的单例装饰器</h4>
-<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">functools</span>
-
-<span class="k">class</span> <span class="nc">Singleton</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
-
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">instances</span> <span class="o">=</span> <span class="p">{}</span>
-
-    <span class="k">def</span> <span class="fm">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="bp">cls</span><span class="p">):</span>
-        <span class="nd">@functools.wraps</span><span class="p">(</span><span class="bp">cls</span><span class="p">)</span>
-        <span class="k">def</span> <span class="nf">wrapper</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-            <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">instances</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
-                <span class="bp">self</span><span class="o">.</span><span class="n">instances</span><span class="p">[</span><span class="bp">cls</span><span class="p">]</span> <span class="o">=</span> <span class="bp">cls</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">instances</span><span class="p">[</span><span class="bp">cls</span><span class="p">]</span>
-        <span class="k">return</span> <span class="n">wrapper</span>
-
-<span class="n">singleton</span> <span class="o">=</span> <span class="n">Singleton</span><span class="p">()</span>
-
-<span class="c1"># 用法</span>
-<span class="nd">@singleton</span>
-<span class="k">class</span> <span class="nc">Test</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
-    <span class="k">pass</span>
-
-<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
-    <span class="n">t1</span> <span class="o">=</span> <span class="n">Test</span><span class="p">()</span>
-    <span class="n">t2</span> <span class="o">=</span> <span class="n">Test</span><span class="p">()</span>
-    <span class="k">print</span><span class="p">(</span><span class="n">t1</span><span class="p">,</span> <span class="n">t2</span><span class="p">)</span>
-    <span class="k">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">t1</span><span class="p">),</span> <span class="nb">type</span><span class="p">(</span><span class="n">t2</span><span class="p">))</span>
-    <span class="k">assert</span> <span class="n">t1</span> <span class="o">==</span> <span class="n">t2</span>
-
-<span class="c1"># 这种方式有一个缺点，就是Test这个类会变成一个function, </span>
-<span class="c1"># 这样的话就无法使用instance等方式了。</span>
-</pre></div>
-
-
-<h4>2. 类实现的单例装饰器</h4>
-<div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Singleton</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
-
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="bp">cls</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">cls</span> <span class="o">=</span> <span class="bp">cls</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">cls_instance</span> <span class="o">=</span> <span class="bp">None</span>
-
-    <span class="k">def</span> <span class="fm">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">cls_instance</span><span class="p">:</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">cls_instance</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">cls</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">cls_instance</span>
-
-<span class="nd">@Singleton</span>
-<span class="k">class</span> <span class="nc">Test</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
-    <span class="k">pass</span>
-
-
-<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
-    <span class="k">print</span><span class="p">(</span><span class="n">Test</span><span class="p">)</span>
-    <span class="n">t1</span> <span class="o">=</span> <span class="n">Test</span><span class="p">()</span>
-    <span class="n">t2</span> <span class="o">=</span> <span class="n">Test</span><span class="p">()</span>
-    <span class="k">print</span><span class="p">(</span><span class="n">t1</span><span class="p">,</span> <span class="n">t2</span><span class="p">)</span>
-    <span class="k">assert</span> <span class="n">t1</span> <span class="o">==</span> <span class="n">t2</span>
-
-<span class="c1"># 这种方式Test其实已经是single的一个实例了</span>
-<span class="c1"># 缺点和第一种方式一样，Test已经不是原来的Test了</span>
-<span class="c1"># 而t1, t2却还是原来的Test的实例</span>
-<span class="c1"># 对于这种方式我还存有疑虑，但是又说不出来</span>
-<span class="c1"># 总感觉怪怪的</span>
-</pre></div>
-
-
-<h4>3. metaclass元类</h4>
-<div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Singleton</span><span class="p">(</span><span class="nb">type</span><span class="p">):</span>
-    <span class="n">_instances</span> <span class="o">=</span> <span class="p">{}</span>
-    <span class="k">def</span> <span class="nf">__cal__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-        <span class="k">if</span> <span class="bp">self</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_instances</span><span class="p">:</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">_instances</span><span class="p">[</span><span class="bp">self</span><span class="p">]</span> <span class="o">=</span> <span class="nb">super</span><span class="p">(</span><span class="n">Singleton</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__call__</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">*</span><span class="n">kwargs</span><span class="p">)</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_instances</span><span class="p">[</span><span class="bp">self</span><span class="p">]</span>
-
-<span class="c1"># py2写法</span>
-<span class="k">class</span> <span class="nc">Test</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
-    <span class="vm">__metaclass__</span> <span class="o">=</span> <span class="n">Singleton</span>
-
-    <span class="k">pass</span>
-
-<span class="c1"># py3写法</span>
-<span class="k">class</span> <span class="nc">Test</span><span class="p">(</span><span class="nb">object</span><span class="p">,</span> <span class="n">metaclass</span><span class="o">=</span><span class="n">Singleton</span><span class="p">):</span>
-    <span class="k">pass</span>
-
-<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
-    <span class="k">print</span><span class="p">(</span><span class="n">Test</span><span class="p">)</span>
-    <span class="n">t1</span> <span class="o">=</span> <span class="n">Test</span><span class="p">()</span>
-    <span class="n">t2</span> <span class="o">=</span> <span class="n">Test</span><span class="p">()</span>
-    <span class="k">print</span><span class="p">(</span><span class="n">t1</span><span class="p">,</span> <span class="n">t2</span><span class="p">)</span>
-    <span class="k">assert</span> <span class="n">t1</span> <span class="o">==</span> <span class="n">t2</span>
-    <span class="k">print</span><span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">t1</span><span class="p">,</span> <span class="n">Test</span><span class="p">)</span>
-
-<span class="c1"># 使用元类是最好的，因为Test的行为都没有被改变</span>
-<span class="c1"># 所以isinstance, type等函数的调用都没有影响</span>
-<span class="c1"># 不过理解起来可能会有一些困难了</span>
-<span class="c1"># 因为我觉得自己理解的还有一些不够通透</span>
-</pre></div>
-		</div> <!--/#entry-content-->
-    		<span class="tag-links"><strong>Tagged</strong>
- <a href="https://importcjj.github.io/tag/singleton.html" rel="tag">singleton</a>,  <a href="https://importcjj.github.io/tag/zhuang-shi-qi.html" rel="tag">装饰器</a>    		</span>
-	</div> <!--/#main-->
-</div>  <!--/#post--><div class="post type-post status-publish format-standard hentry category-general" id="post">
-	<div class="entry-meta">
-		<div class="date"><a href="https://importcjj.github.io/python-yieldxiao-ji.html">日 27 三月 2016</a></div>
-		<span class="byline">By <a href="https://importcjj.github.io/author/importcjj.html">importcjj</a></span>
-			<div class="comments"><a href="https://importcjj.github.io/python-yieldxiao-ji.html#disqus_thread" title="Comment on Python yield小记">comments</a></div>
-			<span class="cat-links"><a href="https://importcjj.github.io/category/python.html" title="View all posts in Python" rel="category tag">Python</a></span>
-	</div> <!-- /#entry-meta -->
-	<div class="main">
-		<h2 class="entry-title">
-			<a href="https://importcjj.github.io/python-yieldxiao-ji.html" title="Permalink to Python yield小记" rel="bookmark">Python yield小记</a>
-		</h2>
-		<div class="entry-content">
-			<h4>yeild</h4>
-<p><em>yield</em> 一般搭配函数来定义一个Generator(生成器)</p>
-<p>一个简单的例子:</p>
-<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f</span><span class="p">():</span>
-    <span class="k">print</span> <span class="s2">&quot;Today is 7.21&quot;</span>
-    <span class="k">yield</span> <span class="mi">6</span>
-</pre></div>
-
-
-<p><em>f()</em> 将会返回一个Generator, 而非像普通函数一样执行。想要使用生成器的话(比如 i)需要使用i.next() (与next(i)等效) 和i.send(value)。</p>
-<div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="n">i</span> <span class="o">=</span> <span class="n">f</span><span class="p">()</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">i</span>
-<span class="o">&lt;</span><span class="n">generator</span> <span class="nb">object</span> <span class="n">f</span> <span class="n">at</span> <span class="mh">0x1041e7dc0</span><span class="o">&gt;</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">i</span><span class="o">.</span><span class="n">next</span><span class="p">()</span>
-<span class="n">Today</span> <span class="ow">is</span> <span class="mf">7.21</span>
-<span class="mi">6</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">i</span><span class="o">.</span><span class="n">next</span><span class="p">()</span>
-<span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">):</span>
-  <span class="n">File</span> <span class="s2">&quot;&lt;stdin&gt;&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">1</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">StopIteration</span>
-</pre></div>
-
-
-<p>生成器调next()或send()方法后会执行函数体内的语句，执行到yield语句后停止, 并返回yield语句的参数，上例中就是 6。再次使用next()或send()会从停止处继续执行，由于之后已经没有yield了，所以会raise StopTteration异常。</p>
-<p>有时候可能会遇到这样的情况</p>
-<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f</span><span class="p">():</span>
-    <span class="n">m</span> <span class="o">=</span> <span class="mi">5</span>
-    <span class="n">m</span> <span class="o">=</span> <span class="k">yield</span> <span class="mi">6</span>
-    <span class="k">print</span> <span class="s2">&quot;m = &quot;</span><span class="p">,</span> <span class="n">m</span>
-</pre></div>
-
-
-<p>上例中 m 会得到（yield 6）这个式子的值。那么，这个值是多少呢？取决于i.next()和i.send(value)。如果是next，则是None。send的话就是value。</p>
-<p><em>can't send non-None value to a just-started generator</em> 第一次调用只能是
-i.next()或者i.send(None)</p>
-<p>这里需要注意一点，第一次next会在执行(yield 6)后停止，并不会执行m的赋值(重新绑定，毕竟python不太一样)。m的值是轮到下一个next或send来改变的。</p>
-<div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="k">def</span> <span class="nf">f</span><span class="p">():</span>
-<span class="o">...</span>     <span class="n">m</span> <span class="o">=</span> <span class="mi">5</span> 
-<span class="o">...</span>     <span class="n">m</span> <span class="o">=</span> <span class="k">yield</span> <span class="mi">6</span>
-<span class="o">...</span>     <span class="k">print</span> <span class="s2">&quot;m = &quot;</span><span class="p">,</span> <span class="n">m</span>
-<span class="o">...</span> 
-<span class="o">&gt;&gt;&gt;</span> <span class="n">i</span> <span class="o">=</span> <span class="n">f</span><span class="p">()</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">i</span><span class="o">.</span><span class="n">next</span><span class="p">()</span>
-<span class="mi">6</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">i</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="mi">7</span><span class="p">)</span>
-<span class="n">m</span> <span class="o">=</span>  <span class="mi">7</span>
-<span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">):</span>
-  <span class="n">File</span> <span class="s2">&quot;&lt;stdin&gt;&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">1</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">StopIteration</span>
-</pre></div>
-
-
-<h4>使用</h4>
-<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">fibonacci</span><span class="p">(</span><span class="n">i</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;关于斐波那契数列的生成器</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-    <span class="k">if</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
-        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">,</span> <span class="n">i</span>
-    <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-        <span class="k">yield</span> <span class="mi">0</span>
-
-    <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span>
-    <span class="k">while</span> <span class="n">count</span> <span class="o">&lt;=</span> <span class="n">i</span><span class="p">:</span>
-        <span class="k">yield</span> <span class="n">a</span>
-        <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">b</span><span class="p">,</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
-        <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
-
-<span class="o">&gt;&gt;&gt;</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">fibonacci</span><span class="p">(</span><span class="mi">13</span><span class="p">):</span>
-<span class="o">...</span>     <span class="k">print</span> <span class="n">i</span><span class="p">,</span>
-<span class="o">...</span> 
-<span class="mi">0</span> <span class="mi">1</span> <span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span> <span class="mi">5</span> <span class="mi">8</span> <span class="mi">13</span> <span class="mi">21</span> <span class="mi">34</span> <span class="mi">55</span> <span class="mi">89</span> <span class="mi">144</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">fibonacci</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
-<span class="o">...</span>     <span class="k">print</span> <span class="n">i</span><span class="p">,</span>
-<span class="o">...</span> 
-<span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">):</span>
-  <span class="n">File</span> <span class="s2">&quot;&lt;stdin&gt;&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">1</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-  <span class="n">File</span> <span class="s2">&quot;_yield.py&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">5</span><span class="p">,</span> <span class="ow">in</span> <span class="n">fibonacci</span>
-    <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">,</span> <span class="n">i</span>
-<span class="ne">ValueError</span><span class="p">:</span> <span class="o">-</span><span class="mi">1</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">fibonacci</span><span class="p">(</span><span class="mi">0</span><span class="p">):</span>
-<span class="o">...</span>     <span class="k">print</span> <span class="n">i</span><span class="p">,</span>
-<span class="o">...</span> 
-<span class="mi">0</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">fibonacci</span><span class="p">(</span><span class="mi">1</span><span class="p">):</span>
-<span class="o">...</span>     <span class="k">print</span> <span class="n">i</span>
-<span class="o">...</span> 
-<span class="mi">0</span> <span class="mi">1</span>
-</pre></div>
-
-
-<p>随便写了一个关于斐波拉切数列的生成器，并且遍历了它。</p>
-<h4>终止生成器</h4>
-<div class="highlight"><pre><span></span><span class="n">fib</span> <span class="o">=</span> <span class="n">fibonacci</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span>
-<span class="n">fib</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
-</pre></div>
-
-
-<div class="highlight"><pre><span></span><span class="n">fib</span><span class="o">.</span><span class="n">throw</span><span class="p">(</span><span class="ne">GeneratorExit</span><span class="p">)</span>
-<span class="c1"># GeneratorExit 继承自 BaseException</span>
-</pre></div>
-
-
-<p>使用这两种方法之后，再去访问生成器的方法，会触发StopIteration异常。遍历的话也不会返回有效值。</p>
-<h4>最后</h4>
-<p>关于yield暂时只想到这些，以后可能补充。生成器不一定还能通过别的方式定义。比如</p>
-<div class="highlight"><pre><span></span><span class="p">(</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">6</span><span class="p">))</span>
-</pre></div>
-		</div> <!--/#entry-content-->
-    		<span class="tag-links"><strong>Tagged</strong>
- <a href="https://importcjj.github.io/tag/python.html" rel="tag">Python</a>,  <a href="https://importcjj.github.io/tag/sheng-cheng-qi.html" rel="tag">生成器</a>,  <a href="https://importcjj.github.io/tag/yield.html" rel="tag">yield</a>    		</span>
-	</div> <!--/#main-->
-</div>  <!--/#post--><div class="post type-post status-publish format-standard hentry category-general" id="post">
-	<div class="entry-meta">
-		<div class="date"><a href="https://importcjj.github.io/pythonzhong-yi-xie-rong-yi-bei-hu-shi-de-dong-xi.html">日 27 三月 2016</a></div>
-		<span class="byline">By <a href="https://importcjj.github.io/author/importcjj.html">importcjj</a></span>
-			<div class="comments"><a href="https://importcjj.github.io/pythonzhong-yi-xie-rong-yi-bei-hu-shi-de-dong-xi.html#disqus_thread" title="Comment on Python中一些容易被忽视的东西">comments</a></div>
-			<span class="cat-links"><a href="https://importcjj.github.io/category/python.html" title="View all posts in Python" rel="category tag">Python</a></span>
-	</div> <!-- /#entry-meta -->
-	<div class="main">
-		<h2 class="entry-title">
-			<a href="https://importcjj.github.io/pythonzhong-yi-xie-rong-yi-bei-hu-shi-de-dong-xi.html" title="Permalink to Python中一些容易被忽视的东西" rel="bookmark">Python中一些容易被忽视的东西</a>
-		</h2>
-		<div class="entry-content">
-			<h3>旨在记录Python标准库中好像很厉害的模块或功能。</h3>
-<h5>1. <a href="#particial">functools.partial(func[,<em>args][, </em>*keywords])</a></h5>
-<h5>2. <a href="#globals_and_locals">globals() and locals()</a></h5>
-<h4><a id="particial">functools.partial(func[,<em>args][, </em>*keywords])</a></h4>
-<p>为func的参数指定默认值后返回一个新的函数。比如:</p>
-<div class="highlight"><pre><span></span><span class="c1"># disable print as the statement</span>
-<span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">print_function</span>
-<span class="kn">from</span> <span class="nn">functools</span> <span class="kn">import</span> <span class="n">partial</span>
-<span class="kn">from</span> <span class="nn">StringIO</span> <span class="kn">import</span> <span class="n">StringIO</span>
-
-<span class="n">f</span> <span class="o">=</span> <span class="n">StringIO</span><span class="o">.</span><span class="n">StringIO</span><span class="p">()</span>
-<span class="k">print</span> <span class="o">=</span> <span class="n">partial</span><span class="p">(</span><span class="k">print</span><span class="p">,</span> <span class="nb">file</span><span class="o">=</span><span class="n">f</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="s2">&quot;This will print to f)</span>
-<span class="c1"># stdout will print nothing!</span>
-<span class="n">s</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">getvalue</span><span class="p">()</span>
-<span class="c1"># s = &quot;This will print to f&quot;</span>
-<span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
-</pre></div>
-
-
-<p>原本print函数有个file参数用来指定输出到的目标，例子中我们修改了file参数的默认值，从而重定向print到指定的file对象。虽然这个例子举得好像有点夸张了。</p>
-<h4><a id="globals_and_locals">globals() and locals()</a></h4>
-<p>这两个函数与Python的namespace相关，比如一个函数有它自己的namespace，叫做local namespace，其中存放了只有他自己能够访问的变量和值，包括函数的参数以及在函数内部定义的变量。再比如一个模块有它自己的namespace，叫做global namespace，其中包括了该模块中定义的变量，常数，函数，类，导入的模块。除了这两个之外，还有一个叫build-in的namespace，包含了Python内置函数和异常。</p>
-<p>Python解释器按照以下顺序寻找一个变量（或者函数，类等）：</p>
-<ol>
-<li>local namespace</li>
-<li>global namespace</li>
-<li>build-in namespace</li>
-</ol>
-<p>注：如果在这三个namespace都不能找到该变量，那么解释器就会抛出<code>NameError: There is no variable named 'x'</code></p>
-<p>globals()和locals()返回一个dict，该dict的值是变量名(函数名，类名等)，dict的值就是对应得对象了。在最外层代码，也就是模块层面，locals()和globals()是相等的。</p>
-<div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="n">globals</span><span class="p">()</span>
-<span class="err">{</span><span class="s1">&#39;__builtins__&#39;</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">module</span> <span class="s1">&#39;__builtin__&#39;</span> <span class="p">(</span><span class="n">built</span><span class="o">-</span><span class="k">in</span><span class="p">)</span><span class="o">&gt;</span><span class="p">,</span> <span class="s1">&#39;__name__&#39;</span><span class="p">:</span> <span class="s1">&#39;__main__&#39;</span><span class="p">,</span> <span class="s1">&#39;__doc__&#39;</span><span class="p">:</span> <span class="k">None</span><span class="p">,</span> <span class="s1">&#39;__package__&#39;</span><span class="p">:</span> <span class="k">None</span><span class="err">}</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">locals</span><span class="p">()</span>
-<span class="err">{</span><span class="s1">&#39;__builtins__&#39;</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">module</span> <span class="s1">&#39;__builtin__&#39;</span> <span class="p">(</span><span class="n">built</span><span class="o">-</span><span class="k">in</span><span class="p">)</span><span class="o">&gt;</span><span class="p">,</span> <span class="s1">&#39;__name__&#39;</span><span class="p">:</span> <span class="s1">&#39;__main__&#39;</span><span class="p">,</span> <span class="s1">&#39;__doc__&#39;</span><span class="p">:</span> <span class="k">None</span><span class="p">,</span> <span class="s1">&#39;__package__&#39;</span><span class="p">:</span> <span class="k">None</span><span class="err">}</span>
-</pre></div>
-
-
-<p>在Python的一个基于falcon构建的api框架<a href="https://github.com/timothycrosley/hug">hug</a>中有一段代码动态创建变量的代码:</p>
-<div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">method</span> <span class="ow">in</span> <span class="n">HTTP_METHODS</span><span class="p">:</span>
-    <span class="n">method_handler</span> <span class="o">=</span> <span class="n">partial</span><span class="p">(</span><span class="n">http</span><span class="p">,</span> <span class="n">accept</span><span class="o">=</span><span class="p">(</span><span class="n">method</span><span class="p">,</span> <span class="p">))</span>
-    <span class="n">method_handler</span><span class="o">.</span><span class="vm">__doc__</span> <span class="o">=</span> <span class="s2">&quot;Exposes a Python method externally as an HTTP {0} method&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">method</span><span class="o">.</span><span class="n">upper</span><span class="p">())</span>
-    <span class="nb">globals</span><span class="p">()[</span><span class="n">method</span><span class="o">.</span><span class="n">lower</span><span class="p">()]</span> <span class="o">=</span> <span class="n">method_handler</span>
-</pre></div>
-
-
-<p>大致作用是为每个http方法设置一个函数，并将该函数绑定到以该http方法为变量名的变量上。这样能动态创建以指定string为名字的变量名了。
-相当于:</p>
-<div class="highlight"><pre><span></span><span class="n">get</span> <span class="o">=</span> <span class="n">partial</span><span class="p">(</span><span class="n">http</span><span class="p">,</span> <span class="n">accept</span><span class="o">=</span><span class="p">(</span><span class="n">get</span><span class="p">,))</span>
-<span class="n">get</span><span class="o">.</span><span class="vm">__doc__</span> <span class="o">==</span> <span class="s2">&quot;Exposes a Python method externally as an HTTP GET method&quot;</span>
-<span class="c1"># 然后post, put, patch...</span>
-</pre></div>
-		</div> <!--/#entry-content-->
-    		<span class="tag-links"><strong>Tagged</strong>
- <a href="https://importcjj.github.io/tag/python.html" rel="tag">Python</a>    		</span>
-	</div> <!--/#main-->
-</div>  <!--/#post--><div class="post type-post status-publish format-standard hentry category-general" id="post">
-	<div class="entry-meta">
-		<div class="date"><a href="https://importcjj.github.io/shi-yong-pythonzhi-zuo-zi-ding-yi-zhong-duan-ming-ling.html">日 27 三月 2016</a></div>
-		<span class="byline">By <a href="https://importcjj.github.io/author/importcjj.html">importcjj</a></span>
-			<div class="comments"><a href="https://importcjj.github.io/shi-yong-pythonzhi-zuo-zi-ding-yi-zhong-duan-ming-ling.html#disqus_thread" title="Comment on 使用Python制作自定义终端命令">comments</a></div>
-			<span class="cat-links"><a href="https://importcjj.github.io/category/python.html" title="View all posts in Python" rel="category tag">Python</a></span>
-	</div> <!-- /#entry-meta -->
-	<div class="main">
-		<h2 class="entry-title">
-			<a href="https://importcjj.github.io/shi-yong-pythonzhi-zuo-zi-ding-yi-zhong-duan-ming-ling.html" title="Permalink to 使用Python制作自定义终端命令" rel="bookmark">使用Python制作自定义终端命令</a>
-		</h2>
-		<div class="entry-content">
-			<h3>介绍</h3>
-<p>首先，拿pip举个例子，pip是我们使用较多的python包管理工具。当我们安装pip之后，直接在终端中就可以使用pip这个命令。那你有没有想过这是如何实现的？</p>
-<p>其实，pip这个命令最终调用了python所在文件夹bin目录的pip文件。为什么说最终？因为使用系统默认的python安装pip时，可能会在/usr/local/bin或者/usr/bin下创建软链接。如果使用了virtualenv，那么pip文件就在env/bin下。那么pip文件到底是什么呢？答案就是，是一个具有执行权限的python文件，只不过去掉了.py的后缀.</p>
-<p>也许你会兴高采烈的去尝试一发，在bin文件下创建xxx.py，打上一句 print “hello world”, 然后去掉.py的后缀, 再使用chmod a+x xxx来赋予它执行的权限。打开终端，敲下xxx。最后你只会得到print: command not found的错误提示。为什么？因为操作系统不知道这是一个py文件。思考一下，我们平时运行py文件都需要打上python xxx.py形式的命令，其实我们告诉了操作系统这是一个python文件（哪怕是有.py后缀），需要使用python解释器来解释运行该文件。现在，我们没有指定解释器了，自然就无法顺利的作为py脚本来运行了，它被错误的认为是shell脚本了。而shell编程中只有echo，没有print命令。</p>
-<p>那么我们要做的就是在文件的第一行为该文件指定它的解释器(通过环境变量来获取当前使用的python解释器的路径):</p>
-<div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env python</span>
-</pre></div>
-
-
-<p>这是一种常见写法，当然可以写成:</p>
-<div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/python</span>
-</pre></div>
-
-
-<p>这样，我们就为这个脚本指定了一个固定的解释器(它的路径是/usr/bin/python)，可能有些时候你需要这样做。但是第一种更加灵活，尤其是在使用virtualenv创建的虚拟环境中，采用第二种写法的脚本将无法导入虚拟环境中安装的依赖包。</p>
-<h3>拓展</h3>
-<p>安装自己创建的python项目时，如何让安装工具自动在python目录的bin目录下创建自己的命令文件？在python2中，安装一个包，通常需要setup.py这个文件。大致写法如下：</p>
-<div class="highlight"><pre><span></span>     <span class="kn">from</span> <span class="nn">setuptools</span> <span class="kn">import</span> <span class="n">setup</span>
-     <span class="n">setup</span><span class="p">(</span>
-         <span class="n">name</span><span class="o">=</span><span class="s1">&#39;project_name&#39;</span><span class="p">,</span>
-          <span class="n">version</span><span class="o">=</span><span class="s1">&#39;0.1&#39;</span><span class="p">,</span>
-          <span class="o">...</span>
-          <span class="n">entry_points</span><span class="o">=</span><span class="p">{</span>
-            <span class="s1">&#39;console_scripts&#39;</span><span class="p">:</span> <span class="p">[</span>
-               <span class="s1">&#39;hello = hello.main:main&#39;</span><span class="p">,</span>
-            <span class="p">]</span>
-          <span class="p">}</span>
-     <span class="p">)</span>
-</pre></div>
-
-
-<p>表示hello这个命令执行的是hello包下的main模块中的main函数.</p>
-<h3>实践</h3>
-<p>环境: python2.7 + mac osx
-举个例子，我们现在有个project，目录如下</p>
-<div class="highlight"><pre><span></span><span class="n">example</span><span class="o">/</span>
-<span class="o">-</span> <span class="n">setup</span><span class="p">.</span><span class="n">py</span>
-<span class="o">-</span> <span class="n">hello</span><span class="o">/</span>
-   <span class="n">_</span> <span class="n">__init__</span><span class="p">.</span><span class="n">py</span>
-   <span class="o">-</span> <span class="n">main</span><span class="p">.</span><span class="n">py</span>
-</pre></div>
-
-
-<p>其中, <code>main.py</code>是我们写的命令文件，内容如下:</p>
-<div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env python</span>
-<span class="c1"># -*- coding:utf-8 -*-</span>
-
-<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
-   <span class="k">print</span> <span class="s1">&#39;hello word&#39;</span>
-</pre></div>
-
-
-<p>setup.py的内容如下:</p>
-<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">setuptools</span> <span class="kn">import</span> <span class="n">setup</span>
-<span class="n">setup</span><span class="p">(</span>
-     <span class="n">name</span><span class="o">=</span><span class="s1">&#39;hello&#39;</span><span class="p">,</span>
-     <span class="n">version</span><span class="o">=</span><span class="s1">&#39;0.1&#39;</span><span class="p">,</span>
-     <span class="n">entry_points</span><span class="o">=</span><span class="p">{</span>
-         <span class="s1">&#39;console_scripts&#39;</span><span class="p">:[</span>
-            <span class="s1">&#39;hello = hello.main:main&#39;</span>
-         <span class="p">]</span>
-     <span class="p">}</span>
-<span class="p">)</span>
-</pre></div>
-
-
-<p>在安装这个简单的项目之前，我们还需要修改一下hello文件到额权限：
-          chmod a+x hello</p>
-<p>接着安装, <code>python setup.py</code> install 或者 <code>pip install</code> . 这两种方式随便哪种都可以，安装完成后在终端中输入hello命令试试，有没有显示hello world？</p>
-<h3>结尾</h3>
-<p>说了这么多，提醒一点，并不是所有的python包都是通过上述方式来提供终端命令的，不过这是一种很普遍很简便的方式！</p>
-		</div> <!--/#entry-content-->
-    		<span class="tag-links"><strong>Tagged</strong>
- <a href="https://importcjj.github.io/tag/python.html" rel="tag">Python</a>    		</span>
-	</div> <!--/#main-->
-</div>  <!--/#post--><div class="post type-post status-publish format-standard hentry category-general" id="post">
-	<div class="entry-meta">
-		<div class="date"><a href="https://importcjj.github.io/supervisorcelerycelerybeatde-jian-dan-shi-yong.html">日 27 三月 2016</a></div>
-		<span class="byline">By <a href="https://importcjj.github.io/author/importcjj.html">importcjj</a></span>
-			<div class="comments"><a href="https://importcjj.github.io/supervisorcelerycelerybeatde-jian-dan-shi-yong.html#disqus_thread" title="Comment on supervisor+celery+celerybeat的简单使用">comments</a></div>
-			<span class="cat-links"><a href="https://importcjj.github.io/category/python.html" title="View all posts in Python" rel="category tag">Python</a></span>
-	</div> <!-- /#entry-meta -->
-	<div class="main">
-		<h2 class="entry-title">
-			<a href="https://importcjj.github.io/supervisorcelerycelerybeatde-jian-dan-shi-yong.html" title="Permalink to supervisor+celery+celerybeat的简单使用" rel="bookmark">supervisor+celery+celerybeat的简单使用</a>
-		</h2>
-		<div class="entry-content">
-			<h2>1. 提前准备</h2>
-<p>略去相关工具的安装过程，其实都挺简单的!</p>
-<p>celery作为异步任务队列, 需要一个中间人来协助celery存放和消耗任务信息。我们选择rabbitmq来做消息代理人。使用celery之前, 需要使用创建一个rabbitmq的管理员账号和一个能让该账号访问的vhost.</p>
-<p><strong><a href="">Rabbitmq的安装配置以及网页管理插件</a></strong></p>
-<p>假设准备的rabbitmq的信息如下:</p>
-<div class="highlight"><pre><span></span><span class="n">SETTINGS</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s1">&#39;user&#39;</span><span class="p">:</span> <span class="s1">&#39;www-data&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;password&#39;</span><span class="p">:</span> <span class="s1">&#39;www-data&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;host&#39;</span><span class="p">:</span> <span class="s1">&#39;127.0.0.1&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;port&#39;</span><span class="p">:</span> <span class="s1">&#39;5672&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;vhost&#39;</span><span class="p">:</span> <span class="s1">&#39;t_celery&#39;</span>
-<span class="p">}</span>
-</pre></div>
-
-
-<h3>示例项目结构</h3>
-<div class="highlight"><pre><span></span><span class="n">test</span><span class="p">.</span><span class="n">celery</span><span class="o">/</span>
-    <span class="o">|-</span> <span class="n">env</span><span class="o">/</span>
-    <span class="o">|-</span> <span class="n">src</span><span class="o">/</span>
-        <span class="o">|-</span> <span class="n">__init__</span><span class="p">.</span><span class="n">py</span>
-        <span class="o">|-</span> <span class="n">app</span><span class="p">.</span><span class="n">py</span>
-        <span class="o">|-</span> <span class="n">task</span><span class="p">.</span><span class="n">py</span>
-</pre></div>
-
-
-<h2>2. celery实例及任务</h2>
-<h3>2.1 生成实例</h3>
-<div class="highlight"><pre><span></span><span class="c1"># -*- coding: utf-8 -*-</span>
-
-<span class="c1"># filename: app.py</span>
-
-<span class="kn">from</span> <span class="nn">celery</span> <span class="kn">import</span> <span class="n">Celery</span>
-
-<span class="n">CELERY_CONFIG</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s1">&#39;CELERY_TIMEZONE&#39;</span><span class="p">:</span> <span class="s1">&#39;Asia/Shanghai&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;CELERY_ENABLE_UTC&#39;</span><span class="p">:</span> <span class="bp">True</span><span class="p">,</span>
-    <span class="c1"># content</span>
-    <span class="s1">&#39;CELERY_TASK_SERIALIZER&#39;</span><span class="p">:</span> <span class="s1">&#39;json&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;CELERY_RESULT_SERIALIZER&#39;</span><span class="p">:</span> <span class="s1">&#39;json&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;CELERY_ACCEPT_CONTENT&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;json&#39;</span><span class="p">],</span>
-    <span class="s1">&#39;CELERYD_MAX_TASKS_PER_CHILD&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
-<span class="p">}</span>
-
-<span class="c1"># 第一个参数是实例的名称,  也可以使用模块的名字.</span>
-<span class="c1"># broker参数是消息代理人url.</span>
-<span class="c1"># 还有一个backend参数，当我们需要拿到异步任务的返回时需要用到.</span>
-<span class="c1"># 这里就直接略过了.</span>
-<span class="n">app</span> <span class="o">=</span> <span class="n">Celery</span><span class="p">(</span>
-    <span class="s1">&#39;test_celery&#39;</span><span class="p">,</span>
-    <span class="n">broker</span><span class="o">=</span><span class="s1">&#39;amqp://{user}:{password}@{host}:{port}/{vhost}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
-        <span class="o">**</span><span class="n">SETTINGS</span><span class="p">)</span>
-<span class="p">)</span>
-<span class="n">app</span><span class="o">.</span><span class="n">conf</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="o">**</span><span class="n">CELERY_CONFIG</span><span class="p">)</span>
-</pre></div>
-
-
-<h3>2.2 定义Task</h3>
-<div class="highlight"><pre><span></span><span class="c1"># -*- coding: utf-8 -*-</span>
-
-<span class="c1"># filename: task.py</span>
-
-<span class="kn">from</span> <span class="nn">src.app</span> <span class="kn">import</span> <span class="n">app</span>
-
-<span class="nd">@app.task</span><span class="p">(</span><span class="n">queue</span><span class="o">=</span><span class="s1">&#39;test_celey_queue&#39;</span><span class="p">)</span>
-<span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
-    <span class="k">return</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span> <span class="o">+</span> <span class="n">c</span>
-</pre></div>
-
-
-<p>注意, 我们给app.task这个装饰器传了queue这个参数, 这样当异步执行的时候,这个task会被丢到名称为test_celery_queue的队列中, 然后被为这个队列工作的worker拿到并执行。当然， 我们也可以在CELERY_CONFIG中配置:</p>
-<div class="highlight"><pre><span></span><span class="n">CELERY_ROUTES</span> <span class="o">=</span> <span class="p">{</span>
-     <span class="s1">&#39;src.task.add&#39;</span><span class="p">:</span> <span class="s1">&#39;test_celery_queue&#39;</span><span class="p">,</span>
-<span class="p">}</span>
-</pre></div>
-
-
-<p>如果我们不指定queue的话，celery会默认自己指定一个队列。task的队列一定要对应的worke， 否者就会只生产不消费， 这些task就永远不会被执行了。</p>
-<h3>2.3 启动worker</h3>
-<p>我们需要在项目路径下，也就是test.celery文件下运行python解释器， 否者python解释器无法找到 <strong>src</strong> 这个包。 或者直接将项目路径添加到PYTHONPATH变量，就像这样<code>export PYTHONPATH=/data/test.celery</code></p>
-<p>然后再启动worker：</p>
-<div class="highlight"><pre><span></span>celery worker -A src.task --loglevel<span class="o">=</span>info -Q test_celery_queue -f /data/test.celery/celery.log
-</pre></div>
-
-
-<h5>参数解析</h5>
-<ol>
-<li>
-<ul>
-<li>A src.task 指定celery实例, celery会到src.task中找app实例</li>
-</ul>
-</li>
-<li>worker 告知celery要启动worker.</li>
-<li>--loglevel=info 日志的级别是info.</li>
-<li>-Q test_celery_queue 为该worker指定一个消息队列, worker只取该队列中的任务。可以指定多个队列.</li>
-<li>-f 日志文件输出位置</li>
-<li>-P</li>
-</ol>
-<p>更多可配置参数s通过 <code>celery worker -h</code>  查看。</p>
-<h3>2.4 验证正确性</h3>
-<h5>在一个终端显示日志</h5>
-<div class="highlight"><pre><span></span><span class="n">tail</span> <span class="o">-</span><span class="n">f</span> <span class="o">/</span><span class="k">data</span><span class="o">/</span><span class="n">test</span><span class="p">.</span><span class="n">celery</span><span class="o">/</span><span class="n">celery</span><span class="p">.</span><span class="n">log</span>
-</pre></div>
-
-
-<h5>另一个终端启动python的交互解释器</h5>
-<h6>注：如果没有设置PYTHONPATH， 那就要在我们的项目文件夹下启动</h6>
-<div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">src.task</span> <span class="kn">import</span> <span class="n">add</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">add</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
-<span class="mi">10</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">add</span><span class="o">.</span><span class="n">delay</span><span class="p">()</span>
-<span class="o">&lt;</span><span class="n">AsyncResult</span><span class="p">:</span> <span class="n">fe9b4b75</span><span class="o">-</span><span class="mi">6</span><span class="n">ba8</span><span class="o">-</span><span class="mi">44</span><span class="n">aa</span><span class="o">-</span><span class="n">adb2</span><span class="o">-</span><span class="mi">92</span><span class="n">d63c8ba1c6</span><span class="o">&gt;</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">add</span><span class="o">.</span><span class="n">delay</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
-<span class="o">&lt;</span><span class="n">AsyncResult</span><span class="p">:</span> <span class="n">e6dfcdbb</span><span class="o">-</span><span class="mi">7</span><span class="n">a19</span><span class="o">-</span><span class="mi">4</span><span class="n">fb2</span><span class="o">-</span><span class="n">aa5e</span><span class="o">-</span><span class="mi">841</span><span class="n">b8f393874</span><span class="o">&gt;</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">add</span><span class="o">.</span><span class="n">apply_async</span><span class="p">(</span><span class="n">args</span><span class="o">=</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
-<span class="o">&lt;</span><span class="n">AsyncResult</span><span class="p">:</span> <span class="mi">34</span><span class="n">cf6a59</span><span class="o">-</span><span class="mi">35</span><span class="n">db</span><span class="o">-</span><span class="mi">40</span><span class="n">d3</span><span class="o">-</span><span class="n">a218</span><span class="o">-</span><span class="mi">6703</span><span class="n">eb04336b</span><span class="o">&gt;</span>
-</pre></div>
-
-
-<p>如果一切正常的话，运行第二、三、四条命令的时候会看到有日志输出。而且第二条命令会有错误日志，提示缺少参数。</p>
-<h5>用法说明</h5>
-<p>如果直接调用某一个task, 那么该task就跟普通的函数一样, 会同步运行并直接返回结果。想要异步执行, 就要使用 <strong>delay</strong> 或者 <strong>apply_async</strong> 。</p>
-<ul>
-<li><strong>delay:</strong> 相对简单，怎么给<strong>add</strong>传参，就怎么传给它。比如:</li>
-</ul>
-<p><code>add.delay(4, 5, 9)</code> 或者 <code>add.delay(4 , 5, c=19)</code>等. </p>
-<ul>
-<li><strong>apply_async:</strong> 列举几个常用的参数:</li>
-</ul>
-<div class="highlight"><pre><span></span>  <span class="o">*</span> <span class="n">args</span><span class="p">:</span> <span class="err">传给</span><span class="n">task</span><span class="err">的参数</span><span class="p">.</span>
-  <span class="o">*</span> <span class="n">kwargs</span><span class="p">:</span> <span class="err">传给</span><span class="n">task</span><span class="err">的参数</span><span class="p">.</span>
-  <span class="o">*</span> <span class="n">countdown</span><span class="err">：</span> <span class="err">延时执行的秒数</span><span class="p">.</span><span class="n">countdown</span><span class="o">=</span><span class="mi">10</span><span class="err">表示</span><span class="mi">10</span><span class="n">s</span><span class="err">后执行</span><span class="p">.</span>
-  <span class="o">*</span> <span class="n">eta</span><span class="p">:</span> <span class="n">datetime</span><span class="err">类型</span><span class="p">,</span> <span class="err">执行的日期</span><span class="p">.</span>
-  <span class="o">*</span> <span class="n">queue</span><span class="p">:</span> <span class="err">指定任务消息要去的队列</span><span class="p">.</span>
-  <span class="o">*</span> <span class="p">...</span>
-</pre></div>
-
-
-<h2>3. celery beat</h2>
-<p>我们以定时发邮件为例子</p>
-<h3>3.1 添加发邮件的task</h3>
-<p>在task.py的基础上修改:</p>
-<div class="highlight"><pre><span></span><span class="c1"># -*- coding: utf-8 -*-</span>
-
-<span class="kn">from</span> <span class="nn">src.app</span> <span class="kn">import</span> <span class="n">app</span>
-<span class="kn">from</span> <span class="nn">posts</span> <span class="kn">import</span> <span class="n">Posts</span>
-<span class="kn">import</span> <span class="nn">time</span>
-
-<span class="nd">@app.task</span><span class="p">(</span><span class="n">queue</span><span class="o">=</span><span class="s1">&#39;test_celery_queue&#39;</span><span class="p">)</span>
-<span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
-    <span class="k">return</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span> <span class="o">+</span> <span class="n">c</span>
-
-<span class="nd">@app.task</span>
-<span class="k">def</span> <span class="nf">sendmail</span><span class="p">():</span>
-    <span class="n">post</span> <span class="o">=</span> <span class="n">Posts</span><span class="p">(</span><span class="s1">&#39;smtp.qq.com&#39;</span><span class="p">,</span> <span class="s1">&#39;emailname@qq.com&#39;</span><span class="p">,</span> <span class="s1">&#39;password&#39;</span><span class="p">,</span> <span class="n">port</span><span class="o">=</span><span class="mi">465</span><span class="p">)</span>
-    <span class="k">with</span> <span class="n">post</span><span class="p">(</span><span class="n">ssl</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span> <span class="k">as</span> <span class="n">mail</span><span class="p">:</span>
-        <span class="n">mail</span><span class="o">.</span><span class="n">text</span><span class="p">(</span>
-            <span class="n">recipient</span> <span class="o">=</span><span class="s1">&#39;receive@163.com,</span>
-            <span class="n">subject</span><span class="o">=</span><span class="s1">&#39;send by celery beat&#39;</span><span class="p">,</span>
-            <span class="n">content</span><span class="o">=</span><span class="n">time</span><span class="o">.</span><span class="n">ctime</span><span class="p">()</span>
-        <span class="p">)</span>
-</pre></div>
-
-
-<p>由于Python标准库发邮件有点繁琐，我这里使用了自己简单封装的<a href="https://github.com/importcjj/Posts">posts</a>来发送邮件。邮件的内容就是执行任务的时间。</p>
-<h3>3.2 配置定时任务的schedule</h3>
-<div class="highlight"><pre><span></span><span class="c1"># -*- coding: utf-8 -*-</span>
-
-<span class="kn">from</span> <span class="nn">celery</span> <span class="kn">import</span> <span class="n">Celery</span>
-<span class="kn">from</span> <span class="nn">celery.schedules</span> <span class="kn">import</span> <span class="n">crontab</span>
-<span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">timedelta</span>
-
-<span class="n">CELERYBEAT_SCHEDULE</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s1">&#39;send-email-every-30-minutes&#39;</span><span class="p">:</span> <span class="p">{</span>    <span class="c1"># 定时任务的名字</span>
-        <span class="s1">&#39;task&#39;</span><span class="p">:</span> <span class="s1">&#39;src.task.sendmail&#39;</span><span class="p">,</span>     <span class="c1"># 具体对应的Task</span>
-        <span class="s1">&#39;schedule&#39;</span><span class="p">:</span>  <span class="n">timedelta</span><span class="p">(</span><span class="n">seconds</span><span class="o">=</span><span class="mi">30</span><span class="p">),</span><span class="c1"># 定时设置，这里表示30s执行一次</span>
-        <span class="c1"># &#39;args&#39;: () ,       # 传给Task的参数</span>
-        <span class="s1">&#39;options&#39;</span><span class="p">:</span> <span class="p">{</span>     <span class="c1"># 设置Task的一些属性, 参见apply_async的参数</span>
-            <span class="s1">&#39;queue&#39;</span><span class="p">:</span><span class="s1">&#39;test_celery_queue&#39;</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-<span class="n">CELERY_CONFIG</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s1">&#39;CELERY_TIMEZONE&#39;</span><span class="p">:</span> <span class="s1">&#39;Asia/Shanghai&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;CELERY_ENABLE_UTC&#39;</span><span class="p">:</span> <span class="bp">True</span><span class="p">,</span>
-    <span class="c1"># content</span>
-    <span class="s1">&#39;CELERY_TASK_SERIALIZER&#39;</span><span class="p">:</span> <span class="s1">&#39;json&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;CELERY_RESULT_SERIALIZER&#39;</span><span class="p">:</span> <span class="s1">&#39;json&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;CELERY_ACCEPT_CONTENT&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;json&#39;</span><span class="p">],</span>
-    <span class="s1">&#39;CELERYD_MAX_TASKS_PER_CHILD&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
-    <span class="s1">&#39;CELERYBEAT_SCHEDULE&#39;</span><span class="p">:</span> <span class="n">CELERYBEAT_SCHEDULE</span>     <span class="c1"># 启动beat，传入相关参数.</span>
-<span class="p">}</span>
-<span class="n">SETTINGS</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s1">&#39;user&#39;</span><span class="p">:</span> <span class="s1">&#39;www-data&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;password&#39;</span><span class="p">:</span> <span class="s1">&#39;www-data&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;host&#39;</span><span class="p">:</span> <span class="s1">&#39;127.0.0.1&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;port&#39;</span><span class="p">:</span> <span class="s1">&#39;5672&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;vhost&#39;</span><span class="p">:</span> <span class="s1">&#39;t_celery&#39;</span>
-<span class="p">}</span>
-
-<span class="n">app</span> <span class="o">=</span> <span class="n">Celery</span><span class="p">(</span>
-    <span class="s1">&#39;test_celery&#39;</span><span class="p">,</span>
-    <span class="n">broker</span><span class="o">=</span><span class="s1">&#39;amqp://{user}:{password}@{host}:{port}/{vhost}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
-        <span class="o">**</span><span class="n">SETTINGS</span><span class="p">)</span>
-<span class="p">)</span>
-<span class="n">app</span><span class="o">.</span><span class="n">conf</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="o">**</span><span class="n">CELERY_CONFIG</span><span class="p">)</span>
-</pre></div>
-
-
-<p>参数 <strong>schedule</strong> 说明, 通常使用两种方式来指定：</p>
-<ol>
-<li>datetime.timedelta: 用这种方式来指定 秒 级别.</li>
-<li>celery.shedules.crontab: 用这种方式指定 分钟 以上级别.</li>
-</ol>
-<table>
-<thead>
-<tr>
-<th>Example</th>
-<th>表示</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>timedelta(seconds=30)</td>
-<td>30秒执行一次</td>
-</tr>
-<tr>
-<td>crontab()</td>
-<td>每分钟执行一次</td>
-</tr>
-<tr>
-<td>crontab(minute=0, hour=0)</td>
-<td>凌晨执行一次</td>
-</tr>
-<tr>
-<td>crontab(minute=0, hour='*/3')</td>
-<td>从凌晨开始。每三个小时执行一次</td>
-</tr>
-<tr>
-<td>crontab(minute=0,hour='0,3,6,9,12,15,18,21')</td>
-<td>同上</td>
-</tr>
-<tr>
-<td>crontab(minute='*/15')</td>
-<td>每15分钟执行一次</td>
-</tr>
-<tr>
-<td>crontab(day_of_week='sunday')</td>
-<td>在周日，每分钟执行一次</td>
-</tr>
-<tr>
-<td>crontab(minute='<em>',hour='</em>', day_of_week='sun')</td>
-<td>同上</td>
-</tr>
-<tr>
-<td>crontab(minute=0, hour='*/5')</td>
-<td>每5小时执行一次,0,5,10,15,20</td>
-</tr>
-<tr>
-<td>crontab(0, 0, day_of_month='2')</td>
-<td>每个月第二天执行一次</td>
-</tr>
-<tr>
-<td>crontab(0, 0, day_of_month='1-7,15-21')</td>
-<td>每月的1-7号和15-21号执行</td>
-</tr>
-<tr>
-<td>crontab(0, 0, day_of_month='11', month_of_year='5')</td>
-<td>5月份的11号执行一次</td>
-</tr>
-<tr>
-<td>crontab(0, 0,month_of_year='*/3')</td>
-<td>每个季度的第一个月执行一次</td>
-</tr>
-</tbody>
-</table>
-<p>更多用法详见 <strong><a href="http://docs.celeryproject.org/en/latest/userguide/periodic-tasks.html#crontab-schedules">官方文档</a></strong></p>
-<h3>3.3 启动celery beat</h3>
-<div class="highlight"><pre><span></span>celery beat -A src.app --loglevel<span class="o">=</span>info --logfile<span class="o">=</span>/data/test.celery/celery.beat.log
-</pre></div>
-
-
-<p>更多可配置参数通过 <code>celery beat -h</code>  查看。</p>
-<h3>3.4 验证正确性</h3>
-<h5>一个页面显示celery beat 的输入日志</h5>
-<div class="highlight"><pre><span></span><span class="n">tail</span> <span class="o">-</span><span class="n">f</span> <span class="o">/</span><span class="k">data</span><span class="o">/</span><span class="n">test</span><span class="p">.</span><span class="n">celery</span><span class="o">/</span><span class="n">celery</span><span class="p">.</span><span class="n">beat</span><span class="p">.</span><span class="n">log</span>
-</pre></div>
-
-
-<h5>一个终端页面显示 celery worker 输出日志</h5>
-<div class="highlight"><pre><span></span><span class="n">tail</span> <span class="o">-</span><span class="n">f</span> <span class="o">/</span><span class="k">data</span><span class="o">/</span><span class="n">test</span><span class="p">.</span><span class="n">celery</span><span class="o">/</span><span class="n">celery</span><span class="p">.</span><span class="n">log</span>
-</pre></div>
-
-
-<p>如果分别能看到产生和消耗任务的日志输出。那就成功了。</p>
-<h2>4. supervisor</h2>
-<h3>4.1 (supervisord)配置并启动supervisor</h3>
-<p>启动supervisor的命令是 <strong>supervisord</strong>。我们可以使用 <strong>-c</strong> 参数来指定其配置文件的位置。比如:</p>
-<p><code>supervisord -c supervisord.conf</code></p>
-<p>supervisor的配置文件 supervisord.conf:</p>
-<div class="highlight"><pre><span></span><span class="k">[unix_http_server]</span>
-<span class="na">file</span><span class="o">=</span><span class="s">/var/run/supervisor.sock                   ; (the path to the socket file)</span>
-
-<span class="k">[supervisord]</span>
-<span class="na">logfile</span><span class="o">=</span><span class="s">/data/log/supervisor/syslog         ; (main log file;default $CWD/supervisord.log)</span>
-<span class="na">loglevel</span><span class="o">=</span><span class="s">info                               ; (log level;default info; others: debug,warn,trace)</span>
-<span class="na">pidfile</span><span class="o">=</span><span class="s">/var/run/supervisord.pid                ; (supervisord pidfile;default supervisord.pid)</span>
-<span class="na">nodaemon</span><span class="o">=</span><span class="s">false                              ; (start in foreground if true;default false)</span>
-<span class="na">minfds</span><span class="o">=</span><span class="s">1024                               ; (min. avail startup file descriptors;default 1024)</span>
-<span class="na">minprocs</span><span class="o">=</span><span class="s">1024                             ; (min. avail process descriptors;default 200)</span>
-<span class="na">nocleanup</span><span class="o">=</span><span class="s">false</span>
-<span class="na">umask</span><span class="o">=</span><span class="s">022</span>
-<span class="na">user</span><span class="o">=</span><span class="s">root</span>
-
-<span class="k">[supervisorctl]</span>
-<span class="na">serverurl</span><span class="o">=</span><span class="s">unix:///var/run/supervisor.sock   ; use a unix:// URL  for a unix socket</span>
-
-<span class="k">[rpcinterface:supervisor]</span>
-<span class="na">supervisor.rpcinterface_factory</span> <span class="o">=</span> <span class="s">supervisor.rpcinterface:make_main_rpcinterface</span>
-
-<span class="k">[include]</span>
-<span class="na">files</span> <span class="o">=</span> <span class="s">/etc/supervisord.d/*.ini</span>
-</pre></div>
-
-
-<h3>4.2 配置具体项目</h3>
-<p>我们会为不同的程序编写独立的ini配置文件，然后放置到一个统一的路径(比如 /etc/supervisord.d/)下让supervisor读取.具体项目的配置文件 test.celery.ini 如下</p>
-<div class="highlight"><pre><span></span><span class="k">[group:test_celery]</span>
-<span class="na">programs</span> <span class="o">=</span> <span class="s">test_celery.async,test_celery.beat</span>
-
-<span class="k">[program:test_celery.async]</span>
-<span class="na">command</span><span class="o">=</span><span class="s">/data/test.celery/env/bin/celery worker -A src.app --loglevel=info -Q test_celery_queue</span>
-<span class="na">numprocs</span><span class="o">=</span><span class="s">1</span>
-<span class="na">numprocs_start</span><span class="o">=</span><span class="s">0</span>
-<span class="na">priority</span><span class="o">=</span><span class="s">999</span>
-<span class="na">autostart</span><span class="o">=</span><span class="s">true</span>
-<span class="na">startsecs</span><span class="o">=</span><span class="s">3</span>
-<span class="na">startretries</span><span class="o">=</span><span class="s">3</span>
-<span class="na">exitcodes</span><span class="o">=</span><span class="s">0,2</span>
-<span class="na">stopsignal</span><span class="o">=</span><span class="s">QUIT</span>
-<span class="na">stopwaitsecs</span><span class="o">=</span><span class="s">60</span>
-<span class="na">directory</span><span class="o">=</span><span class="s">/data/test.celery</span>
-<span class="na">user</span><span class="o">=</span><span class="s">www-data</span>
-<span class="na">stopasgroup</span><span class="o">=</span><span class="s">false</span>
-<span class="na">killasgroup</span><span class="o">=</span><span class="s">false</span>
-<span class="na">redirect_stderr</span><span class="o">=</span><span class="s">true</span>
-<span class="na">stdout_logfile</span><span class="o">=</span><span class="s">/data/log/test.celery/test_celery.log</span>
-<span class="na">stdout_logfile_maxbytes</span><span class="o">=</span><span class="s">250MB</span>
-<span class="na">stdout_logfile_backups</span><span class="o">=</span><span class="s">10</span>
-<span class="na">stderr_logfile</span><span class="o">=</span><span class="s">/data/log/test.celery/test_celery.err</span>
-<span class="na">stderr_logfile_maxbytes</span><span class="o">=</span><span class="s">250MB</span>
-<span class="na">stderr_logfile_backups</span><span class="o">=</span><span class="s">10</span>
-<span class="na">environment</span><span class="o">=</span><span class="s">PYTHONPATH=&#39;/data/test.celery/&#39;;C_FORCE_ROOT=&quot;true&quot;</span>
-
-<span class="k">[program:test_celery.beat]</span>
-<span class="na">command</span><span class="o">=</span><span class="s">/data/test.celery/env/bin/celery beat -A src.app --loglevel=info</span>
-<span class="na">numprocs</span><span class="o">=</span><span class="s">1</span>
-<span class="na">numprocs_start</span><span class="o">=</span><span class="s">0</span>
-<span class="na">priority</span><span class="o">=</span><span class="s">999</span>
-<span class="na">autostart</span><span class="o">=</span><span class="s">true</span>
-<span class="na">startsecs</span><span class="o">=</span><span class="s">3</span>
-<span class="na">startretries</span><span class="o">=</span><span class="s">3</span>
-<span class="na">exitcodes</span><span class="o">=</span><span class="s">0,2</span>
-<span class="na">stopsignal</span><span class="o">=</span><span class="s">QUIT</span>
-<span class="na">stopwaitsecs</span><span class="o">=</span><span class="s">60</span>
-<span class="na">directory</span><span class="o">=</span><span class="s">/data/test.celery</span>
-<span class="na">user</span><span class="o">=</span><span class="s">www-data</span>
-<span class="na">stopasgroup</span><span class="o">=</span><span class="s">false</span>
-<span class="na">killasgroup</span><span class="o">=</span><span class="s">false</span>
-<span class="na">redirect_stderr</span><span class="o">=</span><span class="s">true</span>
-<span class="na">stdout_logfile</span><span class="o">=</span><span class="s">/data/log/test.celery/test_celery.beat.log</span>
-<span class="na">stdout_logfile_maxbytes</span><span class="o">=</span><span class="s">250MB</span>
-<span class="na">stdout_logfile_backups</span><span class="o">=</span><span class="s">10</span>
-<span class="na">stderr_logfile</span><span class="o">=</span><span class="s">/data/log/test.celery/test_celery.beat.err</span>
-<span class="na">stderr_logfile_maxbytes</span><span class="o">=</span><span class="s">250MB</span>
-<span class="na">stderr_logfile_backups</span><span class="o">=</span><span class="s">10</span>
-<span class="na">environment</span><span class="o">=</span><span class="s">PYTHONPATH=&#39;/data/test.celery/&#39;;C_FORCE_ROOT=&quot;true&quot;</span>
-</pre></div>
-
-
-<h4>简单说明</h4>
-<ul>
-<li><strong>test_celery.async</strong> 和 <strong>test_celery.beat</strong> 是两个program，分别对应worker和beat，而它们又同属于 <strong>test_celery</strong> 这个组，这样便于同时管理。</li>
-<li>注意到command参数了吗？因为我使用了<strong>virtualenv</strong>来隔离每个项目的包环境，所以需要明确指出 <strong>celery命令</strong>所在的目录(如果全局安装了celery就必要了), 这也是为什么上文项目结构中会有一个 <strong>env</strong> 文件夹的原因。</li>
-<li>使用了虚拟环境之后, 通常需要先激活环境 <code>source /data/test.celery/env/bin/activate</code></li>
-<li><strong>environment</strong> 下设置 PYTHONPATH 我们在上文中提到过。总之，你要让Python知道你项目包得位置，设置PYTHONPATH 只是一种方式。</li>
-</ul>
-<h3>4.3 (supervisorctl) 管理程序进程</h3>
-<p>通过 <code>sudo supervisorctl</code> 可以进入管理客户端。我们可以使用各种命令管理程序的进程:  </p>
-<p>常用的命令有:</p>
-<ul>
-<li>status \<program-name>  查看状态</li>
-<li>restart \<program-name> 重新启动</li>
-<li>start \<program-name>    启动</li>
-<li>stop \<prorgram-name>   停止</li>
-<li>update                                    更新配置</li>
-</ul>
-<p>也可以不进入来管理 ，例如每次更新玩配置，我们可以使其快速生效:</p>
-<div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">supervisorctl</span> <span class="k">update</span> 
-</pre></div>
-
-
-<p>​   </p>
-<h2>5. 结束语</h2>
-<p>上文中只是简单介绍了supervisor 、celery、 celerybeat的简单运用。如果有兴趣的话可以自己去深入了解!</p>
-<p><strong>本篇文章到此结束，原创手打！ </strong></p>
-<p><strong>人生苦短， 我用python!</strong></p>
-		</div> <!--/#entry-content-->
-    		<span class="tag-links"><strong>Tagged</strong>
- <a href="https://importcjj.github.io/tag/celery.html" rel="tag">celery</a>,  <a href="https://importcjj.github.io/tag/python.html" rel="tag">Python</a>,  <a href="https://importcjj.github.io/tag/supervisor.html" rel="tag">supervisor</a>    		</span>
-	</div> <!--/#main-->
-</div>  <!--/#post--><div class="post type-post status-publish format-standard hentry category-general" id="post">
-	<div class="entry-meta">
-		<div class="date"><a href="https://importcjj.github.io/zhong-duan-jin-du-tiao-de-jian-dan-yuan-li.html">日 27 三月 2016</a></div>
-		<span class="byline">By <a href="https://importcjj.github.io/author/importcjj.html">importcjj</a></span>
-			<div class="comments"><a href="https://importcjj.github.io/zhong-duan-jin-du-tiao-de-jian-dan-yuan-li.html#disqus_thread" title="Comment on 终端进度条的简单原理">comments</a></div>
-			<span class="cat-links"><a href="https://importcjj.github.io/category/python.html" title="View all posts in Python" rel="category tag">Python</a></span>
-	</div> <!-- /#entry-meta -->
-	<div class="main">
-		<h2 class="entry-title">
-			<a href="https://importcjj.github.io/zhong-duan-jin-du-tiao-de-jian-dan-yuan-li.html" title="Permalink to 终端进度条的简单原理" rel="bookmark">终端进度条的简单原理</a>
-		</h2>
-		<div class="entry-content">
-			<h4>进度条</h4>
-<p>每次使用pip安装一些第三方库时，总会在终端或者命令行中看到进度条，能够让用户等待时得到当前任务的进度。今天偶然在知乎看到一个帖子中提到了这个有趣的功能。</p>
-<h4>实现方式</h4>
-<p>一般情况下命令行和终端的输出总是由上往下一行一行输出。如果我们需要实现进度条的效果的效果的话，就需要每次输出都在同一行上，不断地用后来的输出去覆盖之前的输出，从而模拟出一种动态变化的效果。那究竟怎样实现呢？答案就是使用<strong>反杠r</strong>。</p>
-<p><strong>反杠n</strong>是换行，<strong>反杠r</strong>就只是把输出光标移到行首，而不换行。根据这个思路，我们先做个倒计时来玩玩。</p>
-<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">time</span>
-<span class="kn">import</span> <span class="nn">sys</span>
-
-<span class="k">def</span> <span class="nf">CountDown</span><span class="p">(</span><span class="n">total_sec</span><span class="p">):</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">xrange</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">):</span>
-        <span class="c1"># 不能换行哈</span>
-        <span class="k">print</span> <span class="s1">&#39;</span><span class="si">%4d</span><span class="se">\\</span><span class="s1">r&#39;</span> <span class="o">%</span> <span class="n">i</span><span class="p">,</span>
-        <span class="n">sys</span><span class="o">.</span><span class="n">stdout</span><span class="o">.</span><span class="n">flush</span><span class="p">()</span>
-        <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-    <span class="c1"># 防止输出被之后的输出覆盖</span>
-    <span class="k">print</span>
-
-<span class="n">CountDown</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
-</pre></div>
-
-
-<p>结果让我失望了，因为倒计时效果没有出现，而是等待10秒后直接出现0</p>
-<h5>为什么？</h5>
-<p>输出是有缓存机制的，输出缓存（即所谓的行缓冲区）是根据换行符来写数据的，看到换行符，就会从缓存打印数据。</p>
-<p>修改代码前，先看下命令行和终端中的输出方式：</p>
-<div class="highlight"><pre><span></span><span class="c1"># print方式</span>
-<span class="k">print</span> <span class="s1">&#39;ProcessBar&#39;</span>
-
-<span class="c1"># stdout方式</span>
-<span class="kn">import</span> <span class="nn">sys</span>
-<span class="n">sys</span><span class="o">.</span><span class="n">stdout</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;ProcessBar</span><span class="se">\\</span><span class="s1">n&#39;</span><span class="p">)</span>
-</pre></div>
-
-
-<p><strong>print</strong>使用的较为普遍,但以上两种方式其实是等价的，无非是print自带默认自带换行。我们可以借助sys模块中stdout中的flush强制取出缓冲区的内容。</p>
-<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">time</span>
-<span class="kn">import</span> <span class="nn">sys</span>
-
-<span class="k">def</span> <span class="nf">CountDown</span><span class="p">(</span><span class="n">total_sec</span><span class="p">):</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">xrange</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">):</span>
-        <span class="c1"># 默认不换行</span>
-        <span class="c1"># 也可以 print &#39;%4d\\r&#39; % i,</span>
-        <span class="n">sys</span><span class="o">.</span><span class="n">stdout</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%4d</span><span class="se">\\</span><span class="s1">r&#39;</span> <span class="o">%</span> <span class="n">i</span><span class="p">)</span>
-        <span class="c1"># 强制打印</span>
-        <span class="n">sys</span><span class="o">.</span><span class="n">stdout</span><span class="o">.</span><span class="n">flush</span><span class="p">()</span>
-        <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-    <span class="c1"># 防止最后结果被之后的输出覆盖</span>
-    <span class="k">print</span>
-
-<span class="n">CountDown</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
-</pre></div>
-
-
-<p>成功实现。接下来来实现进度条！</p>
-<div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env python</span>
-<span class="c1">#-*-coding=utf-8-*-</span>
-
-<span class="kn">import</span> <span class="nn">sys</span>
-
-<span class="k">class</span> <span class="nc">ProcessBar</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
-
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">end</span><span class="p">,</span> <span class="n">char</span><span class="o">=</span><span class="s1">&#39;#&#39;</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        @param end : 总大小</span>
-<span class="sd">        @param char : 进度条的符号</span>
-<span class="sd">        &quot;&quot;&quot;</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">end</span> <span class="o">=</span> <span class="n">end</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">char</span> <span class="o">=</span> <span class="n">char</span>
-
-    <span class="k">def</span> <span class="nf">show</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">count</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        @param count : 当前进度</span>
-<span class="sd">        &quot;&quot;&quot;</span>
-        <span class="c1"># 百分比</span>
-        <span class="n">percent</span> <span class="o">=</span> <span class="n">count</span> <span class="o">*</span> <span class="mi">100</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">end</span>
-        <span class="c1"># 符号数量</span>
-        <span class="n">s_num</span> <span class="o">=</span> <span class="n">percent</span> <span class="o">/</span> <span class="mi">10</span>
-        <span class="n">sys</span><span class="o">.</span><span class="n">stdout</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%3d%%</span><span class="s1">=&gt;|</span><span class="si">%-10s</span><span class="s1">|</span><span class="se">\\</span><span class="s1">r&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">percent</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">char</span> <span class="o">*</span> <span class="n">s_num</span><span class="p">))</span>
-        <span class="n">sys</span><span class="o">.</span><span class="n">stdout</span><span class="o">.</span><span class="n">flush</span><span class="p">()</span>
-
-<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
-    <span class="kn">import</span> <span class="nn">time</span>
-    <span class="n">pb</span> <span class="o">=</span> <span class="n">ProcessBar</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">xrange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">101</span><span class="p">):</span>
-        <span class="n">pb</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
-        <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.1</span><span class="p">)</span>
-    <span class="k">print</span> <span class="s2">&quot;</span><span class="se">\\</span><span class="s2">ncompleted&quot;</span>
-</pre></div>
-
-
-<p>一个简单的进度条做好了，感觉还不错！</p>
-<p>还有一种方法那就是使用<strong>反杠b</strong>来回退，有空试试。</p>
-<h4>扩展</h4>
-<p>每次输出都需要flush感觉很麻烦？
-几种方式轻松解决!</p>
-<ol>
-<li><strong>python -u ProcessBar.py</strong> 带参数<strong>u</strong>来运行文件</li>
-<li><strong>PYTHONUNBUFFERED=1 python ProcessBar.py</strong> 与方法一等效</li>
-<li><strong>#!/usr/bin/env python -u</strong> linux、unix需要直接运行的方式的话，可以在py文件开头加上<strong>-u</strong></li>
-<li>使用<strong>stderr.write(str)</strong>输出，因为stderr不使用缓冲区</li>
-</ol>
-		</div> <!--/#entry-content-->
-    		<span class="tag-links"><strong>Tagged</strong>
- <a href="https://importcjj.github.io/tag/python.html" rel="tag">Python</a>    		</span>
-	</div> <!--/#main-->
-</div>  <!--/#post--><div class="post type-post status-publish format-standard hentry category-general" id="post">
-	<div class="entry-meta">
-		<div class="date"><a href="https://importcjj.github.io/pythondan-ceng-zhuang-shi-qi-xiao-ji.html">六 26 三月 2016</a></div>
-		<span class="byline">By <a href="https://importcjj.github.io/author/importcjj.html">importcjj</a></span>
-			<div class="comments"><a href="https://importcjj.github.io/pythondan-ceng-zhuang-shi-qi-xiao-ji.html#disqus_thread" title="Comment on Python单层装饰器小记">comments</a></div>
-			<span class="cat-links"><a href="https://importcjj.github.io/category/python.html" title="View all posts in Python" rel="category tag">Python</a></span>
-	</div> <!-- /#entry-meta -->
-	<div class="main">
-		<h2 class="entry-title">
-			<a href="https://importcjj.github.io/pythondan-ceng-zhuang-shi-qi-xiao-ji.html" title="Permalink to Python单层装饰器小记" rel="bookmark">Python单层装饰器小记</a>
-		</h2>
-		<div class="entry-content">
-			<h4>解释器什么时候处理装饰器？</h4>
-<p>答: Python解释器加载代码的时候.</p>
-<p>例如, sleep.py 代码如下</p>
-<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">functools</span>
-<span class="kn">import</span> <span class="nn">time</span>
-
-
-<span class="k">def</span> <span class="nf">timer</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
-    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;handle decorator&quot;</span><span class="p">)</span>
-
-    <span class="nd">@functools.wraps</span><span class="p">(</span><span class="n">func</span><span class="p">)</span>
-    <span class="k">def</span> <span class="nf">wrapper</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-        <span class="n">start</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
-        <span class="n">rtn</span> <span class="o">=</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-        <span class="n">cost</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="n">start</span>
-        <span class="k">print</span><span class="p">(</span><span class="s2">&quot;cost </span><span class="si">%f</span><span class="s2"> s&quot;</span><span class="p">)</span> <span class="o">%</span> <span class="n">cost</span>
-        <span class="k">return</span> <span class="n">rtn</span>
-    <span class="k">return</span> <span class="n">wrapper</span>
-
-
-<span class="nd">@timer</span>
-<span class="k">def</span> <span class="nf">sleep</span><span class="p">(</span><span class="n">seconds</span><span class="p">):</span>
-    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="n">seconds</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">seconds</span>
-</pre></div>
-
-
-<p>以上代码只是定义了一个装饰器和一个使用该装饰器的函数，当运行<code>python sleep.py</code>的时候会打印<code>hanle decorator</code>。当解释器在加载处理代码的时候遇到了"@"的时候，回去调用timer这个函数，并把sleep这个参数当做参数传给timer。这个过程相当于:</p>
-<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">sleep</span><span class="p">(</span><span class="n">seconds</span><span class="p">):</span>
-    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="n">seconds</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">seconds</span>
-<span class="n">sleep</span> <span class="o">=</span> <span class="n">timer</span><span class="p">(</span><span class="n">sleep</span><span class="p">)</span>
-</pre></div>
-
-
-<h4>装饰器和闭包？</h4>
-<blockquote>
-<p>在计算机科学中，闭包（英语：Closure），又称词法闭包（Lexical Closure）或函数闭包（function closures），是引用了自由变量的函数。这个被引用的自由变量将和这个函数一同存在，即使已经离开了创造它的环境也不例外。所以，有另一种说法认为闭包是由函数和与其相关的引用环境组合而成的实体。闭包在运行时可以有多个实例，不同的引用环境和相同的函数组合可以产生不同的实例。
-</p>
-</blockquote>
-<p>我们不去深究到底什么才是闭包的正确定义。姑且认为就是引用了自由变量的函数。如果在一个内部函数里，对在外部作用域（但不是在全局作用域）的变量进行引用，那么内部函数就被认为是闭包。粗暴的理解为<strong>函数套函数，内层函数引用了外层函数的变量，即使外层函数结束了，内层函数函数仍可以访问该变量</strong>。</p>
-<p>在装饰器的用法中，表现为如下方式:</p>
-<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">functools</span>
-<span class="kn">import</span> <span class="nn">time</span>
-
-
-<span class="k">def</span> <span class="nf">timer</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
-    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;handle decorator&quot;</span><span class="p">)</span>
-    <span class="n">name</span> <span class="o">=</span> <span class="n">func</span><span class="o">.</span><span class="n">func_name</span>
-
-    <span class="nd">@functools.wraps</span><span class="p">(</span><span class="n">func</span><span class="p">)</span>
-    <span class="k">def</span> <span class="nf">wrapper</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-        <span class="k">print</span> <span class="n">name</span><span class="p">,</span> <span class="nb">id</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
-        <span class="n">start</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
-        <span class="n">rtn</span> <span class="o">=</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-        <span class="n">cost</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="n">start</span>
-        <span class="k">print</span><span class="p">(</span><span class="s2">&quot;costs </span><span class="si">%f</span><span class="s2"> s&quot;</span><span class="p">)</span> <span class="o">%</span> <span class="n">cost</span>
-        <span class="k">return</span> <span class="n">rtn</span>
-    <span class="k">return</span> <span class="n">wrapper</span>
-
-
-<span class="nd">@timer</span>
-<span class="k">def</span> <span class="nf">sleep</span><span class="p">(</span><span class="n">seconds</span><span class="p">):</span>
-    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="n">seconds</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">seconds</span>
-
-
-<span class="nd">@timer</span>
-<span class="k">def</span> <span class="nf">sleep2</span><span class="p">(</span><span class="n">seconds</span><span class="p">):</span>
-    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="n">seconds</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">seconds</span>
-
-<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
-    <span class="k">print</span> <span class="n">sleep</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-    <span class="k">print</span> <span class="n">sleep</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
-    <span class="k">print</span> <span class="n">sleep2</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-    <span class="k">print</span> <span class="n">sleep2</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
-
-<span class="c1"># 运行结果:</span>
-<span class="n">handle</span> <span class="n">decorator</span>
-<span class="n">handle</span> <span class="n">decorator</span>
-<span class="c1"># print sleep(2)</span>
-<span class="n">sleep</span> <span class="mi">4402047952</span>
-<span class="n">costs</span> <span class="mf">2.005124</span> <span class="n">s</span>
-<span class="mi">2</span>
-<span class="c1"># print sleep(3)</span>
-<span class="n">sleep</span> <span class="mi">4402047952</span>
-<span class="n">costs</span> <span class="mf">3.005203</span> <span class="n">s</span>
-<span class="mi">3</span>
-<span class="c1"># print sleep2(2)</span>
-<span class="n">sleep2</span> <span class="mi">4402048048</span>
-<span class="n">costs</span> <span class="mf">2.005205</span> <span class="n">s</span>
-<span class="mi">2</span>
-<span class="c1"># print sleep2(3)</span>
-<span class="n">sleep2</span> <span class="mi">4402048048</span>
-<span class="n">costs</span> <span class="mf">3.000412</span> <span class="n">s</span>
-<span class="mi">3</span>
-</pre></div>
-
-
-<p>可以看到:</p>
-<ol>
-<li>sleep是可以访问timer函数中的name变量。</li>
-<li>同一个函数的多次调用，name变量是同一个(id相同)。</li>
-<li>函数<strong>sleep</strong>和<strong>sleep2</strong>所引用的name变量不是同一个，因为timer装饰这两个函数，被调用了两次，声明了两个不同的name变量。</li>
-</ol>
-<p>利用以上三点特性，我们可以在装饰器中为被装饰函数开辟一个"存放数据空间"，来看一种应用方式:</p>
-<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">functools</span>
-<span class="kn">import</span> <span class="nn">time</span>
-
-
-<span class="k">def</span> <span class="nf">cache</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
-    <span class="n">caches</span> <span class="o">=</span> <span class="p">{}</span>
-
-    <span class="nd">@functools.wraps</span><span class="p">(</span><span class="n">func</span><span class="p">)</span>
-    <span class="k">def</span> <span class="nf">wrapper</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-        <span class="k">if</span> <span class="n">n</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">caches</span><span class="p">:</span>
-            <span class="n">caches</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="o">=</span> <span class="n">func</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
-        <span class="k">return</span> <span class="n">caches</span><span class="p">[</span><span class="n">n</span><span class="p">]</span>
-    <span class="k">return</span> <span class="n">wrapper</span>
-
-
-<span class="nd">@cache</span>
-<span class="k">def</span> <span class="nf">fib</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-    <span class="k">if</span> <span class="n">n</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">:</span>
-        <span class="k">return</span> <span class="mi">1</span>
-    <span class="k">return</span> <span class="n">fib</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="n">fib</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">2</span><span class="p">)</span>
-
-
-<span class="k">def</span> <span class="nf">fib2</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-    <span class="k">if</span> <span class="n">n</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">:</span>
-        <span class="k">return</span> <span class="mi">1</span>
-    <span class="k">return</span> <span class="n">fib2</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="n">fib2</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">2</span><span class="p">)</span>
-
-
-<span class="k">def</span> <span class="nf">fib3</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-    <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">xrange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
-        <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">,</span> <span class="n">a</span>
-    <span class="k">return</span> <span class="n">a</span>
-
-<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
-    <span class="n">start</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
-    <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">xrange</span><span class="p">(</span><span class="mi">10000</span><span class="p">):</span>
-        <span class="n">fib</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>
-    <span class="k">print</span> <span class="s2">&quot;cache fib without cache spends </span><span class="si">%f</span><span class="s2"> s&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="n">start</span><span class="p">,)</span>
-
-    <span class="n">start</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
-    <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">xrange</span><span class="p">(</span><span class="mi">10000</span><span class="p">):</span>
-        <span class="n">fib2</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>
-    <span class="k">print</span> <span class="s2">&quot;no cache fib spends </span><span class="si">%f</span><span class="s2"> s&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="n">start</span><span class="p">,)</span>
-
-    <span class="n">start</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
-    <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">xrange</span><span class="p">(</span><span class="mi">10000</span><span class="p">):</span>
-        <span class="n">fib3</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>
-    <span class="k">print</span> <span class="s2">&quot;fib3 spends </span><span class="si">%f</span><span class="s2"> s&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="n">start</span><span class="p">,)</span>
-
-<span class="c1"># 运行结果</span>
-<span class="n">cache</span> <span class="n">fib</span> <span class="n">without</span> <span class="n">cache</span> <span class="n">spends</span> <span class="mf">0.003719</span> <span class="n">s</span>
-<span class="n">no</span> <span class="n">cache</span> <span class="n">fib</span> <span class="n">spends</span> <span class="mf">31.374117</span> <span class="n">s</span>
-<span class="n">fib3</span> <span class="n">spends</span> <span class="mf">0.016529</span> <span class="n">s</span>
-</pre></div>
-
-
-<p>递归通常比非递归实现对程序执行的效率影响更大一些，我们带缓冲的递归fib却比非递归版本的fib3耗时更少！</p>
-<p>这</p>
-<h4>类装饰器</h4>
-<p>我们在创建一个class的时候可以选择重写以下三个方法：</p>
-<ul>
-<li>__new__(cls, <em>args, </em>*kwargs)   创建实例</li>
-<li>__init__(self, <em>args, </em>*kwargs)  初始化实例</li>
-<li>__call__(self, <em>args, </em>*kwargs)  把实例当函数一样调用</li>
-</ul>
-<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">functools</span>
-<span class="kn">import</span> <span class="nn">time</span>
-
-
-<span class="k">class</span> <span class="nc">Timer</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
-
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">names</span> <span class="o">=</span> <span class="p">[]</span>
-
-    <span class="k">def</span> <span class="fm">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">func</span><span class="p">):</span>
-        <span class="k">if</span> <span class="n">func</span><span class="o">.</span><span class="n">func_name</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">names</span><span class="p">:</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">names</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">func</span><span class="o">.</span><span class="n">func_name</span><span class="p">)</span>
-
-        <span class="nd">@functools.wraps</span><span class="p">(</span><span class="n">func</span><span class="p">)</span>
-        <span class="k">def</span> <span class="nf">wrapper</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-            <span class="k">print</span> <span class="bp">self</span><span class="o">.</span><span class="n">names</span>
-            <span class="n">start</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
-            <span class="n">rtn</span> <span class="o">=</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-            <span class="k">print</span> <span class="s2">&quot;</span><span class="si">%s</span><span class="s2"> spends </span><span class="si">%f</span><span class="s2"> s&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">func</span><span class="o">.</span><span class="n">func_name</span><span class="p">,</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="n">start</span><span class="p">)</span>
-            <span class="k">return</span> <span class="n">rtn</span>
-        <span class="k">return</span> <span class="n">wrapper</span>
-
-<span class="n">timer</span> <span class="o">=</span> <span class="n">Timer</span><span class="p">()</span>
-
-
-<span class="nd">@timer</span>
-<span class="k">def</span> <span class="nf">sleep</span><span class="p">(</span><span class="n">seconds</span><span class="p">):</span>
-    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="n">seconds</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">seconds</span>
-
-
-<span class="nd">@timer</span>
-<span class="k">def</span> <span class="nf">sleep2</span><span class="p">(</span><span class="n">seconds</span><span class="p">):</span>
-    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="n">seconds</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">seconds</span>
-
-<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
-    <span class="n">sleep</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
-    <span class="n">sleep2</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
-
-<span class="err">＃</span> <span class="err">运行结果</span>
-<span class="p">[</span><span class="s1">&#39;sleep&#39;</span><span class="p">,</span> <span class="s1">&#39;sleep2&#39;</span><span class="p">]</span>
-<span class="n">sleep</span> <span class="n">spends</span> <span class="mf">5.000244</span> <span class="n">s</span>
-<span class="p">[</span><span class="s1">&#39;sleep&#39;</span><span class="p">,</span> <span class="s1">&#39;sleep2&#39;</span><span class="p">]</span>
-<span class="n">sleep2</span> <span class="n">spends</span> <span class="mf">5.004623</span> <span class="n">s</span>
-</pre></div>
-
-
-<p>想要使用类来做装饰器，先要准备一个实例，然后调用这个实例。除了这点要注意外，还要注意的是，用类实现的装饰器，可以让所有被装饰的函数共享变量，这种变量就是实例的内部变量。</p>
-		</div> <!--/#entry-content-->
-    		<span class="tag-links"><strong>Tagged</strong>
- <a href="https://importcjj.github.io/tag/python.html" rel="tag">Python</a>,  <a href="https://importcjj.github.io/tag/zhuang-shi-qi.html" rel="tag">装饰器</a>    		</span>
-	</div> <!--/#main-->
-</div>  <!--/#post--><div class="post type-post status-publish format-standard hentry category-general" id="post">
-	<div class="entry-meta">
-		<div class="date"><a href="https://importcjj.github.io/pythonde-metaclassxiao-ji.html">六 26 三月 2016</a></div>
-		<span class="byline">By <a href="https://importcjj.github.io/author/importcjj.html">importcjj</a></span>
-			<div class="comments"><a href="https://importcjj.github.io/pythonde-metaclassxiao-ji.html#disqus_thread" title="Comment on Python的metaclass小记">comments</a></div>
-			<span class="cat-links"><a href="https://importcjj.github.io/category/python.html" title="View all posts in Python" rel="category tag">Python</a></span>
-	</div> <!-- /#entry-meta -->
-	<div class="main">
-		<h2 class="entry-title">
-			<a href="https://importcjj.github.io/pythonde-metaclassxiao-ji.html" title="Permalink to Python的metaclass小记" rel="bookmark">Python的metaclass小记</a>
-		</h2>
-		<div class="entry-content">
-			<p>使用metaclass的时候可以使用<strong>metaclass</strong>的<code>__new__</code>和<code>__init__</code>去改变所定义的类的相关属性，因为这两个方法是在类定义的时候被调用，他们所需的参数也与使用<code>type(name, bases, dict)</code>动态声明类相同。而使用<strong>metaclass</strong>的<code>__call__</code>可以影响我们所声明的类产生实例的过程，因为当我们使用class_name()去产生实例的时候，相当于call了这个class，而这个class又是metaclass的实例，所以其实调用了metaclass的__call__</p>
-<p>注意: 通过<code>super</code>来调用父类的<code>__new__</code>时，第一个参数需要是该class，这点是不同于调用<code>__init__</code>等其他父类方法的。因为<code>__new__</code>是个静态方法。还有一个小问题就是当父类是object的时候，也就是调用<code>object.__new__()</code>只传一个cls参数就可以了，至于为什么，请戳<a href="https://mail.python.org/pipermail/python-dev/2008-February/076854.html">here</a>
-和<a href="http://bugs.python.org/issue1683368">here</a>。 如果你重写了<code>__new__</code>而没有重写<code>__init__</code>，那么给<code>object.__new__</code>传额外的参数会直接报错, 如果两个都重写了会报出<strong>DeprecationWarning</strong>，可以继续运行。</p>
-<div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Meta</span><span class="p">(</span><span class="nb">type</span><span class="p">):</span>
-
-    <span class="k">def</span> <span class="fm">__new__</span><span class="p">(</span><span class="n">meta</span><span class="p">,</span> <span class="n">cls_name</span><span class="p">,</span> <span class="n">base_clses</span><span class="p">,</span> <span class="n">cls_attrs</span><span class="p">):</span>
-        <span class="k">print</span> <span class="s2">&quot;============Meta_new==============&quot;</span>
-        <span class="k">print</span> <span class="s2">&quot;meta&quot;</span><span class="p">,</span> <span class="n">meta</span>
-        <span class="k">print</span> <span class="s2">&quot;class name&quot;</span><span class="p">,</span> <span class="n">cls_name</span>
-        <span class="k">print</span> <span class="s2">&quot;base classes&quot;</span><span class="p">,</span> <span class="n">base_clses</span>
-        <span class="k">print</span> <span class="s2">&quot;class attrs&quot;</span><span class="p">,</span> <span class="n">cls_attrs</span>
-        <span class="n">instance</span> <span class="o">=</span> <span class="nb">super</span><span class="p">(</span><span class="n">Meta</span><span class="p">,</span> <span class="n">meta</span><span class="p">)</span><span class="o">.</span><span class="fm">__new__</span><span class="p">(</span><span class="n">meta</span><span class="p">,</span> <span class="n">cls_name</span><span class="p">,</span> <span class="n">base_clses</span><span class="p">,</span> <span class="n">cls_attrs</span><span class="p">)</span>
-        <span class="k">print</span> <span class="s2">&quot;=============Meta_new============&quot;</span>
-        <span class="k">return</span> <span class="n">instance</span>
-
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="n">cls_obj</span><span class="p">,</span> <span class="n">cls_name</span><span class="p">,</span> <span class="n">base_clses</span><span class="p">,</span> <span class="n">cls_attrs</span><span class="p">):</span>
-        <span class="k">print</span> <span class="s2">&quot;============Meta_init============&quot;</span>
-        <span class="k">print</span> <span class="s1">&#39;class obj&#39;</span><span class="p">,</span> <span class="n">cls_obj</span>
-        <span class="k">print</span> <span class="s2">&quot;class name&quot;</span><span class="p">,</span> <span class="n">cls_name</span>
-        <span class="k">print</span> <span class="s2">&quot;base classes&quot;</span><span class="p">,</span> <span class="n">base_clses</span>
-        <span class="k">print</span> <span class="s2">&quot;class attrs&quot;</span><span class="p">,</span> <span class="n">cls_attrs</span>
-        <span class="k">print</span> <span class="s2">&quot;============Meta_init===========&quot;</span>
-
-    <span class="k">def</span> <span class="fm">__call__</span><span class="p">(</span><span class="n">cls_obj</span><span class="p">,</span>  <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-        <span class="k">print</span> <span class="s2">&quot;=============Meta_call==========&quot;</span>
-        <span class="k">print</span> <span class="s2">&quot;class obj&quot;</span><span class="p">,</span> <span class="n">cls_obj</span>
-        <span class="n">instance</span> <span class="o">=</span> <span class="nb">super</span><span class="p">(</span><span class="n">Meta</span><span class="p">,</span> <span class="n">cls_obj</span><span class="p">)</span><span class="o">.</span><span class="fm">__call__</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-        <span class="k">print</span> <span class="s2">&quot;=============Meta_call==========&quot;</span>
-        <span class="k">return</span> <span class="n">instance</span>
-
-
-<span class="k">class</span> <span class="nc">Foo</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
-    <span class="vm">__metaclass__</span> <span class="o">=</span> <span class="n">Meta</span>
-
-    <span class="k">def</span> <span class="fm">__new__</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
-        <span class="k">print</span> <span class="bp">cls</span>
-        <span class="k">print</span> <span class="s1">&#39;Foo.__new__&#39;</span>
-        <span class="k">return</span> <span class="nb">super</span><span class="p">(</span><span class="n">Foo</span><span class="p">,</span> <span class="bp">cls</span><span class="p">)</span><span class="o">.</span><span class="fm">__new__</span><span class="p">(</span><span class="bp">cls</span><span class="p">)</span>
-
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">print</span> <span class="s1">&#39;Foo.__init__&#39;</span>
-
-<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
-    <span class="n">Foo</span><span class="p">()</span>
-    <span class="k">print</span> <span class="nb">type</span><span class="o">.</span><span class="fm">__call__</span><span class="p">(</span><span class="n">Foo</span><span class="p">)</span>
-</pre></div>
-
-
-<p>输出</p>
-<div class="highlight"><pre><span></span><span class="o">============</span><span class="n">Meta_new</span><span class="o">==============</span>
-<span class="n">meta</span> <span class="o">&lt;</span><span class="k">class</span> <span class="s1">&#39;__main__.Meta&#39;</span><span class="o">&gt;</span>
-<span class="k">class</span> <span class="n">name</span> <span class="n">Foo</span>
-<span class="n">base</span> <span class="n">classes</span> <span class="p">(</span><span class="o">&lt;</span><span class="k">type</span> <span class="s1">&#39;object&#39;</span><span class="o">&gt;</span><span class="p">,)</span>
-<span class="k">class</span> <span class="n">attrs</span> <span class="err">{</span><span class="s1">&#39;__module__&#39;</span><span class="p">:</span> <span class="s1">&#39;__main__&#39;</span><span class="p">,</span> <span class="s1">&#39;__metaclass__&#39;</span><span class="p">:</span> <span class="o">&lt;</span><span class="k">class</span> <span class="s1">&#39;__main__.Meta&#39;</span><span class="o">&gt;</span><span class="p">,</span> <span class="s1">&#39;__new__&#39;</span><span class="p">:</span> <span class="o">&lt;</span><span class="k">function</span> <span class="n">__new__</span> <span class="k">at</span> <span class="mi">0</span><span class="n">x1091ad578</span><span class="o">&gt;</span><span class="p">,</span> <span class="s1">&#39;__init__&#39;</span><span class="p">:</span> <span class="o">&lt;</span><span class="k">function</span> <span class="n">__init__</span> <span class="k">at</span> <span class="mi">0</span><span class="n">x1091b9578</span><span class="o">&gt;</span><span class="err">}</span>
-<span class="o">=============</span><span class="n">Meta_new</span><span class="o">============</span>
-<span class="o">============</span><span class="n">Meta_init</span><span class="o">============</span>
-<span class="k">class</span> <span class="n">obj</span> <span class="o">&lt;</span><span class="k">class</span> <span class="s1">&#39;__main__.Foo&#39;</span><span class="o">&gt;</span>
-<span class="k">class</span> <span class="n">name</span> <span class="n">Foo</span>
-<span class="n">base</span> <span class="n">classes</span> <span class="p">(</span><span class="o">&lt;</span><span class="k">type</span> <span class="s1">&#39;object&#39;</span><span class="o">&gt;</span><span class="p">,)</span>
-<span class="k">class</span> <span class="n">attrs</span> <span class="err">{</span><span class="s1">&#39;__module__&#39;</span><span class="p">:</span> <span class="s1">&#39;__main__&#39;</span><span class="p">,</span> <span class="s1">&#39;__metaclass__&#39;</span><span class="p">:</span> <span class="o">&lt;</span><span class="k">class</span> <span class="s1">&#39;__main__.Meta&#39;</span><span class="o">&gt;</span><span class="p">,</span> <span class="s1">&#39;__new__&#39;</span><span class="p">:</span> <span class="o">&lt;</span><span class="k">function</span> <span class="n">__new__</span> <span class="k">at</span> <span class="mi">0</span><span class="n">x1091ad578</span><span class="o">&gt;</span><span class="p">,</span> <span class="s1">&#39;__init__&#39;</span><span class="p">:</span> <span class="o">&lt;</span><span class="k">function</span> <span class="n">__init__</span> <span class="k">at</span> <span class="mi">0</span><span class="n">x1091b9578</span><span class="o">&gt;</span><span class="err">}</span>
-<span class="o">============</span><span class="n">Meta_init</span><span class="o">===========</span>
-<span class="o">=============</span><span class="n">Meta_call</span><span class="o">==========</span>
-<span class="k">class</span> <span class="n">obj</span> <span class="o">&lt;</span><span class="k">class</span> <span class="s1">&#39;__main__.Foo&#39;</span><span class="o">&gt;</span>
-<span class="o">&lt;</span><span class="k">class</span> <span class="s1">&#39;__main__.Foo&#39;</span><span class="o">&gt;</span>
-<span class="n">Foo</span><span class="p">.</span><span class="n">__new__</span>
-<span class="n">Foo</span><span class="p">.</span><span class="n">__init__</span>
-<span class="o">=============</span><span class="n">Meta_call</span><span class="o">==========</span>
-<span class="o">&lt;</span><span class="k">class</span> <span class="s1">&#39;__main__.Foo&#39;</span><span class="o">&gt;</span>
-<span class="n">Foo</span><span class="p">.</span><span class="n">__new__</span>
-<span class="n">Foo</span><span class="p">.</span><span class="n">__init__</span>
-<span class="o">&lt;</span><span class="n">__main__</span><span class="p">.</span><span class="n">Foo</span> <span class="k">object</span> <span class="k">at</span> <span class="mi">0</span><span class="n">x1091b6910</span><span class="o">&gt;</span>
-</pre></div>
-		</div> <!--/#entry-content-->
-    		<span class="tag-links"><strong>Tagged</strong>
- <a href="https://importcjj.github.io/tag/metaclass.html" rel="tag">metaclass</a>,  <a href="https://importcjj.github.io/tag/python.html" rel="tag">Python</a>    		</span>
-	</div> <!--/#main-->
-</div>  <!--/#post--><div class="navigation">
-</div>
-		</div>
-		
-		<div id="footer">
-			<p>Powered by <a href="http://getpelican.com">Pelican</a>, theme by <a href="http://bunnyman.info">tBunnyMan</a>.</p>
-<script type="text/javascript">
-    var disqus_shortname = 'importcjj';
-    (function () {
-        var s = document.createElement('script'); s.async = true;
-        s.type = 'text/javascript';
-        s.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
-        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
-    }());
-</script>		</div><!-- /#footer -->
-	</div><!-- /#container -->
-	<div style="display:none"></div>
+<div class="articles">
+        <ol>
+            <li>
+                <article>
+                    <footer>
+                         <p>
+                            <time datetime="2016-05-18 14:07:45+08:00">
+                                <script>document.write(moment('2016-05-18 14:07:45+08:00').format('LL'));</script>
+                            </time>
+                                    in <a href="https://importcjj.github.io/category/python.html"><span class="category-tag">Python</span></a>
+                        </p>
+                    </footer>
+                    <header>
+                        <a href="https://importcjj.github.io/greenlet-qing-liang-ji-bing-fa-bian-cheng.html">
+                            <h2>Greenlet: 轻量级并发编程</h2>
+                        </a>
+                    </header>
+                    <div class="summary"> </div>
+                    <div class="tags">
+                        <ul class="tags">
+                            <li><a href="https://importcjj.github.io/tag/concurrent.html" class="tag">concurrent</a></li>
+                            <li><a href="https://importcjj.github.io/tag/gevent.html" class="tag">gevent</a></li>
+                        </ul>
+                    </div>
+                    <a href="https://importcjj.github.io/greenlet-qing-liang-ji-bing-fa-bian-cheng.html">
+                        <p class="readmore">Read more...</p>
+                    </a>
+                </article>
+            </li>
+            <li>
+                <article>
+                    <footer>
+                         <p>
+                            <time datetime="2016-04-26 16:10:27+08:00">
+                                <script>document.write(moment('2016-04-26 16:10:27+08:00').format('LL'));</script>
+                            </time>
+                                    in <a href="https://importcjj.github.io/category/python.html"><span class="category-tag">Python</span></a>
+                        </p>
+                    </footer>
+                    <header>
+                        <a href="https://importcjj.github.io/pythondan-li-mo-shi-de-shi-xian.html">
+                            <h2>Python单例模式的实现</h2>
+                        </a>
+                    </header>
+                    <div class="summary"> </div>
+                    <div class="tags">
+                        <ul class="tags">
+                            <li><a href="https://importcjj.github.io/tag/singleton.html" class="tag">singleton</a></li>
+                            <li><a href="https://importcjj.github.io/tag/zhuang-shi-qi.html" class="tag">装饰器</a></li>
+                        </ul>
+                    </div>
+                    <a href="https://importcjj.github.io/pythondan-li-mo-shi-de-shi-xian.html">
+                        <p class="readmore">Read more...</p>
+                    </a>
+                </article>
+            </li>
+            <li>
+                <article>
+                    <footer>
+                         <p>
+                            <time datetime="2016-03-27 03:37:03+08:00">
+                                <script>document.write(moment('2016-03-27 03:37:03+08:00').format('LL'));</script>
+                            </time>
+                                    in <a href="https://importcjj.github.io/category/python.html"><span class="category-tag">Python</span></a>
+                        </p>
+                    </footer>
+                    <header>
+                        <a href="https://importcjj.github.io/python-yieldxiao-ji.html">
+                            <h2>Python yield小记</h2>
+                        </a>
+                    </header>
+                    <div class="summary"> </div>
+                    <div class="tags">
+                        <ul class="tags">
+                            <li><a href="https://importcjj.github.io/tag/yield.html" class="tag">yield</a></li>
+                            <li><a href="https://importcjj.github.io/tag/sheng-cheng-qi.html" class="tag">生成器</a></li>
+                            <li><a href="https://importcjj.github.io/tag/python.html" class="tag">Python</a></li>
+                        </ul>
+                    </div>
+                    <a href="https://importcjj.github.io/python-yieldxiao-ji.html">
+                        <p class="readmore">Read more...</p>
+                    </a>
+                </article>
+            </li>
+            <li>
+                <article>
+                    <footer>
+                         <p>
+                            <time datetime="2016-03-27 03:37:03+08:00">
+                                <script>document.write(moment('2016-03-27 03:37:03+08:00').format('LL'));</script>
+                            </time>
+                                    in <a href="https://importcjj.github.io/category/python.html"><span class="category-tag">Python</span></a>
+                        </p>
+                    </footer>
+                    <header>
+                        <a href="https://importcjj.github.io/pythonzhong-yi-xie-rong-yi-bei-hu-shi-de-dong-xi.html">
+                            <h2>Python中一些容易被忽视的东西</h2>
+                        </a>
+                    </header>
+                    <div class="summary"> </div>
+                    <div class="tags">
+                        <ul class="tags">
+                            <li><a href="https://importcjj.github.io/tag/python.html" class="tag">Python</a></li>
+                        </ul>
+                    </div>
+                    <a href="https://importcjj.github.io/pythonzhong-yi-xie-rong-yi-bei-hu-shi-de-dong-xi.html">
+                        <p class="readmore">Read more...</p>
+                    </a>
+                </article>
+            </li>
+            <li>
+                <article>
+                    <footer>
+                         <p>
+                            <time datetime="2016-03-27 03:37:03+08:00">
+                                <script>document.write(moment('2016-03-27 03:37:03+08:00').format('LL'));</script>
+                            </time>
+                                    in <a href="https://importcjj.github.io/category/python.html"><span class="category-tag">Python</span></a>
+                        </p>
+                    </footer>
+                    <header>
+                        <a href="https://importcjj.github.io/shi-yong-pythonzhi-zuo-zi-ding-yi-zhong-duan-ming-ling.html">
+                            <h2>使用Python制作自定义终端命令</h2>
+                        </a>
+                    </header>
+                    <div class="summary"> </div>
+                    <div class="tags">
+                        <ul class="tags">
+                            <li><a href="https://importcjj.github.io/tag/python.html" class="tag">Python</a></li>
+                        </ul>
+                    </div>
+                    <a href="https://importcjj.github.io/shi-yong-pythonzhi-zuo-zi-ding-yi-zhong-duan-ming-ling.html">
+                        <p class="readmore">Read more...</p>
+                    </a>
+                </article>
+            </li>
+            <li>
+                <article>
+                    <footer>
+                         <p>
+                            <time datetime="2016-03-27 03:37:03+08:00">
+                                <script>document.write(moment('2016-03-27 03:37:03+08:00').format('LL'));</script>
+                            </time>
+                                    in <a href="https://importcjj.github.io/category/python.html"><span class="category-tag">Python</span></a>
+                        </p>
+                    </footer>
+                    <header>
+                        <a href="https://importcjj.github.io/supervisorcelerycelerybeatde-jian-dan-shi-yong.html">
+                            <h2>supervisor+celery+celerybeat的简单使用</h2>
+                        </a>
+                    </header>
+                    <div class="summary"> </div>
+                    <div class="tags">
+                        <ul class="tags">
+                            <li><a href="https://importcjj.github.io/tag/supervisor.html" class="tag">supervisor</a></li>
+                            <li><a href="https://importcjj.github.io/tag/celery.html" class="tag">celery</a></li>
+                            <li><a href="https://importcjj.github.io/tag/python.html" class="tag">Python</a></li>
+                        </ul>
+                    </div>
+                    <a href="https://importcjj.github.io/supervisorcelerycelerybeatde-jian-dan-shi-yong.html">
+                        <p class="readmore">Read more...</p>
+                    </a>
+                </article>
+            </li>
+            <li>
+                <article>
+                    <footer>
+                         <p>
+                            <time datetime="2016-03-27 03:37:03+08:00">
+                                <script>document.write(moment('2016-03-27 03:37:03+08:00').format('LL'));</script>
+                            </time>
+                                    in <a href="https://importcjj.github.io/category/python.html"><span class="category-tag">Python</span></a>
+                        </p>
+                    </footer>
+                    <header>
+                        <a href="https://importcjj.github.io/zhong-duan-jin-du-tiao-de-jian-dan-yuan-li.html">
+                            <h2>终端进度条的简单原理</h2>
+                        </a>
+                    </header>
+                    <div class="summary"> </div>
+                    <div class="tags">
+                        <ul class="tags">
+                            <li><a href="https://importcjj.github.io/tag/python.html" class="tag">Python</a></li>
+                        </ul>
+                    </div>
+                    <a href="https://importcjj.github.io/zhong-duan-jin-du-tiao-de-jian-dan-yuan-li.html">
+                        <p class="readmore">Read more...</p>
+                    </a>
+                </article>
+            </li>
+            <li>
+                <article>
+                    <footer>
+                         <p>
+                            <time datetime="2016-03-26 17:50:50+08:00">
+                                <script>document.write(moment('2016-03-26 17:50:50+08:00').format('LL'));</script>
+                            </time>
+                                    in <a href="https://importcjj.github.io/category/python.html"><span class="category-tag">Python</span></a>
+                        </p>
+                    </footer>
+                    <header>
+                        <a href="https://importcjj.github.io/pythondan-ceng-zhuang-shi-qi-xiao-ji.html">
+                            <h2>Python单层装饰器小记</h2>
+                        </a>
+                    </header>
+                    <div class="summary"> </div>
+                    <div class="tags">
+                        <ul class="tags">
+                            <li><a href="https://importcjj.github.io/tag/zhuang-shi-qi.html" class="tag">装饰器</a></li>
+                            <li><a href="https://importcjj.github.io/tag/python.html" class="tag">Python</a></li>
+                        </ul>
+                    </div>
+                    <a href="https://importcjj.github.io/pythondan-ceng-zhuang-shi-qi-xiao-ji.html">
+                        <p class="readmore">Read more...</p>
+                    </a>
+                </article>
+            </li>
+            <li>
+                <article>
+                    <footer>
+                         <p>
+                            <time datetime="2016-03-26 17:50:50+08:00">
+                                <script>document.write(moment('2016-03-26 17:50:50+08:00').format('LL'));</script>
+                            </time>
+                                    in <a href="https://importcjj.github.io/category/python.html"><span class="category-tag">Python</span></a>
+                        </p>
+                    </footer>
+                    <header>
+                        <a href="https://importcjj.github.io/pythonde-metaclassxiao-ji.html">
+                            <h2>Python的metaclass小记</h2>
+                        </a>
+                    </header>
+                    <div class="summary"> </div>
+                    <div class="tags">
+                        <ul class="tags">
+                            <li><a href="https://importcjj.github.io/tag/metaclass.html" class="tag">metaclass</a></li>
+                            <li><a href="https://importcjj.github.io/tag/python.html" class="tag">Python</a></li>
+                        </ul>
+                    </div>
+                    <a href="https://importcjj.github.io/pythonde-metaclassxiao-ji.html">
+                        <p class="readmore">Read more...</p>
+                    </a>
+                </article>
+            </li>
+        </ol>
+        
+</div>                <footer>
+                    <div class="icons">
+                    </div>
+                    <p>© <script>document.write(moment().format('YYYY'));</script> importcjj</p>
+                </footer>
+        </div>
 </body>
 </html>

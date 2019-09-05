@@ -1,232 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-		<title>Signal &mdash; Articles tagged web</title>
-		<meta charset="utf-8" />
-		<link rel="profile" href="http://gmpg.org/xfn/11" />
-		<link rel="stylesheet" type="text/css" href="https://importcjj.github.io/theme/css/style.css" />
-		<link rel='stylesheet' id='oswald-css'  href='http://fonts.googleapis.com/css?family=Oswald&#038;ver=3.3.2' type='text/css' media='all' />
-		<style type="text/css">
-			body.custom-background { background-color: #f5f5f5; }
-		</style>
-		<link rel="alternate" type="application/atom+xml"
-			title="Signal — Flux Atom"
-			href="https://importcjj.github.io/" /> 
-		<!--[if lte IE 8]><script src="https://importcjj.github.io/theme/js/html5shiv.js"></script><![endif]-->
+        <title>Signal</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta charset="utf-8" />
+        <!-- twitter card metadata -->
+        <!-- OG Tags -->
+<meta property="og:url" content="https://importcjj.github.io/tag/web"/>
+<meta property="og:title" content="Signal | web" />
+        <!-- favicon -->
+        <!-- moment.js for date formatting -->
+        <script src="https://importcjj.github.io/theme/js/moment.js"></script>
+        <!-- css -->
+        <link rel="stylesheet" type="text/css" href="https://importcjj.github.io/theme/css/main.css" />
+		<script>
+			
+                /*! grunt-grunticon Stylesheet Loader - v2.1.2 | https://github.com/filamentgroup/grunticon | (c) 2015 Scott Jehl, Filament Group, Inc. | MIT license. */
+    
+    (function(e){function t(t,n,r,o){"use strict";function a(){for(var e,n=0;u.length>n;n++)u[n].href&&u[n].href.indexOf(t)>-1&&(e=!0);e?i.media=r||"all":setTimeout(a)}var i=e.document.createElement("link"),l=n||e.document.getElementsByTagName("script")[0],u=e.document.styleSheets;return i.rel="stylesheet",i.href=t,i.media="only x",i.onload=o||null,l.parentNode.insertBefore(i,l),a(),i}var n=function(r,o){"use strict";if(r&&3===r.length){var a=e.navigator,i=e.Image,l=!(!document.createElementNS||!document.createElementNS("http://www.w3.org/2000/svg","svg").createSVGRect||!document.implementation.hasFeature("http://www.w3.org/TR/SVG11/feature#Image","1.1")||e.opera&&-1===a.userAgent.indexOf("Chrome")||-1!==a.userAgent.indexOf("Series40")),u=new i;u.onerror=function(){n.method="png",n.href=r[2],t(r[2])},u.onload=function(){var e=1===u.width&&1===u.height,a=r[e&&l?0:e?1:2];n.method=e&&l?"svg":e?"datapng":"png",n.href=a,t(a,null,null,o)},u.src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==",document.documentElement.className+=" grunticon"}};n.loadCSS=t,e.grunticon=n})(this);(function(e,t){"use strict";var n=t.document,r="grunticon:",o=function(e){if(n.attachEvent?"complete"===n.readyState:"loading"!==n.readyState)e();else{var t=!1;n.addEventListener("readystatechange",function(){t||(t=!0,e())},!1)}},a=function(e){return t.document.querySelector('link[href$="'+e+'"]')},c=function(e){var t,n,o,a,c,i,u={};if(t=e.sheet,!t)return u;n=t.cssRules?t.cssRules:t.rules;for(var l=0;n.length>l;l++)o=n[l].cssText,a=r+n[l].selectorText,c=o.split(");")[0].match(/US\-ASCII\,([^"']+)/),c&&c[1]&&(i=decodeURIComponent(c[1]),u[a]=i);return u},i=function(e){var t,o,a;o="data-grunticon-embed";for(var c in e)if(a=c.slice(r.length),t=n.querySelectorAll(a+"["+o+"]"),t.length)for(var i=0;t.length>i;i++)t[i].innerHTML=e[c],t[i].style.backgroundImage="none",t[i].removeAttribute(o);return t},u=function(t){"svg"===e.method&&o(function(){i(c(a(e.href))),"function"==typeof t&&t()})};e.embedIcons=i,e.getCSS=a,e.getIcons=c,e.ready=o,e.svgLoadedCallback=u,e.embedSVG=u})(grunticon,this);
+                
+                grunticon(["https://importcjj.github.io/theme/css/icons.data.svg.css", "https://importcjj.github.io/theme/css/icons.data.png.css", "https://importcjj.github.io/theme/css/icons.fallback.css"]);
+            </script>
+        <noscript><link href="https://importcjj.github.io/theme/css/icons.fallback.css" rel="stylesheet"></noscript>
+        <!-- menu toggle javascript -->
+        <script type="text/javascript">
+            document.addEventListener("DOMContentLoaded", initMenu);
+            
+            function initMenu(){
+                var menu = document.getElementById("menu");
+                var menulink = document.getElementById("menu-link");
+                menulink.addEventListener("click", function toggleMenu(){
+                        window.event.preventDefault();
+                        menulink.classList.toggle('active');
+                        menu.classList.toggle('active');              
+                    });
+            };
+        </script>
 </head>
-
-<body class="home blog custom-background " >
-	<div id="container">
-		<div id="header">
-				<h1 id="site-title"><a href="https://importcjj.github.io">Signal</a></h1>
-		</div><!-- /#banner -->
-		
-		<div id="menu">
-			<div class="menu-navigation-container">
-				<ul id="menu-navigation" class="menu">
-						<li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://importcjj.github.io/category/centos.html">CentOS</a></li>
-						<li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://importcjj.github.io/category/docker.html">Docker</a></li>
-						<li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://importcjj.github.io/category/emacs.html">Emacs</a></li>
-						<li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://importcjj.github.io/category/git.html">git</a></li>
-						<li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://importcjj.github.io/category/github.html">github</a></li>
-						<li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://importcjj.github.io/category/go.html">Go</a></li>
-						<li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://importcjj.github.io/category/markdown.html">Markdown</a></li>
-						<li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://importcjj.github.io/category/python.html">Python</a></li>
-						<li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://importcjj.github.io/category/rust.html">Rust</a></li>
-						<li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://importcjj.github.io/category/sundry.html">sundry</a></li>
-						<li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://importcjj.github.io/category/tool.html">Tool</a></li>
-						<li  class="active" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="http://chihiro.moe">Slade</a></li>
-						<li  class="active" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="http://shenyizhou.github.io">无主之地</a></li>
-						<li  class="active" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="http://yuan0.github.io">Junifer</a></li>
-						<li  class="active" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="http://getpelican.com/">Pelican</a></li>
-						<li  class="active" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="http://python.org/">Python.org</a></li>
-						<li  class="active" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="http://jinja.pocoo.org/">Jinja2</a></li>
-						<li  class="active" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="http://dongweiming.github.io/Expert-Python/#1">Expert-python</a></li>
-
-				</ul>
-			</div> <!--/#menu-navigation-container-->
-		</div><!-- /#menu -->
-		
-		<div class="page-title">
+<body>
+<a href="https://github.com/importcjj">
+<img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" alt="Fork me on GitHub" />
+</a>
+    <div role="banner" id="masthead">
+        <header>
+            <h1><a href="/">'s Blog</a></h1>
+            <a href="#menu" id="menu-link">more stuff</a>
+            <nav id="menu">
+                <ul>
+                            <li><a href="https://importcjj.github.io/category/centos.html">CentOS</a></li>
+                            <li><a href="https://importcjj.github.io/category/docker.html">Docker</a></li>
+                            <li><a href="https://importcjj.github.io/category/emacs.html">Emacs</a></li>
+                            <li><a href="https://importcjj.github.io/category/git.html">git</a></li>
+                            <li><a href="https://importcjj.github.io/category/github.html">github</a></li>
+                            <li><a href="https://importcjj.github.io/category/go.html">Go</a></li>
+                            <li><a href="https://importcjj.github.io/category/markdown.html">Markdown</a></li>
+                            <li><a href="https://importcjj.github.io/category/python.html">Python</a></li>
+                            <li><a href="https://importcjj.github.io/category/rust.html">Rust</a></li>
+                            <li><a href="https://importcjj.github.io/category/sundry.html">sundry</a></li>
+                            <li><a href="https://importcjj.github.io/category/tool.html">Tool</a></li>
+                </ul>
+            </nav>
+        </header>
+    </div>
+        <div class="page" role="main">
 <div class="page-title">
-	<h2>Tagged with <span>web</span> &hellip;</h2>
+    <h1>web</h1>
 </div>
-		</div>
-	
-		<div id="contents">
-<div class="post type-post status-publish format-standard hentry category-general" id="post">
-	<div class="entry-meta">
-		<div class="date"><a href="https://importcjj.github.io/gowang-luo-bian-cheng-ji-lei-yi.html">一 20 六月 2016</a></div>
-		<span class="byline">By <a href="https://importcjj.github.io/author/importcjj.html">importcjj</a></span>
-			<div class="comments"><a href="https://importcjj.github.io/gowang-luo-bian-cheng-ji-lei-yi.html#disqus_thread" title="Comment on go网络编程积累(一)">comments</a></div>
-			<span class="cat-links"><a href="https://importcjj.github.io/category/go.html" title="View all posts in Go" rel="category tag">Go</a></span>
-	</div> <!-- /#entry-meta -->
-	<div class="main">
-		<h2 class="entry-title">
-			<a href="https://importcjj.github.io/gowang-luo-bian-cheng-ji-lei-yi.html" title="Permalink to go网络编程积累(一)" rel="bookmark">go网络编程积累(一)</a>
-		</h2>
-		<div class="entry-content">
-			<div class="highlight"><pre><span></span><span class="c1">//server.go</span>
-<span class="kn">package</span> <span class="nx">main</span>
-
-<span class="kn">import</span> <span class="p">(</span>
-    <span class="s">&quot;fmt&quot;</span>
-    <span class="s">&quot;net&quot;</span>
-    <span class="s">&quot;os&quot;</span>
-    <span class="s">&quot;io&quot;</span>
-<span class="p">)</span>
-
-<span class="kd">func</span> <span class="nx">main</span><span class="p">()</span> <span class="p">{</span>
-    <span class="nx">ln</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">net</span><span class="p">.</span><span class="nx">Listen</span><span class="p">(</span><span class="s">&quot;tcp&quot;</span><span class="p">,</span> <span class="s">&quot;:8888&quot;</span><span class="p">)</span>
-    <span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
-        <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;Can&#39;t listen&quot;</span><span class="p">)</span>
-        <span class="nx">os</span><span class="p">.</span><span class="nx">Exit</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-    <span class="p">}</span>
-    <span class="k">for</span> <span class="p">{</span>
-        <span class="nx">conn</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">ln</span><span class="p">.</span><span class="nx">Accept</span><span class="p">()</span>
-        <span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
-            <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;Can&#39;t accept a conn&quot;</span><span class="p">)</span>
-            <span class="k">continue</span>
-        <span class="p">}</span>
-        <span class="k">go</span> <span class="nx">handleConn</span><span class="p">(</span><span class="nx">conn</span><span class="p">)</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-
-<span class="kd">func</span> <span class="nx">handleConn</span><span class="p">(</span><span class="nx">conn</span> <span class="nx">net</span><span class="p">.</span><span class="nx">Conn</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">buf</span> <span class="o">:=</span> <span class="nb">make</span><span class="p">([]</span><span class="kt">byte</span><span class="p">,</span> <span class="mi">30</span> <span class="o">*</span> <span class="mi">1024</span><span class="p">)</span>
-    <span class="k">for</span> <span class="p">{</span>
-        <span class="nx">n</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">conn</span><span class="p">.</span><span class="nx">Read</span><span class="p">(</span><span class="nx">buf</span><span class="p">)</span>
-        <span class="k">if</span> <span class="nx">n</span> <span class="p">&gt;</span> <span class="mi">0</span> <span class="p">{</span>
-            <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">buf</span><span class="p">[:</span><span class="nx">n</span><span class="p">])</span>
-        <span class="p">}</span>
-        <span class="k">if</span> <span class="nx">err</span> <span class="o">==</span> <span class="nx">io</span><span class="p">.</span><span class="nx">EOF</span> <span class="p">{</span>
-            <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;Conn was closed.&quot;</span><span class="p">)</span>
-            <span class="k">return</span>
-        <span class="p">}</span>
-        <span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
-            <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span>
-            <span class="k">return</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</pre></div>
-
-
-<div class="highlight"><pre><span></span><span class="c1">//client.go</span>
-<span class="kn">package</span> <span class="nx">main</span>
-
-<span class="kn">import</span> <span class="p">(</span>
-    <span class="s">&quot;net&quot;</span>
-    <span class="s">&quot;fmt&quot;</span>
-    <span class="s">&quot;os&quot;</span>
-    <span class="s">&quot;time&quot;</span>
-<span class="p">)</span>
-
-<span class="kd">func</span> <span class="nx">main</span><span class="p">()</span> <span class="p">{</span>
-    <span class="nx">conn</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">net</span><span class="p">.</span><span class="nx">Dial</span><span class="p">(</span><span class="s">&quot;tcp&quot;</span><span class="p">,</span> <span class="s">&quot;:8888&quot;</span><span class="p">)</span>
-    <span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
-        <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span>
-        <span class="nx">os</span><span class="p">.</span><span class="nx">Exit</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-    <span class="p">}</span>
-    <span class="k">defer</span> <span class="nx">conn</span><span class="p">.</span><span class="nx">Close</span><span class="p">()</span>
-
-    <span class="nx">buf</span> <span class="o">:=</span> <span class="p">[]</span><span class="nb">byte</span><span class="p">(</span><span class="s">&quot;Hello, my server&quot;</span><span class="p">)</span>
-    <span class="k">for</span> <span class="p">{</span>
-        <span class="nx">n</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">conn</span><span class="p">.</span><span class="nx">Write</span><span class="p">(</span><span class="nx">buf</span><span class="p">)</span>
-        <span class="k">if</span> <span class="nx">n</span> <span class="p">&gt;</span> <span class="mi">0</span> <span class="p">{</span>
-            <span class="nx">fmt</span><span class="p">.</span><span class="nx">Printf</span><span class="p">(</span><span class="s">&quot;Write %s to conn&quot;</span><span class="p">,</span> <span class="nx">buf</span><span class="p">[:</span><span class="nx">n</span><span class="p">])</span>
-        <span class="p">}</span>
-        <span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
-            <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span>
-            <span class="nx">os</span><span class="p">.</span><span class="nx">Exit</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-        <span class="p">}</span>
-        <span class="nx">time</span><span class="p">.</span><span class="nx">Sleep</span><span class="p">(</span><span class="mi">1</span> <span class="o">*</span> <span class="nx">time</span><span class="p">.</span><span class="nx">Second</span><span class="p">)</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</pre></div>
-
-
-<p>最近在看unix网络编程这本书，顺便结合go来试试手。在写完这个简单的客户端服务器程序后，发现了几个以前一直没注意的问题。</p>
-<h4>发现一: Reader.Read</h4>
-<div class="highlight"><pre><span></span><span class="kd">func</span> <span class="p">(</span><span class="o">*</span><span class="nx">Reader</span><span class="p">)</span> <span class="nx">Read</span>
-
-<span class="kd">func</span> <span class="p">(</span><span class="nx">b</span> <span class="o">*</span><span class="nx">Reader</span><span class="p">)</span> <span class="nx">Read</span><span class="p">(</span><span class="nx">p</span> <span class="p">[]</span><span class="kt">byte</span><span class="p">)</span> <span class="p">(</span><span class="nx">n</span> <span class="kt">int</span><span class="p">,</span> <span class="nx">err</span> <span class="kt">error</span><span class="p">)</span>
-<span class="nx">Read</span> <span class="nx">reads</span> <span class="nx">data</span> <span class="nx">into</span> <span class="nx">p</span><span class="p">.</span> <span class="nx">It</span> <span class="nx">returns</span> <span class="nx">the</span> <span class="nx">number</span> <span class="nx">of</span> <span class="nx">bytes</span>
-<span class="nx">read</span> <span class="nx">into</span> <span class="nx">p</span><span class="p">.</span> <span class="nx">It</span> <span class="nx">calls</span> <span class="nx">Read</span> <span class="nx">at</span> <span class="nx">most</span> <span class="nx">once</span> <span class="nx">on</span> <span class="nx">the</span> <span class="nx">underlying</span> 
-<span class="nx">Reader</span><span class="p">,</span> <span class="nx">hence</span> <span class="nx">n</span> <span class="nx">may</span> <span class="nx">be</span> <span class="nx">less</span> <span class="nx">than</span> <span class="nb">len</span><span class="p">(</span><span class="nx">p</span><span class="p">).</span> <span class="nx">At</span> <span class="nx">EOF</span><span class="p">,</span> <span class="nx">the</span> <span class="nx">count</span> 
-<span class="nx">will</span> <span class="nx">be</span> <span class="nx">zero</span> <span class="nx">and</span> <span class="nx">err</span> <span class="nx">will</span> <span class="nx">be</span> <span class="nx">io</span><span class="p">.</span><span class="nx">EOF</span><span class="p">.</span>
-</pre></div>
-
-
-<p>将数据读取到提供的byte切片p中，读取的数据量与p的长度有关。这一点以前一直没有注意到，以致于程序一直有问题。以前我一直这样使用:</p>
-<div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">buf</span> <span class="p">[]</span><span class="kt">byte</span>
-<span class="nx">n</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">conn</span><span class="p">.</span><span class="nx">Read</span><span class="p">(</span><span class="nx">buf</span><span class="p">)</span>
-<span class="k">if</span> <span class="nx">n</span> <span class="p">&gt;</span> <span class="mi">0</span> <span class="p">{</span>
-    <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">buf</span><span class="p">)</span>
-<span class="p">}</span>
-</pre></div>
-
-
-<p>由于buf在声明之后没有分配内存，所以一直是nil，因此len(buf)当然也是0，所以在Read数据的时候，返回的n一直都是0，这导致了无法正常显示客户端发送的数据。正确的用法是在Read之前先使用make为buf分配一定长度的空间：</p>
-<div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">buf</span> <span class="p">=</span> <span class="nb">make</span><span class="p">([]</span><span class="kt">byte</span><span class="p">,</span> <span class="mi">30</span> <span class="o">*</span> <span class="mi">1024</span><span class="p">)</span>
-<span class="nx">n</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">conn</span><span class="p">.</span><span class="nx">Read</span><span class="p">(</span><span class="nx">buf</span><span class="p">)</span>
-<span class="k">if</span> <span class="nx">n</span> <span class="p">&gt;</span> <span class="mi">0</span> <span class="p">{</span>
-    <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">buf</span><span class="p">[:</span><span class="nx">n</span><span class="p">])</span>
-<span class="p">}</span>
-</pre></div>
-
-
-<p>上述例子中，首先为buf分配了30*1024字节的内存空间。这样就能正常读取连接中的数据了。n总是小于等于len(buf)。当EOF时，Read返回0和一个io.EOF错误，表示无法读取更多的数据。另外，如果返回了io.EOF以外的错误，则表示还没读取完全之前就遇到了某个错误。</p>
-<h4>发现二：判断是否实现了特定接口</h4>
-<p>在go中，无需显式声明自己实现了某个接口。如果类型实现了某个接口定义的全部方法，则该类型实现了该接口。在某些特定的时候，我们需要在代码逻辑中判断接口的实现。如果实现了某接口，还需要调用该接口中的方法。</p>
-<div class="highlight"><pre><span></span><span class="kd">type</span> <span class="nx">Reader</span> <span class="kd">interface</span> <span class="p">{</span>
-    <span class="nx">Read</span><span class="p">(</span><span class="nx">p</span> <span class="p">[]</span><span class="kt">byte</span><span class="p">)</span> <span class="p">(</span><span class="nx">n</span> <span class="kt">int</span><span class="p">,</span> <span class="nx">err</span> <span class="kt">error</span><span class="p">)</span>
-<span class="p">}</span>
-
-
-<span class="kd">func</span> <span class="nx">main</span><span class="p">()</span> <span class="p">{</span>
-    <span class="nx">conn</span> <span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">net</span><span class="p">.</span><span class="nx">Dial</span><span class="p">(</span><span class="s">&quot;tcp&quot;</span><span class="p">,</span> <span class="s">&quot;:8080&quot;</span><span class="p">)</span>
-    <span class="k">if</span> <span class="nx">rd</span><span class="p">,</span> <span class="nx">ok</span> <span class="o">:=</span> <span class="nx">conn</span><span class="p">.(</span><span class="nx">Reader</span><span class="p">);</span> <span class="nx">ok</span> <span class="p">{</span>
-        <span class="nx">buf</span> <span class="o">:=</span> <span class="nb">make</span><span class="p">([]</span><span class="kt">byte</span><span class="p">,</span> <span class="mi">30</span> <span class="o">*</span> <span class="mi">1024</span><span class="p">)</span>
-        <span class="nx">n</span> <span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">rd</span><span class="p">.</span><span class="nx">Read</span><span class="p">(</span><span class="nx">buf</span><span class="p">)</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</pre></div>
-
-
-<h4>发现三：defer应该在error判断之后</h4>
-<p>使用defer的时候经常会写出以下代码</p>
-<div class="highlight"><pre><span></span><span class="kd">func</span> <span class="nx">main</span><span class="p">()</span> <span class="p">{</span>
-    <span class="nx">conn</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">net</span><span class="p">.</span><span class="nx">Dial</span><span class="p">(</span><span class="s">&quot;tcp&quot;</span><span class="p">,</span> <span class="s">&quot;:8080&quot;</span><span class="p">)</span>
-    <span class="k">defer</span> <span class="nx">conn</span><span class="p">.</span><span class="nx">Close</span><span class="p">()</span>
-    <span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
-        <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span>    
-    <span class="p">}</span>
-<span class="p">}</span>
-</pre></div>
-
-
-<p>这样写保证了函数main函数执行退出时必定能关闭tcp连接。但是在没有建立正常连接时，conn为nil，并没有实现Closer接口，也就没有Close方法可供调用，这样的代码就会引发panic。</p>
-		</div> <!--/#entry-content-->
-    		<span class="tag-links"><strong>Tagged</strong>
- <a href="https://importcjj.github.io/tag/web.html" rel="tag">web</a>    		</span>
-	</div> <!--/#main-->
-</div>  <!--/#post--><div class="navigation">
-</div>
-		</div>
-		
-		<div id="footer">
-			<p>Powered by <a href="http://getpelican.com">Pelican</a>, theme by <a href="http://bunnyman.info">tBunnyMan</a>.</p>
-<script type="text/javascript">
-    var disqus_shortname = 'importcjj';
-    (function () {
-        var s = document.createElement('script'); s.async = true;
-        s.type = 'text/javascript';
-        s.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
-        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
-    }());
-</script>		</div><!-- /#footer -->
-	</div><!-- /#container -->
-	<div style="display:none"></div>
+<div class="articles">
+        <ol>
+            <li>
+                <article>
+                    <footer>
+                         <p>
+                            <time datetime="2016-06-20 17:44:21+08:00">
+                                <script>document.write(moment('2016-06-20 17:44:21+08:00').format('LL'));</script>
+                            </time>
+                                    in <a href="https://importcjj.github.io/category/go.html"><span class="category-tag">Go</span></a>
+                        </p>
+                    </footer>
+                    <header>
+                        <a href="https://importcjj.github.io/gowang-luo-bian-cheng-ji-lei-yi.html">
+                            <h2>go网络编程积累(一)</h2>
+                        </a>
+                    </header>
+                    <div class="summary"> </div>
+                    <div class="tags">
+                        <ul class="tags">
+                            <li><a href="https://importcjj.github.io/tag/web.html" class="tag">web</a></li>
+                        </ul>
+                    </div>
+                    <a href="https://importcjj.github.io/gowang-luo-bian-cheng-ji-lei-yi.html">
+                        <p class="readmore">Read more...</p>
+                    </a>
+                </article>
+            </li>
+        </ol>
+        
+</div>                <footer>
+                    <div class="icons">
+                    </div>
+                    <p>© <script>document.write(moment().format('YYYY'));</script> importcjj</p>
+                </footer>
+        </div>
 </body>
 </html>

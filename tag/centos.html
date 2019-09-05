@@ -1,145 +1,108 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-		<title>Signal &mdash; Articles tagged CentOS</title>
-		<meta charset="utf-8" />
-		<link rel="profile" href="http://gmpg.org/xfn/11" />
-		<link rel="stylesheet" type="text/css" href="https://importcjj.github.io/theme/css/style.css" />
-		<link rel='stylesheet' id='oswald-css'  href='http://fonts.googleapis.com/css?family=Oswald&#038;ver=3.3.2' type='text/css' media='all' />
-		<style type="text/css">
-			body.custom-background { background-color: #f5f5f5; }
-		</style>
-		<link rel="alternate" type="application/atom+xml"
-			title="Signal — Flux Atom"
-			href="https://importcjj.github.io/" /> 
-		<!--[if lte IE 8]><script src="https://importcjj.github.io/theme/js/html5shiv.js"></script><![endif]-->
+        <title>Signal</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta charset="utf-8" />
+        <!-- twitter card metadata -->
+        <!-- OG Tags -->
+<meta property="og:url" content="https://importcjj.github.io/tag/CentOS"/>
+<meta property="og:title" content="Signal | CentOS" />
+        <!-- favicon -->
+        <!-- moment.js for date formatting -->
+        <script src="https://importcjj.github.io/theme/js/moment.js"></script>
+        <!-- css -->
+        <link rel="stylesheet" type="text/css" href="https://importcjj.github.io/theme/css/main.css" />
+		<script>
+			
+                /*! grunt-grunticon Stylesheet Loader - v2.1.2 | https://github.com/filamentgroup/grunticon | (c) 2015 Scott Jehl, Filament Group, Inc. | MIT license. */
+    
+    (function(e){function t(t,n,r,o){"use strict";function a(){for(var e,n=0;u.length>n;n++)u[n].href&&u[n].href.indexOf(t)>-1&&(e=!0);e?i.media=r||"all":setTimeout(a)}var i=e.document.createElement("link"),l=n||e.document.getElementsByTagName("script")[0],u=e.document.styleSheets;return i.rel="stylesheet",i.href=t,i.media="only x",i.onload=o||null,l.parentNode.insertBefore(i,l),a(),i}var n=function(r,o){"use strict";if(r&&3===r.length){var a=e.navigator,i=e.Image,l=!(!document.createElementNS||!document.createElementNS("http://www.w3.org/2000/svg","svg").createSVGRect||!document.implementation.hasFeature("http://www.w3.org/TR/SVG11/feature#Image","1.1")||e.opera&&-1===a.userAgent.indexOf("Chrome")||-1!==a.userAgent.indexOf("Series40")),u=new i;u.onerror=function(){n.method="png",n.href=r[2],t(r[2])},u.onload=function(){var e=1===u.width&&1===u.height,a=r[e&&l?0:e?1:2];n.method=e&&l?"svg":e?"datapng":"png",n.href=a,t(a,null,null,o)},u.src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==",document.documentElement.className+=" grunticon"}};n.loadCSS=t,e.grunticon=n})(this);(function(e,t){"use strict";var n=t.document,r="grunticon:",o=function(e){if(n.attachEvent?"complete"===n.readyState:"loading"!==n.readyState)e();else{var t=!1;n.addEventListener("readystatechange",function(){t||(t=!0,e())},!1)}},a=function(e){return t.document.querySelector('link[href$="'+e+'"]')},c=function(e){var t,n,o,a,c,i,u={};if(t=e.sheet,!t)return u;n=t.cssRules?t.cssRules:t.rules;for(var l=0;n.length>l;l++)o=n[l].cssText,a=r+n[l].selectorText,c=o.split(");")[0].match(/US\-ASCII\,([^"']+)/),c&&c[1]&&(i=decodeURIComponent(c[1]),u[a]=i);return u},i=function(e){var t,o,a;o="data-grunticon-embed";for(var c in e)if(a=c.slice(r.length),t=n.querySelectorAll(a+"["+o+"]"),t.length)for(var i=0;t.length>i;i++)t[i].innerHTML=e[c],t[i].style.backgroundImage="none",t[i].removeAttribute(o);return t},u=function(t){"svg"===e.method&&o(function(){i(c(a(e.href))),"function"==typeof t&&t()})};e.embedIcons=i,e.getCSS=a,e.getIcons=c,e.ready=o,e.svgLoadedCallback=u,e.embedSVG=u})(grunticon,this);
+                
+                grunticon(["https://importcjj.github.io/theme/css/icons.data.svg.css", "https://importcjj.github.io/theme/css/icons.data.png.css", "https://importcjj.github.io/theme/css/icons.fallback.css"]);
+            </script>
+        <noscript><link href="https://importcjj.github.io/theme/css/icons.fallback.css" rel="stylesheet"></noscript>
+        <!-- menu toggle javascript -->
+        <script type="text/javascript">
+            document.addEventListener("DOMContentLoaded", initMenu);
+            
+            function initMenu(){
+                var menu = document.getElementById("menu");
+                var menulink = document.getElementById("menu-link");
+                menulink.addEventListener("click", function toggleMenu(){
+                        window.event.preventDefault();
+                        menulink.classList.toggle('active');
+                        menu.classList.toggle('active');              
+                    });
+            };
+        </script>
 </head>
-
-<body class="home blog custom-background " >
-	<div id="container">
-		<div id="header">
-				<h1 id="site-title"><a href="https://importcjj.github.io">Signal</a></h1>
-		</div><!-- /#banner -->
-		
-		<div id="menu">
-			<div class="menu-navigation-container">
-				<ul id="menu-navigation" class="menu">
-						<li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://importcjj.github.io/category/centos.html">CentOS</a></li>
-						<li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://importcjj.github.io/category/docker.html">Docker</a></li>
-						<li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://importcjj.github.io/category/emacs.html">Emacs</a></li>
-						<li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://importcjj.github.io/category/git.html">git</a></li>
-						<li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://importcjj.github.io/category/github.html">github</a></li>
-						<li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://importcjj.github.io/category/go.html">Go</a></li>
-						<li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://importcjj.github.io/category/markdown.html">Markdown</a></li>
-						<li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://importcjj.github.io/category/python.html">Python</a></li>
-						<li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://importcjj.github.io/category/rust.html">Rust</a></li>
-						<li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://importcjj.github.io/category/sundry.html">sundry</a></li>
-						<li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://importcjj.github.io/category/tool.html">Tool</a></li>
-						<li  class="active" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="http://chihiro.moe">Slade</a></li>
-						<li  class="active" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="http://shenyizhou.github.io">无主之地</a></li>
-						<li  class="active" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="http://yuan0.github.io">Junifer</a></li>
-						<li  class="active" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="http://getpelican.com/">Pelican</a></li>
-						<li  class="active" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="http://python.org/">Python.org</a></li>
-						<li  class="active" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="http://jinja.pocoo.org/">Jinja2</a></li>
-						<li  class="active" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="http://dongweiming.github.io/Expert-Python/#1">Expert-python</a></li>
-
-				</ul>
-			</div> <!--/#menu-navigation-container-->
-		</div><!-- /#menu -->
-		
-		<div class="page-title">
+<body>
+<a href="https://github.com/importcjj">
+<img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" alt="Fork me on GitHub" />
+</a>
+    <div role="banner" id="masthead">
+        <header>
+            <h1><a href="/">'s Blog</a></h1>
+            <a href="#menu" id="menu-link">more stuff</a>
+            <nav id="menu">
+                <ul>
+                            <li><a href="https://importcjj.github.io/category/centos.html">CentOS</a></li>
+                            <li><a href="https://importcjj.github.io/category/docker.html">Docker</a></li>
+                            <li><a href="https://importcjj.github.io/category/emacs.html">Emacs</a></li>
+                            <li><a href="https://importcjj.github.io/category/git.html">git</a></li>
+                            <li><a href="https://importcjj.github.io/category/github.html">github</a></li>
+                            <li><a href="https://importcjj.github.io/category/go.html">Go</a></li>
+                            <li><a href="https://importcjj.github.io/category/markdown.html">Markdown</a></li>
+                            <li><a href="https://importcjj.github.io/category/python.html">Python</a></li>
+                            <li><a href="https://importcjj.github.io/category/rust.html">Rust</a></li>
+                            <li><a href="https://importcjj.github.io/category/sundry.html">sundry</a></li>
+                            <li><a href="https://importcjj.github.io/category/tool.html">Tool</a></li>
+                </ul>
+            </nav>
+        </header>
+    </div>
+        <div class="page" role="main">
 <div class="page-title">
-	<h2>Tagged with <span>CentOS</span> &hellip;</h2>
+    <h1>CentOS</h1>
 </div>
-		</div>
-	
-		<div id="contents">
-<div class="post type-post status-publish format-standard hentry category-general" id="post">
-	<div class="entry-meta">
-		<div class="date"><a href="https://importcjj.github.io/sheng-ji-centosde-pythonban-ben.html">六 26 三月 2016</a></div>
-		<span class="byline">By <a href="https://importcjj.github.io/author/importcjj.html">importcjj</a></span>
-			<div class="comments"><a href="https://importcjj.github.io/sheng-ji-centosde-pythonban-ben.html#disqus_thread" title="Comment on 升级CentOS的Python版本">comments</a></div>
-			<span class="cat-links"><a href="https://importcjj.github.io/category/centos.html" title="View all posts in CentOS" rel="category tag">CentOS</a></span>
-	</div> <!-- /#entry-meta -->
-	<div class="main">
-		<h2 class="entry-title">
-			<a href="https://importcjj.github.io/sheng-ji-centosde-pythonban-ben.html" title="Permalink to 升级CentOS的Python版本" rel="bookmark">升级CentOS的Python版本</a>
-		</h2>
-		<div class="entry-content">
-			<p>服务器(centos)上默认的python版本是python2.6，但是平时使用的是2.7，故手动升级一下吧。</p>
-<p>下载最新版本<a href="https://www.python.org/ftp/python/2.7.10/Python-2.7.10.tgz">Python-2.7.10</a></p>
-<div class="highlight"><pre><span></span>wget https://www.python.org/ftp/python/2.7.10/Python-2.7.10.tgz
-
-tar -zxvf Python-2.7.10.tgz
-</pre></div>
-
-
-<p>提前安装依赖</p>
-<div class="highlight"><pre><span></span>yum install zlib
-yum install zlib-devel
-yum install openssl -y
-yum install openssl-devel -y
-</pre></div>
-
-
-<p>配置编译安装替换</p>
-<div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">Python</span><span class="o">-</span><span class="mi">2</span><span class="p">.</span><span class="mi">7</span><span class="p">.</span><span class="mi">10</span>
-<span class="p">.</span><span class="o">/</span><span class="n">configure</span> <span class="c1">--prefix=/usr/local/python2.7</span>
-</pre></div>
-
-
-<p>修改配置</p>
-<div class="highlight"><pre><span></span><span class="nv">cd</span> <span class="nv">Python</span><span class="o">-</span><span class="mi">2</span>.<span class="mi">7</span>.<span class="mi">10</span>
-<span class="nv">vim</span> <span class="nv">Modules</span><span class="o">/</span><span class="nv">Setup</span>
-去掉<span class="mi">456</span>行左右
-#<span class="nv">zlib</span> <span class="nv">zlibmodule</span>.<span class="nv">c</span> <span class="o">-</span><span class="nv">I</span>$<span class="ss">(</span><span class="nv">prefix</span><span class="ss">)</span><span class="o">/</span><span class="k">include</span> <span class="o">-</span><span class="nv">L</span>$<span class="ss">(</span><span class="nv">exec_prefix</span><span class="ss">)</span><span class="o">/</span><span class="nv">lib</span> <span class="o">-</span><span class="nv">lz</span>的注释
-</pre></div>
-
-
-<p>Go on...</p>
-<div class="highlight"><pre><span></span>make
-make install
-rm /usr/bin/python
-ln -s /usr/local/bin/python2.7 /usr/bin/python
-</pre></div>
-
-
-<p>修复yum</p>
-<div class="highlight"><pre><span></span>vim /usr/bin/yum
-将
-<span class="c1">#!/usr/bin/python</span>
-替换为
-<span class="c1">#!/usr/bin/python2.6(根据版本而定)</span>
-</pre></div>
-
-
-<p>安装pip</p>
-<div class="highlight"><pre><span></span>wget https://bootstrap.pypa.io/get-pip.py
-python get-pip.py
-</pre></div>
-
-
-<p>这里比较坑的一点是，以后安装的带有命令行命令的第三方库都不能直接在终端通过命令调用，而是需要使用绝对路径或者在/usr/bin中创建链接才能正常使用。关于这点我暂时还不知道如何优雅的解决它。</p>
-		</div> <!--/#entry-content-->
-    		<span class="tag-links"><strong>Tagged</strong>
- <a href="https://importcjj.github.io/tag/centos.html" rel="tag">CentOS</a>,  <a href="https://importcjj.github.io/tag/python.html" rel="tag">Python</a>,  <a href="https://importcjj.github.io/tag/yun-wei.html" rel="tag">运维</a>    		</span>
-	</div> <!--/#main-->
-</div>  <!--/#post--><div class="navigation">
-</div>
-		</div>
-		
-		<div id="footer">
-			<p>Powered by <a href="http://getpelican.com">Pelican</a>, theme by <a href="http://bunnyman.info">tBunnyMan</a>.</p>
-<script type="text/javascript">
-    var disqus_shortname = 'importcjj';
-    (function () {
-        var s = document.createElement('script'); s.async = true;
-        s.type = 'text/javascript';
-        s.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
-        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
-    }());
-</script>		</div><!-- /#footer -->
-	</div><!-- /#container -->
-	<div style="display:none"></div>
+<div class="articles">
+        <ol>
+            <li>
+                <article>
+                    <footer>
+                         <p>
+                            <time datetime="2016-03-26 17:50:50+08:00">
+                                <script>document.write(moment('2016-03-26 17:50:50+08:00').format('LL'));</script>
+                            </time>
+                                    in <a href="https://importcjj.github.io/category/centos.html"><span class="category-tag">CentOS</span></a>
+                        </p>
+                    </footer>
+                    <header>
+                        <a href="https://importcjj.github.io/sheng-ji-centosde-pythonban-ben.html">
+                            <h2>升级CentOS的Python版本</h2>
+                        </a>
+                    </header>
+                    <div class="summary"> </div>
+                    <div class="tags">
+                        <ul class="tags">
+                            <li><a href="https://importcjj.github.io/tag/centos.html" class="tag">CentOS</a></li>
+                            <li><a href="https://importcjj.github.io/tag/python.html" class="tag">Python</a></li>
+                            <li><a href="https://importcjj.github.io/tag/yun-wei.html" class="tag">运维</a></li>
+                        </ul>
+                    </div>
+                    <a href="https://importcjj.github.io/sheng-ji-centosde-pythonban-ben.html">
+                        <p class="readmore">Read more...</p>
+                    </a>
+                </article>
+            </li>
+        </ol>
+        
+</div>                <footer>
+                    <div class="icons">
+                    </div>
+                    <p>© <script>document.write(moment().format('YYYY'));</script> importcjj</p>
+                </footer>
+        </div>
 </body>
 </html>
