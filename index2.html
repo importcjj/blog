@@ -1,351 +1,372 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-        <title>Signal</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta charset="utf-8" />
-        <!-- twitter card metadata -->
-<meta name="twitter:site" content="">
-<meta name="twitter:title" content="Signal">
-<meta name="twitter:description" content="">
-        <!-- OG Tags -->
-<meta property="og:url" content="https://importcjj.github.io"/>
-<meta property="og:title" content="Signal" />
-<meta property="og:description" content="" />
-        <!-- favicon -->
-        <!-- moment.js for date formatting -->
-        <script src="https://importcjj.github.io/theme/js/moment.js"></script>
-        <!-- css -->
-        <link rel="stylesheet" type="text/css" href="https://importcjj.github.io/theme/css/main.css" />
-		<script>
-			
-                /*! grunt-grunticon Stylesheet Loader - v2.1.2 | https://github.com/filamentgroup/grunticon | (c) 2015 Scott Jehl, Filament Group, Inc. | MIT license. */
-    
-    (function(e){function t(t,n,r,o){"use strict";function a(){for(var e,n=0;u.length>n;n++)u[n].href&&u[n].href.indexOf(t)>-1&&(e=!0);e?i.media=r||"all":setTimeout(a)}var i=e.document.createElement("link"),l=n||e.document.getElementsByTagName("script")[0],u=e.document.styleSheets;return i.rel="stylesheet",i.href=t,i.media="only x",i.onload=o||null,l.parentNode.insertBefore(i,l),a(),i}var n=function(r,o){"use strict";if(r&&3===r.length){var a=e.navigator,i=e.Image,l=!(!document.createElementNS||!document.createElementNS("http://www.w3.org/2000/svg","svg").createSVGRect||!document.implementation.hasFeature("http://www.w3.org/TR/SVG11/feature#Image","1.1")||e.opera&&-1===a.userAgent.indexOf("Chrome")||-1!==a.userAgent.indexOf("Series40")),u=new i;u.onerror=function(){n.method="png",n.href=r[2],t(r[2])},u.onload=function(){var e=1===u.width&&1===u.height,a=r[e&&l?0:e?1:2];n.method=e&&l?"svg":e?"datapng":"png",n.href=a,t(a,null,null,o)},u.src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==",document.documentElement.className+=" grunticon"}};n.loadCSS=t,e.grunticon=n})(this);(function(e,t){"use strict";var n=t.document,r="grunticon:",o=function(e){if(n.attachEvent?"complete"===n.readyState:"loading"!==n.readyState)e();else{var t=!1;n.addEventListener("readystatechange",function(){t||(t=!0,e())},!1)}},a=function(e){return t.document.querySelector('link[href$="'+e+'"]')},c=function(e){var t,n,o,a,c,i,u={};if(t=e.sheet,!t)return u;n=t.cssRules?t.cssRules:t.rules;for(var l=0;n.length>l;l++)o=n[l].cssText,a=r+n[l].selectorText,c=o.split(");")[0].match(/US\-ASCII\,([^"']+)/),c&&c[1]&&(i=decodeURIComponent(c[1]),u[a]=i);return u},i=function(e){var t,o,a;o="data-grunticon-embed";for(var c in e)if(a=c.slice(r.length),t=n.querySelectorAll(a+"["+o+"]"),t.length)for(var i=0;t.length>i;i++)t[i].innerHTML=e[c],t[i].style.backgroundImage="none",t[i].removeAttribute(o);return t},u=function(t){"svg"===e.method&&o(function(){i(c(a(e.href))),"function"==typeof t&&t()})};e.embedIcons=i,e.getCSS=a,e.getIcons=c,e.ready=o,e.svgLoadedCallback=u,e.embedSVG=u})(grunticon,this);
-                
-                grunticon(["https://importcjj.github.io/theme/css/icons.data.svg.css", "https://importcjj.github.io/theme/css/icons.data.png.css", "https://importcjj.github.io/theme/css/icons.fallback.css"]);
-            </script>
-        <noscript><link href="https://importcjj.github.io/theme/css/icons.fallback.css" rel="stylesheet"></noscript>
-        <!-- menu toggle javascript -->
-        <script type="text/javascript">
-            document.addEventListener("DOMContentLoaded", initMenu);
-            
-            function initMenu(){
-                var menu = document.getElementById("menu");
-                var menulink = document.getElementById("menu-link");
-                menulink.addEventListener("click", function toggleMenu(){
-                        window.event.preventDefault();
-                        menulink.classList.toggle('active');
-                        menu.classList.toggle('active');              
-                    });
-            };
-        </script>
+        <title>Signal</title>
+        <link rel="stylesheet" href="https://importcjj.github.io/theme/css/main.css" />
+
+        <!--[if IE]>
+            <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
 </head>
-<body>
+
+<body id="index" class="home">
 <a href="https://github.com/importcjj">
-<img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" alt="Fork me on GitHub" />
+<img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub" />
 </a>
-    <div role="banner" id="masthead">
-        <header>
-            <h1><a href="/">'s Blog</a></h1>
-            <a href="#menu" id="menu-link">more stuff</a>
-            <nav id="menu">
-                <ul>
-                            <li><a href="https://importcjj.github.io/category/centos.html">CentOS</a></li>
-                            <li><a href="https://importcjj.github.io/category/docker.html">Docker</a></li>
-                            <li><a href="https://importcjj.github.io/category/emacs.html">Emacs</a></li>
-                            <li><a href="https://importcjj.github.io/category/git.html">git</a></li>
-                            <li><a href="https://importcjj.github.io/category/github.html">github</a></li>
-                            <li><a href="https://importcjj.github.io/category/go.html">Go</a></li>
-                            <li><a href="https://importcjj.github.io/category/markdown.html">Markdown</a></li>
-                            <li><a href="https://importcjj.github.io/category/python.html">Python</a></li>
-                            <li><a href="https://importcjj.github.io/category/rust.html">Rust</a></li>
-                            <li><a href="https://importcjj.github.io/category/sundry.html">sundry</a></li>
-                            <li><a href="https://importcjj.github.io/category/tool.html">Tool</a></li>
+        <header id="banner" class="body">
+                <h1><a href="https://importcjj.github.io/">Signal </a></h1>
+                <nav><ul>
+                    <li><a href="https://importcjj.github.io/category/centos.html">CentOS</a></li>
+                    <li><a href="https://importcjj.github.io/category/docker.html">Docker</a></li>
+                    <li><a href="https://importcjj.github.io/category/emacs.html">Emacs</a></li>
+                    <li><a href="https://importcjj.github.io/category/git.html">git</a></li>
+                    <li><a href="https://importcjj.github.io/category/github.html">github</a></li>
+                    <li><a href="https://importcjj.github.io/category/go.html">Go</a></li>
+                    <li><a href="https://importcjj.github.io/category/markdown.html">Markdown</a></li>
+                    <li><a href="https://importcjj.github.io/category/python.html">Python</a></li>
+                    <li><a href="https://importcjj.github.io/category/rust.html">Rust</a></li>
+                    <li><a href="https://importcjj.github.io/category/sundry.html">sundry</a></li>
+                    <li><a href="https://importcjj.github.io/category/tool.html">Tool</a></li>
                 </ul>
-            </nav>
-        </header>
-    </div>
-        <div class="page" role="main">
-<div class="articles">
-        <ol>
-            <li>
-                <article>
-                    <footer>
-                         <p>
-                            <time datetime="2016-04-05 19:41:06+08:00">
-                                <script>document.write(moment('2016-04-05 19:41:06+08:00').format('LL'));</script>
-                            </time>
-                                    in <a href="https://importcjj.github.io/category/emacs.html"><span class="category-tag">Emacs</span></a>
-                        </p>
-                    </footer>
-                    <header>
-                        <a href="https://importcjj.github.io/wo-de-emacsde-pei-zhi.html">
-                            <h2>我的Emacs的配置</h2>
-                        </a>
-                    </header>
-                    <div class="summary"> </div>
-                    <div class="tags">
-                        <ul class="tags">
-                            <li><a href="https://importcjj.github.io/tag/emacs.html" class="tag">Emacs</a></li>
-                        </ul>
-                    </div>
-                    <a href="https://importcjj.github.io/wo-de-emacsde-pei-zhi.html">
-                        <p class="readmore">Read more...</p>
-                    </a>
-                </article>
-            </li>
-            <li>
-                <article>
-                    <footer>
-                         <p>
-                            <time datetime="2016-03-28 21:18:08+08:00">
-                                <script>document.write(moment('2016-03-28 21:18:08+08:00').format('LL'));</script>
-                            </time>
-                                    in <a href="https://importcjj.github.io/category/github.html"><span class="category-tag">github</span></a>
-                        </p>
-                    </footer>
-                    <header>
-                        <a href="https://importcjj.github.io/shi-xian-bo-ke-de-zi-dong-bian-yi-fa-bu.html">
-                            <h2>实现博客的自动编译发布</h2>
-                        </a>
-                    </header>
-                    <div class="summary"> </div>
-                    <div class="tags">
-                        <ul class="tags">
-                            <li><a href="https://importcjj.github.io/tag/blog.html" class="tag">blog</a></li>
-                            <li><a href="https://importcjj.github.io/tag/travis-ci.html" class="tag">travis-ci</a></li>
-                        </ul>
-                    </div>
-                    <a href="https://importcjj.github.io/shi-xian-bo-ke-de-zi-dong-bian-yi-fa-bu.html">
-                        <p class="readmore">Read more...</p>
-                    </a>
-                </article>
-            </li>
-            <li>
-                <article>
-                    <footer>
-                         <p>
-                            <time datetime="2016-03-27 03:37:03+08:00">
-                                <script>document.write(moment('2016-03-27 03:37:03+08:00').format('LL'));</script>
-                            </time>
-                                    in <a href="https://importcjj.github.io/category/docker.html"><span class="category-tag">Docker</span></a>
-                        </p>
-                    </footer>
-                    <header>
-                        <a href="https://importcjj.github.io/dockerfilecan-shu-xue-xi.html">
-                            <h2>Dockerfile参数学习</h2>
-                        </a>
-                    </header>
-                    <div class="summary"> </div>
-                    <div class="tags">
-                        <ul class="tags">
-                            <li><a href="https://importcjj.github.io/tag/docker.html" class="tag">Docker</a></li>
-                            <li><a href="https://importcjj.github.io/tag/dockerfile.html" class="tag">Dockerfile</a></li>
-                        </ul>
-                    </div>
-                    <a href="https://importcjj.github.io/dockerfilecan-shu-xue-xi.html">
-                        <p class="readmore">Read more...</p>
-                    </a>
-                </article>
-            </li>
-            <li>
-                <article>
-                    <footer>
-                         <p>
-                            <time datetime="2016-03-27 03:37:03+08:00">
-                                <script>document.write(moment('2016-03-27 03:37:03+08:00').format('LL'));</script>
-                            </time>
-                                    in <a href="https://importcjj.github.io/category/git.html"><span class="category-tag">git</span></a>
-                        </p>
-                    </footer>
-                    <header>
-                        <a href="https://importcjj.github.io/gitzhong-yi-xie-rong-yi-bei-hu-shi-de-dong-xi.html">
-                            <h2>Git中一些容易被忽视的东西</h2>
-                        </a>
-                    </header>
-                    <div class="summary"> </div>
-                    <div class="tags">
-                        <ul class="tags">
-                            <li><a href="https://importcjj.github.io/tag/git.html" class="tag">git</a></li>
-                        </ul>
-                    </div>
-                    <a href="https://importcjj.github.io/gitzhong-yi-xie-rong-yi-bei-hu-shi-de-dong-xi.html">
-                        <p class="readmore">Read more...</p>
-                    </a>
-                </article>
-            </li>
-            <li>
-                <article>
-                    <footer>
-                         <p>
-                            <time datetime="2016-03-27 03:37:03+08:00">
-                                <script>document.write(moment('2016-03-27 03:37:03+08:00').format('LL'));</script>
-                            </time>
-                                    in <a href="https://importcjj.github.io/category/go.html"><span class="category-tag">Go</span></a>
-                        </p>
-                    </footer>
-                    <header>
-                        <a href="https://importcjj.github.io/golangzhong-san-chong-importfang-shi.html">
-                            <h2>Golang中三种import方式</h2>
-                        </a>
-                    </header>
-                    <div class="summary"> </div>
-                    <div class="tags">
-                        <ul class="tags">
-                            <li><a href="https://importcjj.github.io/tag/golang.html" class="tag">golang</a></li>
-                            <li><a href="https://importcjj.github.io/tag/import.html" class="tag">import</a></li>
-                        </ul>
-                    </div>
-                    <a href="https://importcjj.github.io/golangzhong-san-chong-importfang-shi.html">
-                        <p class="readmore">Read more...</p>
-                    </a>
-                </article>
-            </li>
-            <li>
-                <article>
-                    <footer>
-                         <p>
-                            <time datetime="2016-03-27 03:37:03+08:00">
-                                <script>document.write(moment('2016-03-27 03:37:03+08:00').format('LL'));</script>
-                            </time>
-                                    in <a href="https://importcjj.github.io/category/docker.html"><span class="category-tag">Docker</span></a>
-                        </p>
-                    </footer>
-                    <header>
-                        <a href="https://importcjj.github.io/guan-yu-dockerde-yi-xie-za-huo.html">
-                            <h2>关于Docker的一些杂货</h2>
-                        </a>
-                    </header>
-                    <div class="summary"> </div>
-                    <div class="tags">
-                        <ul class="tags">
-                            <li><a href="https://importcjj.github.io/tag/docker.html" class="tag">Docker</a></li>
-                        </ul>
-                    </div>
-                    <a href="https://importcjj.github.io/guan-yu-dockerde-yi-xie-za-huo.html">
-                        <p class="readmore">Read more...</p>
-                    </a>
-                </article>
-            </li>
-            <li>
-                <article>
-                    <footer>
-                         <p>
-                            <time datetime="2016-03-27 03:37:03+08:00">
-                                <script>document.write(moment('2016-03-27 03:37:03+08:00').format('LL'));</script>
-                            </time>
-                                    in <a href="https://importcjj.github.io/category/markdown.html"><span class="category-tag">Markdown</span></a>
-                        </p>
-                    </footer>
-                    <header>
-                        <a href="https://importcjj.github.io/markdownyu-fa-shuo-ming.html">
-                            <h2>MarkDown语法说明</h2>
-                        </a>
-                    </header>
-                    <div class="summary"> </div>
-                    <div class="tags">
-                        <ul class="tags">
-                            <li><a href="https://importcjj.github.io/tag/markdown.html" class="tag">markdown</a></li>
-                        </ul>
-                    </div>
-                    <a href="https://importcjj.github.io/markdownyu-fa-shuo-ming.html">
-                        <p class="readmore">Read more...</p>
-                    </a>
-                </article>
-            </li>
-            <li>
-                <article>
-                    <footer>
-                         <p>
-                            <time datetime="2016-03-27 03:37:03+08:00">
-                                <script>document.write(moment('2016-03-27 03:37:03+08:00').format('LL'));</script>
-                            </time>
-                                    in <a href="https://importcjj.github.io/category/python.html"><span class="category-tag">Python</span></a>
-                        </p>
-                    </footer>
-                    <header>
-                        <a href="https://importcjj.github.io/python-yieldxiao-ji.html">
-                            <h2>Python yield小记</h2>
-                        </a>
-                    </header>
-                    <div class="summary"> </div>
-                    <div class="tags">
-                        <ul class="tags">
-                            <li><a href="https://importcjj.github.io/tag/yield.html" class="tag">yield</a></li>
-                            <li><a href="https://importcjj.github.io/tag/sheng-cheng-qi.html" class="tag">生成器</a></li>
-                            <li><a href="https://importcjj.github.io/tag/python.html" class="tag">Python</a></li>
-                        </ul>
-                    </div>
-                    <a href="https://importcjj.github.io/python-yieldxiao-ji.html">
-                        <p class="readmore">Read more...</p>
-                    </a>
-                </article>
-            </li>
-            <li>
-                <article>
-                    <footer>
-                         <p>
-                            <time datetime="2016-03-27 03:37:03+08:00">
-                                <script>document.write(moment('2016-03-27 03:37:03+08:00').format('LL'));</script>
-                            </time>
-                                    in <a href="https://importcjj.github.io/category/python.html"><span class="category-tag">Python</span></a>
-                        </p>
-                    </footer>
-                    <header>
-                        <a href="https://importcjj.github.io/pythonzhong-yi-xie-rong-yi-bei-hu-shi-de-dong-xi.html">
-                            <h2>Python中一些容易被忽视的东西</h2>
-                        </a>
-                    </header>
-                    <div class="summary"> </div>
-                    <div class="tags">
-                        <ul class="tags">
-                            <li><a href="https://importcjj.github.io/tag/python.html" class="tag">Python</a></li>
-                        </ul>
-                    </div>
-                    <a href="https://importcjj.github.io/pythonzhong-yi-xie-rong-yi-bei-hu-shi-de-dong-xi.html">
-                        <p class="readmore">Read more...</p>
-                    </a>
-                </article>
-            </li>
-            <li>
-                <article>
-                    <footer>
-                         <p>
-                            <time datetime="2016-03-27 03:37:03+08:00">
-                                <script>document.write(moment('2016-03-27 03:37:03+08:00').format('LL'));</script>
-                            </time>
-                                    in <a href="https://importcjj.github.io/category/python.html"><span class="category-tag">Python</span></a>
-                        </p>
-                    </footer>
-                    <header>
-                        <a href="https://importcjj.github.io/shi-yong-pythonzhi-zuo-zi-ding-yi-zhong-duan-ming-ling.html">
-                            <h2>使用Python制作自定义终端命令</h2>
-                        </a>
-                    </header>
-                    <div class="summary"> </div>
-                    <div class="tags">
-                        <ul class="tags">
-                            <li><a href="https://importcjj.github.io/tag/python.html" class="tag">Python</a></li>
-                        </ul>
-                    </div>
-                    <a href="https://importcjj.github.io/shi-yong-pythonzhi-zuo-zi-ding-yi-zhong-duan-ming-ling.html">
-                        <p class="readmore">Read more...</p>
-                    </a>
-                </article>
-            </li>
-        </ol>
+                </nav>
+        </header><!-- /#banner -->
+
+                <section id="content" class="body">
+                    <ol id="posts-list" class="hfeed" start="9">
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="https://importcjj.github.io/wo-de-emacsde-pei-zhi.html" rel="bookmark"
+                           title="Permalink to 我的Emacs的配置">我的Emacs的配置</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <span>二 05 四月 2016</span>
+<span>| tags: <a href="https://importcjj.github.io/tag/emacs.html">Emacs</a></span>
+</footer><!-- /.post-info -->                <h4>记录Emacs的相关配置和插件，以备万一。 ~/.emacs/init.el</h4>
+<div class="highlight"><pre><span></span><span class="c1">;;; package --- Emacs Configure</span>
+<span class="c1">;;; Commentary:</span>
+<span class="c1">;;; code:</span>
+<span class="p">(</span><span class="nb">require</span> <span class="ss">&#39;package</span><span class="p">)</span>
+<span class="p">(</span><span class="nv">add-to-list</span> <span class="ss">&#39;package-archives</span> <span class="o">&#39;</span><span class="p">(</span><span class="s">&quot;melpa&quot;</span> <span class="o">.</span> <span class="s">&quot;http://melpa.org/packages/&quot;</span><span class="p">))</span>
+
+<span class="p">(</span><span class="nv">package-initialize</span><span class="p">)</span>
+<span class="p">(</span><span class="nb">when</span> <span class="p">(</span><span class="nv">not</span> <span class="nv">package-archive-contents</span><span class="p">)</span>
+  <span class="p">(</span><span class="nv">package-refresh-contents</span><span class="p">))</span>
+
+<span class="p">(</span><span class="nb">when</span> <span class="p">(</span><span class="nf">memq</span> <span class="nf">window-system</span> <span class="o">&#39;</span><span class="p">(</span><span class="nv">mac</span> <span class="nv">ns</span><span class="p">))</span>
+  <span class="p">(</span><span class="nv">exec-path-from-shell-initialize</span><span class="p">))</span>
+
+<span class="c1">;; add maunal/ and top dir to load-path</span>
+<span class="p">(</span><span class="k">let</span> <span class="p">((</span><span class="nv">base</span> <span class="s">&quot;~/.emacs.d/maunal&quot;</span><span class="p">))</span>
+  <span class="p">(</span><span class="nv">add-to-list</span> <span class="ss">&#39;load-path</span> <span class="nv">base</span><span class="p">)</span>
+  <span class="p">(</span><span class="nb">dolist</span> <span class="p">(</span><span class="nv">f</span> <span class="p">(</span><span class="nf">directory-files</span> <span class="nv">base</span><span class="p">))</span>
+    <span class="p">(</span><span class="k">let ...</span></pre></div>
+                <a class="readmore" href="https://importcjj.github.io/wo-de-emacsde-pei-zhi.html">read more</a>
+<p><a href="https://importcjj.github.io/wo-de-emacsde-pei-zhi.html#disqus_thread">comments</a></p>                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="https://importcjj.github.io/shi-xian-bo-ke-de-zi-dong-bian-yi-fa-bu.html" rel="bookmark"
+                           title="Permalink to 实现博客的自动编译发布">实现博客的自动编译发布</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <span>一 28 三月 2016</span>
+<span>| tags: <a href="https://importcjj.github.io/tag/blog.html">blog</a><a href="https://importcjj.github.io/tag/travis-ci.html">travis-ci</a></span>
+</footer><!-- /.post-info -->                <h3>使用github、coding和travis-ci实现在线编辑和自动发布！</h3>
+<h4>在线编辑</h4>
+<p>使用github在线创建和编辑文章。</p>
+<h4>自动发布</h4>
+<p>使用travis-ci自动编译和发布到github、coding的相应repo的gh-pages分支</p>
+                <a class="readmore" href="https://importcjj.github.io/shi-xian-bo-ke-de-zi-dong-bian-yi-fa-bu.html">read more</a>
+<p><a href="https://importcjj.github.io/shi-xian-bo-ke-de-zi-dong-bian-yi-fa-bu.html#disqus_thread">comments</a></p>                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="https://importcjj.github.io/dockerfilecan-shu-xue-xi.html" rel="bookmark"
+                           title="Permalink to Dockerfile参数学习">Dockerfile参数学习</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <span>日 27 三月 2016</span>
+<span>| tags: <a href="https://importcjj.github.io/tag/docker.html">Docker</a><a href="https://importcjj.github.io/tag/dockerfile.html">Dockerfile</a></span>
+</footer><!-- /.post-info -->                <h4>镜像和容器</h4>
+<p>容器是镜像的实例。一个镜像可以对应多个容器。每次使用<code>docker run &lt;image&gt;</code>时都会重新创建该镜像的一个容器，我们可以为该命令指定--name <name>来为所产生的容器指定名字:</p>
+<p><code>docker run -d --name serve ubuntu</code> 这样根据ubuntu这个镜像产生的容器就叫<em>serve</em>。</p>
+<p>。当容器运行时，我们对容器的修改只会写人到容器的文件系统，而不会影响到对应镜像。所以， 前一次run形成的改动不会影响到后一次run所创建的容器。想要这些修改对image生效， 可以使用<code>docker commit &lt;container&gt;</code></p>
+<div class="highlight"><pre><span></span>                <span class="err">├─</span> <span class="err">可写层</span><span class="p">(</span><span class="n">container</span><span class="p">)</span>
+<span class="err">内核层</span> <span class="o">-</span> <span class="err">镜像层</span> <span class="err">─</span> <span class="err">├─</span> <span class="err">可写层</span><span class="p">(</span><span class="n">container</span><span class="p">)</span>
+                <span class="err">├─</span> <span class="err">可写层</span><span class="p">(</span><span class="n">container</span><span class="p">)</span>
+</pre></div>
+
+
+<p><strong>内核层 - 镜像层 -可写层(container)</strong></p>
+<h4>CMD和ENTRYPOINT的区别</h4>
+<p>首先两者都可以让你在容器运行的时候执行一条命令，而且这两个字段在Dockerfile中只能指定一次，如果指定多次，那么则以最后一次为准。</p>
+<p>再来说两者的区别: 假如我们在运行容器的命令<code>docker run &lt;image ...</code></p>
+                <a class="readmore" href="https://importcjj.github.io/dockerfilecan-shu-xue-xi.html">read more</a>
+<p><a href="https://importcjj.github.io/dockerfilecan-shu-xue-xi.html#disqus_thread">comments</a></p>                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="https://importcjj.github.io/gitzhong-yi-xie-rong-yi-bei-hu-shi-de-dong-xi.html" rel="bookmark"
+                           title="Permalink to Git中一些容易被忽视的东西">Git中一些容易被忽视的东西</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <span>日 27 三月 2016</span>
+<span>| tags: <a href="https://importcjj.github.io/tag/git.html">git</a></span>
+</footer><!-- /.post-info -->                <h4>修改commit的message</h4>
+<ol>
+<li>修改最近一次commit的message  <code>git commit --amend</code> 然后输入想要修改的message</li>
+<li>批量修改commit的message <code>git rebase -i HEAD~n</code> n为一个数字，表示最近n次commit, 将想要修改的commit id前的pick改成reword(r)命令, 然后修改id后的commit message,  保存退出后即可.</li>
+</ol>
+<h4>合并连续的多个commit为一个commit</h4>
+<p>使用<code>git rebase -i HEAD~n</code> 把将被合并的commit id前的pick命令改成squash(s)</p>
+<h4>忽略已被提交过的文件</h4>
+<ol>
+<li><code>git rm --cached &lt;filename&gt;</code> 不用担心，这一步只是删除该文件在版本库中的追踪，并不会正真删除磁盘上的物理文件</li>
+<li>更新.gitignore文件, 如果之前已经更新过了，就可以直接跳过这一步了。</li>
+<li>add + commit 提交</li>
+</ol>
+<h4>新建一个orphan(孤儿)分支</h4>
+<p><code>git ...</code></p>
+                <a class="readmore" href="https://importcjj.github.io/gitzhong-yi-xie-rong-yi-bei-hu-shi-de-dong-xi.html">read more</a>
+<p><a href="https://importcjj.github.io/gitzhong-yi-xie-rong-yi-bei-hu-shi-de-dong-xi.html#disqus_thread">comments</a></p>                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="https://importcjj.github.io/golangzhong-san-chong-importfang-shi.html" rel="bookmark"
+                           title="Permalink to Golang中三种import方式">Golang中三种import方式</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <span>日 27 三月 2016</span>
+<span>| tags: <a href="https://importcjj.github.io/tag/golang.html">golang</a><a href="https://importcjj.github.io/tag/import.html">import</a></span>
+</footer><!-- /.post-info -->                <h4>1. 点方式</h4>
+<p>有时候会看到如下的方式导入包    <code>import( . "fmt" )</code></p>
+<p>这个点操作的含义就是这个包导入之后在你调用这个包的函数时，你可以省略前缀的包名，也就是前面你调用的<code>fmt.Println("hello world")</code>  可以省略的写成<code>Println("hello world")</code></p>
+<h4>2. 别名方式</h4>
+<p>别名操作顾名思义可以把包命名成另一个用起来容易记忆的名字。</p>
+<p><code>import( f "fmt" )</code>  别名操作调用包函数时前缀变成了重命名的前缀，即<code>f.Println("hello world")</code></p>
+<h4>3.  _方式</h4>
+<p>_操作其实只是引入该包。当导入一个包时，它所有的init()函数就会被执行，但有些时候并非真的需要使用这些包，仅仅是希望它的init()函数被执行而已。这个时候就可以使用_操作引用该包了。即使用_操作引用包是无法通过包名来调用包中的导出函数，而是只是为了简单的调用其init函数()。</p>
+<p>比如 <code>import (_ "github.com/mattn/go-sqlite3")</code>只是为了调用该包中的init函数来注册该数据库驱动而已，并需要该包中的其他内容。</p>
+                <a class="readmore" href="https://importcjj.github.io/golangzhong-san-chong-importfang-shi.html">read more</a>
+<p><a href="https://importcjj.github.io/golangzhong-san-chong-importfang-shi.html#disqus_thread">comments</a></p>                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="https://importcjj.github.io/guan-yu-dockerde-yi-xie-za-huo.html" rel="bookmark"
+                           title="Permalink to 关于Docker的一些杂货">关于Docker的一些杂货</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <span>日 27 三月 2016</span>
+<span>| tags: <a href="https://importcjj.github.io/tag/docker.html">Docker</a></span>
+</footer><!-- /.post-info -->                <h4>如何在外部获取容器的日志?</h4>
+<p>可以使用<code>docker logs -f &lt;container&gt;</code>的方式在宿主机显示容器进程所产生的日志，就像我们使用tail那样。但是如果我们需要访问的并不是容器主进程所记录的日志呢？比如说，现在有一个很简单的web应用，我们选择让他运行在Docker容器里面，web服务器使用了gunicorn，它支持使用参数<code>--access-file=filename</code>来将该web应用的访问请求记录到指定的日志中去。当我们需要方便的获取这些访问记录或者实时查看的时候，应该怎么做？</p>
+<p>当我们的web应用运行时，gunicorn所记录的日志只存在于docker系统的读写层(容器container)，而不会影响到只读层(镜像image)。如果我们想要较为方便的得到容器中的日志文件，可以使用Docker提供的的<code>volume</code>。你可以理解为将宿主系统的文件夹挂载至容器中从而达到实时共享文件夹的目的。</p>
+<p>你可以在很多地方指定volume, 比如:</p>
+<h5>1. Dockerfile 的<code>VOLUME</code>命令</h5>
+<div class="highlight"><pre><span></span><span class="c"># Dockerfile</span>
+
+<span class="k">RUN</span> mkdir -p /data/logs/webapp
+<span class="k">VOLUME</span><span class="s"> /data/logs/webapp</span>
+</pre></div>
+
+
+<p>当你使用该Dockerfile去build一个镜像，并使用该镜像来运行了一个容器实例的时候，宿主系统的某个文件夹就会被挂载为该容器的<code>/data ...</code></p>
+                <a class="readmore" href="https://importcjj.github.io/guan-yu-dockerde-yi-xie-za-huo.html">read more</a>
+<p><a href="https://importcjj.github.io/guan-yu-dockerde-yi-xie-za-huo.html#disqus_thread">comments</a></p>                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="https://importcjj.github.io/markdownyu-fa-shuo-ming.html" rel="bookmark"
+                           title="Permalink to MarkDown语法说明">MarkDown语法说明</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <span>日 27 三月 2016</span>
+<span>| tags: <a href="https://importcjj.github.io/tag/markdown.html">markdown</a></span>
+</footer><!-- /.post-info -->                <p>本篇博文参考<a href="http://blog.csdn.net/lanxuezaipiao/article/details/44307757">这里</a></p>
+<blockquote>
+<p>Markdown 是一种轻量级标记语言，它允许人们使用易读易写的纯文本格式编写文档，然后转换成格式丰富的HTML页面。
+<br></p>
+</blockquote>
+<h4>标题语法</h4>
+<p>形式一:</p>
+<div class="highlight"><pre><span></span><span class="err">标题</span><span class="mi">1</span>
+<span class="o">====</span><span class="p">(</span><span class="err">至少一个</span><span class="p">,</span><span class="err">同行不能有其他字符</span><span class="p">)</span>
+<span class="err">标题</span><span class="mi">2</span>
+<span class="c1">----</span>
+</pre></div>
+
+
+<p>效果:</p>
+<h1>标题1</h1>
+<h2>标题2</h2>
+<p>形式二:</p>
+<div class="highlight"><pre><span></span><span class="err">示例：</span>
+<span class="o">#</span> <span class="err">标题</span><span class="mi">1</span> <span class="o">#</span><span class="p">(</span><span class="err">可以闭合，也可以不闭合，闭合的话数量也不一定要相同</span><span class="p">)</span>
+<span class="o">##</span> <span class="err">标题</span><span class="mi">2</span>
+<span class="o">###</span> <span class="err">标题</span><span class="mi">3</span>
+<span class="o">####</span> <span class="err">标题</span><span class="mi">4</span>
+<span class="o">#####</span> <span class="err">标题</span><span class="mi">5</span>
+<span class="o">######</span> <span class="err">标题</span><span class="mi">6</span>
+</pre></div>
+
+
+<p>效果:</p>
+<h1>标题1</h1>
+<h2>标题2</h2>
+<h3>标题3</h3>
+<h4>标题4</h4>
+<h5>标题5</h5>
+<h6>标题6</h6>
+<p><br><br></p>
+<h4>段落和换行</h4>
+<p><code>空格</code>：多个空格或者一个回车符(只能显示一个空格)</p>
+<p><code>多空格</code>：\&nbsp;</p>
+<p><code>段内换行</code>：双空格 + 回车符</p>
+<p><code>另起一段 ...</code></p>
+                <a class="readmore" href="https://importcjj.github.io/markdownyu-fa-shuo-ming.html">read more</a>
+<p><a href="https://importcjj.github.io/markdownyu-fa-shuo-ming.html#disqus_thread">comments</a></p>                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="https://importcjj.github.io/python-yieldxiao-ji.html" rel="bookmark"
+                           title="Permalink to Python yield小记">Python yield小记</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <span>日 27 三月 2016</span>
+<span>| tags: <a href="https://importcjj.github.io/tag/yield.html">yield</a><a href="https://importcjj.github.io/tag/sheng-cheng-qi.html">生成器</a><a href="https://importcjj.github.io/tag/python.html">Python</a></span>
+</footer><!-- /.post-info -->                <h4>yeild</h4>
+<p><em>yield</em> 一般搭配函数来定义一个Generator(生成器)</p>
+<p>一个简单的例子:</p>
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f</span><span class="p">():</span>
+    <span class="k">print</span> <span class="s2">&quot;Today is 7.21&quot;</span>
+    <span class="k">yield</span> <span class="mi">6</span>
+</pre></div>
+
+
+<p><em>f()</em> 将会返回一个Generator, 而非像普通函数一样执行。想要使用生成器的话(比如 i)需要使用i.next() (与next(i)等效) 和i.send(value)。</p>
+<div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="n">i</span> <span class="o">=</span> <span class="n">f</span><span class="p">()</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">i</span>
+<span class="o">&lt;</span><span class="n">generator</span> <span class="nb">object</span> <span class="n">f</span> <span class="n">at</span> <span class="mh">0x1041e7dc0</span><span class="o">&gt;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">i</span><span class="o">.</span><span class="n">next</span><span class="p">()</span>
+<span class="n">Today</span> <span class="ow">is</span> <span class="mf">7.21</span>
+<span class="mi">6</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">i</span><span class="o">.</span><span class="n">next</span><span class="p">()</span>
+<span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last ...</span></pre></div>
+                <a class="readmore" href="https://importcjj.github.io/python-yieldxiao-ji.html">read more</a>
+<p><a href="https://importcjj.github.io/python-yieldxiao-ji.html#disqus_thread">comments</a></p>                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="https://importcjj.github.io/pythonzhong-yi-xie-rong-yi-bei-hu-shi-de-dong-xi.html" rel="bookmark"
+                           title="Permalink to Python中一些容易被忽视的东西">Python中一些容易被忽视的东西</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <span>日 27 三月 2016</span>
+<span>| tags: <a href="https://importcjj.github.io/tag/python.html">Python</a></span>
+</footer><!-- /.post-info -->                <h3>旨在记录Python标准库中好像很厉害的模块或功能。</h3>
+<h5>1. <a href="#particial">functools.partial(func[,<em>args][, </em>*keywords])</a></h5>
+<h5>2. <a href="#globals_and_locals">globals() and locals()</a></h5>
+<h4><a id="particial">functools.partial(func[,<em>args][, </em>*keywords])</a></h4>
+<p>为func的参数指定默认值后返回一个新的函数。比如:</p>
+<div class="highlight"><pre><span></span><span class="c1"># disable print as the statement</span>
+<span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">print_function</span>
+<span class="kn">from</span> <span class="nn">functools</span> <span class="kn">import</span> <span class="n">partial</span>
+<span class="kn">from</span> <span class="nn">StringIO</span> <span class="kn">import</span> <span class="n">StringIO</span>
+
+<span class="n">f</span> <span class="o">=</span> <span class="n">StringIO</span><span class="o">.</span><span class="n">StringIO</span><span class="p">()</span>
+<span class="k">print</span> <span class="o">=</span> <span class="n">partial</span><span class="p">(</span><span class="k">print</span><span class="p">,</span> <span class="nb">file</span><span class="o">=</span><span class="n">f</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;This will print to f)</span>
+<span class="c1"># stdout ...</span></pre></div>
+                <a class="readmore" href="https://importcjj.github.io/pythonzhong-yi-xie-rong-yi-bei-hu-shi-de-dong-xi.html">read more</a>
+<p><a href="https://importcjj.github.io/pythonzhong-yi-xie-rong-yi-bei-hu-shi-de-dong-xi.html#disqus_thread">comments</a></p>                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="https://importcjj.github.io/shi-yong-pythonzhi-zuo-zi-ding-yi-zhong-duan-ming-ling.html" rel="bookmark"
+                           title="Permalink to 使用Python制作自定义终端命令">使用Python制作自定义终端命令</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <span>日 27 三月 2016</span>
+<span>| tags: <a href="https://importcjj.github.io/tag/python.html">Python</a></span>
+</footer><!-- /.post-info -->                <h3>介绍</h3>
+<p>首先，拿pip举个例子，pip是我们使用较多的python包管理工具。当我们安装pip之后，直接在终端中就可以使用pip这个命令。那你有没有想过这是如何实现的？</p>
+<p>其实，pip这个命令最终调用了python所在文件夹bin目录的pip文件。为什么说最终？因为使用系统默认的python安装pip时，可能会在/usr/local/bin或者/usr/bin下创建软链接。如果使用了virtualenv，那么pip文件就在env/bin下。那么pip文件到底是什么呢？答案就是，是一个具有执行权限的python文件，只不过去掉了.py的后缀.</p>
+<p>也许你会兴高采烈的去尝试一发，在bin文件下创建xxx.py，打上一句 print “hello world”, 然后去掉.py的后缀, 再使用chmod a+x xxx来赋予它执行的权限。打开终端，敲下xxx。最后你只会得到print: command not found的错误提示。为什么？因为操作系统不知道这是一个py文件。思考一下，我们平时运行py文件都需要打上python xxx.py形式的命令 ...</p>
+                <a class="readmore" href="https://importcjj.github.io/shi-yong-pythonzhi-zuo-zi-ding-yi-zhong-duan-ming-ling.html">read more</a>
+<p><a href="https://importcjj.github.io/shi-yong-pythonzhi-zuo-zi-ding-yi-zhong-duan-ming-ling.html#disqus_thread">comments</a></p>                </div><!-- /.entry-content -->
+            </article></li>
+            </ol><!-- /#posts-list -->
 <p class="paginator">
-        <a href="https://importcjj.github.io/index.html" class="previous">&laquo;</a>
-    <span>2 / 3</span>
-        <a href="https://importcjj.github.io/index3.html" class="next">&raquo;</a>
+        <a href="https://importcjj.github.io/index.html">&laquo;</a>
+    Page 2 / 3
+        <a href="https://importcjj.github.io/index3.html">&raquo;</a>
 </p>
-        
-</div>                <footer>
-                    <div class="icons">
-                    </div>
-                    <p>© <script>document.write(moment().format('YYYY'));</script> importcjj</p>
-                </footer>
-        </div>
+            </section><!-- /#content -->
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>blogroll</h2>
+                        <ul>
+                            <li><a href="http://chihiro.moe">Slade</a></li>
+                            <li><a href="http://shenyizhou.github.io">无主之地</a></li>
+                            <li><a href="http://yuan0.github.io">Junifer</a></li>
+                            <li><a href="http://getpelican.com/">Pelican</a></li>
+                            <li><a href="http://python.org/">Python.org</a></li>
+                            <li><a href="http://jinja.pocoo.org/">Jinja2</a></li>
+                            <li><a href="http://dongweiming.github.io/Expert-Python/#1">Expert-python</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+
+                            <li><a href="#">You can add links in your config file</a></li>
+                            <li><a href="#">Another social link</a></li>
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <p>Powered by <a href="http://getpelican.com/">Pelican</a>. Theme <a href="https://github.com/blueicefield/pelican-blueidea/">blueidea</a>, inspired by the default theme.</p>
+        </footer><!-- /#contentinfo -->
+
+<script type="text/javascript">
+    var disqus_shortname = 'importcjj';
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+</script>
 </body>
 </html>

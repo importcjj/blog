@@ -1,107 +1,232 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-        <title>Signal</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta charset="utf-8" />
-        <!-- twitter card metadata -->
-        <!-- OG Tags -->
-<meta property="og:url" content="https://importcjj.github.io/tag/Dockerfile"/>
-<meta property="og:title" content="Signal | Dockerfile" />
-        <!-- favicon -->
-        <!-- moment.js for date formatting -->
-        <script src="https://importcjj.github.io/theme/js/moment.js"></script>
-        <!-- css -->
-        <link rel="stylesheet" type="text/css" href="https://importcjj.github.io/theme/css/main.css" />
-		<script>
-			
-                /*! grunt-grunticon Stylesheet Loader - v2.1.2 | https://github.com/filamentgroup/grunticon | (c) 2015 Scott Jehl, Filament Group, Inc. | MIT license. */
-    
-    (function(e){function t(t,n,r,o){"use strict";function a(){for(var e,n=0;u.length>n;n++)u[n].href&&u[n].href.indexOf(t)>-1&&(e=!0);e?i.media=r||"all":setTimeout(a)}var i=e.document.createElement("link"),l=n||e.document.getElementsByTagName("script")[0],u=e.document.styleSheets;return i.rel="stylesheet",i.href=t,i.media="only x",i.onload=o||null,l.parentNode.insertBefore(i,l),a(),i}var n=function(r,o){"use strict";if(r&&3===r.length){var a=e.navigator,i=e.Image,l=!(!document.createElementNS||!document.createElementNS("http://www.w3.org/2000/svg","svg").createSVGRect||!document.implementation.hasFeature("http://www.w3.org/TR/SVG11/feature#Image","1.1")||e.opera&&-1===a.userAgent.indexOf("Chrome")||-1!==a.userAgent.indexOf("Series40")),u=new i;u.onerror=function(){n.method="png",n.href=r[2],t(r[2])},u.onload=function(){var e=1===u.width&&1===u.height,a=r[e&&l?0:e?1:2];n.method=e&&l?"svg":e?"datapng":"png",n.href=a,t(a,null,null,o)},u.src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==",document.documentElement.className+=" grunticon"}};n.loadCSS=t,e.grunticon=n})(this);(function(e,t){"use strict";var n=t.document,r="grunticon:",o=function(e){if(n.attachEvent?"complete"===n.readyState:"loading"!==n.readyState)e();else{var t=!1;n.addEventListener("readystatechange",function(){t||(t=!0,e())},!1)}},a=function(e){return t.document.querySelector('link[href$="'+e+'"]')},c=function(e){var t,n,o,a,c,i,u={};if(t=e.sheet,!t)return u;n=t.cssRules?t.cssRules:t.rules;for(var l=0;n.length>l;l++)o=n[l].cssText,a=r+n[l].selectorText,c=o.split(");")[0].match(/US\-ASCII\,([^"']+)/),c&&c[1]&&(i=decodeURIComponent(c[1]),u[a]=i);return u},i=function(e){var t,o,a;o="data-grunticon-embed";for(var c in e)if(a=c.slice(r.length),t=n.querySelectorAll(a+"["+o+"]"),t.length)for(var i=0;t.length>i;i++)t[i].innerHTML=e[c],t[i].style.backgroundImage="none",t[i].removeAttribute(o);return t},u=function(t){"svg"===e.method&&o(function(){i(c(a(e.href))),"function"==typeof t&&t()})};e.embedIcons=i,e.getCSS=a,e.getIcons=c,e.ready=o,e.svgLoadedCallback=u,e.embedSVG=u})(grunticon,this);
-                
-                grunticon(["https://importcjj.github.io/theme/css/icons.data.svg.css", "https://importcjj.github.io/theme/css/icons.data.png.css", "https://importcjj.github.io/theme/css/icons.fallback.css"]);
-            </script>
-        <noscript><link href="https://importcjj.github.io/theme/css/icons.fallback.css" rel="stylesheet"></noscript>
-        <!-- menu toggle javascript -->
-        <script type="text/javascript">
-            document.addEventListener("DOMContentLoaded", initMenu);
-            
-            function initMenu(){
-                var menu = document.getElementById("menu");
-                var menulink = document.getElementById("menu-link");
-                menulink.addEventListener("click", function toggleMenu(){
-                        window.event.preventDefault();
-                        menulink.classList.toggle('active');
-                        menu.classList.toggle('active');              
-                    });
-            };
-        </script>
+        <title>Signal - Dockerfile</title>
+        <link rel="stylesheet" href="https://importcjj.github.io/theme/css/main.css" />
+
+        <!--[if IE]>
+            <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
 </head>
-<body>
+
+<body id="index" class="home">
 <a href="https://github.com/importcjj">
-<img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" alt="Fork me on GitHub" />
+<img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub" />
 </a>
-    <div role="banner" id="masthead">
-        <header>
-            <h1><a href="/">'s Blog</a></h1>
-            <a href="#menu" id="menu-link">more stuff</a>
-            <nav id="menu">
-                <ul>
-                            <li><a href="https://importcjj.github.io/category/centos.html">CentOS</a></li>
-                            <li><a href="https://importcjj.github.io/category/docker.html">Docker</a></li>
-                            <li><a href="https://importcjj.github.io/category/emacs.html">Emacs</a></li>
-                            <li><a href="https://importcjj.github.io/category/git.html">git</a></li>
-                            <li><a href="https://importcjj.github.io/category/github.html">github</a></li>
-                            <li><a href="https://importcjj.github.io/category/go.html">Go</a></li>
-                            <li><a href="https://importcjj.github.io/category/markdown.html">Markdown</a></li>
-                            <li><a href="https://importcjj.github.io/category/python.html">Python</a></li>
-                            <li><a href="https://importcjj.github.io/category/rust.html">Rust</a></li>
-                            <li><a href="https://importcjj.github.io/category/sundry.html">sundry</a></li>
-                            <li><a href="https://importcjj.github.io/category/tool.html">Tool</a></li>
+        <header id="banner" class="body">
+                <h1><a href="https://importcjj.github.io/">Signal </a></h1>
+                <nav><ul>
+                    <li><a href="https://importcjj.github.io/category/centos.html">CentOS</a></li>
+                    <li><a href="https://importcjj.github.io/category/docker.html">Docker</a></li>
+                    <li><a href="https://importcjj.github.io/category/emacs.html">Emacs</a></li>
+                    <li><a href="https://importcjj.github.io/category/git.html">git</a></li>
+                    <li><a href="https://importcjj.github.io/category/github.html">github</a></li>
+                    <li><a href="https://importcjj.github.io/category/go.html">Go</a></li>
+                    <li><a href="https://importcjj.github.io/category/markdown.html">Markdown</a></li>
+                    <li><a href="https://importcjj.github.io/category/python.html">Python</a></li>
+                    <li><a href="https://importcjj.github.io/category/rust.html">Rust</a></li>
+                    <li><a href="https://importcjj.github.io/category/sundry.html">sundry</a></li>
+                    <li><a href="https://importcjj.github.io/category/tool.html">Tool</a></li>
                 </ul>
-            </nav>
-        </header>
-    </div>
-        <div class="page" role="main">
-<div class="page-title">
-    <h1>Dockerfile</h1>
-</div>
-<div class="articles">
-        <ol>
-            <li>
+                </nav>
+        </header><!-- /#banner -->
+
+            <aside id="featured" class="body">
                 <article>
-                    <footer>
-                         <p>
-                            <time datetime="2016-03-27 03:37:03+08:00">
-                                <script>document.write(moment('2016-03-27 03:37:03+08:00').format('LL'));</script>
-                            </time>
-                                    in <a href="https://importcjj.github.io/category/docker.html"><span class="category-tag">Docker</span></a>
-                        </p>
-                    </footer>
-                    <header>
-                        <a href="https://importcjj.github.io/dockerfilecan-shu-xue-xi.html">
-                            <h2>Dockerfile参数学习</h2>
-                        </a>
-                    </header>
-                    <div class="summary"> </div>
-                    <div class="tags">
-                        <ul class="tags">
-                            <li><a href="https://importcjj.github.io/tag/docker.html" class="tag">Docker</a></li>
-                            <li><a href="https://importcjj.github.io/tag/dockerfile.html" class="tag">Dockerfile</a></li>
+                    <h1 class="entry-title"><a href="https://importcjj.github.io/dockerfilecan-shu-xue-xi.html">Dockerfile参数学习</a></h1>
+<footer class="post-info">
+        <span>日 27 三月 2016</span>
+<span>| tags: <a href="https://importcjj.github.io/tag/docker.html">Docker</a><a href="https://importcjj.github.io/tag/dockerfile.html">Dockerfile</a></span>
+</footer><!-- /.post-info --><h4>镜像和容器</h4>
+<p>容器是镜像的实例。一个镜像可以对应多个容器。每次使用<code>docker run &lt;image&gt;</code>时都会重新创建该镜像的一个容器，我们可以为该命令指定--name <name>来为所产生的容器指定名字:</p>
+<p><code>docker run -d --name serve ubuntu</code> 这样根据ubuntu这个镜像产生的容器就叫<em>serve</em>。</p>
+<p>。当容器运行时，我们对容器的修改只会写人到容器的文件系统，而不会影响到对应镜像。所以， 前一次run形成的改动不会影响到后一次run所创建的容器。想要这些修改对image生效， 可以使用<code>docker commit &lt;container&gt;</code></p>
+<div class="highlight"><pre><span></span>                <span class="err">├─</span> <span class="err">可写层</span><span class="p">(</span><span class="n">container</span><span class="p">)</span>
+<span class="err">内核层</span> <span class="o">-</span> <span class="err">镜像层</span> <span class="err">─</span> <span class="err">├─</span> <span class="err">可写层</span><span class="p">(</span><span class="n">container</span><span class="p">)</span>
+                <span class="err">├─</span> <span class="err">可写层</span><span class="p">(</span><span class="n">container</span><span class="p">)</span>
+</pre></div>
+
+
+<p><strong>内核层 - 镜像层 -可写层(container)</strong></p>
+<h4>CMD和ENTRYPOINT的区别</h4>
+<p>首先两者都可以让你在容器运行的时候执行一条命令，而且这两个字段在Dockerfile中只能指定一次，如果指定多次，那么则以最后一次为准。</p>
+<p>再来说两者的区别: 假如我们在运行容器的命令<code>docker run &lt;image&gt;</code>中指定了参数。那么CMD指定的命令会被该参数所覆盖, 但是该参数却能为ENTRYPOINT中指定的命令所用。</p>
+<p>举个例子:</p>
+<div class="highlight"><pre><span></span><span class="c"># Dockerfile</span>
+<span class="c"># 镜像名: test</span>
+...
+<span class="k">CMD</span> <span class="p">[</span><span class="s2">&quot;echo&quot;</span><span class="p">,</span> <span class="s2">&quot;Hello, CMD!&quot;</span><span class="p">]</span>
+</pre></div>
+
+
+<p>当我们使用<code>docker run test</code>时，显示<code>Hello, CMD!</code>，但当我们使用<code>docker run test echo hi, everyone!</code>时， 显示<code>hi, everyone!</code>。我们重新指定的echo命令和参数覆盖了原来的echo。 值得注意的是，如果在Dockerfile使用CMD指定命令, 那么在run的时候指定的第一个参数必须时可执行的命令，否则将运行失败！</p>
+<p>如果我们使用ENTRYPOINT指定入口命令的话，在docker run命令中指定的参数都会被传递给入口命令.</p>
+<div class="highlight"><pre><span></span><span class="c"># Dockerfile</span>
+<span class="c"># 镜像名: test</span>
+...
+<span class="k">ENTRYPOINT</span> <span class="p">[</span><span class="s2">&quot;echo&quot;</span><span class="p">,</span> <span class="s2">&quot;Hello, CMD!&quot;</span><span class="p">]</span>
+</pre></div>
+
+
+<p>运行<code>docker run test echo hi, everyone!</code>将得到<code>Hello, CMD! echo hi, everyone!</code></p>
+<p>补充:</p>
+<p>其实在<code>run</code>的时候<code>ENTRYPOINT</code>也是可以别覆盖的，通过指定<code>--entrypoint="xxxx"</code>参数就可以做到!</p>
+<h4>FROM</h4>
+<p>指定基础镜像，格式通常为<code>FROM &lt;image&gt;:&lt;tag&gt;</code> 例如:
+<code>From ubuntu:latest</code>
+如果本地不存在该镜像，则去Docker Hub中拉取该镜像。</p>
+<h4>MAINTAINER</h4>
+<p>为该镜像指定作者, 例如:
+<code>MAINTAINER importcjj@ele.me</code></p>
+<h4>ENV</h4>
+<p>设定环境变量， 两种方式:
+<em> ENV \<key> \<value>
+</em> ENV \<key>=\<value></p>
+<p>例如:
+<em> ENV LANG en_US.UTF-8
+</em> ENV PYTHON_VERSION 2.7.6</p>
+<h4>WORKDIR</h4>
+<p>切换工作目录，类似于cd， 例如:</p>
+<div class="highlight"><pre><span></span><span class="c"># pwd is /p/dir1</span>
+<span class="k">RUN</span> ls
+<span class="c"># now cd to /p/dir2</span>
+<span class="k">WORKDIR</span><span class="s"> ../dir2</span>
+<span class="c"># pwd is /p/dir2</span>
+<span class="k">RUN</span> ls
+</pre></div>
+
+
+<h4>RUN</h4>
+<p>可用于运行普通的命令，有两种方式:
+<em> RUN \<command>
+</em> RUN ["executable", "param1", "param2"]</p>
+<p><strong>通常使用第一种</strong></p>
+<p>比如运行相关软件包的安装命令，例如:
+<em> RUN apt-get -y update
+</em> RUN apt-get -y python
+<em> RUN apt-get install -y python-pip
+</em> RUN apt-get install -y python2.7-dev
+* RUN pip install flask</p>
+<h4>ADD</h4>
+<p>将build路径(或者相对位置)的文件，文件夹甚至是远程文件添加至荣区的文件系统的指定位置，可用于设置相关软件的配置文件等例如:</p>
+<div class="highlight"><pre><span></span><span class="k">ADD</span> requirements.txt /tmp/requirements.txt
+<span class="k">RUN</span> pip install -i /tmp/requirements.txt
+</pre></div>
+
+
+<h4>VOLUME</h4>
+<p>将宿主系统的文件夹挂载到容器中指定的文件夹。比如:</p>
+<div class="highlight"><pre><span></span><span class="k">VOLUME</span><span class="s"> /data/logs</span>
+</pre></div>
+
+
+<p>此命令的局限性在于无法指定宿主系统的某个文件夹被挂载，只能由docker来分配。可用docker run的<code>-v src:dest</code>参数来弥补这一局限性。如果想要查看是哪个文件夹被mount了，使用<code>docker inspect &lt;container&gt;</code>，在返回的json结果中的查看<strong>Mounts</strong>这个字段的内容。</p>
+<h4>EXPOSE</h4>
+<p>指定容器运行时所要监听的端口。虽然配置了EXPOSE, 但我们在运行容器的时候还需要指定端口映射，否则在宿主机中无法访问该端口。 例如:
+<code>docker run -d -p 127.0.0.1:5000:5000</code>
+这样的话我们容器的5000端口就被映射到了宿主机的5000端口。访问宿主机的5000端口，即可访问到容器的5000端口所提供的服务。
+同时，多端口的映射也是可以的 <code>-p 1234-1236:1234-1236/tcp</code></p>
+<h4>LABEL</h4>
+<p>为构建的镜像设置标签
+<code>LABEL &lt;key&gt;=&lt;value&gt; &lt;key&gt;=&lt;value&gt; &lt;key&gt;=&lt;value&gt;</code>
+设置的标签可在 <code>docker inspect &lt;image&gt;</code>给出的JSON结果中看到。</p>
+<h4>例子(来源于github)</h4>
+<div class="highlight"><pre><span></span><span class="k">FROM</span><span class="s"> centos:centos6</span>
+
+<span class="k">RUN</span> cp -f /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
+<span class="k">RUN</span> yum install -y wget tar gcc zlib zlib-devel openssl openssl-devel unzip mysql-devel python-devel
+
+<span class="k">RUN</span> mkdir /opt/logs
+<span class="k">RUN</span> mkdir /usr/src/python
+<span class="k">WORKDIR</span><span class="s"> /usr/src/python</span>
+
+<span class="k">ENV</span> LANG en_US.UTF-8
+<span class="k">ENV</span> PYTHON_VERSION <span class="m">2</span>.7.6
+
+<span class="k">RUN</span> curl -SL <span class="s2">&quot;https://www.python.org/ftp/python/</span><span class="nv">$PYTHON_VERSION</span><span class="s2">/Python-</span><span class="nv">$PYTHON_VERSION</span><span class="s2">.tgz&quot;</span> <span class="p">|</span> tar xvzf - --strip-components<span class="o">=</span><span class="m">1</span>
+<span class="k">RUN</span> ./configure <span class="se">\</span>
+    <span class="o">&amp;&amp;</span> make <span class="se">\</span>
+    <span class="o">&amp;&amp;</span> make install <span class="se">\</span>
+    <span class="o">&amp;&amp;</span> make clean
+
+<span class="k">RUN</span> sed <span class="s1">&#39;s/\/usr\/bin\/python/\/usr\/bin\/python2.6/g&#39;</span> /usr/bin/yum &gt; /usr/bin/yum.tmp <span class="se">\</span>
+    <span class="o">&amp;&amp;</span> mv /usr/bin/yum.tmp /usr/bin/yum <span class="se">\</span>
+    <span class="o">&amp;&amp;</span> chmod <span class="m">755</span>  /usr/bin/yum
+
+<span class="k">ADD</span> . /opt/
+<span class="k">WORKDIR</span><span class="s"> /opt</span>
+
+<span class="k">RUN</span> tar zxvf scribed.tar.gz <span class="se">\</span>
+    <span class="o">&amp;&amp;</span> chown -R root:root scribed <span class="se">\</span>
+    <span class="o">&amp;&amp;</span> rm -f scribed.tar.gz
+
+<span class="k">RUN</span> curl -SL <span class="s1">&#39;https://bootstrap.pypa.io/get-pip.py&#39;</span> <span class="p">|</span> python
+<span class="k">RUN</span> pip install -r requirements.txt <span class="se">\</span>
+    <span class="o">&amp;&amp;</span> rm -f requirements.txt
+
+<span class="k">RUN</span> easy_install virtualenv <span class="se">\</span>
+    <span class="o">&amp;&amp;</span> easy_install mysql-connector-python <span class="se">\</span>
+    <span class="o">&amp;&amp;</span> easy_install MySQL-python
+
+<span class="k">RUN</span> easy_install supervisor <span class="se">\</span>
+    <span class="o">&amp;&amp;</span> echo_supervisord_conf &gt; /etc/supervisord.conf <span class="se">\</span>
+    <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="s2">&quot;[include]&quot;</span> &gt;&gt; /etc/supervisord.conf <span class="se">\</span>
+    <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="s2">&quot;files = /etc/supervisord.d/*.conf&quot;</span> &gt;&gt; /etc/supervisord.conf <span class="se">\</span>
+    <span class="o">&amp;&amp;</span> mkdir -p /etc/supervisord.d <span class="se">\</span>
+    <span class="o">&amp;&amp;</span> cp gunicorn.conf scribed.conf /etc/supervisord.d/ <span class="se">\</span>
+    <span class="o">&amp;&amp;</span> rm -f gunicorn.conf scribed.conf Dockerfile
+</pre></div>
+
+
+<h4>更多内容请前往<a href="https://docs.docker.com/engine/reference/builder/">Docker的官方文档</a></h4>
+<h4>补充</h4>
+<p>除了<code>FROM</code>, <code>MAINTAINER</code>, 'RUN' 和 'AND<code>四个Dockerfile命令之外, 其他命令都可以在</code>docker run`时被覆盖! 详见Docker官方文档<a href="https://docs.docker.com/engine/reference/run/">docker run reference</a>。</p>
+<p>修改Dockerfile的时候，尽量在文件的最后修改(如果允许的话)。这回加快build的速度(缓存的作用：)。因此, 尽量把不轻易变动的部分放在Dockerfile的上方。</p>
+<p>如何为正在运行的容器，打开一个新的shell？
+<em> <code>docker exec -i -t &lt;container_id&gt; bash</code>
+</em> <code>docker exec -i -t &lt;container_name&gt; bash</code></p><p><a href="https://importcjj.github.io/dockerfilecan-shu-xue-xi.html#disqus_thread">comments</a></p>                </article>
+<p class="paginator">
+    Page 1 / 1
+</p>
+            </aside><!-- /#featured -->
+            </ol><!-- /#posts-list -->
+            </section><!-- /#content -->
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>blogroll</h2>
+                        <ul>
+                            <li><a href="http://chihiro.moe">Slade</a></li>
+                            <li><a href="http://shenyizhou.github.io">无主之地</a></li>
+                            <li><a href="http://yuan0.github.io">Junifer</a></li>
+                            <li><a href="http://getpelican.com/">Pelican</a></li>
+                            <li><a href="http://python.org/">Python.org</a></li>
+                            <li><a href="http://jinja.pocoo.org/">Jinja2</a></li>
+                            <li><a href="http://dongweiming.github.io/Expert-Python/#1">Expert-python</a></li>
                         </ul>
-                    </div>
-                    <a href="https://importcjj.github.io/dockerfilecan-shu-xue-xi.html">
-                        <p class="readmore">Read more...</p>
-                    </a>
-                </article>
-            </li>
-        </ol>
-        
-</div>                <footer>
-                    <div class="icons">
-                    </div>
-                    <p>© <script>document.write(moment().format('YYYY'));</script> importcjj</p>
-                </footer>
-        </div>
+                </div><!-- /.blogroll -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+
+                            <li><a href="#">You can add links in your config file</a></li>
+                            <li><a href="#">Another social link</a></li>
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <p>Powered by <a href="http://getpelican.com/">Pelican</a>. Theme <a href="https://github.com/blueicefield/pelican-blueidea/">blueidea</a>, inspired by the default theme.</p>
+        </footer><!-- /#contentinfo -->
+
+<script type="text/javascript">
+    var disqus_shortname = 'importcjj';
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+</script>
 </body>
 </html>

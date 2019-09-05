@@ -1,94 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-          <title>Signal</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta charset="utf-8" />
-        <!-- twitter card metadata -->
-<meta name="twitter:site" content="">
-<meta name="twitter:title" content="Python单层装饰器小记">
-<meta name="twitter:description" content="">
-        <!-- OG Tags -->
-<meta property="og:url" content="https://importcjj.github.io/pythondan-ceng-zhuang-shi-qi-xiao-ji.html"/>
-<meta property="og:title" content="Signal | Python单层装饰器小记" />
-<meta property="og:description" content="" />
-        <!-- favicon -->
-        <!-- moment.js for date formatting -->
-        <script src="https://importcjj.github.io/theme/js/moment.js"></script>
-        <!-- css -->
-        <link rel="stylesheet" type="text/css" href="https://importcjj.github.io/theme/css/main.css" />
-		<script>
-			
-                /*! grunt-grunticon Stylesheet Loader - v2.1.2 | https://github.com/filamentgroup/grunticon | (c) 2015 Scott Jehl, Filament Group, Inc. | MIT license. */
-    
-    (function(e){function t(t,n,r,o){"use strict";function a(){for(var e,n=0;u.length>n;n++)u[n].href&&u[n].href.indexOf(t)>-1&&(e=!0);e?i.media=r||"all":setTimeout(a)}var i=e.document.createElement("link"),l=n||e.document.getElementsByTagName("script")[0],u=e.document.styleSheets;return i.rel="stylesheet",i.href=t,i.media="only x",i.onload=o||null,l.parentNode.insertBefore(i,l),a(),i}var n=function(r,o){"use strict";if(r&&3===r.length){var a=e.navigator,i=e.Image,l=!(!document.createElementNS||!document.createElementNS("http://www.w3.org/2000/svg","svg").createSVGRect||!document.implementation.hasFeature("http://www.w3.org/TR/SVG11/feature#Image","1.1")||e.opera&&-1===a.userAgent.indexOf("Chrome")||-1!==a.userAgent.indexOf("Series40")),u=new i;u.onerror=function(){n.method="png",n.href=r[2],t(r[2])},u.onload=function(){var e=1===u.width&&1===u.height,a=r[e&&l?0:e?1:2];n.method=e&&l?"svg":e?"datapng":"png",n.href=a,t(a,null,null,o)},u.src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==",document.documentElement.className+=" grunticon"}};n.loadCSS=t,e.grunticon=n})(this);(function(e,t){"use strict";var n=t.document,r="grunticon:",o=function(e){if(n.attachEvent?"complete"===n.readyState:"loading"!==n.readyState)e();else{var t=!1;n.addEventListener("readystatechange",function(){t||(t=!0,e())},!1)}},a=function(e){return t.document.querySelector('link[href$="'+e+'"]')},c=function(e){var t,n,o,a,c,i,u={};if(t=e.sheet,!t)return u;n=t.cssRules?t.cssRules:t.rules;for(var l=0;n.length>l;l++)o=n[l].cssText,a=r+n[l].selectorText,c=o.split(");")[0].match(/US\-ASCII\,([^"']+)/),c&&c[1]&&(i=decodeURIComponent(c[1]),u[a]=i);return u},i=function(e){var t,o,a;o="data-grunticon-embed";for(var c in e)if(a=c.slice(r.length),t=n.querySelectorAll(a+"["+o+"]"),t.length)for(var i=0;t.length>i;i++)t[i].innerHTML=e[c],t[i].style.backgroundImage="none",t[i].removeAttribute(o);return t},u=function(t){"svg"===e.method&&o(function(){i(c(a(e.href))),"function"==typeof t&&t()})};e.embedIcons=i,e.getCSS=a,e.getIcons=c,e.ready=o,e.svgLoadedCallback=u,e.embedSVG=u})(grunticon,this);
-                
-                grunticon(["https://importcjj.github.io/theme/css/icons.data.svg.css", "https://importcjj.github.io/theme/css/icons.data.png.css", "https://importcjj.github.io/theme/css/icons.fallback.css"]);
-            </script>
-        <noscript><link href="https://importcjj.github.io/theme/css/icons.fallback.css" rel="stylesheet"></noscript>
-        <!-- menu toggle javascript -->
-        <script type="text/javascript">
-            document.addEventListener("DOMContentLoaded", initMenu);
-            
-            function initMenu(){
-                var menu = document.getElementById("menu");
-                var menulink = document.getElementById("menu-link");
-                menulink.addEventListener("click", function toggleMenu(){
-                        window.event.preventDefault();
-                        menulink.classList.toggle('active');
-                        menu.classList.toggle('active');              
-                    });
-            };
-        </script>
+        <title>Python单层装饰器小记</title>
+        <link rel="stylesheet" href="https://importcjj.github.io/theme/css/main.css" />
 
-
-    <meta name="tags" content="装饰器" />
-    <meta name="tags" content="Python" />
-
+        <!--[if IE]>
+            <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
 </head>
-<body>
+
+<body id="index" class="home">
 <a href="https://github.com/importcjj">
-<img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" alt="Fork me on GitHub" />
+<img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub" />
 </a>
-    <div role="banner" id="masthead">
-        <header>
-            <h1><a href="/">'s Blog</a></h1>
-            <a href="#menu" id="menu-link">more stuff</a>
-            <nav id="menu">
-                <ul>
-                            <li><a href="https://importcjj.github.io/category/centos.html">CentOS</a></li>
-                            <li><a href="https://importcjj.github.io/category/docker.html">Docker</a></li>
-                            <li><a href="https://importcjj.github.io/category/emacs.html">Emacs</a></li>
-                            <li><a href="https://importcjj.github.io/category/git.html">git</a></li>
-                            <li><a href="https://importcjj.github.io/category/github.html">github</a></li>
-                            <li><a href="https://importcjj.github.io/category/go.html">Go</a></li>
-                            <li><a href="https://importcjj.github.io/category/markdown.html">Markdown</a></li>
-                            <li class="active"><a href="https://importcjj.github.io/category/python.html">Python</a></li>
-                            <li><a href="https://importcjj.github.io/category/rust.html">Rust</a></li>
-                            <li><a href="https://importcjj.github.io/category/sundry.html">sundry</a></li>
-                            <li><a href="https://importcjj.github.io/category/tool.html">Tool</a></li>
+        <header id="banner" class="body">
+                <h1><a href="https://importcjj.github.io/">Signal </a></h1>
+                <nav><ul>
+                    <li><a href="https://importcjj.github.io/category/centos.html">CentOS</a></li>
+                    <li><a href="https://importcjj.github.io/category/docker.html">Docker</a></li>
+                    <li><a href="https://importcjj.github.io/category/emacs.html">Emacs</a></li>
+                    <li><a href="https://importcjj.github.io/category/git.html">git</a></li>
+                    <li><a href="https://importcjj.github.io/category/github.html">github</a></li>
+                    <li><a href="https://importcjj.github.io/category/go.html">Go</a></li>
+                    <li><a href="https://importcjj.github.io/category/markdown.html">Markdown</a></li>
+                    <li class="active"><a href="https://importcjj.github.io/category/python.html">Python</a></li>
+                    <li><a href="https://importcjj.github.io/category/rust.html">Rust</a></li>
+                    <li><a href="https://importcjj.github.io/category/sundry.html">sundry</a></li>
+                    <li><a href="https://importcjj.github.io/category/tool.html">Tool</a></li>
                 </ul>
-            </nav>
-        </header>
-    </div>
-        <div class="page" role="main">
-  <div class="article" role="article">
-    <article>
-        <footer>
-            <a name="top"></a>
-            <p>
-              <time datetime=" 2016-03-26 17:50:50+08:00">
-                <script>document.write(moment('2016-03-26 17:50:50+08:00').format('LL'));</script>
-              </time>
-            </p>
-        </footer>
-        <header>
-          <h2>
-            Python单层装饰器小记
-          </h2>
-        </header>
-      <div class="content">
-         <h4>解释器什么时候处理装饰器？</h4>
+                </nav>
+        </header><!-- /#banner -->
+<section id="content" class="body">
+  <article>
+    <header>
+      <h1 class="entry-title">
+        <a href="https://importcjj.github.io/pythondan-ceng-zhuang-shi-qi-xiao-ji.html" rel="bookmark"
+           title="Permalink to Python单层装饰器小记">Python单层装饰器小记</a></h1>
+    </header>
+
+    <div class="entry-content">
+<footer class="post-info">
+        <span>六 26 三月 2016</span>
+<span>| tags: <a href="https://importcjj.github.io/tag/zhuang-shi-qi.html">装饰器</a><a href="https://importcjj.github.io/tag/python.html">Python</a></span>
+</footer><!-- /.post-info -->      <h4>解释器什么时候处理装饰器？</h4>
 <p>答: Python解释器加载代码的时候.</p>
 <p>例如, sleep.py 代码如下</p>
 <div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">functools</span>
@@ -310,34 +265,58 @@
 
 
 <p>想要使用类来做装饰器，先要准备一个实例，然后调用这个实例。除了这点要注意外，还要注意的是，用类实现的装饰器，可以让所有被装饰的函数共享变量，这种变量就是实例的内部变量。</p>
-      </div>
-      <div class="back-to-top">
-          <a href="#top">back to top</a>
-      </div>
+    </div><!-- /.entry-content -->
+    <div class="comments">
+      <h2>Comments !</h2>
       <div id="disqus_thread"></div>
-        <script>
-          var disqus_config = function () {
-          this.page.url = "https://importcjj.github.io/pythondan-ceng-zhuang-shi-qi-xiao-ji.html";  // Replace PAGE_URL with your page's canonical URL variable
-          this.page.identifier = "pythondan-ceng-zhuang-shi-qi-xiao-ji"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-          };
-        </script>
-        <script>
+      <script type="text/javascript">
+        var disqus_identifier = "pythondan-ceng-zhuang-shi-qi-xiao-ji.html";
+        var disqus_url = "https://importcjj.github.io/pythondan-ceng-zhuang-shi-qi-xiao-ji.html";
         (function() {
-              var d = document, s = d.createElement('script');
-              s.src = 'https://importcjj.disqus.com/embed.js';
-              s.setAttribute('data-timestamp', +new Date());
-              (d.head || d.body).appendChild(s);
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//importcjj.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
         })();
       </script>
-      <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-    </article>
-  </div>
-<!-- end article -->
-                <footer>
-                    <div class="icons">
-                    </div>
-                    <p>© <script>document.write(moment().format('YYYY'));</script> importcjj</p>
-                </footer>
-        </div>
+    </div>
+
+  </article>
+</section>
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>blogroll</h2>
+                        <ul>
+                            <li><a href="http://chihiro.moe">Slade</a></li>
+                            <li><a href="http://shenyizhou.github.io">无主之地</a></li>
+                            <li><a href="http://yuan0.github.io">Junifer</a></li>
+                            <li><a href="http://getpelican.com/">Pelican</a></li>
+                            <li><a href="http://python.org/">Python.org</a></li>
+                            <li><a href="http://jinja.pocoo.org/">Jinja2</a></li>
+                            <li><a href="http://dongweiming.github.io/Expert-Python/#1">Expert-python</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+
+                            <li><a href="#">You can add links in your config file</a></li>
+                            <li><a href="#">Another social link</a></li>
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <p>Powered by <a href="http://getpelican.com/">Pelican</a>. Theme <a href="https://github.com/blueicefield/pelican-blueidea/">blueidea</a>, inspired by the default theme.</p>
+        </footer><!-- /#contentinfo -->
+
+<script type="text/javascript">
+    var disqus_shortname = 'importcjj';
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+</script>
 </body>
 </html>

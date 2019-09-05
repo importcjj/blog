@@ -1,106 +1,354 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-        <title>Signal</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta charset="utf-8" />
-        <!-- twitter card metadata -->
-        <!-- OG Tags -->
-<meta property="og:url" content="https://importcjj.github.io/category/Markdown"/>
-<meta property="og:title" content="Signal | Markdown" />
-        <!-- favicon -->
-        <!-- moment.js for date formatting -->
-        <script src="https://importcjj.github.io/theme/js/moment.js"></script>
-        <!-- css -->
-        <link rel="stylesheet" type="text/css" href="https://importcjj.github.io/theme/css/main.css" />
-		<script>
-			
-                /*! grunt-grunticon Stylesheet Loader - v2.1.2 | https://github.com/filamentgroup/grunticon | (c) 2015 Scott Jehl, Filament Group, Inc. | MIT license. */
-    
-    (function(e){function t(t,n,r,o){"use strict";function a(){for(var e,n=0;u.length>n;n++)u[n].href&&u[n].href.indexOf(t)>-1&&(e=!0);e?i.media=r||"all":setTimeout(a)}var i=e.document.createElement("link"),l=n||e.document.getElementsByTagName("script")[0],u=e.document.styleSheets;return i.rel="stylesheet",i.href=t,i.media="only x",i.onload=o||null,l.parentNode.insertBefore(i,l),a(),i}var n=function(r,o){"use strict";if(r&&3===r.length){var a=e.navigator,i=e.Image,l=!(!document.createElementNS||!document.createElementNS("http://www.w3.org/2000/svg","svg").createSVGRect||!document.implementation.hasFeature("http://www.w3.org/TR/SVG11/feature#Image","1.1")||e.opera&&-1===a.userAgent.indexOf("Chrome")||-1!==a.userAgent.indexOf("Series40")),u=new i;u.onerror=function(){n.method="png",n.href=r[2],t(r[2])},u.onload=function(){var e=1===u.width&&1===u.height,a=r[e&&l?0:e?1:2];n.method=e&&l?"svg":e?"datapng":"png",n.href=a,t(a,null,null,o)},u.src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==",document.documentElement.className+=" grunticon"}};n.loadCSS=t,e.grunticon=n})(this);(function(e,t){"use strict";var n=t.document,r="grunticon:",o=function(e){if(n.attachEvent?"complete"===n.readyState:"loading"!==n.readyState)e();else{var t=!1;n.addEventListener("readystatechange",function(){t||(t=!0,e())},!1)}},a=function(e){return t.document.querySelector('link[href$="'+e+'"]')},c=function(e){var t,n,o,a,c,i,u={};if(t=e.sheet,!t)return u;n=t.cssRules?t.cssRules:t.rules;for(var l=0;n.length>l;l++)o=n[l].cssText,a=r+n[l].selectorText,c=o.split(");")[0].match(/US\-ASCII\,([^"']+)/),c&&c[1]&&(i=decodeURIComponent(c[1]),u[a]=i);return u},i=function(e){var t,o,a;o="data-grunticon-embed";for(var c in e)if(a=c.slice(r.length),t=n.querySelectorAll(a+"["+o+"]"),t.length)for(var i=0;t.length>i;i++)t[i].innerHTML=e[c],t[i].style.backgroundImage="none",t[i].removeAttribute(o);return t},u=function(t){"svg"===e.method&&o(function(){i(c(a(e.href))),"function"==typeof t&&t()})};e.embedIcons=i,e.getCSS=a,e.getIcons=c,e.ready=o,e.svgLoadedCallback=u,e.embedSVG=u})(grunticon,this);
-                
-                grunticon(["https://importcjj.github.io/theme/css/icons.data.svg.css", "https://importcjj.github.io/theme/css/icons.data.png.css", "https://importcjj.github.io/theme/css/icons.fallback.css"]);
-            </script>
-        <noscript><link href="https://importcjj.github.io/theme/css/icons.fallback.css" rel="stylesheet"></noscript>
-        <!-- menu toggle javascript -->
-        <script type="text/javascript">
-            document.addEventListener("DOMContentLoaded", initMenu);
-            
-            function initMenu(){
-                var menu = document.getElementById("menu");
-                var menulink = document.getElementById("menu-link");
-                menulink.addEventListener("click", function toggleMenu(){
-                        window.event.preventDefault();
-                        menulink.classList.toggle('active');
-                        menu.classList.toggle('active');              
-                    });
-            };
-        </script>
+        <title>Signal - Markdown</title>
+        <link rel="stylesheet" href="https://importcjj.github.io/theme/css/main.css" />
+
+        <!--[if IE]>
+            <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
 </head>
-<body>
+
+<body id="index" class="home">
 <a href="https://github.com/importcjj">
-<img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" alt="Fork me on GitHub" />
+<img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub" />
 </a>
-    <div role="banner" id="masthead">
-        <header>
-            <h1><a href="/">'s Blog</a></h1>
-            <a href="#menu" id="menu-link">more stuff</a>
-            <nav id="menu">
-                <ul>
-                            <li><a href="https://importcjj.github.io/category/centos.html">CentOS</a></li>
-                            <li><a href="https://importcjj.github.io/category/docker.html">Docker</a></li>
-                            <li><a href="https://importcjj.github.io/category/emacs.html">Emacs</a></li>
-                            <li><a href="https://importcjj.github.io/category/git.html">git</a></li>
-                            <li><a href="https://importcjj.github.io/category/github.html">github</a></li>
-                            <li><a href="https://importcjj.github.io/category/go.html">Go</a></li>
-                            <li class="active"><a href="https://importcjj.github.io/category/markdown.html">Markdown</a></li>
-                            <li><a href="https://importcjj.github.io/category/python.html">Python</a></li>
-                            <li><a href="https://importcjj.github.io/category/rust.html">Rust</a></li>
-                            <li><a href="https://importcjj.github.io/category/sundry.html">sundry</a></li>
-                            <li><a href="https://importcjj.github.io/category/tool.html">Tool</a></li>
+        <header id="banner" class="body">
+                <h1><a href="https://importcjj.github.io/">Signal </a></h1>
+                <nav><ul>
+                    <li><a href="https://importcjj.github.io/category/centos.html">CentOS</a></li>
+                    <li><a href="https://importcjj.github.io/category/docker.html">Docker</a></li>
+                    <li><a href="https://importcjj.github.io/category/emacs.html">Emacs</a></li>
+                    <li><a href="https://importcjj.github.io/category/git.html">git</a></li>
+                    <li><a href="https://importcjj.github.io/category/github.html">github</a></li>
+                    <li><a href="https://importcjj.github.io/category/go.html">Go</a></li>
+                    <li class="active"><a href="https://importcjj.github.io/category/markdown.html">Markdown</a></li>
+                    <li><a href="https://importcjj.github.io/category/python.html">Python</a></li>
+                    <li><a href="https://importcjj.github.io/category/rust.html">Rust</a></li>
+                    <li><a href="https://importcjj.github.io/category/sundry.html">sundry</a></li>
+                    <li><a href="https://importcjj.github.io/category/tool.html">Tool</a></li>
                 </ul>
-            </nav>
-        </header>
-    </div>
-        <div class="page" role="main">
-<div class="page-title">
-    <h1>Markdown</h1>
-</div>
-<div class="articles">
-        <ol>
-            <li>
+                </nav>
+        </header><!-- /#banner -->
+
+            <aside id="featured" class="body">
                 <article>
-                    <footer>
-                         <p>
-                            <time datetime="2016-03-27 03:37:03+08:00">
-                                <script>document.write(moment('2016-03-27 03:37:03+08:00').format('LL'));</script>
-                            </time>
-                                    in <a href="https://importcjj.github.io/category/markdown.html"><span class="category-tag">Markdown</span></a>
-                        </p>
-                    </footer>
-                    <header>
-                        <a href="https://importcjj.github.io/markdownyu-fa-shuo-ming.html">
-                            <h2>MarkDown语法说明</h2>
-                        </a>
-                    </header>
-                    <div class="summary"> </div>
-                    <div class="tags">
-                        <ul class="tags">
-                            <li><a href="https://importcjj.github.io/tag/markdown.html" class="tag">markdown</a></li>
+                    <h1 class="entry-title"><a href="https://importcjj.github.io/markdownyu-fa-shuo-ming.html">MarkDown语法说明</a></h1>
+<footer class="post-info">
+        <span>日 27 三月 2016</span>
+<span>| tags: <a href="https://importcjj.github.io/tag/markdown.html">markdown</a></span>
+</footer><!-- /.post-info --><p>本篇博文参考<a href="http://blog.csdn.net/lanxuezaipiao/article/details/44307757">这里</a></p>
+<blockquote>
+<p>Markdown 是一种轻量级标记语言，它允许人们使用易读易写的纯文本格式编写文档，然后转换成格式丰富的HTML页面。
+<br></p>
+</blockquote>
+<h4>标题语法</h4>
+<p>形式一:</p>
+<div class="highlight"><pre><span></span><span class="err">标题</span><span class="mi">1</span>
+<span class="o">====</span><span class="p">(</span><span class="err">至少一个</span><span class="p">,</span><span class="err">同行不能有其他字符</span><span class="p">)</span>
+<span class="err">标题</span><span class="mi">2</span>
+<span class="c1">----</span>
+</pre></div>
+
+
+<p>效果:</p>
+<h1>标题1</h1>
+<h2>标题2</h2>
+<p>形式二:</p>
+<div class="highlight"><pre><span></span><span class="err">示例：</span>
+<span class="o">#</span> <span class="err">标题</span><span class="mi">1</span> <span class="o">#</span><span class="p">(</span><span class="err">可以闭合，也可以不闭合，闭合的话数量也不一定要相同</span><span class="p">)</span>
+<span class="o">##</span> <span class="err">标题</span><span class="mi">2</span>
+<span class="o">###</span> <span class="err">标题</span><span class="mi">3</span>
+<span class="o">####</span> <span class="err">标题</span><span class="mi">4</span>
+<span class="o">#####</span> <span class="err">标题</span><span class="mi">5</span>
+<span class="o">######</span> <span class="err">标题</span><span class="mi">6</span>
+</pre></div>
+
+
+<p>效果:</p>
+<h1>标题1</h1>
+<h2>标题2</h2>
+<h3>标题3</h3>
+<h4>标题4</h4>
+<h5>标题5</h5>
+<h6>标题6</h6>
+<p><br><br></p>
+<h4>段落和换行</h4>
+<p><code>空格</code>：多个空格或者一个回车符(只能显示一个空格)</p>
+<p><code>多空格</code>：\&nbsp;</p>
+<p><code>段内换行</code>：双空格 + 回车符</p>
+<p><code>另起一段</code>：双回车符</p>
+<p><code>多空行</code>： \<br></p>
+<h4>分隔线语法</h4>
+<div class="highlight"><pre><span></span><span class="err">三个以上</span> <span class="o">*</span> <span class="err">或</span> <span class="o">-</span> <span class="err">或</span> <span class="n">_</span> 
+
+<span class="o">*</span> <span class="o">*</span> <span class="o">*</span>
+
+<span class="o">***</span>
+
+<span class="o">*****</span>
+
+<span class="o">-</span> <span class="o">-</span> <span class="o">-</span>
+
+<span class="c1">---------------------------------------</span>
+</pre></div>
+
+
+<p>效果：</p>
+<hr />
+<hr />
+<hr />
+<hr />
+<hr />
+<h4>加粗和斜体</h4>
+<div class="highlight"><pre><span></span><span class="err">使用一个</span> <span class="o">*</span> <span class="err">或</span> <span class="n">_</span> <span class="err">来包围词句，相当于用</span> <span class="o">&lt;</span><span class="n">em</span><span class="o">&gt;</span> <span class="err">标签包围（内部就是这样转化的）；</span>
+<span class="err">使用两个</span> <span class="o">*</span> <span class="err">或</span> <span class="n">_</span> <span class="err">包起来的话，则相当于使用</span> <span class="o">&lt;</span><span class="n">strong</span><span class="o">&gt;</span><span class="err">。</span>
+<span class="err">示例：</span>
+<span class="o">**</span><span class="err">加粗</span><span class="o">**</span> <span class="n">__</span><span class="err">加粗</span><span class="n">__</span>
+<span class="o">*</span><span class="err">斜体</span><span class="o">*</span> <span class="n">_</span><span class="err">斜体</span><span class="n">_</span>
+</pre></div>
+
+
+<p>效果：</p>
+<p><strong>加粗</strong> <strong>加粗</strong><br />
+<em>斜体</em> <em>斜体</em></p>
+<h4>列表语法</h4>
+<p>无序列表</p>
+<div class="highlight"><pre><span></span><span class="err">一个星号</span> <span class="o">/</span> <span class="err">一个加号</span> <span class="o">/</span> <span class="err">一个减号</span> <span class="o">+</span> <span class="err">若干个空格</span> <span class="o">+</span> <span class="err">列表项内容</span>
+<span class="err">条目之间的空行会作用到所有条目</span>
+<span class="o">*</span> <span class="err">条目</span><span class="mi">1</span>         <span class="o">+</span> <span class="err">条目</span><span class="mi">1</span>        <span class="o">-</span> <span class="err">条目</span><span class="mi">1</span>
+<span class="o">*</span> <span class="err">条目</span><span class="mi">2</span>    <span class="k">or</span>   <span class="o">+</span> <span class="err">条目</span><span class="mi">2</span>    <span class="k">or</span>  <span class="o">-</span> <span class="err">条目</span><span class="mi">1</span>
+<span class="o">*</span> <span class="err">条目</span><span class="mi">3</span>         <span class="o">+</span> <span class="err">条目</span><span class="mi">3</span>        <span class="o">-</span> <span class="err">条目</span><span class="mi">1</span>
+</pre></div>
+
+
+<p>效果：</p>
+<ul>
+<li>条目1</li>
+<li>条目2</li>
+<li>条目3</li>
+</ul>
+<p><br>
+有序列表</p>
+<div class="highlight"><pre><span></span><span class="err">一个数字</span> <span class="o">+</span> <span class="err">一个英文句点</span> <span class="o">+</span> <span class="err">若干个空格</span> <span class="o">+</span> <span class="err">列表项内容</span>
+<span class="mi">1</span><span class="p">.</span> <span class="err">条目</span><span class="mi">1</span>
+<span class="mi">2</span><span class="p">.</span> <span class="err">条目</span><span class="mi">2</span>
+<span class="mi">3</span><span class="p">.</span> <span class="err">条目</span><span class="mi">3</span>
+<span class="mi">33</span><span class="p">.</span><span class="err">条目</span><span class="mi">4</span> <span class="err">（数字可以乱写，自动从</span><span class="mi">1</span><span class="err">开始排列）</span>
+</pre></div>
+
+
+<p>效果：</p>
+<ol>
+<li>条目1</li>
+<li>条目2</li>
+<li>条目3</li>
+<li>条目4</li>
+</ol>
+<p>注意：</p>
+<ol>
+<li>
+<p>每个列表条目下都可以包含多个段落，但这些段落都必须缩进 4 个空格或 1 个制表符</p>
+</li>
+<li>
+<p>如果要在列表条目内放进引用，那 &gt; 就需要缩进</p>
+</li>
+<li>
+<p>如果要在列表项内放代码区块的话，该区块就需要缩进两次，也就是8个空格或是2个制表符 </p>
+</li>
+</ol>
+<h4>区块引用语法</h4>
+<div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="err">引用</span><span class="n">d</span><span class="err">段落</span>
+<span class="err">（段落里每一行有可以加</span> <span class="o">&gt;</span> <span class="err">也可以只在段首加）</span>
+</pre></div>
+
+
+<p>效果：</p>
+<blockquote>
+<p>引用段落</p>
+</blockquote>
+<p><br></p>
+<div class="highlight"><pre><span></span><span class="err">引用可以嵌套</span>
+<span class="err">示例：</span>
+<span class="o">&gt;</span> <span class="err">父引用</span>
+<span class="o">&gt;</span> 
+<span class="o">&gt;</span> <span class="o">&gt;</span> <span class="err">子引用</span>
+<span class="o">&gt;</span> 
+<span class="o">&gt;</span> <span class="err">父引用</span>
+</pre></div>
+
+
+<p>效果：</p>
+<blockquote>
+<p>父引用</p>
+<blockquote>
+<p>子引用</p>
+</blockquote>
+<p>父引用</p>
+</blockquote>
+<div class="highlight"><pre><span></span>引用内<span class="nv">MarkDown</span>语法依然有效
+<span class="o">&gt;</span> ## 这是一个标题。
+<span class="o">&gt;</span> 
+<span class="o">&gt;</span> <span class="mi">1</span>. 这是第一个列表项。
+<span class="o">&gt;</span> <span class="mi">2</span>. 这是第二个列表项。
+<span class="o">&gt;</span> 
+<span class="o">&gt;</span> 这是一个代码例子：
+<span class="o">&gt;</span> 
+<span class="o">&gt;</span>     <span class="nv">printf</span><span class="ss">(</span><span class="s2">&quot;</span><span class="s">Hello, Minmin!</span><span class="se">\n</span><span class="s2">&quot;</span><span class="ss">)</span><span class="c1">; return 0;</span>
+</pre></div>
+
+
+<p>效果：</p>
+<blockquote>
+<h2>这是一个标题。</h2>
+<ol>
+<li>这是第一个列表项。</li>
+<li>这是第二个列表项。</li>
+</ol>
+<p>这是一个代码例子：</p>
+<div class="highlight"><pre><span></span><span class="nv">printf</span><span class="ss">(</span><span class="s2">&quot;</span><span class="s">Hello, Minmin!</span><span class="se">\n</span><span class="s2">&quot;</span><span class="ss">)</span><span class="c1">; return 0;</span>
+</pre></div>
+
+
+</blockquote>
+<h4>链接语法</h4>
+<p>形式一:自动链接（可点击的URL和Email）</p>
+<div class="highlight"><pre><span></span><span class="n">如果链接的文字就是一个网络地址或者是邮箱地址</span><span class="err">，</span><span class="n">直接使用</span><span class="o">&lt;</span><span class="n">url</span><span class="o">&gt;</span><span class="w"></span>
+<span class="n">示例</span><span class="err">：</span><span class="w"></span>
+<span class="o">&lt;</span><span class="nl">http</span><span class="p">:</span><span class="o">//</span><span class="n">www</span><span class="p">.</span><span class="n">baidu</span><span class="p">.</span><span class="n">com</span><span class="o">&gt;</span><span class="w"></span>
+<span class="o">&lt;</span><span class="n">importcjj</span><span class="nv">@gmail</span><span class="p">.</span><span class="n">com</span><span class="o">&gt;</span><span class="w"></span>
+</pre></div>
+
+
+<p>效果：<br />
+<a href="http://www.baidu.com">http://www.baidu.com</a></p>
+<p><a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#105;&#109;&#112;&#111;&#114;&#116;&#99;&#106;&#106;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;">&#105;&#109;&#112;&#111;&#114;&#116;&#99;&#106;&#106;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;</a></p>
+<p><br>
+形式二:普通文本链接</p>
+<div class="highlight"><pre><span></span><span class="p">[</span><span class="err">链接文字</span><span class="p">](</span><span class="err">链接</span><span class="n">URL</span> <span class="err">‘可选的链接</span><span class="n">title</span><span class="err">’</span><span class="p">)</span>  <span class="err">注：我的</span><span class="n">blog</span><span class="err">有问题，这里的‘</span> <span class="err">其实是英文单引号</span>
+<span class="p">[</span><span class="err">链接文字</span><span class="p">](</span><span class="err">链接</span><span class="n">URL</span> <span class="ss">&quot;可选的链接title&quot;</span><span class="p">)</span>
+<span class="p">[</span><span class="err">链接文字</span><span class="p">](</span><span class="err">链接</span><span class="n">URL</span> <span class="p">(</span><span class="err">可选的链接</span><span class="n">title</span><span class="p">))</span>
+<span class="n">title</span><span class="p">:</span> <span class="err">加上</span><span class="n">title</span><span class="err">后，你用鼠标移到该链接文字时就会显示</span><span class="n">title</span><span class="err">文字，可以把它当作一种提示信息来用</span>
+<span class="err">示例：</span>
+<span class="err">欢迎光临我的</span><span class="p">[</span><span class="err">博客</span><span class="p">](</span><span class="n">www</span><span class="p">.</span><span class="n">importcjj</span><span class="p">.</span><span class="n">com</span><span class="p">)</span>
+</pre></div>
+
+
+<p>效果：</p>
+<p>欢迎光临我的<a href="www.importcjj.com" title="jiaju的博客">博客</a></p>
+<p><br>
+形式三:参考式链接</p>
+<div class="highlight"><pre><span></span><span class="k">[链接文字][链接id]</span>
+<span class="na">\[链接id]: 真正的链接URL &quot;可选的title&quot;           注：去掉反杠！</span>
+<span class="na">示例：</span>
+<span class="k">[我的博客][id]</span>
+<span class="na">\[id]: www.baidu.com &quot;jiaju的博客&quot;</span>
+</pre></div>
+
+
+<p>效果：
+<a href="www.baidu.com" title="jiaju的博客">我的博客</a></p>
+<h4>图片语法</h4>
+<div class="highlight"><pre><span></span><span class="o">!</span><span class="p">[</span><span class="n">alt</span><span class="err">文本</span><span class="p">](</span><span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">img10</span><span class="p">.</span><span class="mi">3</span><span class="n">lian</span><span class="p">.</span><span class="n">com</span><span class="o">/</span><span class="n">sc6</span><span class="o">/</span><span class="n">show02</span><span class="o">/</span><span class="mi">67</span><span class="o">/</span><span class="mi">27</span><span class="o">/</span><span class="mi">02</span><span class="p">.</span><span class="n">jpg</span><span class="p">)</span>
+</pre></div>
+
+
+<p>效果：</p>
+<p><img alt="alt文本" src="http://img10.3lian.com/sc6/show02/67/27/02.jpg" /></p>
+<h4>代码语法</h4>
+<p>行内代码</p>
+<div class="highlight"><pre><span></span><span class="o">`</span><span class="err">代码</span><span class="o">`</span>  <span class="err">反引号</span>
+<span class="o">`</span><span class="n">print</span> <span class="ss">&quot;hello world&quot;</span><span class="o">`</span>
+</pre></div>
+
+
+<p>代码区块</p>
+<div class="highlight"><pre><span></span><span class="err">要在</span> <span class="n">Markdown</span> <span class="err">中建立代码区块很简单，只要简单地缩进</span> <span class="mi">4</span> <span class="err">个空格或是</span> <span class="mi">1</span> <span class="err">个制表符就可以。</span>
+</pre></div>
+
+
+<h4>表格语法</h4>
+<p>简洁写法:</p>
+<div class="highlight"><pre><span></span><span class="s s-Atom">示例：</span>
+<span class="p">|</span><span class="s s-Atom">姓名</span>  <span class="p">|</span><span class="s s-Atom">年龄</span><span class="p">|</span><span class="s s-Atom">性别</span>   <span class="p">|</span>   <span class="s s-Atom">我们可以指定单元格的对齐方式</span>
+<span class="p">|</span><span class="s s-Atom">---</span>  <span class="p">|</span><span class="s s-Atom">----</span><span class="p">|</span><span class="s s-Atom">-----</span> <span class="p">|</span>   <span class="p">|:-</span><span class="s s-Atom">--</span><span class="p">|</span>           <span class="s s-Atom">靠左</span>
+<span class="p">|</span><span class="nv">John</span> <span class="p">|</span><span class="mi">22</span>  <span class="p">|</span><span class="s s-Atom">male</span>  <span class="p">|</span>   <span class="p">|</span><span class="s s-Atom">---</span><span class="p">|</span> <span class="s s-Atom">or</span> <span class="p">|:-</span><span class="s s-Atom">--:</span><span class="p">|</span> <span class="s s-Atom">居中</span>
+<span class="p">|</span><span class="nv">Tom</span>  <span class="p">|</span><span class="mi">20</span>  <span class="p">|</span><span class="s s-Atom">male</span>  <span class="p">|</span>   <span class="p">|</span><span class="s s-Atom">---:</span><span class="p">|</span>           <span class="s s-Atom">靠右</span>
+<span class="p">|</span><span class="s s-Atom">aliss</span><span class="p">|</span><span class="mi">24</span>  <span class="p">|</span><span class="s s-Atom">female</span><span class="p">|</span>
+</pre></div>
+
+
+<p>效果:</p>
+<table>
+<thead>
+<tr>
+<th>姓名</th>
+<th align="left">年龄</th>
+<th>性别</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>John</td>
+<td align="left">22</td>
+<td>male</td>
+</tr>
+<tr>
+<td>Tom</td>
+<td align="left">20</td>
+<td>male</td>
+</tr>
+<tr>
+<td>aliss</td>
+<td align="left">24</td>
+<td>female</td>
+</tr>
+</tbody>
+</table>
+<h2>总结</h2>
+<p>注意：上述乃基本语法，而且由于MarkDown的编辑器各不相同，对于原生MarkDown都有扩展，实际使用的时候情况很多，自己多多尝试就能熟练使用了。</p><p><a href="https://importcjj.github.io/markdownyu-fa-shuo-ming.html#disqus_thread">comments</a></p>                </article>
+<p class="paginator">
+    Page 1 / 1
+</p>
+            </aside><!-- /#featured -->
+            </ol><!-- /#posts-list -->
+            </section><!-- /#content -->
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>blogroll</h2>
+                        <ul>
+                            <li><a href="http://chihiro.moe">Slade</a></li>
+                            <li><a href="http://shenyizhou.github.io">无主之地</a></li>
+                            <li><a href="http://yuan0.github.io">Junifer</a></li>
+                            <li><a href="http://getpelican.com/">Pelican</a></li>
+                            <li><a href="http://python.org/">Python.org</a></li>
+                            <li><a href="http://jinja.pocoo.org/">Jinja2</a></li>
+                            <li><a href="http://dongweiming.github.io/Expert-Python/#1">Expert-python</a></li>
                         </ul>
-                    </div>
-                    <a href="https://importcjj.github.io/markdownyu-fa-shuo-ming.html">
-                        <p class="readmore">Read more...</p>
-                    </a>
-                </article>
-            </li>
-        </ol>
-        
-</div>                <footer>
-                    <div class="icons">
-                    </div>
-                    <p>© <script>document.write(moment().format('YYYY'));</script> importcjj</p>
-                </footer>
-        </div>
+                </div><!-- /.blogroll -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+
+                            <li><a href="#">You can add links in your config file</a></li>
+                            <li><a href="#">Another social link</a></li>
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <p>Powered by <a href="http://getpelican.com/">Pelican</a>. Theme <a href="https://github.com/blueicefield/pelican-blueidea/">blueidea</a>, inspired by the default theme.</p>
+        </footer><!-- /#contentinfo -->
+
+<script type="text/javascript">
+    var disqus_shortname = 'importcjj';
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+</script>
 </body>
 </html>
