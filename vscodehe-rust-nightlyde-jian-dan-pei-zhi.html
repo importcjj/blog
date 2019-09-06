@@ -64,14 +64,14 @@
 
 
 <p>这个命令呢会安装最新构建的nightly版本。</p>
-<div class="highlight"><pre><span></span>rupst update
+<div class="highlight"><pre><span></span>rustup update
 </pre></div>
 
 
-<p>这个命令呢会更新安装的所有toolchain至最新。但是最新构建的nightly版本，既有可能还没有对于的rls组件，这样的话在IDE里就没法好好开发了，毕竟在rust里，编译器是
+<p>这个命令呢会更新安装的所有toolchain至最新。但是最新构建的nightly版本，有可能还没有与之对应的rls组件，这样的话在IDE里就没法好好开发了，毕竟在rust里，编译器是
 程序员的爹。没有rls，就会像失去了眼睛一样难受。搜寻了一番，找到一个地址，通过网页可以快捷的知道对于平台的nightly版本，其对于组件的发布情况如何。如果你们以后发现
 自己的rust没有对于的rls，就可以检查下是不是nightly太新了，如果是的话，就需要安装前几个版本的nightly了。</p>
-<p>https://rust-lang.github.io/rustup-components-history/x86_64-apple-darwin.html</p>
+<p><a href="https://rust-lang.github.io/rustup-components-history/x86_64-apple-darwin.html">https://rust-lang.github.io/rustup-components-history/x86_64-apple-darwin.html</a></p>
 <p>如何安装指定版本的nightly呢？</p>
 <div class="highlight"><pre><span></span>rustup toolchain install nightly-<span class="o">[</span>year<span class="o">]</span>-<span class="o">[</span>month<span class="o">]</span>-<span class="o">[</span>day<span class="o">]</span>
 // 比如 nightly-2019-09-05，因为这个版本目前有rls
