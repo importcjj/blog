@@ -53,6 +53,48 @@
             <div class="date">五 06 九月 2019 by <a rel="author" href="https://importcjj.github.io/pages/aboutme.html">importcjj</a></div>
             <div class="detail">
                 <header><h2>
+                    <a href="https://importcjj.github.io/vscodehe-rust-nightlyde-jian-dan-pei-zhi.html" rel="bookmark" title="Permalink to Vscode和Rust nightly的简单配置">
+                        Vscode和Rust nightly的简单配置
+                    </a>
+                </h2></header>
+
+                   <div class="clearboth"><p>本人的常用IDE是小巧的vscode，之前写Rust的时候，使用的Rust版本是stable，vscode插件是Rust(rls)。一直以来工作良好，除了有时候rls会hanging。
+最近要使用nightly版本的rust，vscode提示没有rls，然后选择安装，发现安装失败。于是就鼓捣了一番，决定将过程记录下来。</p>
+<p><code>nightly</code>版本，顾名思义就是每晚构建的开发版本了。我以前安装nightly时的命令是</p>
+<div class="highlight"><pre><span></span><span class="n">rustup</span> <span class="n">toolchain</span> <span class="n">install</span> <span class="n">nightly</span>
+</pre></div>
+
+
+<p>这个命令呢会安装最新构建的nightly版本。</p>
+<div class="highlight"><pre><span></span><span class="n">rupst</span> <span class="k">update</span>
+</pre></div>
+
+
+<p>这个命令呢会更新安装的所有toolchain至最新。但是最新构建的nightly版本，既有可能还没有对于的rls组件，这样的话在IDE里就没法好好开发了，毕竟在rust里，编译器是
+程序员的爹。没有rls，就会像失去了眼睛一样难受。搜寻了一番，找到一个地址，通过网页可以快捷的知道对于平台的nightly版本，其对于组件的发布情况如何。如果你们以后发现
+自己的rust没有对于的rls，就可以检查下是不是nightly太新了，如果是的话，就需要安装前几个版本的nightly了。</p>
+<p>https://rust-lang.github.io/rustup-components-history/x86_64-apple-darwin.html</p>
+<p>如何安装指定版本的nightly呢？</p>
+<div class="highlight"><pre><span></span><span class="n">rustup</span><span class="w"> </span><span class="n">toolchain</span><span class="w"> </span><span class="n">install</span><span class="w"> </span><span class="n">nightly</span><span class="o">-[</span><span class="n">year</span><span class="o">]-[</span><span class="n">month</span><span class="o">]-[</span><span class="n">day</span><span class="o">]</span><span class="w"></span>
+<span class="o">//</span><span class="w"> </span><span class="n">比如</span><span class="w"> </span><span class="n">nightly</span><span class="o">-</span><span class="mi">2019</span><span class="o">-</span><span class="mi">09</span><span class="o">-</span><span class="mi">05</span><span class="err">，</span><span class="n">因为这个版本目前有rls</span><span class="w"></span>
+<span class="n">rustup</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="n">nightly</span><span class="o">-[</span><span class="n">year</span><span class="o">]-[</span><span class="n">month</span><span class="o">]-[</span><span class="n">day</span><span class="o">]</span><span class="w"></span>
+<span class="n">rustup</span><span class="w"> </span><span class="n">component</span><span class="w"> </span><span class="k">add</span><span class="w"> </span><span class="n">rls</span><span class="w"></span>
+</pre></div>
+
+
+<p>我使用的rust插件，会主动提示选择toolchain，如果选择的toolchain没有安装需要的开发组件的话，也会提示安装。如果组件本身没有缺失的话，就可以安装成功！</p></div>
+
+                    <div class="tags">
+                        <p>This entry was tagged on  
+                            <a href="https://importcjj.github.io/tag/rust.html">#rust</a> and                             <a href="https://importcjj.github.io/tag/vscode.html">#vscode</a></p>
+                    </div>
+
+            </div>
+        </article>
+        <article class="entry-overview">
+            <div class="date">五 06 九月 2019 by <a rel="author" href="https://importcjj.github.io/pages/aboutme.html">importcjj</a></div>
+            <div class="detail">
+                <header><h2>
                     <a href="https://importcjj.github.io/rustfan-xu-lie-jsonde-xiao-ji-qiao.html" rel="bookmark" title="Permalink to Rust反序列JSON的小技巧">
                         Rust反序列JSON的小技巧
                     </a>
@@ -1337,29 +1379,6 @@ curl --cookie cookies -d <span class="s2">&quot;channel=0&amp;date=`date +%s`000
                     <div class="tags">
                         <p>This entry was tagged on  
                             <a href="https://importcjj.github.io/tag/singleton.html">#singleton</a> and                             <a href="https://importcjj.github.io/tag/zhuang-shi-qi.html">#装饰器</a></p>
-                    </div>
-
-            </div>
-        </article>
-        <article class="entry-overview">
-            <div class="date">四 21 四月 2016 by <a rel="author" href="https://importcjj.github.io/pages/aboutme.html">importcjj</a></div>
-            <div class="detail">
-                <header><h2>
-                    <a href="https://importcjj.github.io/hhkb-type-skai-xiang-ti-yan.html" rel="bookmark" title="Permalink to HHKB Type-S开箱体验">
-                        HHKB Type-S开箱体验
-                    </a>
-                </h2></header>
-
-                   <div class="clearboth"><p>先上一张图</p>
-<p><img alt="my HHKB Type-S" src="https://7xsw69.com1.z0.glb.clouddn.com/%257EN%2524IE%2525BPA59T9P627%255BFAL%255BW.jpg" /></p>
-<p>在上一张图，是今天用这块HHKB Type-s来完成的一个简易私人图床，我起名为Tubed，使用了七牛提供的存储服务。配合Unclutter可以轻松完成图片的上传和浏览。
-下图为将qq中的图片上传到我的图床。</p>
-<p><img alt="tubed usage" src="https://7xsw69.com1.z0.glb.clouddn.com/tubed.gif" /></p>
-<p>至于HHKB Type-s的使用感受，下次有空在写吧！（主要是刚才写了一大段，被我不小心关掉了:&lt;</p></div>
-
-                    <div class="tags">
-                        <p>This entry was tagged on  
-                            <a href="https://importcjj.github.io/tag/hhkb.html">#hhkb</a></p>
                     </div>
 
             </div>
