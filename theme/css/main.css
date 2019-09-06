@@ -53,7 +53,7 @@ body {
 
 div.highlight pre, pre.literal-block {
     margin: 5px;
-    font-family: 'Anonymous Pro', 'Consolas', 'Menlo', 'Deja Vu Sans Mono', 'Bitstream Vera Sans Mono', monospace;
+    font-family: 'Consolas', 'Menlo', 'Deja Vu Sans Mono', 'Bitstream Vera Sans Mono', monospace;
     font-size: 14px;
 }
 
