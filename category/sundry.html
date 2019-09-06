@@ -57,7 +57,7 @@
                         简单的Acfun自动签到
                     </a>
                 </h3></header>
-                <div class="summary">1.概述 Acfun有一个签到机制，每天签到可以领取经验和香蕉。之前在玩supervisor，celerybeat和rabbitmq的时候搞了一个自动签到的定时任务，但是由于服务器的原因，每天都会出问题。而且前段时间，那台服务器也到期了，所以现在有必要再搞一个简单的自动签到任务了。：） 2. 签到 为了简便，这里就不使用Python了。直接curl搞定吧！上代码： curl --cookie-jar cookies -d "username=name&password=passwd" http://www.acfun.tv/login.aspx && echo curl --cookie cookies -d "channel=0&date=`date +%s`000" http://www.acfun.tv/webapi/record/actions/signin ... <a href="https://importcjj.github.io/jian-dan-de-acfunzi-dong-qian-dao.html">read more</a></div>
+                <div class="summary">1.概述 Acfun有一个签到机制，每天签到可以领取经验和香蕉。之前在玩supervisor，celerybeat和rabbitmq的时候搞了一个自动签到的定时任务，但是由于服务器的原因，每天都会出问题。而且前段时间，那台服务器也到期了，所以现在有必要再搞一个简单的自动签到任务了。：） 2. 签到 为了简便，这里就不使用Python了。直接curl搞定吧！上代码： curl --cookie-jar cookies -d "username=name&password=passwd" https://www.acfun.tv/login.aspx && echo curl --cookie cookies -d "channel=0&date=`date +%s`000" https://www.acfun.tv/webapi/record/actions/signin ... <a href="https://importcjj.github.io/jian-dan-de-acfunzi-dong-qian-dao.html">read more</a></div>
             </div>
         </article>
         <article class="entry-overview">
