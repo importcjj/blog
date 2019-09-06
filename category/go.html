@@ -1,198 +1,186 @@
-<?xml version="1.0" encoding="utf-8"?>
 <!doctype html>
 <html lang="en">
-    <head>
-        <title>Signal</title>
 
-        <!-- meta -->
-        <meta charset="utf-8" />
-        <meta name="author" content="importcjj" />
+<head>
 
-        <!-- Feeds -->
+    <title>Entries Category "Go" - Signal</title>
 
-        <!-- Style -->
-        <link href="https://fonts.googleapis.com/css?family=Linden+Hill:400,400italic" rel="stylesheet" type="text/css" />
-        <link rel="stylesheet" href="https://importcjj.github.io/theme/css/main.css" type="text/css" />
-        <link rel="shortcut icon" href="https://importcjj.github.io/theme/favicon.ico" />
+    <!-- meta -->
+    <meta charset="utf-8" />
+    <meta name="author" content="importcjj" />
+    <meta name="dc.language" content="en" />
+    <meta name="dc.license" content="">
 
-        <!-- Google analytics -->
+    <!-- favicon -->
+    <link rel="icon" href="https://importcjj.github.io/theme/favicon.ico" type="image/x-icon">
 
-    </head>
-    <body>
-        <div id="wrapper">
-          <div id="blogtitle">
-            <a href="https://importcjj.github.io/">Signal</a>
-         </div>
+    <!-- newsfeeds -->
 
-          <!-- Blogroll -->
-          <ul id="mainnav">
-            <li><a href="http://chihiro.moe">Slade</a></li>
-            <li><a href="http://shenyizhou.github.io">无主之地</a></li>
-            <li><a href="http://yuan0.github.io">Junifer</a></li>
-            <li><a href="http://getpelican.com/">Pelican</a></li>
-            <li><a href="http://python.org/">Python.org</a></li>
-            <li><a href="http://jinja.pocoo.org/">Jinja2</a></li>
-            <li><a href="http://dongweiming.github.io/Expert-Python/#1">Expert-python</a></li>
-          </ul>
+    <!-- assets -->
+    <!--[if lt IE 9]>
+        <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+   
+    <link href="https://fonts.googleapis.com/css?family=Linden+Hill:400,400italic" rel="stylesheet" type="text/css">
+    <link href='http://fonts.googleapis.com/css?family=Anonymous+Pro' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://importcjj.github.io/theme/css/simplegrid.css" type="text/css">
+    <link rel="stylesheet" href="https://importcjj.github.io/theme/css/main.css" type="text/css">
+    <link rel="stylesheet" href="https://importcjj.github.io/theme/css/pygments.css" type="text/css">
+    <!--[if lt IE 8]>
+        <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css" rel="stylesheet" type="text/css">
+    <![endif]-->
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet" type="text/css">
 
-          <div class="clearboth"></div>
-          <div id="content">
-<section id="content">
-<h2>Articles in the Go category</h2>
+</head>
 
-  <div class="row">
-    <div class=article-overview>
-      <div class=date>一 16 一月 2017</div>
-      <div class=detail>
-        <h1><a href="https://importcjj.github.io/golangjie-kou-xing-han-shu.html" title="Permalink to Golang接口型函数">Golang接口型函数</a></h1>
-        <div class=summary><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nx">main</span>
+<body>
 
-<span class="kn">import</span> <span class="p">(</span>
-    <span class="s">&quot;fmt&quot;</span>
-<span class="p">)</span>
-
-<span class="kd">type</span> <span class="nx">Handler</span> <span class="kd">interface</span> <span class="p">{</span>
-    <span class="nx">Do</span><span class="p">(</span><span class="nx">k</span><span class="p">,</span> <span class="nx">v</span> <span class="kd">interface</span><span class="p">{})</span>
-<span class="p">}</span>
-
-<span class="kd">type</span> <span class="nx">HandlerFunc</span> <span class="kd">func</span><span class="p">(</span><span class="nx">k</span><span class="p">,</span> <span class="nx">v</span> <span class="kd">interface</span><span class="p">{})</span>
-
-<span class="kd">func</span> <span class="p">(</span><span class="nx">f</span> <span class="nx">HandlerFunc</span><span class="p">)</span> <span class="nx">Do</span><span class="p">(</span><span class="nx">k</span><span class="p">,</span> <span class="nx">v</span> <span class="kd">interface</span><span class="p">{})</span> <span class="p">{</span>
-    <span class="nx">f</span><span class="p">(</span><span class="nx">k</span><span class="p">,</span> <span class="nx">v</span><span class="p">)</span>
-<span class="p">}</span>
-
-<span class="kd">func</span> <span class="nx">Each</span><span class="p">(</span><span class="nx">m</span> <span class="kd">map</span><span class="p">[</span><span class="kd">interface</span><span class="p">{}]</span><span class="kd">interface</span><span class="p">{},</span> <span class="nx">h</span> <span class="nx">Handler</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">for</span> <span class="nx">k</span><span class="p">,</span> <span class="nx">v</span> <span class="o">:=</span> <span class="k">range</span> <span class="nx">m</span> <span class="p">{</span>
-        <span class="nx">h</span><span class="p">.</span><span class="nx">Do</span><span class="p">(</span><span class="nx">k</span><span class="p">,</span> <span class="nx">v</span><span class="p">)</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-
-<span class="kd">func</span> <span class="nx">EachFunc</span><span class="p">(</span><span class="nx">m</span> <span class="kd">map</span><span class="p">[</span><span class="kd">interface</span><span class="p">{}]</span><span class="kd">interface ...</span></pre></div></div>
-      </div>
-
-      <!-- tags list -->
-	  <div class="tags">
-        <a class="tag" href="https://importcjj.github.io/tag/go.html">Go</a>
-      </div>
+   <div class="grid grid-pad">
+     <div class="col-1-1">        
+       <ul id="mainnav">
+          <li><a href="https://importcjj.github.io">home</a></li>
+       </ul>
+       <div id="blogtitle"><a href="https://importcjj.github.io">Signal</a></div>
+       <div id="blogsubtitle"><a href="https://importcjj.github.io"></a></div>
+     </div>
     </div>
-    <div class=article-overview>
-      <div class=date>一 20 六月 2016</div>
-      <div class=detail>
-        <h1><a href="https://importcjj.github.io/gowang-luo-bian-cheng-ji-lei-yi.html" title="Permalink to go网络编程积累(一)">go网络编程积累(一)</a></h1>
-        <div class=summary><div class="highlight"><pre><span></span><span class="c1">//server.go</span>
-<span class="kn">package</span> <span class="nx">main</span>
 
-<span class="kn">import</span> <span class="p">(</span>
-    <span class="s">&quot;fmt&quot;</span>
-    <span class="s">&quot;net&quot;</span>
-    <span class="s">&quot;os&quot;</span>
-    <span class="s">&quot;io&quot;</span>
-<span class="p">)</span>
+    <div class="grid grid-pad">
+       <div id="left-side" class="col-8-12">
+          <section id="content" class="hyphenate">
 
-<span class="kd">func</span> <span class="nx">main</span><span class="p">()</span> <span class="p">{</span>
-    <span class="nx">ln</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">net</span><span class="p">.</span><span class="nx">Listen</span><span class="p">(</span><span class="s">&quot;tcp&quot;</span><span class="p">,</span> <span class="s">&quot;:8888&quot;</span><span class="p">)</span>
-    <span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
-        <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;Can&#39;t listen&quot;</span><span class="p">)</span>
-        <span class="nx">os</span><span class="p">.</span><span class="nx">Exit</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-    <span class="p">}</span>
-    <span class="k">for</span> <span class="p">{</span>
-        <span class="nx">conn</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">ln</span><span class="p">.</span><span class="nx">Accept</span><span class="p">()</span>
-        <span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
-            <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;Can&#39;t accept a conn&quot;</span><span class="p">)</span>
-            <span class="k">continue</span>
-        <span class="p">}</span>
-        <span class="k">go</span> <span class="nx">handleConn</span><span class="p">(</span><span class="nx">conn</span><span class="p">)</span>
-    <span class="p">}</span>
-<span class="p">}</span>
+    <h1 class="title">Entries Category “Go”</h1>        <article class="entry-overview">
+            <div class="date">一 16 一月 2017</div>
+            <div class="detail">
+                <header><h3>
+                    <a href="https://importcjj.github.io/golangjie-kou-xing-han-shu.html" rel="bookmark" title="Permalink to Golang接口型函数">
+                        Golang接口型函数
+                    </a>
+                </h3></header>
+                <div class="summary">package main import ( "fmt" ) type Handler interface { Do(k, v interface{}) } type HandlerFunc func(k, v interface{}) func (f HandlerFunc) Do(k, v interface{}) { f(k, v) } func Each(m map[interface{}]interface{}, h Handler) { for k, v := range m { h.Do(k, v) } } func EachFunc(m map[interface{}]interface ... <a href="https://importcjj.github.io/golangjie-kou-xing-han-shu.html">read more</a></div>
+            </div>
+        </article>
+        <article class="entry-overview">
+            <div class="date">一 20 六月 2016</div>
+            <div class="detail">
+                <header><h3>
+                    <a href="https://importcjj.github.io/gowang-luo-bian-cheng-ji-lei-yi.html" rel="bookmark" title="Permalink to go网络编程积累(一)">
+                        go网络编程积累(一)
+                    </a>
+                </h3></header>
+                <div class="summary">//server.go package main import ( "fmt" "net" "os" "io" ) func main() { ln, err := net.Listen("tcp", ":8888") if err != nil { fmt.Println("Can't listen") os.Exit(2) } for { conn, err := ln.Accept() if err != nil { fmt.Println("Can't accept a conn") continue } go handleConn(conn) } } func handleConn(conn ... <a href="https://importcjj.github.io/gowang-luo-bian-cheng-ji-lei-yi.html">read more</a></div>
+            </div>
+        </article>
+        <article class="entry-overview">
+            <div class="date">二 10 五月 2016</div>
+            <div class="detail">
+                <header><h3>
+                    <a href="https://importcjj.github.io/golangbian-cheng-lian-xi.html" rel="bookmark" title="Permalink to Golang编程练习">
+                        Golang编程练习
+                    </a>
+                </h3></header>
+                <div class="summary">完整代码 戳这里 1. 验证给定字符串是否为合法身份证号码 算法：前17位纯数字分别乘以相应的因子，然后求和后除以11取余数。使用该余数取得校验字节数组中相位位置的字节与身份证最后一位字节做比较。如果相等即为合法身份证！ package main import "fmt" import "strconv" var ( Factories [17]int = [17]int{7, 9, 10, 5, 8, 4, 2, 1, 6, 3, 7, 9, 10, 5, 8, 4, 2} ValidateBits []byte = []byte("10X98765432") ) func IsValidIDCode(id string) bool { idBytes := []byte(id ... <a href="https://importcjj.github.io/golangbian-cheng-lian-xi.html">read more</a></div>
+            </div>
+        </article>
+        <article class="entry-overview">
+            <div class="date">日 27 三月 2016</div>
+            <div class="detail">
+                <header><h3>
+                    <a href="https://importcjj.github.io/golangzhong-san-chong-importfang-shi.html" rel="bookmark" title="Permalink to Golang中三种import方式">
+                        Golang中三种import方式
+                    </a>
+                </h3></header>
+                <div class="summary">1. 点方式 有时候会看到如下的方式导入包 import( . "fmt" ) 这个点操作的含义就是这个包导入之后在你调用这个包的函数时，你可以省略前缀的包名，也就是前面你调用的fmt.Println("hello world") 可以省略的写成Println("hello world") 2. 别名方式 别名操作顾名思义可以把包命名成另一个用起来容易记忆的名字。 import( f "fmt" ) 别名操作调用包函数时前缀变成了重命名的前缀，即f.Println("hello world") 3. _方式 _操作其实只是引入该包。当导入一个包时，它所有的init()函数就会被执行，但有些时候并非真的需要使用这些包，仅仅是希望它的init()函数被执行而已。这个时候就可以使用_操作引用该包了。即使用_操作引用包是无法通过包名来调用包中的导出函数，而是只是为了简单的调用其init函数()。 比如 import (_ "github.com/mattn/go-sqlite3")只是为了调用该包中的init函数来注册该数据库驱动而已，并需要该包中的其他内容。 <a href="https://importcjj.github.io/golangzhong-san-chong-importfang-shi.html">read more</a></div>
+            </div>
+        </article>
 
-<span class="kd">func</span> <span class="nx">handleConn</span><span class="p">(</span><span class="nx">conn ...</span></pre></div></div>
-      </div>
+          </section>
+       </div>
 
-      <!-- tags list -->
-	  <div class="tags">
-        <a class="tag" href="https://importcjj.github.io/tag/web.html">web</a>
-      </div>
-    </div>
-    <div class=article-overview>
-      <div class=date>二 10 五月 2016</div>
-      <div class=detail>
-        <h1><a href="https://importcjj.github.io/golangbian-cheng-lian-xi.html" title="Permalink to Golang编程练习">Golang编程练习</a></h1>
-        <div class=summary><p>完整代码 <a href="https://github.com/importcjj/fooutils">戳这里</a></p>
-<h5>1. 验证给定字符串是否为合法身份证号码</h5>
-<p>算法：前17位纯数字分别乘以相应的因子，然后求和后除以11取余数。使用该余数取得校验字节数组中相位位置的字节与身份证最后一位字节做比较。如果相等即为合法身份证！</p>
-<div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nx">main</span>
+       <div id="right-side" class="col-1-12">&nbsp;</div>
+       <div id="right-side" class="col-3-12">
 
-<span class="kn">import</span> <span class="s">&quot;fmt&quot;</span>
-<span class="kn">import</span> <span class="s">&quot;strconv&quot;</span>
+<div class="section-container">
+   <h3>Blogroll</h3>
+   <ul>
+      <li><a href="http://chihiro.moe" target="_blank">Slade <i class="fa fa-globe fa-fw"></i></a></li>
+      <li><a href="http://shenyizhou.github.io" target="_blank">无主之地 <i class="fa fa-globe fa-fw"></i></a></li>
+      <li><a href="http://yuan0.github.io" target="_blank">Junifer <i class="fa fa-globe fa-fw"></i></a></li>
+      <li><a href="http://getpelican.com/" target="_blank">Pelican <i class="fa fa-globe fa-fw"></i></a></li>
+      <li><a href="http://python.org/" target="_blank">Python.org <i class="fa fa-globe fa-fw"></i></a></li>
+      <li><a href="http://jinja.pocoo.org/" target="_blank">Jinja2 <i class="fa fa-globe fa-fw"></i></a></li>
+      <li><a href="http://dongweiming.github.io/Expert-Python/#1" target="_blank">Expert-python <i class="fa fa-globe fa-fw"></i></a></li>
+   </ul>
+</div>
 
-<span class="kd">var</span> <span class="p">(</span>
-    <span class="nx">Factories</span>    <span class="p">[</span><span class="mi">17</span><span class="p">]</span><span class="kt">int</span> <span class="p">=</span> <span class="p">[</span><span class="mi">17</span><span class="p">]</span><span class="kt">int</span><span class="p">{</span><span class="mi">7</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">}</span>
-    <span class="nx">ValidateBits</span> <span class="p">[]</span><span class="kt">byte</span>  <span class="p">=</span> <span class="p">[]</span><span class="nb">byte</span><span class="p">(</span><span class="s">&quot;10X98765432&quot;</span><span class="p">)</span>
-<span class="p">)</span>
+<div class="section-container">
+   <h3>Social Network</h3>
+   <ul>
+      <li>
+        <a href="#" target="_blank">You can add links in your config file&nbsp;
+           <i class="fa fa-globe fa-fw"></i>
+        </a>
+      </li>
+      <li>
+        <a href="#" target="_blank">Another social link&nbsp;
+           <i class="fa fa-globe fa-fw"></i>
+        </a>
+      </li>
+   </ul>
+</div>
 
-<span class="kd">func</span> <span class="nx">IsValidIDCode</span><span class="p">(</span><span class="nx">id</span> <span class="kt">string</span><span class="p">)</span> <span class="kt">bool</span> <span class="p">{</span>
-    <span class="nx">idBytes</span> <span class="o">:=</span> <span class="p">[]</span><span class="nb">byte</span><span class="p">(</span><span class="nx">id ...</span></pre></div></div>
-      </div>
+<div class="section-container">
+   <h3>Categories</h3>
+   <ul>
+        <li><a href="https://importcjj.github.io/category/centos.html">CentOS <i class="fa fa-folder-open fa-fw"></i></a></li>
+        <li><a href="https://importcjj.github.io/category/docker.html">Docker <i class="fa fa-folder-open fa-fw"></i></a></li>
+        <li><a href="https://importcjj.github.io/category/emacs.html">Emacs <i class="fa fa-folder-open fa-fw"></i></a></li>
+        <li><a href="https://importcjj.github.io/category/git.html">git <i class="fa fa-folder-open fa-fw"></i></a></li>
+        <li><a href="https://importcjj.github.io/category/github.html">github <i class="fa fa-folder-open fa-fw"></i></a></li>
+        <li><a href="https://importcjj.github.io/category/go.html">Go <i class="fa fa-folder-open fa-fw"></i></a></li>
+        <li><a href="https://importcjj.github.io/category/markdown.html">Markdown <i class="fa fa-folder-open fa-fw"></i></a></li>
+        <li><a href="https://importcjj.github.io/category/python.html">Python <i class="fa fa-folder-open fa-fw"></i></a></li>
+        <li><a href="https://importcjj.github.io/category/rust.html">Rust <i class="fa fa-folder-open fa-fw"></i></a></li>
+        <li><a href="https://importcjj.github.io/category/sundry.html">sundry <i class="fa fa-folder-open fa-fw"></i></a></li>
+        <li><a href="https://importcjj.github.io/category/tool.html">Tool <i class="fa fa-folder-open fa-fw"></i></a></li>
+   </ul>
+</div>
 
-      <!-- tags list -->
-	  <div class="tags">
-        <a class="tag" href="https://importcjj.github.io/tag/go.html">Go</a>
-      </div>
-    </div>
-    <div class=article-overview>
-      <div class=date>日 27 三月 2016</div>
-      <div class=detail>
-        <h1><a href="https://importcjj.github.io/golangzhong-san-chong-importfang-shi.html" title="Permalink to Golang中三种import方式">Golang中三种import方式</a></h1>
-        <div class=summary><h4>1. 点方式</h4>
-<p>有时候会看到如下的方式导入包    <code>import( . "fmt" )</code></p>
-<p>这个点操作的含义就是这个包导入之后在你调用这个包的函数时，你可以省略前缀的包名，也就是前面你调用的<code>fmt.Println("hello world")</code>  可以省略的写成<code>Println("hello world")</code></p>
-<h4>2. 别名方式</h4>
-<p>别名操作顾名思义可以把包命名成另一个用起来容易记忆的名字。</p>
-<p><code>import( f "fmt" )</code>  别名操作调用包函数时前缀变成了重命名的前缀，即<code>f.Println("hello world")</code></p>
-<h4>3.  _方式</h4>
-<p>_操作其实只是引入该包。当导入一个包时，它所有的init()函数就会被执行，但有些时候并非真的需要使用这些包，仅仅是希望它的init()函数被执行而已。这个时候就可以使用_操作引用该包了。即使用_操作引用包是无法通过包名来调用包中的导出函数，而是只是为了简单的调用其init函数()。</p>
-<p>比如 <code>import (_ "github.com/mattn/go-sqlite3")</code>只是为了调用该包中的init函数来注册该数据库驱动而已，并需要该包中的其他内容。</p></div>
-      </div>
+<div class="section-container">
+   <h3>Tags</h3>
+   <ul class="tagcloud">
+   </ul>
+</div>
 
-      <!-- tags list -->
-	  <div class="tags">
-        <a class="tag" href="https://importcjj.github.io/tag/golang.html">golang</a>
-        <a class="tag" href="https://importcjj.github.io/tag/import.html">import</a>
-      </div>
-    </div>
-  </div><!-- /.row -->
 
-</section><!-- /#content -->
+
+          <div class="section-container" id="copyright">
+             <p>This Blog generated by <a href="http://getpelican.com/">Pelican</a> using <a href="https://github.com/habibillah/pujangga">Pujangga</a> theme. All content on this blog, unless stated otherwise, is licensed under the <a href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0 International license</a>.</p>
           </div>
-        </div>
+       </div>
+    </div>
 
-        <!-- footer -->
-        <div class=footer>
-          <div class="textwidget">
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', '']);
+      _gaq.push(['_trackPageview']);
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+ 
 
+    <script type="text/javascript" src="https://importcjj.github.io/theme/js/hyphenator.js"></script>
+    <script type="text/javascript">
+      Hyphenator.config({
+          donthyphenateclassname: 'docutils',
+          useCSS3hyphenation: true
+      });
+      Hyphenator.run();
+    </script>
 
+</body>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-          </div>
-
-          <p>
-            Carburize with <a href="http://blog.getpelican.com">pelican</a></p>
-          <p><a href="https://github.com/badele/pelican-theme-jesuislibre">jesuislibre</a> theme, inspired by <a href="http://blog.dbrgn.ch">dbrng</a> blog</p>
-          <p><a href="http://bruno.adele.im">about author</a></p>
-      </div>
-
-
-     </body>
 </html>

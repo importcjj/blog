@@ -3,88 +3,66 @@ body {
     font-size: 19px;
 }
 
-#wrapper {
-    max-width: 900px;
-    margin: 10px auto 0;
-}
-
 #blogtitle {
-    float: left;
     font-size: 3em;
 }
-
-#subtitle {
-    margin-top: -10px;
-    font-size: 0.5em;
-    color: #777777;
+#blogtitle a, #blogtitle a:hover, #blogtitle a:visited {
+    color: #000;
+    text-decoration: none;
 }
-
+#blogsubtitle {
+}
+#blogsubtitle a, #blogsubtitle a:hover, #blogsubtitle a:visited {
+    color: #000;
+    text-decoration: overline;
+}
 #mainnav {
     margin: 0;
-    padding: 0;
+    padding: 15px 0 0;
     font-size: 20px;
     float: right;
 }
 
-#mainnav li, #mainnav li a {
+#mainnav li {
     list-style-type: none;
     text-align: center;
     display: inline-block;
-    background-color: black;
-    color:white;
-    padding: 0px 3px;
-
-    /* rotate */
-    -webkit-transform: rotate(353deg);
-    -moz-transform: rotate(353deg);
-    -o-transform: rotate(353deg);
-    writing-mode: lr-tb;
-
-
 }
-
-#mainnav li a, #mainnav li a:visited {
-    color:white;
-}
-
 
 #mainnav li:before {
-    /*content: '{\00A0';*/
+    content: '{\00A0';
 }
 #mainnav li:after {
-    /*content: '\00A0}';*/
+    content: '\00A0}';
 }
 
 #content {
-    margin-top: 50px;
+    margin-top: 40px;
 }
 
 #content p {
     text-align: justify;
+    margin-top: 0;
 }
 
-div.footer { 
-    border-top: 1px solid #555;
-    padding-top: 9px;
-    margin-top: 42px; font-size: 16px;
-    text-align: center; color: #555; 
-}
-
-div.footer p { 
-    margin: 0; 
-}
-
-div.highlight, pre.literal-block {
-    background-color: #f4f4f4;
-    border: 1px solid #ddd;
-    margin-bottom: 10px;
-    border-left: 4px solid #2669AD;
+#content img {
+    display: block;
+    margin: 20px auto;
+    max-width: 85%;
 }
 
 div.highlight pre, pre.literal-block {
     margin: 5px;
-    font-family: 'Consolas', 'Menlo', 'Deja Vu Sans Mono', 'Bitstream Vera Sans Mono', monospace;
+    font-family: 'Anonymous Pro', 'Consolas', 'Menlo', 'Deja Vu Sans Mono', 'Bitstream Vera Sans Mono', monospace;
     font-size: 14px;
+}
+
+div.highlight, pre.literal-block {
+    border: 1px solid #DDDDDD;
+    font-family: 'Anonymous Pro','Consolas','Menlo','Deja Vu Sans Mono','Bitstream Vera Sans Mono',monospace;
+    margin: 20px 0;
+    overflow: auto;
+    padding: 10px;
 }
 
 pre.literal-block {
@@ -92,18 +70,57 @@ pre.literal-block {
 }
 
 tt.literal {
+    font-family: 'Anonymous Pro', 'Consolas', 'Menlo', 'Deja Vu Sans Mono', 'Bitstream Vera Sans Mono', monospace;
     background-color: #eee;
     padding: 2px 5px;
+    font-size: 0.8em;
 }
 
 cite {
-    font-family: 'Consolas', 'Menlo', 'Deja Vu Sans Mono', 'Bitstream Vera Sans Mono', monospace;
+    font-family: 'Anonymous Pro', 'Consolas', 'Menlo', 'Deja Vu Sans Mono', 'Bitstream Vera Sans Mono', monospace;
     font-size: 13px;
     font-style: normal;
 }
 
+code {
+    background-color: #EEEEEE;
+    font-family: 'Anonymous Pro', 'Consolas', 'Menlo', 'Deja Vu Sans Mono', 'Bitstream Vera Sans Mono', monospace;
+    border: 1px solid #ddd;
+    padding: 0 2px 2px 3px;
+    font-size: 0.8em;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    margin: 15px 0;
+}
+
+tbody {
+    display: table-row-group;
+    vertical-align: middle;
+}
+
+tr {
+    display: table-row;
+}
+
+th, td {
+    display: table-cell;
+    border: 1px solid #ccc;
+    padding: 4px 8px;
+}
+
+th {
+    font-weight: bold;
+}
+
 .figure .caption {
     font-style: italic;
+}
+
+h1 {
+    font-size: 2em;
 }
 
 h1 cite {
@@ -111,34 +128,50 @@ h1 cite {
     margin: 0 2px;
 }
 
-h1 {
-    margin-bottom: 0px;
+h2 {
+    margin: 0;
+    padding: 15px 0 20px;
 }
 
-.date {
+.archives h2 {
+    margin-bottom: 15px;
+}
+
+h3 {
+    margin: 0;
+}
+
+blockquote {
+  background: #f9f9f9;
+  border-left: 10px solid #ccc;
+  margin: 1.5em 10px;
+  padding: 0.5em 10px;
+  quotes: "\201C""\201D""\2018""\2019";
+}
+
+blockquote p {
+  display: inline;
+}
+
+div.date {
     color: #777;
-    display: block;
-    margin-top: 0px;
+    display: inline-block;
 }
 
+div.date p {
+    margin: 0 0 15px;
+}
 
 img.flattrbutton {
     margin-top: 15px;
     float: right;
 }
 
-/* div.tags p { */
-/*     float: right; */
-/*     clear: both; */
-/* } */
-
-a.tag, a:visited.tag, a:hover.tag {
-    border-radius: 15px 1px 15px 1px;
-    background: #999999;
-    color: #FFFFFF;
-    padding: 4px;
-    font-size: 12px;
-    text-decoration: none;
+div.tags p, #content div.tags p {
+    float: right;
+    clear: both;
+    text-align: right;
+    max-width: 90%;
 }
 
 .field-list .field-name {
@@ -158,33 +191,37 @@ a, a:visited {
     color: #2669AD;
 }
 
-.article-overview {
+.entry-overview {
     margin-bottom: 35px;
 }
 
-.article-overview h1 {
+.entry-overview h1 {
     font-size: 1.5em;
     margin: 0;
 }
 
-.article-overview .summary p {
+.entry-overview h2 {
+    padding: 0;
+}
+
+.entry-overview .summary p {
     margin: 0;
 }
 
-/* .tags { */
-/*     margin-top: 20px; */
-/* } */
+.tags {
+    margin-top: 10px;
+}
 
-/* .tags:after { */
-/*     content: " "; */
-/*     display: block; */
-/*     height: 0; */
-/*     clear: both; */
-/*     visibility: hidden; */
-/* } */
-
-.clearboth {
+.tags:after {
+    content: " ";
+    display: block;
+    height: 0;
     clear: both;
+    visibility: hidden;
+}
+
+#disqus_thread {
+    margin-top: 30px;
 }
 
 .align-center {
@@ -194,7 +231,7 @@ a, a:visited {
 
 .align-right {
     float: right;
-    margin-left: 10px;
+    margin-left: 28px;
 }
 
 .align-left {
@@ -202,89 +239,67 @@ a, a:visited {
     margin-right: 10px;
 }
 
-/* Author */
-
-.author {
-    background: #F4F4F4;
-    padding: 10px;
-    /* border: solid 1px #2669AD; */
-    border: solid 1px #DDDDDD;
-    margin: 20px 0 10px 0;
+.hidden {
+    display: none;
 }
 
-
-h3 {
-    margin: 10px 0 10px 0;
+#right-side {
+    margin-top: 40px;
 }
 
-.author img {
-    float: left;
-    margin: 10px 20px 20px 0;
-    padding: 2px;
-    border: 1px solid #DDDDDD;
+#right-side .section-container {
+    text-align: right;
+    margin-bottom: 30px;
 }
 
-.infos >  p {
-    margin-bottom: 0px;
+#right-side .section-container h3 {
+    text-decoration: underline;
 }
 
-/* Media queries */
-
-@media only screen and (max-width: 600px or max-device-width: 600px) {
-    body, #wrapper {
-        max-width: 600px;
-    }
-    #mainnav {
-        float: left;
-        clear: both;;
-    }
+#right-side .section-container ul {
+    margin-top: 12px;
+    margin-bottom: 12px;
+    padding-left: 0;
 }
 
-@media only screen and (max-width: 500px or max-device-width: 500px) {
-    body, #wrapper {
-        max-width: 500px;
-    }
-    p {
-        line-height: 1.7em;
-    }
-    .blog-archive li {
-        margin-bottom: 15px;
-    }
+#right-side .section-container ul li {
+    list-style: none;
+    font-size: 0.9em;
 }
 
-.pagination{
-    height:36px;
-    margin:18px 0;
+ul.tagcloud {
+  list-style: none;
+    padding: 0;
 }
-.pagination ul{
-    float:left;
-    margin:0;
-    border:1px solid #ddd;
-    border:1px solid rgba(0, 0, 0, 0.15);
-    -webkit-border-radius:8px;
-    -moz-border-radius:8px;
-    border-radius:8px;
+
+#right-side .section-container ul.tagcloud li {
+    display: inline-block;
 }
-.pagination li{
-    display:inline;
+
+#right-side .section-container ul.tagcloud li.tag-0 {
+    font-size: 140%;
 }
-.pagination a{
-    float:left;
-    padding:0 14px;
-    line-height:34px;
-    border-right:1px solid;
-    border-right-color:#ddd;
-    border-right-color:rgba(0, 0, 0, 0.15);
-    *border-right-color:#ddd;
-    text-decoration:none;
+
+#right-side .section-container ul.tagcloud li.tag-1 {
+    font-size: 130%;
 }
-.pagination a:hover,.pagination .active a{
-    background-color:#c7eefe;
+
+#right-side .section-container ul.tagcloud li.tag-2 {
+    font-size: 100%;
 }
-.pagination .disabled a,.pagination .disabled a:hover{
-    background-color:transparent;
-    color:#bfbfbf;
+#right-side .section-container ul.tagcloud li.tag-3 {
+    font-size: 90%;
 }
-.pagination .next a{
-    border:0;
+
+#right-side .section-container ul.tagcloud li.tag-4 {
+    font-size: 80%;
+}
+
+#right-side #copyright {
+    font-size: 0.8em;
+    border-top: solid 0.5px #000;
+}
+
+img {
+    max-width: 100%;
 }

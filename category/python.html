@@ -1,332 +1,241 @@
-<?xml version="1.0" encoding="utf-8"?>
 <!doctype html>
 <html lang="en">
-    <head>
-        <title>Signal</title>
 
-        <!-- meta -->
-        <meta charset="utf-8" />
-        <meta name="author" content="importcjj" />
+<head>
 
-        <!-- Feeds -->
+    <title>Entries Category "Python" - Signal</title>
 
-        <!-- Style -->
-        <link href="https://fonts.googleapis.com/css?family=Linden+Hill:400,400italic" rel="stylesheet" type="text/css" />
-        <link rel="stylesheet" href="https://importcjj.github.io/theme/css/main.css" type="text/css" />
-        <link rel="shortcut icon" href="https://importcjj.github.io/theme/favicon.ico" />
+    <!-- meta -->
+    <meta charset="utf-8" />
+    <meta name="author" content="importcjj" />
+    <meta name="dc.language" content="en" />
+    <meta name="dc.license" content="">
 
-        <!-- Google analytics -->
+    <!-- favicon -->
+    <link rel="icon" href="https://importcjj.github.io/theme/favicon.ico" type="image/x-icon">
 
-    </head>
-    <body>
-        <div id="wrapper">
-          <div id="blogtitle">
-            <a href="https://importcjj.github.io/">Signal</a>
-         </div>
+    <!-- newsfeeds -->
 
-          <!-- Blogroll -->
-          <ul id="mainnav">
-            <li><a href="http://chihiro.moe">Slade</a></li>
-            <li><a href="http://shenyizhou.github.io">无主之地</a></li>
-            <li><a href="http://yuan0.github.io">Junifer</a></li>
-            <li><a href="http://getpelican.com/">Pelican</a></li>
-            <li><a href="http://python.org/">Python.org</a></li>
-            <li><a href="http://jinja.pocoo.org/">Jinja2</a></li>
-            <li><a href="http://dongweiming.github.io/Expert-Python/#1">Expert-python</a></li>
-          </ul>
+    <!-- assets -->
+    <!--[if lt IE 9]>
+        <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+   
+    <link href="https://fonts.googleapis.com/css?family=Linden+Hill:400,400italic" rel="stylesheet" type="text/css">
+    <link href='http://fonts.googleapis.com/css?family=Anonymous+Pro' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://importcjj.github.io/theme/css/simplegrid.css" type="text/css">
+    <link rel="stylesheet" href="https://importcjj.github.io/theme/css/main.css" type="text/css">
+    <link rel="stylesheet" href="https://importcjj.github.io/theme/css/pygments.css" type="text/css">
+    <!--[if lt IE 8]>
+        <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css" rel="stylesheet" type="text/css">
+    <![endif]-->
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet" type="text/css">
 
-          <div class="clearboth"></div>
-          <div id="content">
-<section id="content">
-<h2>Articles in the Python category</h2>
+</head>
 
-  <div class="row">
-    <div class=article-overview>
-      <div class=date>三 18 五月 2016</div>
-      <div class=detail>
-        <h1><a href="https://importcjj.github.io/greenlet-qing-liang-ji-bing-fa-bian-cheng.html" title="Permalink to Greenlet: 轻量级并发编程">Greenlet: 轻量级并发编程</a></h1>
-        <div class=summary><h4>动机</h4>
-<p>greenlet这个包拆分自Stackless。Stackless是一个CPython的版本，实现并支持一种叫做tasklets的微线程。Tasklets会以一种伪并发的方式运行(通常运行在单个或者一些系统级的线程中)，它们之间通过channels来同步数据。</p>
-<p>一个greenlet，从另一方面来说，依然是一种很原始的没有隐式调度的微线程。换句话说，就是协程(coroutine)。这在你想要完全控制代码的运行时是非常有用的。你可以在greenlet之上构建采用自定义调度方式的微线程。然而，使用greenlet来制作先进的控制流结构是很有用的。举个例子，我们可以重新创造生成器。和Python自带的生成器所不同的是，我们的生成器可以调用网状的方法，而且这些网状的方法也可以yield出值。(另外，你不需要再使用<strong>yield</strong>这个关键词了）</p>
-<h4>举例</h4>
-<p>我们来思考一个程序，用户可以在一个类终端控制台中输入命令来控制该程序。假设命令是一个字符一个字符的输入。在这样一个系统中，通常会存在如下一个循环:</p>
-<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">process_commands</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">):</span>
-    <span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
-        <span class="n">line</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
-        <span class="k">while</span> <span class="ow">not</span> <span class="n">line</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">):</span>
-            <span class="n">line</span> <span class="o">+=</span> <span class="n">read_next_char</span><span class="p">()</span>
-        <span class="k">if</span> <span class="n">line</span> <span class="o">==</span> <span class="s1">&#39;quit</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">:</span>
-            <span class="k">print ...</span></pre></div></div>
-      </div>
+<body>
 
-      <!-- tags list -->
-	  <div class="tags">
-        <a class="tag" href="https://importcjj.github.io/tag/concurrent.html">concurrent</a>
-        <a class="tag" href="https://importcjj.github.io/tag/gevent.html">gevent</a>
-      </div>
+   <div class="grid grid-pad">
+     <div class="col-1-1">        
+       <ul id="mainnav">
+          <li><a href="https://importcjj.github.io">home</a></li>
+       </ul>
+       <div id="blogtitle"><a href="https://importcjj.github.io">Signal</a></div>
+       <div id="blogsubtitle"><a href="https://importcjj.github.io"></a></div>
+     </div>
     </div>
-    <div class=article-overview>
-      <div class=date>二 26 四月 2016</div>
-      <div class=detail>
-        <h1><a href="https://importcjj.github.io/pythondan-li-mo-shi-de-shi-xian.html" title="Permalink to Python单例模式的实现">Python单例模式的实现</a></h1>
-        <div class=summary><h4>由于实现的方式很多，先来3种。</h4>
-<h4>1. 类实例实现的单例装饰器</h4>
-<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">functools</span>
 
-<span class="k">class</span> <span class="nc">Singleton</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <div class="grid grid-pad">
+       <div id="left-side" class="col-8-12">
+          <section id="content" class="hyphenate">
 
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">instances</span> <span class="o">=</span> <span class="p">{}</span>
+    <h1 class="title">Entries Category “Python”</h1>        <article class="entry-overview">
+            <div class="date">三 18 五月 2016</div>
+            <div class="detail">
+                <header><h3>
+                    <a href="https://importcjj.github.io/greenlet-qing-liang-ji-bing-fa-bian-cheng.html" rel="bookmark" title="Permalink to Greenlet: 轻量级并发编程">
+                        Greenlet: 轻量级并发编程
+                    </a>
+                </h3></header>
+                <div class="summary">动机 greenlet这个包拆分自Stackless。Stackless是一个CPython的版本，实现并支持一种叫做tasklets的微线程。Tasklets会以一种伪并发的方式运行(通常运行在单个或者一些系统级的线程中)，它们之间通过channels来同步数据。 一个greenlet，从另一方面来说，依然是一种很原始的没有隐式调度的微线程。换句话说，就是协程(coroutine)。这在你想要完全控制代码的运行时是非常有用的。你可以在greenlet之上构建采用自定义调度方式的微线程。然而，使用greenlet来制作先进的控制流结构是很有用的。举个例子，我们可以重新创造生成器。和Python自带的生成器所不同的是，我们的生成器可以调用网状的方法，而且这些网状的方法也可以yield出值。(另外，你不需要再使用yield这个关键词了） 举例 我们来思考一个程序，用户可以在一个类终端控制台中输入命令来控制该程序。假设命令是一个字符一个字符的输入。在这样一个系统中，通常会存在如下一个循环: def process_commands(*args): while True: line = '' while not line.endswith('\n'): line += read_next_char() if line == 'quit\n': print ... <a href="https://importcjj.github.io/greenlet-qing-liang-ji-bing-fa-bian-cheng.html">read more</a></div>
+            </div>
+        </article>
+        <article class="entry-overview">
+            <div class="date">二 26 四月 2016</div>
+            <div class="detail">
+                <header><h3>
+                    <a href="https://importcjj.github.io/pythondan-li-mo-shi-de-shi-xian.html" rel="bookmark" title="Permalink to Python单例模式的实现">
+                        Python单例模式的实现
+                    </a>
+                </h3></header>
+                <div class="summary">由于实现的方式很多，先来3种。 1. 类实例实现的单例装饰器 import functools class Singleton(object): def __init__(self): self.instances = {} def __call__(self, cls): @functools.wraps(cls) def wrapper(*args, **kwargs) if not self.instances.get(cls): self.instances[cls] = cls(*args, **kwargs) return self.instances[cls] return wrapper singleton = Singleton() # 用法 @singleton class Test(object ... <a href="https://importcjj.github.io/pythondan-li-mo-shi-de-shi-xian.html">read more</a></div>
+            </div>
+        </article>
+        <article class="entry-overview">
+            <div class="date">日 27 三月 2016</div>
+            <div class="detail">
+                <header><h3>
+                    <a href="https://importcjj.github.io/python-yieldxiao-ji.html" rel="bookmark" title="Permalink to Python yield小记">
+                        Python yield小记
+                    </a>
+                </h3></header>
+                <div class="summary">yeild yield 一般搭配函数来定义一个Generator(生成器) 一个简单的例子: def f(): print "Today is 7.21" yield 6 f() 将会返回一个Generator, 而非像普通函数一样执行。想要使用生成器的话(比如 i)需要使用i.next() (与next(i)等效) 和i.send(value)。 >>> i = f() >>> i <generator object f at 0x1041e7dc0> >>> i.next() Today is 7.21 6 >>> i.next() Traceback (most recent call last ... <a href="https://importcjj.github.io/python-yieldxiao-ji.html">read more</a></div>
+            </div>
+        </article>
+        <article class="entry-overview">
+            <div class="date">日 27 三月 2016</div>
+            <div class="detail">
+                <header><h3>
+                    <a href="https://importcjj.github.io/pythonzhong-yi-xie-rong-yi-bei-hu-shi-de-dong-xi.html" rel="bookmark" title="Permalink to Python中一些容易被忽视的东西">
+                        Python中一些容易被忽视的东西
+                    </a>
+                </h3></header>
+                <div class="summary">旨在记录Python标准库中好像很厉害的模块或功能。 1. functools.partial(func[,args][, *keywords]) 2. globals() and locals() functools.partial(func[,args][, *keywords]) 为func的参数指定默认值后返回一个新的函数。比如: # disable print as the statement from __future__ import print_function from functools import partial from StringIO import StringIO f = StringIO.StringIO() print = partial(print, file=f) print("This will print to f) # stdout ... <a href="https://importcjj.github.io/pythonzhong-yi-xie-rong-yi-bei-hu-shi-de-dong-xi.html">read more</a></div>
+            </div>
+        </article>
+        <article class="entry-overview">
+            <div class="date">日 27 三月 2016</div>
+            <div class="detail">
+                <header><h3>
+                    <a href="https://importcjj.github.io/shi-yong-pythonzhi-zuo-zi-ding-yi-zhong-duan-ming-ling.html" rel="bookmark" title="Permalink to 使用Python制作自定义终端命令">
+                        使用Python制作自定义终端命令
+                    </a>
+                </h3></header>
+                <div class="summary">介绍 首先，拿pip举个例子，pip是我们使用较多的python包管理工具。当我们安装pip之后，直接在终端中就可以使用pip这个命令。那你有没有想过这是如何实现的？ 其实，pip这个命令最终调用了python所在文件夹bin目录的pip文件。为什么说最终？因为使用系统默认的python安装pip时，可能会在/usr/local/bin或者/usr/bin下创建软链接。如果使用了virtualenv，那么pip文件就在env/bin下。那么pip文件到底是什么呢？答案就是，是一个具有执行权限的python文件，只不过去掉了.py的后缀. 也许你会兴高采烈的去尝试一发，在bin文件下创建xxx.py，打上一句 print “hello world”, 然后去掉.py的后缀, 再使用chmod a+x xxx来赋予它执行的权限。打开终端，敲下xxx。最后你只会得到print: command not found的错误提示。为什么？因为操作系统不知道这是一个py文件。思考一下，我们平时运行py文件都需要打上python xxx.py形式的命令 ... <a href="https://importcjj.github.io/shi-yong-pythonzhi-zuo-zi-ding-yi-zhong-duan-ming-ling.html">read more</a></div>
+            </div>
+        </article>
+        <article class="entry-overview">
+            <div class="date">日 27 三月 2016</div>
+            <div class="detail">
+                <header><h3>
+                    <a href="https://importcjj.github.io/supervisorcelerycelerybeatde-jian-dan-shi-yong.html" rel="bookmark" title="Permalink to supervisor+celery+celerybeat的简单使用">
+                        supervisor+celery+celerybeat的简单使用
+                    </a>
+                </h3></header>
+                <div class="summary">1. 提前准备 略去相关工具的安装过程，其实都挺简单的! celery作为异步任务队列, 需要一个中间人来协助celery存放和消耗任务信息。我们选择rabbitmq来做消息代理人。使用celery之前, 需要使用创建一个rabbitmq的管理员账号和一个能让该账号访问的vhost. Rabbitmq的安装配置以及网页管理插件 假设准备的rabbitmq的信息如下: SETTINGS = { 'user': 'www-data', 'password': 'www-data', 'host': '127.0.0.1', 'port': '5672', 'vhost': 't_celery' } 示例项目结构 test.celery/ |- env/ |- src/ |- __init__.py |- app.py |- task.py 2. celery实例及任务 2.1 生成实例 # -*- coding: utf-8 -*- # filename: app.py from celery import Celery ... <a href="https://importcjj.github.io/supervisorcelerycelerybeatde-jian-dan-shi-yong.html">read more</a></div>
+            </div>
+        </article>
+        <article class="entry-overview">
+            <div class="date">日 27 三月 2016</div>
+            <div class="detail">
+                <header><h3>
+                    <a href="https://importcjj.github.io/zhong-duan-jin-du-tiao-de-jian-dan-yuan-li.html" rel="bookmark" title="Permalink to 终端进度条的简单原理">
+                        终端进度条的简单原理
+                    </a>
+                </h3></header>
+                <div class="summary">进度条 每次使用pip安装一些第三方库时，总会在终端或者命令行中看到进度条，能够让用户等待时得到当前任务的进度。今天偶然在知乎看到一个帖子中提到了这个有趣的功能。 实现方式 一般情况下命令行和终端的输出总是由上往下一行一行输出。如果我们需要实现进度条的效果的效果的话，就需要每次输出都在同一行上，不断地用后来的输出去覆盖之前的输出，从而模拟出一种动态变化的效果。那究竟怎样实现呢？答案就是使用反杠r。 反杠n是换行，反杠r就只是把输出光标移到行首，而不换行。根据这个思路，我们先做个倒计时来玩玩。 import time import sys def CountDown(total_sec): for i in xrange(10, -1, -1): # 不能换行哈 print '%4d\\r' % i, sys.stdout.flush() time.sleep(1) # 防止输出被之后的输出覆盖 print CountDown(10 ... <a href="https://importcjj.github.io/zhong-duan-jin-du-tiao-de-jian-dan-yuan-li.html">read more</a></div>
+            </div>
+        </article>
+        <article class="entry-overview">
+            <div class="date">六 26 三月 2016</div>
+            <div class="detail">
+                <header><h3>
+                    <a href="https://importcjj.github.io/pythondan-ceng-zhuang-shi-qi-xiao-ji.html" rel="bookmark" title="Permalink to Python单层装饰器小记">
+                        Python单层装饰器小记
+                    </a>
+                </h3></header>
+                <div class="summary">解释器什么时候处理装饰器？ 答: Python解释器加载代码的时候. 例如, sleep.py 代码如下 import functools import time def timer(func): print("handle decorator") @functools.wraps(func) def wrapper(*args, **kwargs): start = time.time() rtn = func(*args, **kwargs) cost = time.time() - start print("cost %f s") % cost return rtn return wrapper @timer def sleep(seconds): time.sleep ... <a href="https://importcjj.github.io/pythondan-ceng-zhuang-shi-qi-xiao-ji.html">read more</a></div>
+            </div>
+        </article>
+        <article class="entry-overview">
+            <div class="date">六 26 三月 2016</div>
+            <div class="detail">
+                <header><h3>
+                    <a href="https://importcjj.github.io/pythonde-metaclassxiao-ji.html" rel="bookmark" title="Permalink to Python的metaclass小记">
+                        Python的metaclass小记
+                    </a>
+                </h3></header>
+                <div class="summary">使用metaclass的时候可以使用metaclass的__new__和__init__去改变所定义的类的相关属性，因为这两个方法是在类定义的时候被调用，他们所需的参数也与使用type(name, bases, dict)动态声明类相同。而使用metaclass的__call__可以影响我们所声明的类产生实例的过程，因为当我们使用class_name()去产生实例的时候，相当于call了这个class，而这个class又是metaclass的实例，所以其实调用了metaclass的__call__ 注意: 通过super来调用父类的__new__时，第一个参数需要是该class，这点是不同于调用__init__等其他父类方法的。因为__new__是个静态方法。还有一个小问题就是当父类是object的时候，也就是调用object.__new__()只传一个cls参数就可以了，至于为什么，请戳here 和here。 如果你重写了__new__而没有重写 ... <a href="https://importcjj.github.io/pythonde-metaclassxiao-ji.html">read more</a></div>
+            </div>
+        </article>
 
-    <span class="k">def</span> <span class="fm">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="bp">cls</span><span class="p">):</span>
-        <span class="nd">@functools.wraps</span><span class="p">(</span><span class="bp">cls</span><span class="p">)</span>
-        <span class="k">def</span> <span class="nf">wrapper</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-            <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">instances</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
-                <span class="bp">self</span><span class="o">.</span><span class="n">instances</span><span class="p">[</span><span class="bp">cls</span><span class="p">]</span> <span class="o">=</span> <span class="bp">cls</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">instances</span><span class="p">[</span><span class="bp">cls</span><span class="p">]</span>
-        <span class="k">return</span> <span class="n">wrapper</span>
+          </section>
+       </div>
 
-<span class="n">singleton</span> <span class="o">=</span> <span class="n">Singleton</span><span class="p">()</span>
+       <div id="right-side" class="col-1-12">&nbsp;</div>
+       <div id="right-side" class="col-3-12">
 
-<span class="c1"># 用法</span>
-<span class="nd">@singleton</span>
-<span class="k">class</span> <span class="nc">Test</span><span class="p">(</span><span class="nb">object ...</span></pre></div></div>
-      </div>
+<div class="section-container">
+   <h3>Blogroll</h3>
+   <ul>
+      <li><a href="http://chihiro.moe" target="_blank">Slade <i class="fa fa-globe fa-fw"></i></a></li>
+      <li><a href="http://shenyizhou.github.io" target="_blank">无主之地 <i class="fa fa-globe fa-fw"></i></a></li>
+      <li><a href="http://yuan0.github.io" target="_blank">Junifer <i class="fa fa-globe fa-fw"></i></a></li>
+      <li><a href="http://getpelican.com/" target="_blank">Pelican <i class="fa fa-globe fa-fw"></i></a></li>
+      <li><a href="http://python.org/" target="_blank">Python.org <i class="fa fa-globe fa-fw"></i></a></li>
+      <li><a href="http://jinja.pocoo.org/" target="_blank">Jinja2 <i class="fa fa-globe fa-fw"></i></a></li>
+      <li><a href="http://dongweiming.github.io/Expert-Python/#1" target="_blank">Expert-python <i class="fa fa-globe fa-fw"></i></a></li>
+   </ul>
+</div>
 
-      <!-- tags list -->
-	  <div class="tags">
-        <a class="tag" href="https://importcjj.github.io/tag/singleton.html">singleton</a>
-        <a class="tag" href="https://importcjj.github.io/tag/zhuang-shi-qi.html">装饰器</a>
-      </div>
-    </div>
-    <div class=article-overview>
-      <div class=date>日 27 三月 2016</div>
-      <div class=detail>
-        <h1><a href="https://importcjj.github.io/python-yieldxiao-ji.html" title="Permalink to Python yield小记">Python yield小记</a></h1>
-        <div class=summary><h4>yeild</h4>
-<p><em>yield</em> 一般搭配函数来定义一个Generator(生成器)</p>
-<p>一个简单的例子:</p>
-<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f</span><span class="p">():</span>
-    <span class="k">print</span> <span class="s2">&quot;Today is 7.21&quot;</span>
-    <span class="k">yield</span> <span class="mi">6</span>
-</pre></div>
+<div class="section-container">
+   <h3>Social Network</h3>
+   <ul>
+      <li>
+        <a href="#" target="_blank">You can add links in your config file&nbsp;
+           <i class="fa fa-globe fa-fw"></i>
+        </a>
+      </li>
+      <li>
+        <a href="#" target="_blank">Another social link&nbsp;
+           <i class="fa fa-globe fa-fw"></i>
+        </a>
+      </li>
+   </ul>
+</div>
 
+<div class="section-container">
+   <h3>Categories</h3>
+   <ul>
+        <li><a href="https://importcjj.github.io/category/centos.html">CentOS <i class="fa fa-folder-open fa-fw"></i></a></li>
+        <li><a href="https://importcjj.github.io/category/docker.html">Docker <i class="fa fa-folder-open fa-fw"></i></a></li>
+        <li><a href="https://importcjj.github.io/category/emacs.html">Emacs <i class="fa fa-folder-open fa-fw"></i></a></li>
+        <li><a href="https://importcjj.github.io/category/git.html">git <i class="fa fa-folder-open fa-fw"></i></a></li>
+        <li><a href="https://importcjj.github.io/category/github.html">github <i class="fa fa-folder-open fa-fw"></i></a></li>
+        <li><a href="https://importcjj.github.io/category/go.html">Go <i class="fa fa-folder-open fa-fw"></i></a></li>
+        <li><a href="https://importcjj.github.io/category/markdown.html">Markdown <i class="fa fa-folder-open fa-fw"></i></a></li>
+        <li><a href="https://importcjj.github.io/category/python.html">Python <i class="fa fa-folder-open fa-fw"></i></a></li>
+        <li><a href="https://importcjj.github.io/category/rust.html">Rust <i class="fa fa-folder-open fa-fw"></i></a></li>
+        <li><a href="https://importcjj.github.io/category/sundry.html">sundry <i class="fa fa-folder-open fa-fw"></i></a></li>
+        <li><a href="https://importcjj.github.io/category/tool.html">Tool <i class="fa fa-folder-open fa-fw"></i></a></li>
+   </ul>
+</div>
 
-<p><em>f()</em> 将会返回一个Generator, 而非像普通函数一样执行。想要使用生成器的话(比如 i)需要使用i.next() (与next(i)等效) 和i.send(value)。</p>
-<div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="n">i</span> <span class="o">=</span> <span class="n">f</span><span class="p">()</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">i</span>
-<span class="o">&lt;</span><span class="n">generator</span> <span class="nb">object</span> <span class="n">f</span> <span class="n">at</span> <span class="mh">0x1041e7dc0</span><span class="o">&gt;</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">i</span><span class="o">.</span><span class="n">next</span><span class="p">()</span>
-<span class="n">Today</span> <span class="ow">is</span> <span class="mf">7.21</span>
-<span class="mi">6</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">i</span><span class="o">.</span><span class="n">next</span><span class="p">()</span>
-<span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last ...</span></pre></div></div>
-      </div>
-
-      <!-- tags list -->
-	  <div class="tags">
-        <a class="tag" href="https://importcjj.github.io/tag/yield.html">yield</a>
-        <a class="tag" href="https://importcjj.github.io/tag/sheng-cheng-qi.html">生成器</a>
-        <a class="tag" href="https://importcjj.github.io/tag/python.html">Python</a>
-      </div>
-    </div>
-    <div class=article-overview>
-      <div class=date>日 27 三月 2016</div>
-      <div class=detail>
-        <h1><a href="https://importcjj.github.io/pythonzhong-yi-xie-rong-yi-bei-hu-shi-de-dong-xi.html" title="Permalink to Python中一些容易被忽视的东西">Python中一些容易被忽视的东西</a></h1>
-        <div class=summary><h3>旨在记录Python标准库中好像很厉害的模块或功能。</h3>
-<h5>1. <a href="#particial">functools.partial(func[,<em>args][, </em>*keywords])</a></h5>
-<h5>2. <a href="#globals_and_locals">globals() and locals()</a></h5>
-<h4><a id="particial">functools.partial(func[,<em>args][, </em>*keywords])</a></h4>
-<p>为func的参数指定默认值后返回一个新的函数。比如:</p>
-<div class="highlight"><pre><span></span><span class="c1"># disable print as the statement</span>
-<span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">print_function</span>
-<span class="kn">from</span> <span class="nn">functools</span> <span class="kn">import</span> <span class="n">partial</span>
-<span class="kn">from</span> <span class="nn">StringIO</span> <span class="kn">import</span> <span class="n">StringIO</span>
-
-<span class="n">f</span> <span class="o">=</span> <span class="n">StringIO</span><span class="o">.</span><span class="n">StringIO</span><span class="p">()</span>
-<span class="k">print</span> <span class="o">=</span> <span class="n">partial</span><span class="p">(</span><span class="k">print</span><span class="p">,</span> <span class="nb">file</span><span class="o">=</span><span class="n">f</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="s2">&quot;This will print to f)</span>
-<span class="c1"># stdout ...</span></pre></div></div>
-      </div>
-
-      <!-- tags list -->
-	  <div class="tags">
-        <a class="tag" href="https://importcjj.github.io/tag/python.html">Python</a>
-      </div>
-    </div>
-    <div class=article-overview>
-      <div class=date>日 27 三月 2016</div>
-      <div class=detail>
-        <h1><a href="https://importcjj.github.io/shi-yong-pythonzhi-zuo-zi-ding-yi-zhong-duan-ming-ling.html" title="Permalink to 使用Python制作自定义终端命令">使用Python制作自定义终端命令</a></h1>
-        <div class=summary><h3>介绍</h3>
-<p>首先，拿pip举个例子，pip是我们使用较多的python包管理工具。当我们安装pip之后，直接在终端中就可以使用pip这个命令。那你有没有想过这是如何实现的？</p>
-<p>其实，pip这个命令最终调用了python所在文件夹bin目录的pip文件。为什么说最终？因为使用系统默认的python安装pip时，可能会在/usr/local/bin或者/usr/bin下创建软链接。如果使用了virtualenv，那么pip文件就在env/bin下。那么pip文件到底是什么呢？答案就是，是一个具有执行权限的python文件，只不过去掉了.py的后缀.</p>
-<p>也许你会兴高采烈的去尝试一发，在bin文件下创建xxx.py，打上一句 print “hello world”, 然后去掉.py的后缀, 再使用chmod a+x xxx来赋予它执行的权限。打开终端，敲下xxx。最后你只会得到print: command not found的错误提示。为什么？因为操作系统不知道这是一个py文件。思考一下，我们平时运行py文件都需要打上python xxx.py形式的命令 ...</p></div>
-      </div>
-
-      <!-- tags list -->
-	  <div class="tags">
-        <a class="tag" href="https://importcjj.github.io/tag/python.html">Python</a>
-      </div>
-    </div>
-    <div class=article-overview>
-      <div class=date>日 27 三月 2016</div>
-      <div class=detail>
-        <h1><a href="https://importcjj.github.io/supervisorcelerycelerybeatde-jian-dan-shi-yong.html" title="Permalink to supervisor+celery+celerybeat的简单使用">supervisor+celery+celerybeat的简单使用</a></h1>
-        <div class=summary><h2>1. 提前准备</h2>
-<p>略去相关工具的安装过程，其实都挺简单的!</p>
-<p>celery作为异步任务队列, 需要一个中间人来协助celery存放和消耗任务信息。我们选择rabbitmq来做消息代理人。使用celery之前, 需要使用创建一个rabbitmq的管理员账号和一个能让该账号访问的vhost.</p>
-<p><strong><a href="">Rabbitmq的安装配置以及网页管理插件</a></strong></p>
-<p>假设准备的rabbitmq的信息如下:</p>
-<div class="highlight"><pre><span></span><span class="n">SETTINGS</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s1">&#39;user&#39;</span><span class="p">:</span> <span class="s1">&#39;www-data&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;password&#39;</span><span class="p">:</span> <span class="s1">&#39;www-data&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;host&#39;</span><span class="p">:</span> <span class="s1">&#39;127.0.0.1&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;port&#39;</span><span class="p">:</span> <span class="s1">&#39;5672&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;vhost&#39;</span><span class="p">:</span> <span class="s1">&#39;t_celery&#39;</span>
-<span class="p">}</span>
-</pre></div>
-
-
-<h3>示例项目结构</h3>
-<div class="highlight"><pre><span></span><span class="n">test</span><span class="p">.</span><span class="n">celery</span><span class="o">/</span>
-    <span class="o">|-</span> <span class="n">env</span><span class="o">/</span>
-    <span class="o">|-</span> <span class="n">src</span><span class="o">/</span>
-        <span class="o">|-</span> <span class="n">__init__</span><span class="p">.</span><span class="n">py</span>
-        <span class="o">|-</span> <span class="n">app</span><span class="p">.</span><span class="n">py</span>
-        <span class="o">|-</span> <span class="n">task</span><span class="p">.</span><span class="n">py</span>
-</pre></div>
-
-
-<h2>2. celery实例及任务</h2>
-<h3>2.1 生成实例</h3>
-<div class="highlight"><pre><span></span><span class="c1"># -*- coding: utf-8 -*-</span>
-
-<span class="c1"># filename: app.py</span>
-
-<span class="kn">from</span> <span class="nn">celery</span> <span class="kn">import</span> <span class="n">Celery ...</span></pre></div></div>
-      </div>
-
-      <!-- tags list -->
-	  <div class="tags">
-        <a class="tag" href="https://importcjj.github.io/tag/supervisor.html">supervisor</a>
-        <a class="tag" href="https://importcjj.github.io/tag/celery.html">celery</a>
-        <a class="tag" href="https://importcjj.github.io/tag/python.html">Python</a>
-      </div>
-    </div>
-    <div class=article-overview>
-      <div class=date>日 27 三月 2016</div>
-      <div class=detail>
-        <h1><a href="https://importcjj.github.io/zhong-duan-jin-du-tiao-de-jian-dan-yuan-li.html" title="Permalink to 终端进度条的简单原理">终端进度条的简单原理</a></h1>
-        <div class=summary><h4>进度条</h4>
-<p>每次使用pip安装一些第三方库时，总会在终端或者命令行中看到进度条，能够让用户等待时得到当前任务的进度。今天偶然在知乎看到一个帖子中提到了这个有趣的功能。</p>
-<h4>实现方式</h4>
-<p>一般情况下命令行和终端的输出总是由上往下一行一行输出。如果我们需要实现进度条的效果的效果的话，就需要每次输出都在同一行上，不断地用后来的输出去覆盖之前的输出，从而模拟出一种动态变化的效果。那究竟怎样实现呢？答案就是使用<strong>反杠r</strong>。</p>
-<p><strong>反杠n</strong>是换行，<strong>反杠r</strong>就只是把输出光标移到行首，而不换行。根据这个思路，我们先做个倒计时来玩玩。</p>
-<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">time</span>
-<span class="kn">import</span> <span class="nn">sys</span>
-
-<span class="k">def</span> <span class="nf">CountDown</span><span class="p">(</span><span class="n">total_sec</span><span class="p">):</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">xrange</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">):</span>
-        <span class="c1"># 不能换行哈</span>
-        <span class="k">print</span> <span class="s1">&#39;</span><span class="si">%4d</span><span class="se">\\</span><span class="s1">r&#39;</span> <span class="o">%</span> <span class="n">i</span><span class="p">,</span>
-        <span class="n">sys</span><span class="o">.</span><span class="n">stdout</span><span class="o">.</span><span class="n">flush</span><span class="p">()</span>
-        <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-    <span class="c1"># 防止输出被之后的输出覆盖</span>
-    <span class="k">print</span>
-
-<span class="n">CountDown</span><span class="p">(</span><span class="mi">10 ...</span></pre></div></div>
-      </div>
-
-      <!-- tags list -->
-	  <div class="tags">
-        <a class="tag" href="https://importcjj.github.io/tag/python.html">Python</a>
-      </div>
-    </div>
-    <div class=article-overview>
-      <div class=date>六 26 三月 2016</div>
-      <div class=detail>
-        <h1><a href="https://importcjj.github.io/pythondan-ceng-zhuang-shi-qi-xiao-ji.html" title="Permalink to Python单层装饰器小记">Python单层装饰器小记</a></h1>
-        <div class=summary><h4>解释器什么时候处理装饰器？</h4>
-<p>答: Python解释器加载代码的时候.</p>
-<p>例如, sleep.py 代码如下</p>
-<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">functools</span>
-<span class="kn">import</span> <span class="nn">time</span>
+<div class="section-container">
+   <h3>Tags</h3>
+   <ul class="tagcloud">
+   </ul>
+</div>
 
 
-<span class="k">def</span> <span class="nf">timer</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
-    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;handle decorator&quot;</span><span class="p">)</span>
 
-    <span class="nd">@functools.wraps</span><span class="p">(</span><span class="n">func</span><span class="p">)</span>
-    <span class="k">def</span> <span class="nf">wrapper</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-        <span class="n">start</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
-        <span class="n">rtn</span> <span class="o">=</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-        <span class="n">cost</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="n">start</span>
-        <span class="k">print</span><span class="p">(</span><span class="s2">&quot;cost </span><span class="si">%f</span><span class="s2"> s&quot;</span><span class="p">)</span> <span class="o">%</span> <span class="n">cost</span>
-        <span class="k">return</span> <span class="n">rtn</span>
-    <span class="k">return</span> <span class="n">wrapper</span>
-
-
-<span class="nd">@timer</span>
-<span class="k">def</span> <span class="nf">sleep</span><span class="p">(</span><span class="n">seconds</span><span class="p">):</span>
-    <span class="n">time</span><span class="o">.</span><span class="n">sleep ...</span></pre></div></div>
-      </div>
-
-      <!-- tags list -->
-	  <div class="tags">
-        <a class="tag" href="https://importcjj.github.io/tag/zhuang-shi-qi.html">装饰器</a>
-        <a class="tag" href="https://importcjj.github.io/tag/python.html">Python</a>
-      </div>
-    </div>
-    <div class=article-overview>
-      <div class=date>六 26 三月 2016</div>
-      <div class=detail>
-        <h1><a href="https://importcjj.github.io/pythonde-metaclassxiao-ji.html" title="Permalink to Python的metaclass小记">Python的metaclass小记</a></h1>
-        <div class=summary><p>使用metaclass的时候可以使用<strong>metaclass</strong>的<code>__new__</code>和<code>__init__</code>去改变所定义的类的相关属性，因为这两个方法是在类定义的时候被调用，他们所需的参数也与使用<code>type(name, bases, dict)</code>动态声明类相同。而使用<strong>metaclass</strong>的<code>__call__</code>可以影响我们所声明的类产生实例的过程，因为当我们使用class_name()去产生实例的时候，相当于call了这个class，而这个class又是metaclass的实例，所以其实调用了metaclass的__call__</p>
-<p>注意: 通过<code>super</code>来调用父类的<code>__new__</code>时，第一个参数需要是该class，这点是不同于调用<code>__init__</code>等其他父类方法的。因为<code>__new__</code>是个静态方法。还有一个小问题就是当父类是object的时候，也就是调用<code>object.__new__()</code>只传一个cls参数就可以了，至于为什么，请戳<a href="https://mail.python.org/pipermail/python-dev/2008-February/076854.html">here</a>
-和<a href="http://bugs.python.org/issue1683368">here</a>。 如果你重写了<code>__new__</code>而没有重写 ...</p></div>
-      </div>
-
-      <!-- tags list -->
-	  <div class="tags">
-        <a class="tag" href="https://importcjj.github.io/tag/metaclass.html">metaclass</a>
-        <a class="tag" href="https://importcjj.github.io/tag/python.html">Python</a>
-      </div>
-    </div>
-  </div><!-- /.row -->
-
-</section><!-- /#content -->
+          <div class="section-container" id="copyright">
+             <p>This Blog generated by <a href="http://getpelican.com/">Pelican</a> using <a href="https://github.com/habibillah/pujangga">Pujangga</a> theme. All content on this blog, unless stated otherwise, is licensed under the <a href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0 International license</a>.</p>
           </div>
-        </div>
+       </div>
+    </div>
 
-        <!-- footer -->
-        <div class=footer>
-          <div class="textwidget">
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', '']);
+      _gaq.push(['_trackPageview']);
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+ 
 
+    <script type="text/javascript" src="https://importcjj.github.io/theme/js/hyphenator.js"></script>
+    <script type="text/javascript">
+      Hyphenator.config({
+          donthyphenateclassname: 'docutils',
+          useCSS3hyphenation: true
+      });
+      Hyphenator.run();
+    </script>
 
+</body>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-          </div>
-
-          <p>
-            Carburize with <a href="http://blog.getpelican.com">pelican</a></p>
-          <p><a href="https://github.com/badele/pelican-theme-jesuislibre">jesuislibre</a> theme, inspired by <a href="http://blog.dbrgn.ch">dbrng</a> blog</p>
-          <p><a href="http://bruno.adele.im">about author</a></p>
-      </div>
-
-
-     </body>
 </html>

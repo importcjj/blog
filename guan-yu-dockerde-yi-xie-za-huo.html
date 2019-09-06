@@ -1,50 +1,62 @@
 <!doctype html>
 <html lang="en">
-    <head>
-        <title>关于Docker的一些杂货</title>
 
-        <!-- meta -->
-        <meta charset="utf-8" />
-        <meta name="author" content="importcjj" />
+<head>
 
-        <!-- Feeds -->
+    <title>关于Docker的一些杂货 - Signal</title>
 
-        <!-- Style -->
-        <link href="https://fonts.googleapis.com/css?family=Linden+Hill:400,400italic" rel="stylesheet" type="text/css" />
-        <link rel="stylesheet" href="https://importcjj.github.io/theme/css/main.css" type="text/css" />
-        <link rel="shortcut icon" href="https://importcjj.github.io/theme/favicon.ico" />
+    <!-- meta -->
+    <meta charset="utf-8" />
+    <meta name="author" content="importcjj" />
+    <meta name="dc.language" content="en" />
+    <meta name="dc.license" content="">
 
-        <!-- Google analytics -->
+    <!-- favicon -->
+    <link rel="icon" href="https://importcjj.github.io/theme/favicon.ico" type="image/x-icon">
 
-    </head>
-    <body>
-        <div id="wrapper">
-          <div id="blogtitle">
-            <a href="https://importcjj.github.io/">Signal</a>
-         </div>
+    <!-- newsfeeds -->
 
-          <!-- Blogroll -->
-          <ul id="mainnav">
-            <li><a href="http://chihiro.moe">Slade</a></li>
-            <li><a href="http://shenyizhou.github.io">无主之地</a></li>
-            <li><a href="http://yuan0.github.io">Junifer</a></li>
-            <li><a href="http://getpelican.com/">Pelican</a></li>
-            <li><a href="http://python.org/">Python.org</a></li>
-            <li><a href="http://jinja.pocoo.org/">Jinja2</a></li>
-            <li><a href="http://dongweiming.github.io/Expert-Python/#1">Expert-python</a></li>
-          </ul>
+    <!-- assets -->
+    <!--[if lt IE 9]>
+        <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+   
+    <link href="https://fonts.googleapis.com/css?family=Linden+Hill:400,400italic" rel="stylesheet" type="text/css">
+    <link href='http://fonts.googleapis.com/css?family=Anonymous+Pro' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://importcjj.github.io/theme/css/simplegrid.css" type="text/css">
+    <link rel="stylesheet" href="https://importcjj.github.io/theme/css/main.css" type="text/css">
+    <link rel="stylesheet" href="https://importcjj.github.io/theme/css/pygments.css" type="text/css">
+    <!--[if lt IE 8]>
+        <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css" rel="stylesheet" type="text/css">
+    <![endif]-->
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet" type="text/css">
 
-          <div class="clearboth"></div>
-          <div id="content">
+</head>
 
-<h1>关于Docker的一些杂货</h1>
-<div class=date>日 27 三月 2016
- / <span class="tags">
-  <a class="tag" href="https://importcjj.github.io/tag/docker.html">Docker</a>
-</span>
-</div>
+<body>
 
-<h4>如何在外部获取容器的日志?</h4>
+   <div class="grid grid-pad">
+     <div class="col-1-1">        
+       <ul id="mainnav">
+          <li><a href="https://importcjj.github.io">home</a></li>
+       </ul>
+       <div id="blogtitle"><a href="https://importcjj.github.io">Signal</a></div>
+       <div id="blogsubtitle"><a href="https://importcjj.github.io"></a></div>
+     </div>
+    </div>
+
+    <div class="grid grid-pad">
+       <div id="left-side" class="col-8-12">
+          <section id="content" class="hyphenate">
+
+    <h1 class="title">关于Docker的一些杂货</h1>
+
+        <div class="date">
+            <p>written on 日 27 三月 2016
+            by <a rel="author" href="https://importcjj.github.io/pages/aboutme.html">importcjj</a></p>
+        </div>
+
+    <div class="clearboth"><h4>如何在外部获取容器的日志?</h4>
 <p>可以使用<code>docker logs -f &lt;container&gt;</code>的方式在宿主机显示容器进程所产生的日志，就像我们使用tail那样。但是如果我们需要访问的并不是容器主进程所记录的日志呢？比如说，现在有一个很简单的web应用，我们选择让他运行在Docker容器里面，web服务器使用了gunicorn，它支持使用参数<code>--access-file=filename</code>来将该web应用的访问请求记录到指定的日志中去。当我们需要方便的获取这些访问记录或者实时查看的时候，应该怎么做？</p>
 <p>当我们的web应用运行时，gunicorn所记录的日志只存在于docker系统的读写层(容器container)，而不会影响到只读层(镜像image)。如果我们想要较为方便的得到容器中的日志文件，可以使用Docker提供的的<code>volume</code>。你可以理解为将宿主系统的文件夹挂载至容器中从而达到实时共享文件夹的目的。</p>
 <p>你可以在很多地方指定volume, 比如:</p>
@@ -81,60 +93,117 @@
 
 <p>这样一来，宿主机的<code>/host/dir/path</code>文件夹就被mount到了容器的<code>/container/dir/path</code>，如果容器中原本就有该文件夹， 那么原来的内容会被隐藏。当取消mount后，才可以访问原先的文件。</p>
 <h5>3. docker run 的<code>--volumes-from</code>参数</h5>
-<p>这个参数主要用于多个容器共享一个volume。有连个容器A指定了volume, 当我们使用命令<code>docker run --volumes-from A --name B &lt;image&gt;</code>新建容器B时，B就和A共享volume了。</p>
-<div class="author">
-  <a href="">
-    <img src="" alt="importcjj" width="128" height="108"/>
-  </a>
-  <div class="infos">
-    <h3>A propos de <a href="">importcjj</a></h3>	
-    <p></p>
-  </div>
-</div>
-<h2>Comments</h2>
+<p>这个参数主要用于多个容器共享一个volume。有连个容器A指定了volume, 当我们使用命令<code>docker run --volumes-from A --name B &lt;image&gt;</code>新建容器B时，B就和A共享volume了。</p></div>
+
+        <div class="tags">
+            <p>This entry was tagged on  
+                <a href="https://importcjj.github.io/tag/docker.html">#Docker</a></p>
+        </div>
+
 <div id="disqus_thread"></div>
 <script type="text/javascript">
-    var disqus_shortname = 'importcjj';
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = "importcjj";
+    var disqus_title = "关于Docker的一些杂货";
+    var disqus_url = "https://importcjj.github.io/guan-yu-dockerde-yi-xie-za-huo.html";
 
+    /* * * DON'T EDIT BELOW THIS LINE * * */
     (function() {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
         (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     })();
 </script>
 <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+          </section>
+       </div>
+
+       <div id="right-side" class="col-1-12">&nbsp;</div>
+       <div id="right-side" class="col-3-12">
+
+<div class="section-container">
+   <h3>Blogroll</h3>
+   <ul>
+      <li><a href="http://chihiro.moe" target="_blank">Slade <i class="fa fa-globe fa-fw"></i></a></li>
+      <li><a href="http://shenyizhou.github.io" target="_blank">无主之地 <i class="fa fa-globe fa-fw"></i></a></li>
+      <li><a href="http://yuan0.github.io" target="_blank">Junifer <i class="fa fa-globe fa-fw"></i></a></li>
+      <li><a href="http://getpelican.com/" target="_blank">Pelican <i class="fa fa-globe fa-fw"></i></a></li>
+      <li><a href="http://python.org/" target="_blank">Python.org <i class="fa fa-globe fa-fw"></i></a></li>
+      <li><a href="http://jinja.pocoo.org/" target="_blank">Jinja2 <i class="fa fa-globe fa-fw"></i></a></li>
+      <li><a href="http://dongweiming.github.io/Expert-Python/#1" target="_blank">Expert-python <i class="fa fa-globe fa-fw"></i></a></li>
+   </ul>
+</div>
+
+<div class="section-container">
+   <h3>Social Network</h3>
+   <ul>
+      <li>
+        <a href="#" target="_blank">You can add links in your config file&nbsp;
+           <i class="fa fa-globe fa-fw"></i>
+        </a>
+      </li>
+      <li>
+        <a href="#" target="_blank">Another social link&nbsp;
+           <i class="fa fa-globe fa-fw"></i>
+        </a>
+      </li>
+   </ul>
+</div>
+
+<div class="section-container">
+   <h3>Categories</h3>
+   <ul>
+        <li><a href="https://importcjj.github.io/category/centos.html">CentOS <i class="fa fa-folder-open fa-fw"></i></a></li>
+        <li><a href="https://importcjj.github.io/category/docker.html">Docker <i class="fa fa-folder-open fa-fw"></i></a></li>
+        <li><a href="https://importcjj.github.io/category/emacs.html">Emacs <i class="fa fa-folder-open fa-fw"></i></a></li>
+        <li><a href="https://importcjj.github.io/category/git.html">git <i class="fa fa-folder-open fa-fw"></i></a></li>
+        <li><a href="https://importcjj.github.io/category/github.html">github <i class="fa fa-folder-open fa-fw"></i></a></li>
+        <li><a href="https://importcjj.github.io/category/go.html">Go <i class="fa fa-folder-open fa-fw"></i></a></li>
+        <li><a href="https://importcjj.github.io/category/markdown.html">Markdown <i class="fa fa-folder-open fa-fw"></i></a></li>
+        <li><a href="https://importcjj.github.io/category/python.html">Python <i class="fa fa-folder-open fa-fw"></i></a></li>
+        <li><a href="https://importcjj.github.io/category/rust.html">Rust <i class="fa fa-folder-open fa-fw"></i></a></li>
+        <li><a href="https://importcjj.github.io/category/sundry.html">sundry <i class="fa fa-folder-open fa-fw"></i></a></li>
+        <li><a href="https://importcjj.github.io/category/tool.html">Tool <i class="fa fa-folder-open fa-fw"></i></a></li>
+   </ul>
+</div>
+
+<div class="section-container">
+   <h3>Tags</h3>
+   <ul class="tagcloud">
+   </ul>
+</div>
 
 
+
+          <div class="section-container" id="copyright">
+             <p>This Blog generated by <a href="http://getpelican.com/">Pelican</a> using <a href="https://github.com/habibillah/pujangga">Pujangga</a> theme. All content on this blog, unless stated otherwise, is licensed under the <a href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0 International license</a>.</p>
           </div>
-        </div>
+       </div>
+    </div>
 
-        <!-- footer -->
-        <div class=footer>
-          <div class="textwidget">
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', '']);
+      _gaq.push(['_trackPageview']);
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+ 
 
+    <script type="text/javascript" src="https://importcjj.github.io/theme/js/hyphenator.js"></script>
+    <script type="text/javascript">
+      Hyphenator.config({
+          donthyphenateclassname: 'docutils',
+          useCSS3hyphenation: true
+      });
+      Hyphenator.run();
+    </script>
 
+</body>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-          </div>
-
-          <p>
-            Carburize with <a href="http://blog.getpelican.com">pelican</a></p>
-          <p><a href="https://github.com/badele/pelican-theme-jesuislibre">jesuislibre</a> theme, inspired by <a href="http://blog.dbrgn.ch">dbrng</a> blog</p>
-          <p><a href="http://bruno.adele.im">about author</a></p>
-      </div>
-
-
-     </body>
 </html>

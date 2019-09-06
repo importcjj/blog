@@ -1,94 +1,153 @@
-<?xml version="1.0" encoding="utf-8"?>
 <!doctype html>
 <html lang="en">
-    <head>
-        <title>Signal <small>metaclass</small></title>
 
-        <!-- meta -->
-        <meta charset="utf-8" />
-        <meta name="author" content="importcjj" />
+<head>
 
-        <!-- Feeds -->
+    <title>Entries tagged "metaclass" - Signal</title>
 
-        <!-- Style -->
-        <link href="https://fonts.googleapis.com/css?family=Linden+Hill:400,400italic" rel="stylesheet" type="text/css" />
-        <link rel="stylesheet" href="https://importcjj.github.io/theme/css/main.css" type="text/css" />
-        <link rel="shortcut icon" href="https://importcjj.github.io/theme/favicon.ico" />
+    <!-- meta -->
+    <meta charset="utf-8" />
+    <meta name="author" content="importcjj" />
+    <meta name="dc.language" content="en" />
+    <meta name="dc.license" content="">
 
-        <!-- Google analytics -->
+    <!-- favicon -->
+    <link rel="icon" href="https://importcjj.github.io/theme/favicon.ico" type="image/x-icon">
 
-    </head>
-    <body>
-        <div id="wrapper">
-          <div id="blogtitle">
-            <a href="https://importcjj.github.io/">Signal</a>
-         </div>
+    <!-- newsfeeds -->
 
-          <!-- Blogroll -->
-          <ul id="mainnav">
-            <li><a href="http://chihiro.moe">Slade</a></li>
-            <li><a href="http://shenyizhou.github.io">无主之地</a></li>
-            <li><a href="http://yuan0.github.io">Junifer</a></li>
-            <li><a href="http://getpelican.com/">Pelican</a></li>
-            <li><a href="http://python.org/">Python.org</a></li>
-            <li><a href="http://jinja.pocoo.org/">Jinja2</a></li>
-            <li><a href="http://dongweiming.github.io/Expert-Python/#1">Expert-python</a></li>
-          </ul>
+    <!-- assets -->
+    <!--[if lt IE 9]>
+        <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+   
+    <link href="https://fonts.googleapis.com/css?family=Linden+Hill:400,400italic" rel="stylesheet" type="text/css">
+    <link href='http://fonts.googleapis.com/css?family=Anonymous+Pro' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://importcjj.github.io/theme/css/simplegrid.css" type="text/css">
+    <link rel="stylesheet" href="https://importcjj.github.io/theme/css/main.css" type="text/css">
+    <link rel="stylesheet" href="https://importcjj.github.io/theme/css/pygments.css" type="text/css">
+    <!--[if lt IE 8]>
+        <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css" rel="stylesheet" type="text/css">
+    <![endif]-->
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet" type="text/css">
 
-          <div class="clearboth"></div>
-          <div id="content">
-<section id="content">
+</head>
 
+<body>
 
-  <div class="row">
-    <div class=article-overview>
-      <div class=date>六 26 三月 2016</div>
-      <div class=detail>
-        <h1><a href="https://importcjj.github.io/pythonde-metaclassxiao-ji.html" title="Permalink to Python的metaclass小记">Python的metaclass小记</a></h1>
-        <div class=summary><p>使用metaclass的时候可以使用<strong>metaclass</strong>的<code>__new__</code>和<code>__init__</code>去改变所定义的类的相关属性，因为这两个方法是在类定义的时候被调用，他们所需的参数也与使用<code>type(name, bases, dict)</code>动态声明类相同。而使用<strong>metaclass</strong>的<code>__call__</code>可以影响我们所声明的类产生实例的过程，因为当我们使用class_name()去产生实例的时候，相当于call了这个class，而这个class又是metaclass的实例，所以其实调用了metaclass的__call__</p>
-<p>注意: 通过<code>super</code>来调用父类的<code>__new__</code>时，第一个参数需要是该class，这点是不同于调用<code>__init__</code>等其他父类方法的。因为<code>__new__</code>是个静态方法。还有一个小问题就是当父类是object的时候，也就是调用<code>object.__new__()</code>只传一个cls参数就可以了，至于为什么，请戳<a href="https://mail.python.org/pipermail/python-dev/2008-February/076854.html">here</a>
-和<a href="http://bugs.python.org/issue1683368">here</a>。 如果你重写了<code>__new__</code>而没有重写 ...</p></div>
-      </div>
-
-      <!-- tags list -->
-	  <div class="tags">
-        <a class="tag" href="https://importcjj.github.io/tag/metaclass.html">metaclass</a>
-        <a class="tag" href="https://importcjj.github.io/tag/python.html">Python</a>
-      </div>
+   <div class="grid grid-pad">
+     <div class="col-1-1">        
+       <ul id="mainnav">
+          <li><a href="https://importcjj.github.io">home</a></li>
+       </ul>
+       <div id="blogtitle"><a href="https://importcjj.github.io">Signal</a></div>
+       <div id="blogsubtitle"><a href="https://importcjj.github.io"></a></div>
+     </div>
     </div>
-  </div><!-- /.row -->
 
-</section><!-- /#content -->
+    <div class="grid grid-pad">
+       <div id="left-side" class="col-8-12">
+          <section id="content" class="hyphenate">
+
+    <h1 class="title">Entries tagged “#metaclass”</h1>        <article class="entry-overview">
+            <div class="date">六 26 三月 2016</div>
+            <div class="detail">
+                <header><h3>
+                    <a href="https://importcjj.github.io/pythonde-metaclassxiao-ji.html" rel="bookmark" title="Permalink to Python的metaclass小记">
+                        Python的metaclass小记
+                    </a>
+                </h3></header>
+                <div class="summary">使用metaclass的时候可以使用metaclass的__new__和__init__去改变所定义的类的相关属性，因为这两个方法是在类定义的时候被调用，他们所需的参数也与使用type(name, bases, dict)动态声明类相同。而使用metaclass的__call__可以影响我们所声明的类产生实例的过程，因为当我们使用class_name()去产生实例的时候，相当于call了这个class，而这个class又是metaclass的实例，所以其实调用了metaclass的__call__ 注意: 通过super来调用父类的__new__时，第一个参数需要是该class，这点是不同于调用__init__等其他父类方法的。因为__new__是个静态方法。还有一个小问题就是当父类是object的时候，也就是调用object.__new__()只传一个cls参数就可以了，至于为什么，请戳here 和here。 如果你重写了__new__而没有重写 ... <a href="https://importcjj.github.io/pythonde-metaclassxiao-ji.html">read more</a></div>
+            </div>
+        </article>
+
+          </section>
+       </div>
+
+       <div id="right-side" class="col-1-12">&nbsp;</div>
+       <div id="right-side" class="col-3-12">
+
+<div class="section-container">
+   <h3>Blogroll</h3>
+   <ul>
+      <li><a href="http://chihiro.moe" target="_blank">Slade <i class="fa fa-globe fa-fw"></i></a></li>
+      <li><a href="http://shenyizhou.github.io" target="_blank">无主之地 <i class="fa fa-globe fa-fw"></i></a></li>
+      <li><a href="http://yuan0.github.io" target="_blank">Junifer <i class="fa fa-globe fa-fw"></i></a></li>
+      <li><a href="http://getpelican.com/" target="_blank">Pelican <i class="fa fa-globe fa-fw"></i></a></li>
+      <li><a href="http://python.org/" target="_blank">Python.org <i class="fa fa-globe fa-fw"></i></a></li>
+      <li><a href="http://jinja.pocoo.org/" target="_blank">Jinja2 <i class="fa fa-globe fa-fw"></i></a></li>
+      <li><a href="http://dongweiming.github.io/Expert-Python/#1" target="_blank">Expert-python <i class="fa fa-globe fa-fw"></i></a></li>
+   </ul>
+</div>
+
+<div class="section-container">
+   <h3>Social Network</h3>
+   <ul>
+      <li>
+        <a href="#" target="_blank">You can add links in your config file&nbsp;
+           <i class="fa fa-globe fa-fw"></i>
+        </a>
+      </li>
+      <li>
+        <a href="#" target="_blank">Another social link&nbsp;
+           <i class="fa fa-globe fa-fw"></i>
+        </a>
+      </li>
+   </ul>
+</div>
+
+<div class="section-container">
+   <h3>Categories</h3>
+   <ul>
+        <li><a href="https://importcjj.github.io/category/centos.html">CentOS <i class="fa fa-folder-open fa-fw"></i></a></li>
+        <li><a href="https://importcjj.github.io/category/docker.html">Docker <i class="fa fa-folder-open fa-fw"></i></a></li>
+        <li><a href="https://importcjj.github.io/category/emacs.html">Emacs <i class="fa fa-folder-open fa-fw"></i></a></li>
+        <li><a href="https://importcjj.github.io/category/git.html">git <i class="fa fa-folder-open fa-fw"></i></a></li>
+        <li><a href="https://importcjj.github.io/category/github.html">github <i class="fa fa-folder-open fa-fw"></i></a></li>
+        <li><a href="https://importcjj.github.io/category/go.html">Go <i class="fa fa-folder-open fa-fw"></i></a></li>
+        <li><a href="https://importcjj.github.io/category/markdown.html">Markdown <i class="fa fa-folder-open fa-fw"></i></a></li>
+        <li><a href="https://importcjj.github.io/category/python.html">Python <i class="fa fa-folder-open fa-fw"></i></a></li>
+        <li><a href="https://importcjj.github.io/category/rust.html">Rust <i class="fa fa-folder-open fa-fw"></i></a></li>
+        <li><a href="https://importcjj.github.io/category/sundry.html">sundry <i class="fa fa-folder-open fa-fw"></i></a></li>
+        <li><a href="https://importcjj.github.io/category/tool.html">Tool <i class="fa fa-folder-open fa-fw"></i></a></li>
+   </ul>
+</div>
+
+<div class="section-container">
+   <h3>Tags</h3>
+   <ul class="tagcloud">
+   </ul>
+</div>
+
+
+
+          <div class="section-container" id="copyright">
+             <p>This Blog generated by <a href="http://getpelican.com/">Pelican</a> using <a href="https://github.com/habibillah/pujangga">Pujangga</a> theme. All content on this blog, unless stated otherwise, is licensed under the <a href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0 International license</a>.</p>
           </div>
-        </div>
+       </div>
+    </div>
 
-        <!-- footer -->
-        <div class=footer>
-          <div class="textwidget">
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', '']);
+      _gaq.push(['_trackPageview']);
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+ 
 
+    <script type="text/javascript" src="https://importcjj.github.io/theme/js/hyphenator.js"></script>
+    <script type="text/javascript">
+      Hyphenator.config({
+          donthyphenateclassname: 'docutils',
+          useCSS3hyphenation: true
+      });
+      Hyphenator.run();
+    </script>
 
+</body>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-          </div>
-
-          <p>
-            Carburize with <a href="http://blog.getpelican.com">pelican</a></p>
-          <p><a href="https://github.com/badele/pelican-theme-jesuislibre">jesuislibre</a> theme, inspired by <a href="http://blog.dbrgn.ch">dbrng</a> blog</p>
-          <p><a href="http://bruno.adele.im">about author</a></p>
-      </div>
-
-
-     </body>
 </html>

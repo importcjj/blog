@@ -1,129 +1,164 @@
-<?xml version="1.0" encoding="utf-8"?>
 <!doctype html>
 <html lang="en">
-    <head>
-        <title>Signal</title>
 
-        <!-- meta -->
-        <meta charset="utf-8" />
-        <meta name="author" content="importcjj" />
+<head>
 
-        <!-- Feeds -->
+    <title>Entries Category "Docker" - Signal</title>
 
-        <!-- Style -->
-        <link href="https://fonts.googleapis.com/css?family=Linden+Hill:400,400italic" rel="stylesheet" type="text/css" />
-        <link rel="stylesheet" href="https://importcjj.github.io/theme/css/main.css" type="text/css" />
-        <link rel="shortcut icon" href="https://importcjj.github.io/theme/favicon.ico" />
+    <!-- meta -->
+    <meta charset="utf-8" />
+    <meta name="author" content="importcjj" />
+    <meta name="dc.language" content="en" />
+    <meta name="dc.license" content="">
 
-        <!-- Google analytics -->
+    <!-- favicon -->
+    <link rel="icon" href="https://importcjj.github.io/theme/favicon.ico" type="image/x-icon">
 
-    </head>
-    <body>
-        <div id="wrapper">
-          <div id="blogtitle">
-            <a href="https://importcjj.github.io/">Signal</a>
-         </div>
+    <!-- newsfeeds -->
 
-          <!-- Blogroll -->
-          <ul id="mainnav">
-            <li><a href="http://chihiro.moe">Slade</a></li>
-            <li><a href="http://shenyizhou.github.io">无主之地</a></li>
-            <li><a href="http://yuan0.github.io">Junifer</a></li>
-            <li><a href="http://getpelican.com/">Pelican</a></li>
-            <li><a href="http://python.org/">Python.org</a></li>
-            <li><a href="http://jinja.pocoo.org/">Jinja2</a></li>
-            <li><a href="http://dongweiming.github.io/Expert-Python/#1">Expert-python</a></li>
-          </ul>
+    <!-- assets -->
+    <!--[if lt IE 9]>
+        <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+   
+    <link href="https://fonts.googleapis.com/css?family=Linden+Hill:400,400italic" rel="stylesheet" type="text/css">
+    <link href='http://fonts.googleapis.com/css?family=Anonymous+Pro' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://importcjj.github.io/theme/css/simplegrid.css" type="text/css">
+    <link rel="stylesheet" href="https://importcjj.github.io/theme/css/main.css" type="text/css">
+    <link rel="stylesheet" href="https://importcjj.github.io/theme/css/pygments.css" type="text/css">
+    <!--[if lt IE 8]>
+        <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css" rel="stylesheet" type="text/css">
+    <![endif]-->
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet" type="text/css">
 
-          <div class="clearboth"></div>
-          <div id="content">
-<section id="content">
-<h2>Articles in the Docker category</h2>
+</head>
 
-  <div class="row">
-    <div class=article-overview>
-      <div class=date>日 27 三月 2016</div>
-      <div class=detail>
-        <h1><a href="https://importcjj.github.io/dockerfilecan-shu-xue-xi.html" title="Permalink to Dockerfile参数学习">Dockerfile参数学习</a></h1>
-        <div class=summary><h4>镜像和容器</h4>
-<p>容器是镜像的实例。一个镜像可以对应多个容器。每次使用<code>docker run &lt;image&gt;</code>时都会重新创建该镜像的一个容器，我们可以为该命令指定--name <name>来为所产生的容器指定名字:</p>
-<p><code>docker run -d --name serve ubuntu</code> 这样根据ubuntu这个镜像产生的容器就叫<em>serve</em>。</p>
-<p>。当容器运行时，我们对容器的修改只会写人到容器的文件系统，而不会影响到对应镜像。所以， 前一次run形成的改动不会影响到后一次run所创建的容器。想要这些修改对image生效， 可以使用<code>docker commit &lt;container&gt;</code></p>
-<div class="highlight"><pre><span></span>                <span class="err">├─</span> <span class="err">可写层</span><span class="p">(</span><span class="n">container</span><span class="p">)</span>
-<span class="err">内核层</span> <span class="o">-</span> <span class="err">镜像层</span> <span class="err">─</span> <span class="err">├─</span> <span class="err">可写层</span><span class="p">(</span><span class="n">container</span><span class="p">)</span>
-                <span class="err">├─</span> <span class="err">可写层</span><span class="p">(</span><span class="n">container</span><span class="p">)</span>
-</pre></div>
+<body>
 
-
-<p><strong>内核层 - 镜像层 -可写层(container)</strong></p>
-<h4>CMD和ENTRYPOINT的区别</h4>
-<p>首先两者都可以让你在容器运行的时候执行一条命令，而且这两个字段在Dockerfile中只能指定一次，如果指定多次，那么则以最后一次为准。</p>
-<p>再来说两者的区别: 假如我们在运行容器的命令<code>docker run &lt;image ...</code></p></div>
-      </div>
-
-      <!-- tags list -->
-	  <div class="tags">
-        <a class="tag" href="https://importcjj.github.io/tag/docker.html">Docker</a>
-        <a class="tag" href="https://importcjj.github.io/tag/dockerfile.html">Dockerfile</a>
-      </div>
+   <div class="grid grid-pad">
+     <div class="col-1-1">        
+       <ul id="mainnav">
+          <li><a href="https://importcjj.github.io">home</a></li>
+       </ul>
+       <div id="blogtitle"><a href="https://importcjj.github.io">Signal</a></div>
+       <div id="blogsubtitle"><a href="https://importcjj.github.io"></a></div>
+     </div>
     </div>
-    <div class=article-overview>
-      <div class=date>日 27 三月 2016</div>
-      <div class=detail>
-        <h1><a href="https://importcjj.github.io/guan-yu-dockerde-yi-xie-za-huo.html" title="Permalink to 关于Docker的一些杂货">关于Docker的一些杂货</a></h1>
-        <div class=summary><h4>如何在外部获取容器的日志?</h4>
-<p>可以使用<code>docker logs -f &lt;container&gt;</code>的方式在宿主机显示容器进程所产生的日志，就像我们使用tail那样。但是如果我们需要访问的并不是容器主进程所记录的日志呢？比如说，现在有一个很简单的web应用，我们选择让他运行在Docker容器里面，web服务器使用了gunicorn，它支持使用参数<code>--access-file=filename</code>来将该web应用的访问请求记录到指定的日志中去。当我们需要方便的获取这些访问记录或者实时查看的时候，应该怎么做？</p>
-<p>当我们的web应用运行时，gunicorn所记录的日志只存在于docker系统的读写层(容器container)，而不会影响到只读层(镜像image)。如果我们想要较为方便的得到容器中的日志文件，可以使用Docker提供的的<code>volume</code>。你可以理解为将宿主系统的文件夹挂载至容器中从而达到实时共享文件夹的目的。</p>
-<p>你可以在很多地方指定volume, 比如:</p>
-<h5>1. Dockerfile 的<code>VOLUME</code>命令</h5>
-<div class="highlight"><pre><span></span><span class="c"># Dockerfile</span>
 
-<span class="k">RUN</span> mkdir -p /data/logs/webapp
-<span class="k">VOLUME</span><span class="s"> /data/logs/webapp</span>
-</pre></div>
+    <div class="grid grid-pad">
+       <div id="left-side" class="col-8-12">
+          <section id="content" class="hyphenate">
+
+    <h1 class="title">Entries Category “Docker”</h1>        <article class="entry-overview">
+            <div class="date">日 27 三月 2016</div>
+            <div class="detail">
+                <header><h3>
+                    <a href="https://importcjj.github.io/dockerfilecan-shu-xue-xi.html" rel="bookmark" title="Permalink to Dockerfile参数学习">
+                        Dockerfile参数学习
+                    </a>
+                </h3></header>
+                <div class="summary">镜像和容器 容器是镜像的实例。一个镜像可以对应多个容器。每次使用docker run <image>时都会重新创建该镜像的一个容器，我们可以为该命令指定--name 来为所产生的容器指定名字: docker run -d --name serve ubuntu 这样根据ubuntu这个镜像产生的容器就叫serve。 。当容器运行时，我们对容器的修改只会写人到容器的文件系统，而不会影响到对应镜像。所以， 前一次run形成的改动不会影响到后一次run所创建的容器。想要这些修改对image生效， 可以使用docker commit <container> ├─ 可写层(container) 内核层 - 镜像层 ─ ├─ 可写层(container) ├─ 可写层(container) 内核层 - 镜像层 -可写层(container) CMD和ENTRYPOINT的区别 首先两者都可以让你在容器运行的时候执行一条命令，而且这两个字段在Dockerfile中只能指定一次，如果指定多次，那么则以最后一次为准。 再来说两者的区别: 假如我们在运行容器的命令docker run <image ... <a href="https://importcjj.github.io/dockerfilecan-shu-xue-xi.html">read more</a></div>
+            </div>
+        </article>
+        <article class="entry-overview">
+            <div class="date">日 27 三月 2016</div>
+            <div class="detail">
+                <header><h3>
+                    <a href="https://importcjj.github.io/guan-yu-dockerde-yi-xie-za-huo.html" rel="bookmark" title="Permalink to 关于Docker的一些杂货">
+                        关于Docker的一些杂货
+                    </a>
+                </h3></header>
+                <div class="summary">如何在外部获取容器的日志? 可以使用docker logs -f <container>的方式在宿主机显示容器进程所产生的日志，就像我们使用tail那样。但是如果我们需要访问的并不是容器主进程所记录的日志呢？比如说，现在有一个很简单的web应用，我们选择让他运行在Docker容器里面，web服务器使用了gunicorn，它支持使用参数--access-file=filename来将该web应用的访问请求记录到指定的日志中去。当我们需要方便的获取这些访问记录或者实时查看的时候，应该怎么做？ 当我们的web应用运行时，gunicorn所记录的日志只存在于docker系统的读写层(容器container)，而不会影响到只读层(镜像image)。如果我们想要较为方便的得到容器中的日志文件，可以使用Docker提供的的volume。你可以理解为将宿主系统的文件夹挂载至容器中从而达到实时共享文件夹的目的。 你可以在很多地方指定volume, 比如: 1. Dockerfile 的VOLUME命令 # Dockerfile RUN mkdir -p /data/logs/webapp VOLUME /data/logs/webapp 当你使用该Dockerfile去build一个镜像，并使用该镜像来运行了一个容器实例的时候，宿主系统的某个文件夹就会被挂载为该容器的/data ... <a href="https://importcjj.github.io/guan-yu-dockerde-yi-xie-za-huo.html">read more</a></div>
+            </div>
+        </article>
+
+          </section>
+       </div>
+
+       <div id="right-side" class="col-1-12">&nbsp;</div>
+       <div id="right-side" class="col-3-12">
+
+<div class="section-container">
+   <h3>Blogroll</h3>
+   <ul>
+      <li><a href="http://chihiro.moe" target="_blank">Slade <i class="fa fa-globe fa-fw"></i></a></li>
+      <li><a href="http://shenyizhou.github.io" target="_blank">无主之地 <i class="fa fa-globe fa-fw"></i></a></li>
+      <li><a href="http://yuan0.github.io" target="_blank">Junifer <i class="fa fa-globe fa-fw"></i></a></li>
+      <li><a href="http://getpelican.com/" target="_blank">Pelican <i class="fa fa-globe fa-fw"></i></a></li>
+      <li><a href="http://python.org/" target="_blank">Python.org <i class="fa fa-globe fa-fw"></i></a></li>
+      <li><a href="http://jinja.pocoo.org/" target="_blank">Jinja2 <i class="fa fa-globe fa-fw"></i></a></li>
+      <li><a href="http://dongweiming.github.io/Expert-Python/#1" target="_blank">Expert-python <i class="fa fa-globe fa-fw"></i></a></li>
+   </ul>
+</div>
+
+<div class="section-container">
+   <h3>Social Network</h3>
+   <ul>
+      <li>
+        <a href="#" target="_blank">You can add links in your config file&nbsp;
+           <i class="fa fa-globe fa-fw"></i>
+        </a>
+      </li>
+      <li>
+        <a href="#" target="_blank">Another social link&nbsp;
+           <i class="fa fa-globe fa-fw"></i>
+        </a>
+      </li>
+   </ul>
+</div>
+
+<div class="section-container">
+   <h3>Categories</h3>
+   <ul>
+        <li><a href="https://importcjj.github.io/category/centos.html">CentOS <i class="fa fa-folder-open fa-fw"></i></a></li>
+        <li><a href="https://importcjj.github.io/category/docker.html">Docker <i class="fa fa-folder-open fa-fw"></i></a></li>
+        <li><a href="https://importcjj.github.io/category/emacs.html">Emacs <i class="fa fa-folder-open fa-fw"></i></a></li>
+        <li><a href="https://importcjj.github.io/category/git.html">git <i class="fa fa-folder-open fa-fw"></i></a></li>
+        <li><a href="https://importcjj.github.io/category/github.html">github <i class="fa fa-folder-open fa-fw"></i></a></li>
+        <li><a href="https://importcjj.github.io/category/go.html">Go <i class="fa fa-folder-open fa-fw"></i></a></li>
+        <li><a href="https://importcjj.github.io/category/markdown.html">Markdown <i class="fa fa-folder-open fa-fw"></i></a></li>
+        <li><a href="https://importcjj.github.io/category/python.html">Python <i class="fa fa-folder-open fa-fw"></i></a></li>
+        <li><a href="https://importcjj.github.io/category/rust.html">Rust <i class="fa fa-folder-open fa-fw"></i></a></li>
+        <li><a href="https://importcjj.github.io/category/sundry.html">sundry <i class="fa fa-folder-open fa-fw"></i></a></li>
+        <li><a href="https://importcjj.github.io/category/tool.html">Tool <i class="fa fa-folder-open fa-fw"></i></a></li>
+   </ul>
+</div>
+
+<div class="section-container">
+   <h3>Tags</h3>
+   <ul class="tagcloud">
+   </ul>
+</div>
 
 
-<p>当你使用该Dockerfile去build一个镜像，并使用该镜像来运行了一个容器实例的时候，宿主系统的某个文件夹就会被挂载为该容器的<code>/data ...</code></p></div>
-      </div>
 
-      <!-- tags list -->
-	  <div class="tags">
-        <a class="tag" href="https://importcjj.github.io/tag/docker.html">Docker</a>
-      </div>
+          <div class="section-container" id="copyright">
+             <p>This Blog generated by <a href="http://getpelican.com/">Pelican</a> using <a href="https://github.com/habibillah/pujangga">Pujangga</a> theme. All content on this blog, unless stated otherwise, is licensed under the <a href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0 International license</a>.</p>
+          </div>
+       </div>
     </div>
-  </div><!-- /.row -->
 
-</section><!-- /#content -->
-          </div>
-        </div>
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', '']);
+      _gaq.push(['_trackPageview']);
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+ 
 
-        <!-- footer -->
-        <div class=footer>
-          <div class="textwidget">
+    <script type="text/javascript" src="https://importcjj.github.io/theme/js/hyphenator.js"></script>
+    <script type="text/javascript">
+      Hyphenator.config({
+          donthyphenateclassname: 'docutils',
+          useCSS3hyphenation: true
+      });
+      Hyphenator.run();
+    </script>
 
+</body>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-          </div>
-
-          <p>
-            Carburize with <a href="http://blog.getpelican.com">pelican</a></p>
-          <p><a href="https://github.com/badele/pelican-theme-jesuislibre">jesuislibre</a> theme, inspired by <a href="http://blog.dbrgn.ch">dbrng</a> blog</p>
-          <p><a href="http://bruno.adele.im">about author</a></p>
-      </div>
-
-
-     </body>
 </html>
