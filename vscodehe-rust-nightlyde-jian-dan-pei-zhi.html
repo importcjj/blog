@@ -59,12 +59,12 @@
     <div class="clearboth"><p>本人的常用IDE是小巧的vscode，之前写Rust的时候，使用的Rust版本是stable，vscode插件是Rust(rls)。一直以来工作良好，除了有时候rls会hanging。
 最近要使用nightly版本的rust，vscode提示没有rls，然后选择安装，发现安装失败。于是就鼓捣了一番，决定将过程记录下来。</p>
 <p><code>nightly</code>版本，顾名思义就是每晚构建的开发版本了。我以前安装nightly时的命令是</p>
-<div class="highlight"><pre><span></span><span class="n">rustup</span> <span class="n">toolchain</span> <span class="n">install</span> <span class="n">nightly</span>
+<div class="highlight"><pre><span></span>rustup toolchain install nightly
 </pre></div>
 
 
 <p>这个命令呢会安装最新构建的nightly版本。</p>
-<div class="highlight"><pre><span></span><span class="n">rupst</span> <span class="k">update</span>
+<div class="highlight"><pre><span></span>rupst update
 </pre></div>
 
 
@@ -73,10 +73,10 @@
 自己的rust没有对于的rls，就可以检查下是不是nightly太新了，如果是的话，就需要安装前几个版本的nightly了。</p>
 <p>https://rust-lang.github.io/rustup-components-history/x86_64-apple-darwin.html</p>
 <p>如何安装指定版本的nightly呢？</p>
-<div class="highlight"><pre><span></span><span class="n">rustup</span><span class="w"> </span><span class="n">toolchain</span><span class="w"> </span><span class="n">install</span><span class="w"> </span><span class="n">nightly</span><span class="o">-[</span><span class="n">year</span><span class="o">]-[</span><span class="n">month</span><span class="o">]-[</span><span class="n">day</span><span class="o">]</span><span class="w"></span>
-<span class="o">//</span><span class="w"> </span><span class="n">比如</span><span class="w"> </span><span class="n">nightly</span><span class="o">-</span><span class="mi">2019</span><span class="o">-</span><span class="mi">09</span><span class="o">-</span><span class="mi">05</span><span class="err">，</span><span class="n">因为这个版本目前有rls</span><span class="w"></span>
-<span class="n">rustup</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="n">nightly</span><span class="o">-[</span><span class="n">year</span><span class="o">]-[</span><span class="n">month</span><span class="o">]-[</span><span class="n">day</span><span class="o">]</span><span class="w"></span>
-<span class="n">rustup</span><span class="w"> </span><span class="n">component</span><span class="w"> </span><span class="k">add</span><span class="w"> </span><span class="n">rls</span><span class="w"></span>
+<div class="highlight"><pre><span></span>rustup toolchain install nightly-<span class="o">[</span>year<span class="o">]</span>-<span class="o">[</span>month<span class="o">]</span>-<span class="o">[</span>day<span class="o">]</span>
+// 比如 nightly-2019-09-05，因为这个版本目前有rls
+rustup default nightly-<span class="o">[</span>year<span class="o">]</span>-<span class="o">[</span>month<span class="o">]</span>-<span class="o">[</span>day<span class="o">]</span>
+rustup component add rls
 </pre></div>
 
 
