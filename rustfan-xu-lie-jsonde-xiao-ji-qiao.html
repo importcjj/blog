@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>Rust反序列JSON的小技巧</title>
+
+        <!-- meta -->
+        <meta charset="utf-8" />
+        <meta name="author" content="importcjj" />
+
+        <!-- Feeds -->
+
+        <!-- Style -->
+        <link href="https://fonts.googleapis.com/css?family=Linden+Hill:400,400italic" rel="stylesheet" type="text/css" />
+        <link rel="stylesheet" href="https://importcjj.github.io/theme/css/main.css" type="text/css" />
+        <link rel="shortcut icon" href="https://importcjj.github.io/theme/favicon.ico" />
+
+        <!-- Google analytics -->
+
+    </head>
+    <body>
+        <div id="wrapper">
+          <div id="blogtitle">
+            <a href="https://importcjj.github.io/">Signal</a>
+         </div>
+
+          <!-- Blogroll -->
+          <ul id="mainnav">
+            <li><a href="http://chihiro.moe">Slade</a></li>
+            <li><a href="http://shenyizhou.github.io">无主之地</a></li>
+            <li><a href="http://yuan0.github.io">Junifer</a></li>
+            <li><a href="http://getpelican.com/">Pelican</a></li>
+            <li><a href="http://python.org/">Python.org</a></li>
+            <li><a href="http://jinja.pocoo.org/">Jinja2</a></li>
+            <li><a href="http://dongweiming.github.io/Expert-Python/#1">Expert-python</a></li>
+          </ul>
+
+          <div class="clearboth"></div>
+          <div id="content">
+
+<h1>Rust反序列JSON的小技巧</h1>
+<div class=date>五 06 九月 2019
+ / <span class="tags">
+  <a class="tag" href="https://importcjj.github.io/tag/rust.html">rust</a>
+  <a class="tag" href="https://importcjj.github.io/tag/serde.html">serde</a>
+  <a class="tag" href="https://importcjj.github.io/tag/json.html">json</a>
+</span>
+</div>
+
+<p>serde是Rust中最流行的序列化和反序列化crate，这一篇就来记录下如何使用serde_json来反序列化连续的json对象。</p>
+<p>比如有这样一段json数据:</p>
+<div class="highlight"><pre><span></span><span class="p">{</span><span class="nt">&quot;start_pos&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nt">&quot;end_pos&quot;</span><span class="p">:</span> <span class="mi">10</span><span class="p">}{</span><span class="nt">&quot;start_pos&quot;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span> <span class="nt">&quot;end_pos&quot;</span><span class="p">:</span> <span class="mi">30</span><span class="p">}</span>
+<span class="p">{</span><span class="nt">&quot;start_pos&quot;</span><span class="p">:</span> <span class="mi">30</span><span class="p">,</span> <span class="nt">&quot;end_pos&quot;</span><span class="p">:</span> <span class="mi">40</span><span class="p">}</span>
+</pre></div>
+
+
+<p>这段数据中，是三个连续的字段相同json对象，那么如何对这多个数据进行反序列化呢？</p>
+<div class="highlight"><pre><span></span><span class="k">use</span><span class="w"> </span><span class="n">serde</span>::<span class="p">{</span><span class="n">Deserialize</span><span class="p">,</span><span class="w"> </span><span class="n">Serialize</span><span class="p">};</span><span class="w"></span>
+<span class="k">use</span><span class="w"> </span><span class="n">serde_json</span>::<span class="n">Deserializer</span><span class="p">;</span><span class="w"></span>
+
+<span class="cp">#[derive(Deserialize, Debug)]</span><span class="w"></span>
+<span class="k">struct</span> <span class="nc">Index</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">start_pos</span>: <span class="kt">u32</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="n">end_pos</span>: <span class="kt">u32</span><span class="p">,</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+
+<span class="k">fn</span> <span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">r</span><span class="err">#</span><span class="s">&quot;</span>
+<span class="s">    {&quot;</span><span class="n">start_pos</span><span class="s">&quot;: 0, &quot;</span><span class="n">end_pos</span><span class="s">&quot;: 10}{&quot;</span><span class="n">start_pos</span><span class="s">&quot;: 10, &quot;</span><span class="n">end_pos</span><span class="s">&quot;: 30}</span>
+<span class="s">    {&quot;</span><span class="n">start_pos</span><span class="s">&quot;: 30, &quot;</span><span class="n">end_pos</span><span class="s">&quot;: 40}</span>
+<span class="s">    &quot;</span><span class="err">#</span><span class="p">;</span><span class="w"></span>
+
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">indices</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Deserializer</span>::<span class="n">from_str</span><span class="p">(</span><span class="n">data</span><span class="p">).</span><span class="n">into_iter</span>::<span class="o">&lt;</span><span class="n">Index</span><span class="o">&gt;</span><span class="p">();</span><span class="w"></span>
+<span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="kd">let</span><span class="w"> </span><span class="nb">Some</span><span class="p">(</span><span class="n">idx</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">indices</span><span class="p">.</span><span class="n">next</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">println</span><span class="o">!</span><span class="p">(</span><span class="s">&quot;offset {}&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">indices</span><span class="p">.</span><span class="n">byte_offset</span><span class="p">()</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="kt">u64</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="n">println</span><span class="o">!</span><span class="p">(</span><span class="s">&quot;idx =&gt; {:?}&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">idx</span><span class="p">.</span><span class="n">unwrap</span><span class="p">());</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+
+
+<p>Deserializer对象还有一个方法<code>from_reader</code>支持从文件对象中读取数据。</p>
+<p>完结撒花！</p>
+<div class="author">
+  <a href="">
+    <img src="" alt="importcjj" width="128" height="108"/>
+  </a>
+  <div class="infos">
+    <h3>A propos de <a href="">importcjj</a></h3>	
+    <p></p>
+  </div>
+</div>
+<h2>Comments</h2>
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_shortname = 'importcjj';
+
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+          </div>
+        </div>
+
+        <!-- footer -->
+        <div class=footer>
+          <div class="textwidget">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          </div>
+
+          <p>
+            Carburize with <a href="http://blog.getpelican.com">pelican</a></p>
+          <p><a href="https://github.com/badele/pelican-theme-jesuislibre">jesuislibre</a> theme, inspired by <a href="http://blog.dbrgn.ch">dbrng</a> blog</p>
+          <p><a href="http://bruno.adele.im">about author</a></p>
+      </div>
+
+
+     </body>
+</html>

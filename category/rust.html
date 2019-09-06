@@ -42,6 +42,40 @@
 
   <div class="row">
     <div class=article-overview>
+      <div class=date>五 06 九月 2019</div>
+      <div class=detail>
+        <h1><a href="https://importcjj.github.io/rustfan-xu-lie-jsonde-xiao-ji-qiao.html" title="Permalink to Rust反序列JSON的小技巧">Rust反序列JSON的小技巧</a></h1>
+        <div class=summary><p>serde是Rust中最流行的序列化和反序列化crate，这一篇就来记录下如何使用serde_json来反序列化连续的json对象。</p>
+<p>比如有这样一段json数据:</p>
+<div class="highlight"><pre><span></span><span class="p">{</span><span class="nt">&quot;start_pos&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nt">&quot;end_pos&quot;</span><span class="p">:</span> <span class="mi">10</span><span class="p">}{</span><span class="nt">&quot;start_pos&quot;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span> <span class="nt">&quot;end_pos&quot;</span><span class="p">:</span> <span class="mi">30</span><span class="p">}</span>
+<span class="p">{</span><span class="nt">&quot;start_pos&quot;</span><span class="p">:</span> <span class="mi">30</span><span class="p">,</span> <span class="nt">&quot;end_pos&quot;</span><span class="p">:</span> <span class="mi">40</span><span class="p">}</span>
+</pre></div>
+
+
+<p>这段数据中，是三个连续的字段相同json对象，那么如何对这多个数据进行反序列化呢？</p>
+<div class="highlight"><pre><span></span><span class="k">use</span><span class="w"> </span><span class="n">serde</span>::<span class="p">{</span><span class="n">Deserialize</span><span class="p">,</span><span class="w"> </span><span class="n">Serialize</span><span class="p">};</span><span class="w"></span>
+<span class="k">use</span><span class="w"> </span><span class="n">serde_json</span>::<span class="n">Deserializer</span><span class="p">;</span><span class="w"></span>
+
+<span class="cp">#[derive(Deserialize, Debug)]</span><span class="w"></span>
+<span class="k">struct</span> <span class="nc">Index</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">start_pos</span>: <span class="kt">u32</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="n">end_pos</span>: <span class="kt">u32</span><span class="p">,</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+
+<span class="k">fn</span> <span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">r</span><span class="err">#</span><span class="s">&quot;</span>
+<span class="s">    {&quot;</span><span class="n">start_pos</span><span class="s">&quot;: 0, &quot;</span><span class="n">end_pos</span><span class="s">&quot;: 10}{&quot;</span><span class="n">start_pos</span><span class="s">&quot;: 10, &quot;</span><span class="n">end_pos</span><span class="s">&quot;: 30}</span>
+<span class="s">    {&quot;</span><span class="n">start_pos</span><span class="s">&quot;: 30, &quot;</span><span class="n">end_pos ...</span></pre></div></div>
+      </div>
+
+      <!-- tags list -->
+	  <div class="tags">
+        <a class="tag" href="https://importcjj.github.io/tag/rust.html">rust</a>
+        <a class="tag" href="https://importcjj.github.io/tag/serde.html">serde</a>
+        <a class="tag" href="https://importcjj.github.io/tag/json.html">json</a>
+      </div>
+    </div>
+    <div class=article-overview>
       <div class=date>四 05 九月 2019</div>
       <div class=detail>
         <h1><a href="https://importcjj.github.io/rustde-macroxiao-ji-yi.html" title="Permalink to Rust的macro小记(一)">Rust的macro小记(一)</a></h1>

@@ -44,6 +44,21 @@
     <div class=article-overview>
       <div class=date>日 27 三月 2016</div>
       <div class=detail>
+        <h1><a href="https://importcjj.github.io/shi-yong-pythonzhi-zuo-zi-ding-yi-zhong-duan-ming-ling.html" title="Permalink to 使用Python制作自定义终端命令">使用Python制作自定义终端命令</a></h1>
+        <div class=summary><h3>介绍</h3>
+<p>首先，拿pip举个例子，pip是我们使用较多的python包管理工具。当我们安装pip之后，直接在终端中就可以使用pip这个命令。那你有没有想过这是如何实现的？</p>
+<p>其实，pip这个命令最终调用了python所在文件夹bin目录的pip文件。为什么说最终？因为使用系统默认的python安装pip时，可能会在/usr/local/bin或者/usr/bin下创建软链接。如果使用了virtualenv，那么pip文件就在env/bin下。那么pip文件到底是什么呢？答案就是，是一个具有执行权限的python文件，只不过去掉了.py的后缀.</p>
+<p>也许你会兴高采烈的去尝试一发，在bin文件下创建xxx.py，打上一句 print “hello world”, 然后去掉.py的后缀, 再使用chmod a+x xxx来赋予它执行的权限。打开终端，敲下xxx。最后你只会得到print: command not found的错误提示。为什么？因为操作系统不知道这是一个py文件。思考一下，我们平时运行py文件都需要打上python xxx.py形式的命令 ...</p></div>
+      </div>
+
+      <!-- tags list -->
+	  <div class="tags">
+        <a class="tag" href="https://importcjj.github.io/tag/python.html">Python</a>
+      </div>
+    </div>
+    <div class=article-overview>
+      <div class=date>日 27 三月 2016</div>
+      <div class=detail>
         <h1><a href="https://importcjj.github.io/supervisorcelerycelerybeatde-jian-dan-shi-yong.html" title="Permalink to supervisor+celery+celerybeat的简单使用">supervisor+celery+celerybeat的简单使用</a></h1>
         <div class=summary><h2>1. 提前准备</h2>
 <p>略去相关工具的安装过程，其实都挺简单的!</p>

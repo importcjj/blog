@@ -42,6 +42,24 @@
 
   <div class="row">
     <div class=article-overview>
+      <div class=date>一 11 四月 2016</div>
+      <div class=detail>
+        <h1><a href="https://importcjj.github.io/hao-yong-de-gong-ju-he-ruan-jian-ji-lu.html" title="Permalink to 好用的工具和软件记录">好用的工具和软件记录</a></h1>
+        <div class=summary><h4>Mac OS X</h4>
+<ol>
+<li>licecap: 免费好用的gif录屏软件。</li>
+</ol>
+<h4>Windows</h4>
+<p>1.<a href="https://sourceforge.net/projects/unxutils/">unxutils</a>一套能让你在Windows体验bash的工具集。</p>
+<p>解压后只要将<code>usr/local/wbin</code>文件的绝对路径添加进环境变量<strong>Path</strong>中，即可。</p></div>
+      </div>
+
+      <!-- tags list -->
+	  <div class="tags">
+        <a class="tag" href="https://importcjj.github.io/tag/sofeware.html">sofeware</a>
+      </div>
+    </div>
+    <div class=article-overview>
       <div class=date>二 05 四月 2016</div>
       <div class=detail>
         <h1><a href="https://importcjj.github.io/wo-de-emacsde-pei-zhi.html" title="Permalink to 我的Emacs的配置">我的Emacs的配置</a></h1>
@@ -286,21 +304,6 @@
 <span class="k">print</span> <span class="o">=</span> <span class="n">partial</span><span class="p">(</span><span class="k">print</span><span class="p">,</span> <span class="nb">file</span><span class="o">=</span><span class="n">f</span><span class="p">)</span>
 <span class="k">print</span><span class="p">(</span><span class="s2">&quot;This will print to f)</span>
 <span class="c1"># stdout ...</span></pre></div></div>
-      </div>
-
-      <!-- tags list -->
-	  <div class="tags">
-        <a class="tag" href="https://importcjj.github.io/tag/python.html">Python</a>
-      </div>
-    </div>
-    <div class=article-overview>
-      <div class=date>日 27 三月 2016</div>
-      <div class=detail>
-        <h1><a href="https://importcjj.github.io/shi-yong-pythonzhi-zuo-zi-ding-yi-zhong-duan-ming-ling.html" title="Permalink to 使用Python制作自定义终端命令">使用Python制作自定义终端命令</a></h1>
-        <div class=summary><h3>介绍</h3>
-<p>首先，拿pip举个例子，pip是我们使用较多的python包管理工具。当我们安装pip之后，直接在终端中就可以使用pip这个命令。那你有没有想过这是如何实现的？</p>
-<p>其实，pip这个命令最终调用了python所在文件夹bin目录的pip文件。为什么说最终？因为使用系统默认的python安装pip时，可能会在/usr/local/bin或者/usr/bin下创建软链接。如果使用了virtualenv，那么pip文件就在env/bin下。那么pip文件到底是什么呢？答案就是，是一个具有执行权限的python文件，只不过去掉了.py的后缀.</p>
-<p>也许你会兴高采烈的去尝试一发，在bin文件下创建xxx.py，打上一句 print “hello world”, 然后去掉.py的后缀, 再使用chmod a+x xxx来赋予它执行的权限。打开终端，敲下xxx。最后你只会得到print: command not found的错误提示。为什么？因为操作系统不知道这是一个py文件。思考一下，我们平时运行py文件都需要打上python xxx.py形式的命令 ...</p></div>
       </div>
 
       <!-- tags list -->
