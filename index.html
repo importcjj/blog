@@ -50,7 +50,184 @@
           <section id="content" class="hyphenate">
 
         <article class="entry-overview">
-            <div class="date">五 06 九月 2019 by <a rel="author" href="https://importcjj.github.io/pages/aboutme.html">importcjj</a></div>
+            <div class="date">Tue 08 October 2019 by <a rel="author" href="https://importcjj.github.io/pages/aboutme.html">importcjj</a></div>
+            <div class="detail">
+                <header><h2>
+                    <a href="https://importcjj.github.io/rustzhong-de-fan-xing-traityi-ji-trait-objectsxiao-ji.html" rel="bookmark" title="Permalink to Rust中的泛型,trait以及trait objects小记">
+                        Rust中的泛型,trait以及trait objects小记
+                    </a>
+                </h2></header>
+
+                   <div class="clearboth"><h4>泛型的使用</h4>
+<p>泛型的英文为Generic Types，顾名思义就是通用类型。泛型可以帮助我们减少样板代码的编写。设想一下，如果需要为在一个元素为i32的数组中找出最大的那个数，大部分人都会写一个将这部分代码写成一个函数。形如</p>
+<div class="highlight"><pre><span></span><span class="k">fn</span> <span class="nf">largest</span><span class="p">(</span><span class="n">list</span>: <span class="kp">&amp;</span><span class="p">[</span><span class="kt">i32</span><span class="p">])</span><span class="w"> </span>-&gt; <span class="kt">i32</span> <span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">largest</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">list</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span><span class="w"></span>
+
+<span class="w">  </span><span class="k">for</span><span class="w"> </span><span class="o">&amp;</span><span class="n">item</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="n">list</span><span class="p">.</span><span class="n">iter</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="n">item</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">largest</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">      </span><span class="n">largest</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">item</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">  </span><span class="n">largest</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+
+
+<p>嗯~~ 正常运行。不过之后产品经理增加需求，需要同时支持i64数组，然后又想支持f64数组。在没有泛型的语言中，开发人员只能选择将这个函数复制粘贴n次，对参数类型稍加修改，最后改成不同的名字，如<code>largest_i32</code> 、<code>largest_i64</code>等。而且，这种情况下，当你需要改变代码时，也需要重复修改多次，这些都或多或少地增加了代码的维护成本。但是泛型的出现，可以减少开发者很多重复的劳动。Rust中的泛型：</p>
+<div class="highlight"><pre><span></span><span class="k">fn</span> <span class="nf">largest</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="p">(</span><span class="n">list</span>: <span class="kp">&amp;</span><span class="p">[</span><span class="n">T</span><span class="p">])</span><span class="w"> </span>-&gt; <span class="nc">T</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">largest</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">list</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span><span class="w"></span>
+
+<span class="w">  </span><span class="k">for</span><span class="w"> </span><span class="o">&amp;</span><span class="n">item</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="n">list</span><span class="p">.</span><span class="n">iter</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="n">item</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">largest</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">      </span><span class="n">largest</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">item</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">  </span><span class="n">largest</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+
+
+<p>乍一看，与第一个例子的代码基本相同，但是我们在函数签名中声明了一个泛型<code>T</code>，用来表示任何类型。这样一来，就无需为每一个具体类型定义一个专用函数了。不过不用高兴太早，上面的代码，Rust的编译器并不让通过。这是因为在函数中涉及了对泛型T的大小比较，但是并不是所有的类型都是支持大小比较的，所以还需要再做一点细微的工作来支持它。有兴趣的同学可以去试着让它通过编译。</p>
+<p>在本小节的末尾，来说一下Rust中的泛型的工作原理。以上文提到的函数<code>largest</code>为例，编译器会在编译时，找出所有使用了它的具体类型，并为它们分别生成一个<code>largest_xxx</code>函数，这个过程叫做<code>monomorphization</code>，我翻译成特例化。看到这里，有木有很惊讶？Rust做了我们本来要做的脏活累活，它针对特定类型生成特定函数，这样的泛型实现方式是没有动态开销的，只有编译开销: )</p>
+<h4>Trait的使用</h4>
+<p>Rust中的Trait有点像其他语言中的Interface，但是还是有机制上的区别。Trait定义了一组共享方法，是一种抽象方式。比如：</p>
+<div class="highlight"><pre><span></span><span class="k">trait</span><span class="w"> </span><span class="n">Human</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="k">fn</span> <span class="nf">talk</span><span class="p">(</span><span class="o">&amp;</span><span class="bp">self</span><span class="p">)</span><span class="w"> </span>-&gt; <span class="nb">String</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+
+<span class="k">fn</span> <span class="nf">listen_to</span><span class="p">(</span><span class="n">person</span>: <span class="nc">impl</span><span class="w"> </span><span class="n">Human</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">sent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">person</span><span class="p">.</span><span class="n">talk</span><span class="p">();</span><span class="w"></span>
+<span class="w">  </span><span class="n">println</span><span class="o">!</span><span class="p">(</span><span class="s">&quot;man say: {}&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">sent</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+
+
+<p>我们定义了一个Human的trait，其中还有一个talk方法。接着，我们还定义了一个函数，参数类型为<code>实现了trait的类型</code>。trait不能直接作为函数的参数，但是可以作为trait bound使用，简单理解就是对具体类型的限定。比如，在上面的例子中，我们就限定了man的类型必须实现trait Human。</p>
+<p>形如<code>impl trait</code>的写法是一种简便写法，通常写法是和泛型结合。</p>
+<div class="highlight"><pre><span></span><span class="k">fn</span> <span class="nf">listen_to</span><span class="o">&lt;</span><span class="n">T</span>: <span class="nc">Human</span><span class="o">&gt;</span><span class="p">(</span><span class="n">person</span>: <span class="nc">T</span><span class="p">)</span><span class="w"> </span><span class="p">{...}</span><span class="w"></span>
+<span class="c1">//或者</span>
+
+<span class="k">fn</span> <span class="nf">listen_to</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="p">(</span><span class="n">person</span>:<span class="nc">T</span><span class="p">)</span><span class="w"> </span><span class="k">where</span><span class="w"> </span><span class="n">T</span>: <span class="nc">Human</span><span class="w"> </span><span class="p">{...}</span><span class="w"></span>
+</pre></div>
+
+
+<p>一个泛型可以添加多个trait bound，使用<code>+</code>串联。比如<code>T: Human + Display</code></p>
+<p>规定了trait限定之后，我们需要给函数传入具体的类型。该类型必须实现相应的trait。</p>
+<div class="highlight"><pre><span></span><span class="k">struct</span> <span class="nc">Man</span><span class="p">;</span><span class="w"></span>
+
+<span class="k">impl</span><span class="w"> </span><span class="n">Human</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">Man</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="k">fn</span> <span class="nf">talk</span><span class="p">(</span><span class="o">&amp;</span><span class="bp">self</span><span class="p">)</span><span class="w"> </span>-&gt; <span class="nb">String</span> <span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="s">&quot;Man: I am a man&quot;</span><span class="p">.</span><span class="n">into</span><span class="p">()</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+
+<span class="k">fn</span> <span class="nf">main</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="kd">let</span><span class="w"> </span><span class="n">man</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Man</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="n">listen_to</span><span class="p">(</span><span class="n">man</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+
+
+<p>很简单，理解上也没有问题。不过，接下来就会说到一个问题。我们来看个例子</p>
+<div class="highlight"><pre><span></span><span class="k">struct</span> <span class="nc">Woman</span><span class="p">;</span><span class="w"></span>
+
+<span class="k">impl</span><span class="w"> </span><span class="n">Human</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">Woman</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="k">fn</span> <span class="nf">talk</span><span class="p">(</span><span class="o">&amp;</span><span class="bp">self</span><span class="p">)</span><span class="w"> </span>-&gt; <span class="nb">String</span> <span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="s">&quot;Woman: I am a woman&quot;</span><span class="p">.</span><span class="n">into</span><span class="p">()</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+
+<span class="k">fn</span> <span class="nf">listen_to</span><span class="o">&lt;</span><span class="n">T</span>: <span class="nc">Human</span><span class="o">&gt;</span><span class="p">(</span><span class="n">man</span>: <span class="nc">T</span><span class="p">,</span><span class="w"> </span><span class="n">woman</span>: <span class="nc">T</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">println</span><span class="o">!</span><span class="p">(</span><span class="s">&quot;{}&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">man</span><span class="p">.</span><span class="n">talk</span><span class="p">());</span><span class="w"></span>
+<span class="w">    </span><span class="n">println</span><span class="o">!</span><span class="p">(</span><span class="s">&quot;{}&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">woman</span><span class="p">.</span><span class="n">talk</span><span class="p">());</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+
+<span class="k">fn</span> <span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="kd">let</span><span class="w"> </span><span class="n">man</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Man</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="kd">let</span><span class="w"> </span><span class="n">woman</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Woman</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="n">listen_to</span><span class="p">(</span><span class="n">man</span><span class="p">,</span><span class="w"> </span><span class="n">woman</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+
+
+<p>什么！编译器报错了.</p>
+<div class="highlight"><pre><span></span>   <span class="o">|</span>
+<span class="mi">29</span> <span class="o">|</span>   <span class="nf">listen_to</span><span class="p">(</span><span class="n">man</span><span class="p">,</span> <span class="n">woman</span><span class="p">);</span>
+   <span class="o">|</span>                  <span class="o">^^^^^</span> <span class="n">expected</span> <span class="n">struct</span> <span class="ss">`Man`</span><span class="p">,</span> <span class="n">found</span> <span class="n">struct</span> <span class="ss">`Woman`</span>
+   <span class="o">|</span>
+   <span class="o">=</span> <span class="n">note</span><span class="p">:</span> <span class="n">expected</span> <span class="n">type</span> <span class="ss">`Man`</span>
+              <span class="n">found</span> <span class="n">type</span> <span class="ss">`Woman`</span>
+</pre></div>
+
+
+<p>如果经常写Go的同学可能会奇怪了，listen_to函数的man和woman两个参数都是Human这个interface类型，我们实际传入的也是两个实现了Human的类型，为什么会报错呢？哈哈，这又是Rust的泛型机制在作怪了，我们对man和woman都使用了同一泛型T，这需要我们保证实际传入的类型必须为同一类型。</p>
+<p>那么如何修改呢？有两个方法</p>
+<div class="highlight"><pre><span></span><span class="c1">// 方法一，使用两个泛型</span>
+<span class="k">fn</span> <span class="nf">listen_to</span><span class="o">&lt;</span><span class="n">M</span>: <span class="nc">Human</span><span class="p">,</span><span class="w"> </span><span class="n">W</span>: <span class="nc">Human</span><span class="o">&gt;</span><span class="p">(</span><span class="n">man</span>: <span class="nc">M</span><span class="p">,</span><span class="w"> </span><span class="n">woman</span>: <span class="nc">W</span><span class="p">)</span><span class="w"> </span><span class="p">{...}</span><span class="w"></span>
+
+<span class="c1">// 方法二，使用关键词impl</span>
+<span class="k">fn</span> <span class="nf">listen_to</span><span class="p">(</span><span class="n">man</span>: <span class="nc">impl</span><span class="w"> </span><span class="n">Human</span><span class="p">,</span><span class="w"> </span><span class="n">W</span>: <span class="nc">impl</span><span class="w"> </span><span class="n">Human</span><span class="p">)</span><span class="w"> </span><span class="p">{...}</span><span class="w"></span>
+</pre></div>
+
+
+<p>目前看来，好像一切都相安无事了。但是由于Rust泛型机制的限制，貌似失去了动态能力。想象一下，如果我们需要一个包含了多个Human的Vec，里面既有Man，又有Woman，我们该怎么办？有的同学说简单，直接用不就好了吗？</p>
+<div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="n">people</span>: <span class="nb">Vec</span><span class="o">&lt;</span><span class="n">Human</span><span class="o">&gt;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">vec</span><span class="o">!</span><span class="p">[];</span><span class="w"></span>
+</pre></div>
+
+
+<p>不好意思，编译器不通过！如果要做到我们想要的效果，需要使用<code>trait objects</code>，编译器告诉你要使用<code>dyn</code>关键词。</p>
+<div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="n">people</span>: <span class="nb">Vec</span><span class="o">&lt;</span><span class="n">dyn</span><span class="w"> </span><span class="n">Human</span><span class="o">&gt;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">vec</span><span class="o">!</span><span class="p">[];</span><span class="w"></span>
+</pre></div>
+
+
+<p>再次编译，吼吼，还是不通过！因为编译阶段无法知道trait objects的实际大小了，所以呢？需要我们使用Box将它放到堆上去。</p>
+<div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="n">people</span>: <span class="nb">Vec</span><span class="o">&lt;</span><span class="nb">Box</span><span class="o">&lt;</span><span class="n">dyn</span><span class="w"> </span><span class="n">Human</span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">vec</span><span class="o">!</span><span class="p">[];</span><span class="w"></span>
+</pre></div>
+
+
+<p>终于过了，不容易吼。</p>
+<div class="highlight"><pre><span></span><span class="k">fn</span> <span class="nf">listen_to_people</span><span class="p">(</span><span class="n">people</span>: <span class="nb">Vec</span><span class="o">&lt;</span><span class="nb">Box</span><span class="o">&lt;</span><span class="n">dyn</span><span class="w"> </span><span class="n">Human</span><span class="o">&gt;&gt;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="k">for</span><span class="w"> </span><span class="n">one</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="n">people</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">println</span><span class="o">!</span><span class="p">(</span><span class="s">&quot;{}&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">one</span><span class="p">.</span><span class="n">talk</span><span class="p">());</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+
+<span class="k">fn</span> <span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">people</span>: <span class="nb">Vec</span><span class="o">&lt;</span><span class="nb">Box</span><span class="o">&lt;</span><span class="n">dyn</span><span class="w"> </span><span class="n">Human</span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">vec</span><span class="o">!</span><span class="p">[];</span><span class="w"></span>
+<span class="w">  </span><span class="n">people</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="nb">Box</span>::<span class="n">new</span><span class="p">(</span><span class="n">Man</span><span class="p">));</span><span class="w"></span>
+<span class="w">  </span><span class="n">people</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="nb">Box</span>::<span class="n">new</span><span class="p">(</span><span class="n">Woman</span><span class="p">));</span><span class="w"></span>
+<span class="w">  </span><span class="n">people</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="nb">Box</span>::<span class="n">new</span><span class="p">(</span><span class="n">Man</span><span class="p">));</span><span class="w"></span>
+<span class="w">  </span><span class="n">listen_to_people</span><span class="p">(</span><span class="n">people</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+
+
+<p>trait objects涉及动态匹配，会有运行时开销。</p>
+<p>补充一下，只有类型安全且不含泛型参数的trait才可以作为trait objects.</p>
+<ul>
+<li>返回类型不能为<code>Self</code></li>
+<li>不能还有泛型参数</li>
+</ul>
+<p>比如，Clone这个trait就不能作为trait objects，因为方法的返回类型为Self</p>
+<div class="highlight"><pre><span></span><span class="k">pub</span><span class="w"> </span><span class="k">trait</span><span class="w"> </span><span class="nb">Clone</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">fn</span> <span class="nf">clone</span><span class="p">(</span><span class="o">&amp;</span><span class="bp">self</span><span class="p">)</span><span class="w"> </span>-&gt; <span class="nc">Self</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+
+
+<p>这一篇，篇幅较短。就是简要记录一下泛型、Trait以及Trait objects的使用。如有错误，敬请指教。</p></div>
+
+                    <div class="tags">
+                        <p>This entry was tagged on  
+                            <a href="https://importcjj.github.io/tag/rust.html">#rust</a></p>
+                    </div>
+
+            </div>
+        </article>
+        <article class="entry-overview">
+            <div class="date">Fri 06 September 2019 by <a rel="author" href="https://importcjj.github.io/pages/aboutme.html">importcjj</a></div>
             <div class="detail">
                 <header><h2>
                     <a href="https://importcjj.github.io/vscodehe-rust-nightlyde-jian-dan-pei-zhi.html" rel="bookmark" title="Permalink to Vscode和Rust nightly的简单配置">
@@ -92,7 +269,7 @@ rustup component add rls
             </div>
         </article>
         <article class="entry-overview">
-            <div class="date">五 06 九月 2019 by <a rel="author" href="https://importcjj.github.io/pages/aboutme.html">importcjj</a></div>
+            <div class="date">Fri 06 September 2019 by <a rel="author" href="https://importcjj.github.io/pages/aboutme.html">importcjj</a></div>
             <div class="detail">
                 <header><h2>
                     <a href="https://importcjj.github.io/rustfan-xu-lie-jsonde-xiao-ji-qiao.html" rel="bookmark" title="Permalink to Rust反序列JSON的小技巧">
@@ -144,7 +321,7 @@ rustup component add rls
             </div>
         </article>
         <article class="entry-overview">
-            <div class="date">四 05 九月 2019 by <a rel="author" href="https://importcjj.github.io/pages/aboutme.html">importcjj</a></div>
+            <div class="date">Thu 05 September 2019 by <a rel="author" href="https://importcjj.github.io/pages/aboutme.html">importcjj</a></div>
             <div class="detail">
                 <header><h2>
                     <a href="https://importcjj.github.io/rustde-macroxiao-ji-yi.html" rel="bookmark" title="Permalink to Rust的macro小记(一)">
@@ -367,7 +544,7 @@ rustup component add rls
             </div>
         </article>
         <article class="entry-overview">
-            <div class="date">三 04 九月 2019 by <a rel="author" href="https://importcjj.github.io/pages/aboutme.html">importcjj</a></div>
+            <div class="date">Wed 04 September 2019 by <a rel="author" href="https://importcjj.github.io/pages/aboutme.html">importcjj</a></div>
             <div class="detail">
                 <header><h2>
                     <a href="https://importcjj.github.io/rustshi-yong-matchde-xiao-fa-xian.html" rel="bookmark" title="Permalink to Rust使用match的小发现">
@@ -403,7 +580,7 @@ rustup component add rls
             </div>
         </article>
         <article class="entry-overview">
-            <div class="date">一 16 一月 2017 by <a rel="author" href="https://importcjj.github.io/pages/aboutme.html">importcjj</a></div>
+            <div class="date">Mon 16 January 2017 by <a rel="author" href="https://importcjj.github.io/pages/aboutme.html">importcjj</a></div>
             <div class="detail">
                 <header><h2>
                     <a href="https://importcjj.github.io/golangjie-kou-xing-han-shu.html" rel="bookmark" title="Permalink to Golang接口型函数">
@@ -457,7 +634,7 @@ rustup component add rls
             </div>
         </article>
         <article class="entry-overview">
-            <div class="date">一 20 六月 2016 by <a rel="author" href="https://importcjj.github.io/pages/aboutme.html">importcjj</a></div>
+            <div class="date">Mon 20 June 2016 by <a rel="author" href="https://importcjj.github.io/pages/aboutme.html">importcjj</a></div>
             <div class="detail">
                 <header><h2>
                     <a href="https://importcjj.github.io/gowang-luo-bian-cheng-ji-lei-yi.html" rel="bookmark" title="Permalink to go网络编程积累(一)">
@@ -615,7 +792,7 @@ rustup component add rls
             </div>
         </article>
         <article class="entry-overview">
-            <div class="date">三 18 五月 2016 by <a rel="author" href="https://importcjj.github.io/pages/aboutme.html">importcjj</a></div>
+            <div class="date">Wed 18 May 2016 by <a rel="author" href="https://importcjj.github.io/pages/aboutme.html">importcjj</a></div>
             <div class="detail">
                 <header><h2>
                     <a href="https://importcjj.github.io/greenlet-qing-liang-ji-bing-fa-bian-cheng.html" rel="bookmark" title="Permalink to Greenlet: 轻量级并发编程">
@@ -1037,7 +1214,7 @@ The current top frame, or None.
             </div>
         </article>
         <article class="entry-overview">
-            <div class="date">二 10 五月 2016 by <a rel="author" href="https://importcjj.github.io/pages/aboutme.html">importcjj</a></div>
+            <div class="date">Tue 10 May 2016 by <a rel="author" href="https://importcjj.github.io/pages/aboutme.html">importcjj</a></div>
             <div class="detail">
                 <header><h2>
                     <a href="https://importcjj.github.io/golangbian-cheng-lian-xi.html" rel="bookmark" title="Permalink to Golang编程练习">
@@ -1230,7 +1407,7 @@ The current top frame, or None.
             </div>
         </article>
         <article class="entry-overview">
-            <div class="date">六 30 四月 2016 by <a rel="author" href="https://importcjj.github.io/pages/aboutme.html">importcjj</a></div>
+            <div class="date">Sat 30 April 2016 by <a rel="author" href="https://importcjj.github.io/pages/aboutme.html">importcjj</a></div>
             <div class="detail">
                 <header><h2>
                     <a href="https://importcjj.github.io/jian-dan-de-acfunzi-dong-qian-dao.html" rel="bookmark" title="Permalink to 简单的Acfun自动签到">
@@ -1263,122 +1440,6 @@ curl --cookie cookies -d <span class="s2">&quot;channel=0&amp;date=`date +%s`000
                     <div class="tags">
                         <p>This entry was tagged on  
                             <a href="https://importcjj.github.io/tag/contab.html">#contab</a>,                             <a href="https://importcjj.github.io/tag/curl.html">#curl</a> and                             <a href="https://importcjj.github.io/tag/shell.html">#shell</a></p>
-                    </div>
-
-            </div>
-        </article>
-        <article class="entry-overview">
-            <div class="date">二 26 四月 2016 by <a rel="author" href="https://importcjj.github.io/pages/aboutme.html">importcjj</a></div>
-            <div class="detail">
-                <header><h2>
-                    <a href="https://importcjj.github.io/pythondan-li-mo-shi-de-shi-xian.html" rel="bookmark" title="Permalink to Python单例模式的实现">
-                        Python单例模式的实现
-                    </a>
-                </h2></header>
-
-                   <div class="clearboth"><h4>由于实现的方式很多，先来3种。</h4>
-<h4>1. 类实例实现的单例装饰器</h4>
-<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">functools</span>
-
-<span class="k">class</span> <span class="nc">Singleton</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
-
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">instances</span> <span class="o">=</span> <span class="p">{}</span>
-
-    <span class="k">def</span> <span class="fm">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="bp">cls</span><span class="p">):</span>
-        <span class="nd">@functools.wraps</span><span class="p">(</span><span class="bp">cls</span><span class="p">)</span>
-        <span class="k">def</span> <span class="nf">wrapper</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-            <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">instances</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
-                <span class="bp">self</span><span class="o">.</span><span class="n">instances</span><span class="p">[</span><span class="bp">cls</span><span class="p">]</span> <span class="o">=</span> <span class="bp">cls</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">instances</span><span class="p">[</span><span class="bp">cls</span><span class="p">]</span>
-        <span class="k">return</span> <span class="n">wrapper</span>
-
-<span class="n">singleton</span> <span class="o">=</span> <span class="n">Singleton</span><span class="p">()</span>
-
-<span class="c1"># 用法</span>
-<span class="nd">@singleton</span>
-<span class="k">class</span> <span class="nc">Test</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
-    <span class="k">pass</span>
-
-<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
-    <span class="n">t1</span> <span class="o">=</span> <span class="n">Test</span><span class="p">()</span>
-    <span class="n">t2</span> <span class="o">=</span> <span class="n">Test</span><span class="p">()</span>
-    <span class="k">print</span><span class="p">(</span><span class="n">t1</span><span class="p">,</span> <span class="n">t2</span><span class="p">)</span>
-    <span class="k">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">t1</span><span class="p">),</span> <span class="nb">type</span><span class="p">(</span><span class="n">t2</span><span class="p">))</span>
-    <span class="k">assert</span> <span class="n">t1</span> <span class="o">==</span> <span class="n">t2</span>
-
-<span class="c1"># 这种方式有一个缺点，就是Test这个类会变成一个function, </span>
-<span class="c1"># 这样的话就无法使用instance等方式了。</span>
-</pre></div>
-
-
-<h4>2. 类实现的单例装饰器</h4>
-<div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Singleton</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
-
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="bp">cls</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">cls</span> <span class="o">=</span> <span class="bp">cls</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">cls_instance</span> <span class="o">=</span> <span class="bp">None</span>
-
-    <span class="k">def</span> <span class="fm">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">cls_instance</span><span class="p">:</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">cls_instance</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">cls</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">cls_instance</span>
-
-<span class="nd">@Singleton</span>
-<span class="k">class</span> <span class="nc">Test</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
-    <span class="k">pass</span>
-
-
-<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
-    <span class="k">print</span><span class="p">(</span><span class="n">Test</span><span class="p">)</span>
-    <span class="n">t1</span> <span class="o">=</span> <span class="n">Test</span><span class="p">()</span>
-    <span class="n">t2</span> <span class="o">=</span> <span class="n">Test</span><span class="p">()</span>
-    <span class="k">print</span><span class="p">(</span><span class="n">t1</span><span class="p">,</span> <span class="n">t2</span><span class="p">)</span>
-    <span class="k">assert</span> <span class="n">t1</span> <span class="o">==</span> <span class="n">t2</span>
-
-<span class="c1"># 这种方式Test其实已经是single的一个实例了</span>
-<span class="c1"># 缺点和第一种方式一样，Test已经不是原来的Test了</span>
-<span class="c1"># 而t1, t2却还是原来的Test的实例</span>
-<span class="c1"># 对于这种方式我还存有疑虑，但是又说不出来</span>
-<span class="c1"># 总感觉怪怪的</span>
-</pre></div>
-
-
-<h4>3. metaclass元类</h4>
-<div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Singleton</span><span class="p">(</span><span class="nb">type</span><span class="p">):</span>
-    <span class="n">_instances</span> <span class="o">=</span> <span class="p">{}</span>
-    <span class="k">def</span> <span class="nf">__cal__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-        <span class="k">if</span> <span class="bp">self</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_instances</span><span class="p">:</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">_instances</span><span class="p">[</span><span class="bp">self</span><span class="p">]</span> <span class="o">=</span> <span class="nb">super</span><span class="p">(</span><span class="n">Singleton</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__call__</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">*</span><span class="n">kwargs</span><span class="p">)</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_instances</span><span class="p">[</span><span class="bp">self</span><span class="p">]</span>
-
-<span class="c1"># py2写法</span>
-<span class="k">class</span> <span class="nc">Test</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
-    <span class="vm">__metaclass__</span> <span class="o">=</span> <span class="n">Singleton</span>
-
-    <span class="k">pass</span>
-
-<span class="c1"># py3写法</span>
-<span class="k">class</span> <span class="nc">Test</span><span class="p">(</span><span class="nb">object</span><span class="p">,</span> <span class="n">metaclass</span><span class="o">=</span><span class="n">Singleton</span><span class="p">):</span>
-    <span class="k">pass</span>
-
-<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
-    <span class="k">print</span><span class="p">(</span><span class="n">Test</span><span class="p">)</span>
-    <span class="n">t1</span> <span class="o">=</span> <span class="n">Test</span><span class="p">()</span>
-    <span class="n">t2</span> <span class="o">=</span> <span class="n">Test</span><span class="p">()</span>
-    <span class="k">print</span><span class="p">(</span><span class="n">t1</span><span class="p">,</span> <span class="n">t2</span><span class="p">)</span>
-    <span class="k">assert</span> <span class="n">t1</span> <span class="o">==</span> <span class="n">t2</span>
-    <span class="k">print</span><span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">t1</span><span class="p">,</span> <span class="n">Test</span><span class="p">)</span>
-
-<span class="c1"># 使用元类是最好的，因为Test的行为都没有被改变</span>
-<span class="c1"># 所以isinstance, type等函数的调用都没有影响</span>
-<span class="c1"># 不过理解起来可能会有一些困难了</span>
-<span class="c1"># 因为我觉得自己理解的还有一些不够通透</span>
-</pre></div></div>
-
-                    <div class="tags">
-                        <p>This entry was tagged on  
-                            <a href="https://importcjj.github.io/tag/singleton.html">#singleton</a> and                             <a href="https://importcjj.github.io/tag/zhuang-shi-qi.html">#装饰器</a></p>
                     </div>
 
             </div>

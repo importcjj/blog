@@ -52,9 +52,21 @@
     <section id="content" class="body archives">
         <h1>Blog Archive</h1>
 
-                <h2>九月 2019</h2>
+                <h2>October 2019</h2>
             <article class="entry-overview">
-                <div class="date">五 06 九月 2019 by <a rel="author" href="https://importcjj.github.io/pages/aboutme.html">importcjj</a></div> 
+                <div class="date">Tue 08 October 2019 by <a rel="author" href="https://importcjj.github.io/pages/aboutme.html">importcjj</a></div> 
+                <div class="detail">
+                    <header><h3>
+                        <a href="https://importcjj.github.io/rustzhong-de-fan-xing-traityi-ji-trait-objectsxiao-ji.html" rel="bookmark" title="Permalink to Rust中的泛型,trait以及trait objects小记">
+                            Rust中的泛型,trait以及trait objects小记
+                        </a>
+                    </h3></header>
+                    <div class="summary">泛型的使用 泛型的英文为Generic Types，顾名思义就是通用类型。泛型可以帮助我们减少样板代码的编写。设想一下，如果需要为在一个元素为i32的数组中找出最大的那个数，大部分人都会写一个将这部分代码写成一个函数。形如 fn largest(list: &[i32]) -> i32 { let mut largest = list[0]; for &item in list.iter() { if item > largest { largest = item; } } largest } 嗯~~ 正常运行。不过之后产品经理增加需求，需要同时支持i64数组，然后又想支持f64数组。在没有泛型的语言中，开发人员只能选择将这个函数复制粘贴n次，对参数类型稍加修改，最后改成不同的名字，如largest_i32 、largest_i64等。而且，这种情况下，当你需要改变代码时，也需要重复修改多次，这些都或多或少地增加了代码的维护成本。但是泛型的出现，可以减少开发者很多重复的劳动 ... <a href="https://importcjj.github.io/rustzhong-de-fan-xing-traityi-ji-trait-objectsxiao-ji.html">read more</a></div>
+                </div>
+            </article>
+                <h2>September 2019</h2>
+            <article class="entry-overview">
+                <div class="date">Fri 06 September 2019 by <a rel="author" href="https://importcjj.github.io/pages/aboutme.html">importcjj</a></div> 
                 <div class="detail">
                     <header><h3>
                         <a href="https://importcjj.github.io/vscodehe-rust-nightlyde-jian-dan-pei-zhi.html" rel="bookmark" title="Permalink to Vscode和Rust nightly的简单配置">
@@ -64,9 +76,9 @@
                     <div class="summary">本人的常用IDE是小巧的vscode，之前写Rust的时候，使用的Rust版本是stable，vscode插件是Rust(rls)。一直以来工作良好，除了有时候rls会hanging。 最近要使用nightly版本的rust，vscode提示没有rls，然后选择安装，发现安装失败。于是就鼓捣了一番，决定将过程记录下来。 nightly版本，顾名思义就是每晚构建的开发版本了。我以前安装nightly时的命令是 rustup toolchain install nightly 这个命令呢会安装最新构建的nightly版本。 rustup update 这个命令呢会更新安装的所有toolchain至最新。但是最新构建的nightly版本，有可能还没有与之对应的rls组件，这样的话在IDE里就没法好好开发了，毕竟在rust里，编译器是 程序员的爹。没有rls，就会像失去了眼睛一样难受。搜寻了一番，找到一个地址，通过网页可以快捷的知道对于平台的nightly版本，其对于组件的发布情况如何。如果你们以后发现 自己的rust没有对于的rls，就可以检查下是不是nightly太新了，如果是的话，就需要安装前几个版本的nightly了。 https://rust-lang.github.io/rustup-components-history/x86_64-apple-darwin.html 如何安装指定版本的nightly呢 ... <a href="https://importcjj.github.io/vscodehe-rust-nightlyde-jian-dan-pei-zhi.html">read more</a></div>
                 </div>
             </article>
-                <h2>九月 2019</h2>
+                <h2>September 2019</h2>
             <article class="entry-overview">
-                <div class="date">五 06 九月 2019 by <a rel="author" href="https://importcjj.github.io/pages/aboutme.html">importcjj</a></div> 
+                <div class="date">Fri 06 September 2019 by <a rel="author" href="https://importcjj.github.io/pages/aboutme.html">importcjj</a></div> 
                 <div class="detail">
                     <header><h3>
                         <a href="https://importcjj.github.io/rustfan-xu-lie-jsonde-xiao-ji-qiao.html" rel="bookmark" title="Permalink to Rust反序列JSON的小技巧">
@@ -76,9 +88,9 @@
                     <div class="summary">serde是Rust中最流行的序列化和反序列化crate，这一篇就来记录下如何使用serde_json来反序列化连续的json对象。 比如有这样一段json数据: {"start_pos": 0, "end_pos": 10}{"start_pos": 10, "end_pos": 30} {"start_pos": 30, "end_pos": 40} 这段数据中，是三个连续的字段相同json对象，那么如何对这多个数据进行反序列化呢？ use serde::{Deserialize, Serialize}; use serde_json::Deserializer; #[derive(Deserialize, Debug)] struct Index { start_pos: u32, end_pos: u32, } fn main() { let data = r#" {"start_pos": 0, "end_pos": 10}{"start_pos": 10, "end_pos": 30} {"start_pos": 30, "end_pos ... <a href="https://importcjj.github.io/rustfan-xu-lie-jsonde-xiao-ji-qiao.html">read more</a></div>
                 </div>
             </article>
-                <h2>九月 2019</h2>
+                <h2>September 2019</h2>
             <article class="entry-overview">
-                <div class="date">四 05 九月 2019 by <a rel="author" href="https://importcjj.github.io/pages/aboutme.html">importcjj</a></div> 
+                <div class="date">Thu 05 September 2019 by <a rel="author" href="https://importcjj.github.io/pages/aboutme.html">importcjj</a></div> 
                 <div class="detail">
                     <header><h3>
                         <a href="https://importcjj.github.io/rustde-macroxiao-ji-yi.html" rel="bookmark" title="Permalink to Rust的macro小记(一)">
@@ -88,9 +100,9 @@
                     <div class="summary">这篇记录一下Rust中的Function-like macros，也就是形如println!(...)形式的宏。 先来一个简单的 macro_rules! hello { () => { println!("Hello, World!"); } } fn main() { hello!(); } 上面这个简单的例子中， 定义了一个叫做hello的宏，匹配规则为空。作用就是在使用该宏的地方，插入代码println!("Hello, World!");。 接下来我们加入匹配规则，来让这个宏更加的灵活. macro_rules! hello { () => { println!("Hello, World!"); }; ($name:expr) => { println!("Hello, {}!", $name); } } fn main() { hello!(); hello!("rust"); } 现在增加了一个匹配规则，这样编译器在在工作时会按规则匹配，使用不同的代码分支。那可不可以让hello支持多个参数呢? 当然可以！宏的匹配规则支持重复模式! * 模式重复零次或多次 + 模式重复一次或多次 ? 模式出现零次或一次 让我们来稍加改造一下 ... <a href="https://importcjj.github.io/rustde-macroxiao-ji-yi.html">read more</a></div>
                 </div>
             </article>
-                <h2>九月 2019</h2>
+                <h2>September 2019</h2>
             <article class="entry-overview">
-                <div class="date">三 04 九月 2019 by <a rel="author" href="https://importcjj.github.io/pages/aboutme.html">importcjj</a></div> 
+                <div class="date">Wed 04 September 2019 by <a rel="author" href="https://importcjj.github.io/pages/aboutme.html">importcjj</a></div> 
                 <div class="detail">
                     <header><h3>
                         <a href="https://importcjj.github.io/rustshi-yong-matchde-xiao-fa-xian.html" rel="bookmark" title="Permalink to Rust使用match的小发现">
@@ -100,9 +112,9 @@
                     <div class="summary">今天在读一个库的代码时候，发现了之前使用match的时候没有注意的一个地方。 enum Foo { One, Two, Three, } fn main () { let foo = Foo::One; match foo { Foo::One => println!("It's one"), others => println!("It's others"), }; } 这里没有使用_去匹配其他分支，而是随意指定了一个名字others。貌似对可读性有一定提升。 <a href="https://importcjj.github.io/rustshi-yong-matchde-xiao-fa-xian.html">read more</a></div>
                 </div>
             </article>
-                <h2>一月 2017</h2>
+                <h2>January 2017</h2>
             <article class="entry-overview">
-                <div class="date">一 16 一月 2017 by <a rel="author" href="https://importcjj.github.io/pages/aboutme.html">importcjj</a></div> 
+                <div class="date">Mon 16 January 2017 by <a rel="author" href="https://importcjj.github.io/pages/aboutme.html">importcjj</a></div> 
                 <div class="detail">
                     <header><h3>
                         <a href="https://importcjj.github.io/golangjie-kou-xing-han-shu.html" rel="bookmark" title="Permalink to Golang接口型函数">
@@ -112,9 +124,9 @@
                     <div class="summary">package main import ( "fmt" ) type Handler interface { Do(k, v interface{}) } type HandlerFunc func(k, v interface{}) func (f HandlerFunc) Do(k, v interface{}) { f(k, v) } func Each(m map[interface{}]interface{}, h Handler) { for k, v := range m { h.Do(k, v) } } func EachFunc(m map[interface{}]interface ... <a href="https://importcjj.github.io/golangjie-kou-xing-han-shu.html">read more</a></div>
                 </div>
             </article>
-                <h2>六月 2016</h2>
+                <h2>June 2016</h2>
             <article class="entry-overview">
-                <div class="date">一 20 六月 2016 by <a rel="author" href="https://importcjj.github.io/pages/aboutme.html">importcjj</a></div> 
+                <div class="date">Mon 20 June 2016 by <a rel="author" href="https://importcjj.github.io/pages/aboutme.html">importcjj</a></div> 
                 <div class="detail">
                     <header><h3>
                         <a href="https://importcjj.github.io/gowang-luo-bian-cheng-ji-lei-yi.html" rel="bookmark" title="Permalink to go网络编程积累(一)">
@@ -124,9 +136,9 @@
                     <div class="summary">//server.go package main import ( "fmt" "net" "os" "io" ) func main() { ln, err := net.Listen("tcp", ":8888") if err != nil { fmt.Println("Can't listen") os.Exit(2) } for { conn, err := ln.Accept() if err != nil { fmt.Println("Can't accept a conn") continue } go handleConn(conn) } } func handleConn(conn ... <a href="https://importcjj.github.io/gowang-luo-bian-cheng-ji-lei-yi.html">read more</a></div>
                 </div>
             </article>
-                <h2>五月 2016</h2>
+                <h2>May 2016</h2>
             <article class="entry-overview">
-                <div class="date">三 18 五月 2016 by <a rel="author" href="https://importcjj.github.io/pages/aboutme.html">importcjj</a></div> 
+                <div class="date">Wed 18 May 2016 by <a rel="author" href="https://importcjj.github.io/pages/aboutme.html">importcjj</a></div> 
                 <div class="detail">
                     <header><h3>
                         <a href="https://importcjj.github.io/greenlet-qing-liang-ji-bing-fa-bian-cheng.html" rel="bookmark" title="Permalink to Greenlet: 轻量级并发编程">
@@ -136,9 +148,9 @@
                     <div class="summary">动机 greenlet这个包拆分自Stackless。Stackless是一个CPython的版本，实现并支持一种叫做tasklets的微线程。Tasklets会以一种伪并发的方式运行(通常运行在单个或者一些系统级的线程中)，它们之间通过channels来同步数据。 一个greenlet，从另一方面来说，依然是一种很原始的没有隐式调度的微线程。换句话说，就是协程(coroutine)。这在你想要完全控制代码的运行时是非常有用的。你可以在greenlet之上构建采用自定义调度方式的微线程。然而，使用greenlet来制作先进的控制流结构是很有用的。举个例子，我们可以重新创造生成器。和Python自带的生成器所不同的是，我们的生成器可以调用网状的方法，而且这些网状的方法也可以yield出值。(另外，你不需要再使用yield这个关键词了） 举例 我们来思考一个程序，用户可以在一个类终端控制台中输入命令来控制该程序。假设命令是一个字符一个字符的输入。在这样一个系统中，通常会存在如下一个循环: def process_commands(*args): while True: line = '' while not line.endswith('\n'): line += read_next_char() if line == 'quit\n': print ... <a href="https://importcjj.github.io/greenlet-qing-liang-ji-bing-fa-bian-cheng.html">read more</a></div>
                 </div>
             </article>
-                <h2>五月 2016</h2>
+                <h2>May 2016</h2>
             <article class="entry-overview">
-                <div class="date">二 10 五月 2016 by <a rel="author" href="https://importcjj.github.io/pages/aboutme.html">importcjj</a></div> 
+                <div class="date">Tue 10 May 2016 by <a rel="author" href="https://importcjj.github.io/pages/aboutme.html">importcjj</a></div> 
                 <div class="detail">
                     <header><h3>
                         <a href="https://importcjj.github.io/golangbian-cheng-lian-xi.html" rel="bookmark" title="Permalink to Golang编程练习">
@@ -148,9 +160,9 @@
                     <div class="summary">完整代码 戳这里 1. 验证给定字符串是否为合法身份证号码 算法：前17位纯数字分别乘以相应的因子，然后求和后除以11取余数。使用该余数取得校验字节数组中相位位置的字节与身份证最后一位字节做比较。如果相等即为合法身份证！ package main import "fmt" import "strconv" var ( Factories [17]int = [17]int{7, 9, 10, 5, 8, 4, 2, 1, 6, 3, 7, 9, 10, 5, 8, 4, 2} ValidateBits []byte = []byte("10X98765432") ) func IsValidIDCode(id string) bool { idBytes := []byte(id ... <a href="https://importcjj.github.io/golangbian-cheng-lian-xi.html">read more</a></div>
                 </div>
             </article>
-                <h2>四月 2016</h2>
+                <h2>April 2016</h2>
             <article class="entry-overview">
-                <div class="date">六 30 四月 2016 by <a rel="author" href="https://importcjj.github.io/pages/aboutme.html">importcjj</a></div> 
+                <div class="date">Sat 30 April 2016 by <a rel="author" href="https://importcjj.github.io/pages/aboutme.html">importcjj</a></div> 
                 <div class="detail">
                     <header><h3>
                         <a href="https://importcjj.github.io/jian-dan-de-acfunzi-dong-qian-dao.html" rel="bookmark" title="Permalink to 简单的Acfun自动签到">
@@ -160,9 +172,9 @@
                     <div class="summary">1.概述 Acfun有一个签到机制，每天签到可以领取经验和香蕉。之前在玩supervisor，celerybeat和rabbitmq的时候搞了一个自动签到的定时任务，但是由于服务器的原因，每天都会出问题。而且前段时间，那台服务器也到期了，所以现在有必要再搞一个简单的自动签到任务了。：） 2. 签到 为了简便，这里就不使用Python了。直接curl搞定吧！上代码： curl --cookie-jar cookies -d "username=name&password=passwd" https://www.acfun.tv/login.aspx && echo curl --cookie cookies -d "channel=0&date=`date +%s`000" https://www.acfun.tv/webapi/record/actions/signin ... <a href="https://importcjj.github.io/jian-dan-de-acfunzi-dong-qian-dao.html">read more</a></div>
                 </div>
             </article>
-                <h2>四月 2016</h2>
+                <h2>April 2016</h2>
             <article class="entry-overview">
-                <div class="date">二 26 四月 2016 by <a rel="author" href="https://importcjj.github.io/pages/aboutme.html">importcjj</a></div> 
+                <div class="date">Tue 26 April 2016 by <a rel="author" href="https://importcjj.github.io/pages/aboutme.html">importcjj</a></div> 
                 <div class="detail">
                     <header><h3>
                         <a href="https://importcjj.github.io/pythondan-li-mo-shi-de-shi-xian.html" rel="bookmark" title="Permalink to Python单例模式的实现">
@@ -172,9 +184,9 @@
                     <div class="summary">由于实现的方式很多，先来3种。 1. 类实例实现的单例装饰器 import functools class Singleton(object): def __init__(self): self.instances = {} def __call__(self, cls): @functools.wraps(cls) def wrapper(*args, **kwargs) if not self.instances.get(cls): self.instances[cls] = cls(*args, **kwargs) return self.instances[cls] return wrapper singleton = Singleton() # 用法 @singleton class Test(object ... <a href="https://importcjj.github.io/pythondan-li-mo-shi-de-shi-xian.html">read more</a></div>
                 </div>
             </article>
-                <h2>四月 2016</h2>
+                <h2>April 2016</h2>
             <article class="entry-overview">
-                <div class="date">四 21 四月 2016 by <a rel="author" href="https://importcjj.github.io/pages/aboutme.html">importcjj</a></div> 
+                <div class="date">Thu 21 April 2016 by <a rel="author" href="https://importcjj.github.io/pages/aboutme.html">importcjj</a></div> 
                 <div class="detail">
                     <header><h3>
                         <a href="https://importcjj.github.io/hhkb-type-skai-xiang-ti-yan.html" rel="bookmark" title="Permalink to HHKB Type-S开箱体验">
@@ -184,9 +196,9 @@
                     <div class="summary">先上一张图 在上一张图，是今天用这块HHKB Type-s来完成的一个简易私人图床，我起名为Tubed，使用了七牛提供的存储服务。配合Unclutter可以轻松完成图片的上传和浏览。 下图为将qq中的图片上传到我的图床。 至于HHKB Type-s的使用感受，下次有空在写吧！（主要是刚才写了一大段，被我不小心关掉了:< <a href="https://importcjj.github.io/hhkb-type-skai-xiang-ti-yan.html">read more</a></div>
                 </div>
             </article>
-                <h2>四月 2016</h2>
+                <h2>April 2016</h2>
             <article class="entry-overview">
-                <div class="date">一 11 四月 2016 by <a rel="author" href="https://importcjj.github.io/pages/aboutme.html">importcjj</a></div> 
+                <div class="date">Mon 11 April 2016 by <a rel="author" href="https://importcjj.github.io/pages/aboutme.html">importcjj</a></div> 
                 <div class="detail">
                     <header><h3>
                         <a href="https://importcjj.github.io/hao-yong-de-gong-ju-he-ruan-jian-ji-lu.html" rel="bookmark" title="Permalink to 好用的工具和软件记录">
@@ -196,9 +208,9 @@
                     <div class="summary">Mac OS X licecap: 免费好用的gif录屏软件。 Windows 1.unxutils一套能让你在Windows体验bash的工具集。 解压后只要将usr/local/wbin文件的绝对路径添加进环境变量Path中，即可。 <a href="https://importcjj.github.io/hao-yong-de-gong-ju-he-ruan-jian-ji-lu.html">read more</a></div>
                 </div>
             </article>
-                <h2>四月 2016</h2>
+                <h2>April 2016</h2>
             <article class="entry-overview">
-                <div class="date">二 05 四月 2016 by <a rel="author" href="https://importcjj.github.io/pages/aboutme.html">importcjj</a></div> 
+                <div class="date">Tue 05 April 2016 by <a rel="author" href="https://importcjj.github.io/pages/aboutme.html">importcjj</a></div> 
                 <div class="detail">
                     <header><h3>
                         <a href="https://importcjj.github.io/wo-de-emacsde-pei-zhi.html" rel="bookmark" title="Permalink to 我的Emacs的配置">
@@ -208,9 +220,9 @@
                     <div class="summary">记录Emacs的相关配置和插件，以备万一。 ~/.emacs/init.el ;;; package --- Emacs Configure ;;; Commentary: ;;; code: (require 'package) (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/")) (package-initialize) (when (not package-archive-contents) (package-refresh-contents)) (when (memq window-system '(mac ns)) (exec-path-from-shell-initialize)) ;; add maunal/ and top dir to load-path (let ((base "~/.emacs.d/maunal")) (add-to-list 'load-path base) (dolist (f (directory-files base)) (let ... <a href="https://importcjj.github.io/wo-de-emacsde-pei-zhi.html">read more</a></div>
                 </div>
             </article>
-                <h2>三月 2016</h2>
+                <h2>March 2016</h2>
             <article class="entry-overview">
-                <div class="date">一 28 三月 2016 by <a rel="author" href="https://importcjj.github.io/pages/aboutme.html">importcjj</a></div> 
+                <div class="date">Mon 28 March 2016 by <a rel="author" href="https://importcjj.github.io/pages/aboutme.html">importcjj</a></div> 
                 <div class="detail">
                     <header><h3>
                         <a href="https://importcjj.github.io/shi-xian-bo-ke-de-zi-dong-bian-yi-fa-bu.html" rel="bookmark" title="Permalink to 实现博客的自动编译发布">
@@ -220,9 +232,9 @@
                     <div class="summary">使用github、coding和travis-ci实现在线编辑和自动发布！ 在线编辑 使用github在线创建和编辑文章。 自动发布 使用travis-ci自动编译和发布到github、coding的相应repo的gh-pages分支 <a href="https://importcjj.github.io/shi-xian-bo-ke-de-zi-dong-bian-yi-fa-bu.html">read more</a></div>
                 </div>
             </article>
-                <h2>三月 2016</h2>
+                <h2>March 2016</h2>
             <article class="entry-overview">
-                <div class="date">日 27 三月 2016 by <a rel="author" href="https://importcjj.github.io/pages/aboutme.html">importcjj</a></div> 
+                <div class="date">Sun 27 March 2016 by <a rel="author" href="https://importcjj.github.io/pages/aboutme.html">importcjj</a></div> 
                 <div class="detail">
                     <header><h3>
                         <a href="https://importcjj.github.io/dockerfilecan-shu-xue-xi.html" rel="bookmark" title="Permalink to Dockerfile参数学习">
@@ -232,9 +244,9 @@
                     <div class="summary">镜像和容器 容器是镜像的实例。一个镜像可以对应多个容器。每次使用docker run <image>时都会重新创建该镜像的一个容器，我们可以为该命令指定--name 来为所产生的容器指定名字: docker run -d --name serve ubuntu 这样根据ubuntu这个镜像产生的容器就叫serve。 。当容器运行时，我们对容器的修改只会写人到容器的文件系统，而不会影响到对应镜像。所以， 前一次run形成的改动不会影响到后一次run所创建的容器。想要这些修改对image生效， 可以使用docker commit <container> ├─ 可写层(container) 内核层 - 镜像层 ─ ├─ 可写层(container) ├─ 可写层(container) 内核层 - 镜像层 -可写层(container) CMD和ENTRYPOINT的区别 首先两者都可以让你在容器运行的时候执行一条命令，而且这两个字段在Dockerfile中只能指定一次，如果指定多次，那么则以最后一次为准。 再来说两者的区别: 假如我们在运行容器的命令docker run <image ... <a href="https://importcjj.github.io/dockerfilecan-shu-xue-xi.html">read more</a></div>
                 </div>
             </article>
-                <h2>三月 2016</h2>
+                <h2>March 2016</h2>
             <article class="entry-overview">
-                <div class="date">日 27 三月 2016 by <a rel="author" href="https://importcjj.github.io/pages/aboutme.html">importcjj</a></div> 
+                <div class="date">Sun 27 March 2016 by <a rel="author" href="https://importcjj.github.io/pages/aboutme.html">importcjj</a></div> 
                 <div class="detail">
                     <header><h3>
                         <a href="https://importcjj.github.io/gitzhong-yi-xie-rong-yi-bei-hu-shi-de-dong-xi.html" rel="bookmark" title="Permalink to Git中一些容易被忽视的东西">
@@ -244,9 +256,9 @@
                     <div class="summary">修改commit的message 修改最近一次commit的message git commit --amend 然后输入想要修改的message 批量修改commit的message git rebase -i HEAD~n n为一个数字，表示最近n次commit, 将想要修改的commit id前的pick改成reword(r)命令, 然后修改id后的commit message, 保存退出后即可. 合并连续的多个commit为一个commit 使用git rebase -i HEAD~n 把将被合并的commit id前的pick命令改成squash(s) 忽略已被提交过的文件 git rm --cached <filename> 不用担心，这一步只是删除该文件在版本库中的追踪，并不会正真删除磁盘上的物理文件 更新.gitignore文件, 如果之前已经更新过了，就可以直接跳过这一步了。 add + commit 提交 新建一个orphan(孤儿)分支 git ... <a href="https://importcjj.github.io/gitzhong-yi-xie-rong-yi-bei-hu-shi-de-dong-xi.html">read more</a></div>
                 </div>
             </article>
-                <h2>三月 2016</h2>
+                <h2>March 2016</h2>
             <article class="entry-overview">
-                <div class="date">日 27 三月 2016 by <a rel="author" href="https://importcjj.github.io/pages/aboutme.html">importcjj</a></div> 
+                <div class="date">Sun 27 March 2016 by <a rel="author" href="https://importcjj.github.io/pages/aboutme.html">importcjj</a></div> 
                 <div class="detail">
                     <header><h3>
                         <a href="https://importcjj.github.io/golangzhong-san-chong-importfang-shi.html" rel="bookmark" title="Permalink to Golang中三种import方式">
@@ -256,9 +268,9 @@
                     <div class="summary">1. 点方式 有时候会看到如下的方式导入包 import( . "fmt" ) 这个点操作的含义就是这个包导入之后在你调用这个包的函数时，你可以省略前缀的包名，也就是前面你调用的fmt.Println("hello world") 可以省略的写成Println("hello world") 2. 别名方式 别名操作顾名思义可以把包命名成另一个用起来容易记忆的名字。 import( f "fmt" ) 别名操作调用包函数时前缀变成了重命名的前缀，即f.Println("hello world") 3. _方式 _操作其实只是引入该包。当导入一个包时，它所有的init()函数就会被执行，但有些时候并非真的需要使用这些包，仅仅是希望它的init()函数被执行而已。这个时候就可以使用_操作引用该包了。即使用_操作引用包是无法通过包名来调用包中的导出函数，而是只是为了简单的调用其init函数()。 比如 import (_ "github.com/mattn/go-sqlite3")只是为了调用该包中的init函数来注册该数据库驱动而已，并需要该包中的其他内容。 <a href="https://importcjj.github.io/golangzhong-san-chong-importfang-shi.html">read more</a></div>
                 </div>
             </article>
-                <h2>三月 2016</h2>
+                <h2>March 2016</h2>
             <article class="entry-overview">
-                <div class="date">日 27 三月 2016 by <a rel="author" href="https://importcjj.github.io/pages/aboutme.html">importcjj</a></div> 
+                <div class="date">Sun 27 March 2016 by <a rel="author" href="https://importcjj.github.io/pages/aboutme.html">importcjj</a></div> 
                 <div class="detail">
                     <header><h3>
                         <a href="https://importcjj.github.io/guan-yu-dockerde-yi-xie-za-huo.html" rel="bookmark" title="Permalink to 关于Docker的一些杂货">
@@ -268,9 +280,9 @@
                     <div class="summary">如何在外部获取容器的日志? 可以使用docker logs -f <container>的方式在宿主机显示容器进程所产生的日志，就像我们使用tail那样。但是如果我们需要访问的并不是容器主进程所记录的日志呢？比如说，现在有一个很简单的web应用，我们选择让他运行在Docker容器里面，web服务器使用了gunicorn，它支持使用参数--access-file=filename来将该web应用的访问请求记录到指定的日志中去。当我们需要方便的获取这些访问记录或者实时查看的时候，应该怎么做？ 当我们的web应用运行时，gunicorn所记录的日志只存在于docker系统的读写层(容器container)，而不会影响到只读层(镜像image)。如果我们想要较为方便的得到容器中的日志文件，可以使用Docker提供的的volume。你可以理解为将宿主系统的文件夹挂载至容器中从而达到实时共享文件夹的目的。 你可以在很多地方指定volume, 比如: 1. Dockerfile 的VOLUME命令 # Dockerfile RUN mkdir -p /data/logs/webapp VOLUME /data/logs/webapp 当你使用该Dockerfile去build一个镜像，并使用该镜像来运行了一个容器实例的时候，宿主系统的某个文件夹就会被挂载为该容器的/data ... <a href="https://importcjj.github.io/guan-yu-dockerde-yi-xie-za-huo.html">read more</a></div>
                 </div>
             </article>
-                <h2>三月 2016</h2>
+                <h2>March 2016</h2>
             <article class="entry-overview">
-                <div class="date">日 27 三月 2016 by <a rel="author" href="https://importcjj.github.io/pages/aboutme.html">importcjj</a></div> 
+                <div class="date">Sun 27 March 2016 by <a rel="author" href="https://importcjj.github.io/pages/aboutme.html">importcjj</a></div> 
                 <div class="detail">
                     <header><h3>
                         <a href="https://importcjj.github.io/markdownyu-fa-shuo-ming.html" rel="bookmark" title="Permalink to MarkDown语法说明">
@@ -280,9 +292,9 @@
                     <div class="summary">本篇博文参考这里 Markdown 是一种轻量级标记语言，它允许人们使用易读易写的纯文本格式编写文档，然后转换成格式丰富的HTML页面。 标题语法 形式一: 标题1 ====(至少一个,同行不能有其他字符) 标题2 ---- 效果: 标题1 标题2 形式二: 示例： # 标题1 #(可以闭合，也可以不闭合，闭合的话数量也不一定要相同) ## 标题2 ### 标题3 #### 标题4 ##### 标题5 ###### 标题6 效果: 标题1 标题2 标题3 标题4 标题5 标题6 段落和换行 空格：多个空格或者一个回车符(只能显示一个空格) 多空格：\  段内换行：双空格 + 回车符 另起一段 ... <a href="https://importcjj.github.io/markdownyu-fa-shuo-ming.html">read more</a></div>
                 </div>
             </article>
-                <h2>三月 2016</h2>
+                <h2>March 2016</h2>
             <article class="entry-overview">
-                <div class="date">日 27 三月 2016 by <a rel="author" href="https://importcjj.github.io/pages/aboutme.html">importcjj</a></div> 
+                <div class="date">Sun 27 March 2016 by <a rel="author" href="https://importcjj.github.io/pages/aboutme.html">importcjj</a></div> 
                 <div class="detail">
                     <header><h3>
                         <a href="https://importcjj.github.io/python-yieldxiao-ji.html" rel="bookmark" title="Permalink to Python yield小记">
@@ -292,9 +304,9 @@
                     <div class="summary">yeild yield 一般搭配函数来定义一个Generator(生成器) 一个简单的例子: def f(): print "Today is 7.21" yield 6 f() 将会返回一个Generator, 而非像普通函数一样执行。想要使用生成器的话(比如 i)需要使用i.next() (与next(i)等效) 和i.send(value)。 >>> i = f() >>> i <generator object f at 0x1041e7dc0> >>> i.next() Today is 7.21 6 >>> i.next() Traceback (most recent call last ... <a href="https://importcjj.github.io/python-yieldxiao-ji.html">read more</a></div>
                 </div>
             </article>
-                <h2>三月 2016</h2>
+                <h2>March 2016</h2>
             <article class="entry-overview">
-                <div class="date">日 27 三月 2016 by <a rel="author" href="https://importcjj.github.io/pages/aboutme.html">importcjj</a></div> 
+                <div class="date">Sun 27 March 2016 by <a rel="author" href="https://importcjj.github.io/pages/aboutme.html">importcjj</a></div> 
                 <div class="detail">
                     <header><h3>
                         <a href="https://importcjj.github.io/pythonzhong-yi-xie-rong-yi-bei-hu-shi-de-dong-xi.html" rel="bookmark" title="Permalink to Python中一些容易被忽视的东西">
@@ -304,9 +316,9 @@
                     <div class="summary">旨在记录Python标准库中好像很厉害的模块或功能。 1. functools.partial(func[,args][, *keywords]) 2. globals() and locals() functools.partial(func[,args][, *keywords]) 为func的参数指定默认值后返回一个新的函数。比如: # disable print as the statement from __future__ import print_function from functools import partial from StringIO import StringIO f = StringIO.StringIO() print = partial(print, file=f) print("This will print to f) # stdout ... <a href="https://importcjj.github.io/pythonzhong-yi-xie-rong-yi-bei-hu-shi-de-dong-xi.html">read more</a></div>
                 </div>
             </article>
-                <h2>三月 2016</h2>
+                <h2>March 2016</h2>
             <article class="entry-overview">
-                <div class="date">日 27 三月 2016 by <a rel="author" href="https://importcjj.github.io/pages/aboutme.html">importcjj</a></div> 
+                <div class="date">Sun 27 March 2016 by <a rel="author" href="https://importcjj.github.io/pages/aboutme.html">importcjj</a></div> 
                 <div class="detail">
                     <header><h3>
                         <a href="https://importcjj.github.io/shi-yong-pythonzhi-zuo-zi-ding-yi-zhong-duan-ming-ling.html" rel="bookmark" title="Permalink to 使用Python制作自定义终端命令">
@@ -316,9 +328,9 @@
                     <div class="summary">介绍 首先，拿pip举个例子，pip是我们使用较多的python包管理工具。当我们安装pip之后，直接在终端中就可以使用pip这个命令。那你有没有想过这是如何实现的？ 其实，pip这个命令最终调用了python所在文件夹bin目录的pip文件。为什么说最终？因为使用系统默认的python安装pip时，可能会在/usr/local/bin或者/usr/bin下创建软链接。如果使用了virtualenv，那么pip文件就在env/bin下。那么pip文件到底是什么呢？答案就是，是一个具有执行权限的python文件，只不过去掉了.py的后缀. 也许你会兴高采烈的去尝试一发，在bin文件下创建xxx.py，打上一句 print “hello world”, 然后去掉.py的后缀, 再使用chmod a+x xxx来赋予它执行的权限。打开终端，敲下xxx。最后你只会得到print: command not found的错误提示。为什么？因为操作系统不知道这是一个py文件。思考一下，我们平时运行py文件都需要打上python xxx.py形式的命令 ... <a href="https://importcjj.github.io/shi-yong-pythonzhi-zuo-zi-ding-yi-zhong-duan-ming-ling.html">read more</a></div>
                 </div>
             </article>
-                <h2>三月 2016</h2>
+                <h2>March 2016</h2>
             <article class="entry-overview">
-                <div class="date">日 27 三月 2016 by <a rel="author" href="https://importcjj.github.io/pages/aboutme.html">importcjj</a></div> 
+                <div class="date">Sun 27 March 2016 by <a rel="author" href="https://importcjj.github.io/pages/aboutme.html">importcjj</a></div> 
                 <div class="detail">
                     <header><h3>
                         <a href="https://importcjj.github.io/supervisorcelerycelerybeatde-jian-dan-shi-yong.html" rel="bookmark" title="Permalink to supervisor+celery+celerybeat的简单使用">
@@ -328,9 +340,9 @@
                     <div class="summary">1. 提前准备 略去相关工具的安装过程，其实都挺简单的! celery作为异步任务队列, 需要一个中间人来协助celery存放和消耗任务信息。我们选择rabbitmq来做消息代理人。使用celery之前, 需要使用创建一个rabbitmq的管理员账号和一个能让该账号访问的vhost. Rabbitmq的安装配置以及网页管理插件 假设准备的rabbitmq的信息如下: SETTINGS = { 'user': 'www-data', 'password': 'www-data', 'host': '127.0.0.1', 'port': '5672', 'vhost': 't_celery' } 示例项目结构 test.celery/ |- env/ |- src/ |- __init__.py |- app.py |- task.py 2. celery实例及任务 2.1 生成实例 # -*- coding: utf-8 -*- # filename: app.py from celery import Celery ... <a href="https://importcjj.github.io/supervisorcelerycelerybeatde-jian-dan-shi-yong.html">read more</a></div>
                 </div>
             </article>
-                <h2>三月 2016</h2>
+                <h2>March 2016</h2>
             <article class="entry-overview">
-                <div class="date">日 27 三月 2016 by <a rel="author" href="https://importcjj.github.io/pages/aboutme.html">importcjj</a></div> 
+                <div class="date">Sun 27 March 2016 by <a rel="author" href="https://importcjj.github.io/pages/aboutme.html">importcjj</a></div> 
                 <div class="detail">
                     <header><h3>
                         <a href="https://importcjj.github.io/zhong-duan-jin-du-tiao-de-jian-dan-yuan-li.html" rel="bookmark" title="Permalink to 终端进度条的简单原理">
@@ -340,9 +352,9 @@
                     <div class="summary">进度条 每次使用pip安装一些第三方库时，总会在终端或者命令行中看到进度条，能够让用户等待时得到当前任务的进度。今天偶然在知乎看到一个帖子中提到了这个有趣的功能。 实现方式 一般情况下命令行和终端的输出总是由上往下一行一行输出。如果我们需要实现进度条的效果的效果的话，就需要每次输出都在同一行上，不断地用后来的输出去覆盖之前的输出，从而模拟出一种动态变化的效果。那究竟怎样实现呢？答案就是使用反杠r。 反杠n是换行，反杠r就只是把输出光标移到行首，而不换行。根据这个思路，我们先做个倒计时来玩玩。 import time import sys def CountDown(total_sec): for i in xrange(10, -1, -1): # 不能换行哈 print '%4d\\r' % i, sys.stdout.flush() time.sleep(1) # 防止输出被之后的输出覆盖 print CountDown(10 ... <a href="https://importcjj.github.io/zhong-duan-jin-du-tiao-de-jian-dan-yuan-li.html">read more</a></div>
                 </div>
             </article>
-                <h2>三月 2016</h2>
+                <h2>March 2016</h2>
             <article class="entry-overview">
-                <div class="date">六 26 三月 2016 by <a rel="author" href="https://importcjj.github.io/pages/aboutme.html">importcjj</a></div> 
+                <div class="date">Sat 26 March 2016 by <a rel="author" href="https://importcjj.github.io/pages/aboutme.html">importcjj</a></div> 
                 <div class="detail">
                     <header><h3>
                         <a href="https://importcjj.github.io/pythondan-ceng-zhuang-shi-qi-xiao-ji.html" rel="bookmark" title="Permalink to Python单层装饰器小记">
@@ -352,9 +364,9 @@
                     <div class="summary">解释器什么时候处理装饰器？ 答: Python解释器加载代码的时候. 例如, sleep.py 代码如下 import functools import time def timer(func): print("handle decorator") @functools.wraps(func) def wrapper(*args, **kwargs): start = time.time() rtn = func(*args, **kwargs) cost = time.time() - start print("cost %f s") % cost return rtn return wrapper @timer def sleep(seconds): time.sleep ... <a href="https://importcjj.github.io/pythondan-ceng-zhuang-shi-qi-xiao-ji.html">read more</a></div>
                 </div>
             </article>
-                <h2>三月 2016</h2>
+                <h2>March 2016</h2>
             <article class="entry-overview">
-                <div class="date">六 26 三月 2016 by <a rel="author" href="https://importcjj.github.io/pages/aboutme.html">importcjj</a></div> 
+                <div class="date">Sat 26 March 2016 by <a rel="author" href="https://importcjj.github.io/pages/aboutme.html">importcjj</a></div> 
                 <div class="detail">
                     <header><h3>
                         <a href="https://importcjj.github.io/pythonde-metaclassxiao-ji.html" rel="bookmark" title="Permalink to Python的metaclass小记">
@@ -364,9 +376,9 @@
                     <div class="summary">使用metaclass的时候可以使用metaclass的__new__和__init__去改变所定义的类的相关属性，因为这两个方法是在类定义的时候被调用，他们所需的参数也与使用type(name, bases, dict)动态声明类相同。而使用metaclass的__call__可以影响我们所声明的类产生实例的过程，因为当我们使用class_name()去产生实例的时候，相当于call了这个class，而这个class又是metaclass的实例，所以其实调用了metaclass的__call__ 注意: 通过super来调用父类的__new__时，第一个参数需要是该class，这点是不同于调用__init__等其他父类方法的。因为__new__是个静态方法。还有一个小问题就是当父类是object的时候，也就是调用object.__new__()只传一个cls参数就可以了，至于为什么，请戳here 和here。 如果你重写了__new__而没有重写 ... <a href="https://importcjj.github.io/pythonde-metaclassxiao-ji.html">read more</a></div>
                 </div>
             </article>
-                <h2>三月 2016</h2>
+                <h2>March 2016</h2>
             <article class="entry-overview">
-                <div class="date">六 26 三月 2016 by <a rel="author" href="https://importcjj.github.io/pages/aboutme.html">importcjj</a></div> 
+                <div class="date">Sat 26 March 2016 by <a rel="author" href="https://importcjj.github.io/pages/aboutme.html">importcjj</a></div> 
                 <div class="detail">
                     <header><h3>
                         <a href="https://importcjj.github.io/sheng-ji-centosde-pythonban-ben.html" rel="bookmark" title="Permalink to 升级CentOS的Python版本">

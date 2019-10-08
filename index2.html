@@ -50,7 +50,123 @@
           <section id="content" class="hyphenate">
 
         <article class="entry-overview">
-            <div class="date">四 21 四月 2016 by <a rel="author" href="https://importcjj.github.io/pages/aboutme.html">importcjj</a></div>
+            <div class="date">Tue 26 April 2016 by <a rel="author" href="https://importcjj.github.io/pages/aboutme.html">importcjj</a></div>
+            <div class="detail">
+                <header><h2>
+                    <a href="https://importcjj.github.io/pythondan-li-mo-shi-de-shi-xian.html" rel="bookmark" title="Permalink to Python单例模式的实现">
+                        Python单例模式的实现
+                    </a>
+                </h2></header>
+
+                   <div class="clearboth"><h4>由于实现的方式很多，先来3种。</h4>
+<h4>1. 类实例实现的单例装饰器</h4>
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">functools</span>
+
+<span class="k">class</span> <span class="nc">Singleton</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">instances</span> <span class="o">=</span> <span class="p">{}</span>
+
+    <span class="k">def</span> <span class="fm">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="bp">cls</span><span class="p">):</span>
+        <span class="nd">@functools.wraps</span><span class="p">(</span><span class="bp">cls</span><span class="p">)</span>
+        <span class="k">def</span> <span class="nf">wrapper</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">instances</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">instances</span><span class="p">[</span><span class="bp">cls</span><span class="p">]</span> <span class="o">=</span> <span class="bp">cls</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">instances</span><span class="p">[</span><span class="bp">cls</span><span class="p">]</span>
+        <span class="k">return</span> <span class="n">wrapper</span>
+
+<span class="n">singleton</span> <span class="o">=</span> <span class="n">Singleton</span><span class="p">()</span>
+
+<span class="c1"># 用法</span>
+<span class="nd">@singleton</span>
+<span class="k">class</span> <span class="nc">Test</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="k">pass</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">t1</span> <span class="o">=</span> <span class="n">Test</span><span class="p">()</span>
+    <span class="n">t2</span> <span class="o">=</span> <span class="n">Test</span><span class="p">()</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">t1</span><span class="p">,</span> <span class="n">t2</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">t1</span><span class="p">),</span> <span class="nb">type</span><span class="p">(</span><span class="n">t2</span><span class="p">))</span>
+    <span class="k">assert</span> <span class="n">t1</span> <span class="o">==</span> <span class="n">t2</span>
+
+<span class="c1"># 这种方式有一个缺点，就是Test这个类会变成一个function, </span>
+<span class="c1"># 这样的话就无法使用instance等方式了。</span>
+</pre></div>
+
+
+<h4>2. 类实现的单例装饰器</h4>
+<div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Singleton</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="bp">cls</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">cls</span> <span class="o">=</span> <span class="bp">cls</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">cls_instance</span> <span class="o">=</span> <span class="bp">None</span>
+
+    <span class="k">def</span> <span class="fm">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">cls_instance</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">cls_instance</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">cls</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">cls_instance</span>
+
+<span class="nd">@Singleton</span>
+<span class="k">class</span> <span class="nc">Test</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="k">pass</span>
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">Test</span><span class="p">)</span>
+    <span class="n">t1</span> <span class="o">=</span> <span class="n">Test</span><span class="p">()</span>
+    <span class="n">t2</span> <span class="o">=</span> <span class="n">Test</span><span class="p">()</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">t1</span><span class="p">,</span> <span class="n">t2</span><span class="p">)</span>
+    <span class="k">assert</span> <span class="n">t1</span> <span class="o">==</span> <span class="n">t2</span>
+
+<span class="c1"># 这种方式Test其实已经是single的一个实例了</span>
+<span class="c1"># 缺点和第一种方式一样，Test已经不是原来的Test了</span>
+<span class="c1"># 而t1, t2却还是原来的Test的实例</span>
+<span class="c1"># 对于这种方式我还存有疑虑，但是又说不出来</span>
+<span class="c1"># 总感觉怪怪的</span>
+</pre></div>
+
+
+<h4>3. metaclass元类</h4>
+<div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Singleton</span><span class="p">(</span><span class="nb">type</span><span class="p">):</span>
+    <span class="n">_instances</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">def</span> <span class="nf">__cal__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_instances</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_instances</span><span class="p">[</span><span class="bp">self</span><span class="p">]</span> <span class="o">=</span> <span class="nb">super</span><span class="p">(</span><span class="n">Singleton</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__call__</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">*</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_instances</span><span class="p">[</span><span class="bp">self</span><span class="p">]</span>
+
+<span class="c1"># py2写法</span>
+<span class="k">class</span> <span class="nc">Test</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="vm">__metaclass__</span> <span class="o">=</span> <span class="n">Singleton</span>
+
+    <span class="k">pass</span>
+
+<span class="c1"># py3写法</span>
+<span class="k">class</span> <span class="nc">Test</span><span class="p">(</span><span class="nb">object</span><span class="p">,</span> <span class="n">metaclass</span><span class="o">=</span><span class="n">Singleton</span><span class="p">):</span>
+    <span class="k">pass</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">Test</span><span class="p">)</span>
+    <span class="n">t1</span> <span class="o">=</span> <span class="n">Test</span><span class="p">()</span>
+    <span class="n">t2</span> <span class="o">=</span> <span class="n">Test</span><span class="p">()</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">t1</span><span class="p">,</span> <span class="n">t2</span><span class="p">)</span>
+    <span class="k">assert</span> <span class="n">t1</span> <span class="o">==</span> <span class="n">t2</span>
+    <span class="k">print</span><span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">t1</span><span class="p">,</span> <span class="n">Test</span><span class="p">)</span>
+
+<span class="c1"># 使用元类是最好的，因为Test的行为都没有被改变</span>
+<span class="c1"># 所以isinstance, type等函数的调用都没有影响</span>
+<span class="c1"># 不过理解起来可能会有一些困难了</span>
+<span class="c1"># 因为我觉得自己理解的还有一些不够通透</span>
+</pre></div></div>
+
+                    <div class="tags">
+                        <p>This entry was tagged on  
+                            <a href="https://importcjj.github.io/tag/singleton.html">#singleton</a> and                             <a href="https://importcjj.github.io/tag/zhuang-shi-qi.html">#装饰器</a></p>
+                    </div>
+
+            </div>
+        </article>
+        <article class="entry-overview">
+            <div class="date">Thu 21 April 2016 by <a rel="author" href="https://importcjj.github.io/pages/aboutme.html">importcjj</a></div>
             <div class="detail">
                 <header><h2>
                     <a href="https://importcjj.github.io/hhkb-type-skai-xiang-ti-yan.html" rel="bookmark" title="Permalink to HHKB Type-S开箱体验">
@@ -73,7 +189,7 @@
             </div>
         </article>
         <article class="entry-overview">
-            <div class="date">一 11 四月 2016 by <a rel="author" href="https://importcjj.github.io/pages/aboutme.html">importcjj</a></div>
+            <div class="date">Mon 11 April 2016 by <a rel="author" href="https://importcjj.github.io/pages/aboutme.html">importcjj</a></div>
             <div class="detail">
                 <header><h2>
                     <a href="https://importcjj.github.io/hao-yong-de-gong-ju-he-ruan-jian-ji-lu.html" rel="bookmark" title="Permalink to 好用的工具和软件记录">
@@ -97,7 +213,7 @@
             </div>
         </article>
         <article class="entry-overview">
-            <div class="date">二 05 四月 2016 by <a rel="author" href="https://importcjj.github.io/pages/aboutme.html">importcjj</a></div>
+            <div class="date">Tue 05 April 2016 by <a rel="author" href="https://importcjj.github.io/pages/aboutme.html">importcjj</a></div>
             <div class="detail">
                 <header><h2>
                     <a href="https://importcjj.github.io/wo-de-emacsde-pei-zhi.html" rel="bookmark" title="Permalink to 我的Emacs的配置">
@@ -261,7 +377,7 @@
             </div>
         </article>
         <article class="entry-overview">
-            <div class="date">一 28 三月 2016 by <a rel="author" href="https://importcjj.github.io/pages/aboutme.html">importcjj</a></div>
+            <div class="date">Mon 28 March 2016 by <a rel="author" href="https://importcjj.github.io/pages/aboutme.html">importcjj</a></div>
             <div class="detail">
                 <header><h2>
                     <a href="https://importcjj.github.io/shi-xian-bo-ke-de-zi-dong-bian-yi-fa-bu.html" rel="bookmark" title="Permalink to 实现博客的自动编译发布">
@@ -283,7 +399,7 @@
             </div>
         </article>
         <article class="entry-overview">
-            <div class="date">日 27 三月 2016 by <a rel="author" href="https://importcjj.github.io/pages/aboutme.html">importcjj</a></div>
+            <div class="date">Sun 27 March 2016 by <a rel="author" href="https://importcjj.github.io/pages/aboutme.html">importcjj</a></div>
             <div class="detail">
                 <header><h2>
                     <a href="https://importcjj.github.io/dockerfilecan-shu-xue-xi.html" rel="bookmark" title="Permalink to Dockerfile参数学习">
@@ -448,7 +564,7 @@
             </div>
         </article>
         <article class="entry-overview">
-            <div class="date">日 27 三月 2016 by <a rel="author" href="https://importcjj.github.io/pages/aboutme.html">importcjj</a></div>
+            <div class="date">Sun 27 March 2016 by <a rel="author" href="https://importcjj.github.io/pages/aboutme.html">importcjj</a></div>
             <div class="detail">
                 <header><h2>
                     <a href="https://importcjj.github.io/gitzhong-yi-xie-rong-yi-bei-hu-shi-de-dong-xi.html" rel="bookmark" title="Permalink to Git中一些容易被忽视的东西">
@@ -487,7 +603,7 @@
             </div>
         </article>
         <article class="entry-overview">
-            <div class="date">日 27 三月 2016 by <a rel="author" href="https://importcjj.github.io/pages/aboutme.html">importcjj</a></div>
+            <div class="date">Sun 27 March 2016 by <a rel="author" href="https://importcjj.github.io/pages/aboutme.html">importcjj</a></div>
             <div class="detail">
                 <header><h2>
                     <a href="https://importcjj.github.io/golangzhong-san-chong-importfang-shi.html" rel="bookmark" title="Permalink to Golang中三种import方式">
@@ -513,7 +629,7 @@
             </div>
         </article>
         <article class="entry-overview">
-            <div class="date">日 27 三月 2016 by <a rel="author" href="https://importcjj.github.io/pages/aboutme.html">importcjj</a></div>
+            <div class="date">Sun 27 March 2016 by <a rel="author" href="https://importcjj.github.io/pages/aboutme.html">importcjj</a></div>
             <div class="detail">
                 <header><h2>
                     <a href="https://importcjj.github.io/guan-yu-dockerde-yi-xie-za-huo.html" rel="bookmark" title="Permalink to 关于Docker的一些杂货">
@@ -568,7 +684,7 @@
             </div>
         </article>
         <article class="entry-overview">
-            <div class="date">日 27 三月 2016 by <a rel="author" href="https://importcjj.github.io/pages/aboutme.html">importcjj</a></div>
+            <div class="date">Sun 27 March 2016 by <a rel="author" href="https://importcjj.github.io/pages/aboutme.html">importcjj</a></div>
             <div class="detail">
                 <header><h2>
                     <a href="https://importcjj.github.io/markdownyu-fa-shuo-ming.html" rel="bookmark" title="Permalink to MarkDown语法说明">
@@ -850,131 +966,6 @@
                     <div class="tags">
                         <p>This entry was tagged on  
                             <a href="https://importcjj.github.io/tag/markdown.html">#markdown</a></p>
-                    </div>
-
-            </div>
-        </article>
-        <article class="entry-overview">
-            <div class="date">日 27 三月 2016 by <a rel="author" href="https://importcjj.github.io/pages/aboutme.html">importcjj</a></div>
-            <div class="detail">
-                <header><h2>
-                    <a href="https://importcjj.github.io/python-yieldxiao-ji.html" rel="bookmark" title="Permalink to Python yield小记">
-                        Python yield小记
-                    </a>
-                </h2></header>
-
-                   <div class="clearboth"><h4>yeild</h4>
-<p><em>yield</em> 一般搭配函数来定义一个Generator(生成器)</p>
-<p>一个简单的例子:</p>
-<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f</span><span class="p">():</span>
-    <span class="k">print</span> <span class="s2">&quot;Today is 7.21&quot;</span>
-    <span class="k">yield</span> <span class="mi">6</span>
-</pre></div>
-
-
-<p><em>f()</em> 将会返回一个Generator, 而非像普通函数一样执行。想要使用生成器的话(比如 i)需要使用i.next() (与next(i)等效) 和i.send(value)。</p>
-<div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="n">i</span> <span class="o">=</span> <span class="n">f</span><span class="p">()</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">i</span>
-<span class="o">&lt;</span><span class="n">generator</span> <span class="nb">object</span> <span class="n">f</span> <span class="n">at</span> <span class="mh">0x1041e7dc0</span><span class="o">&gt;</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">i</span><span class="o">.</span><span class="n">next</span><span class="p">()</span>
-<span class="n">Today</span> <span class="ow">is</span> <span class="mf">7.21</span>
-<span class="mi">6</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">i</span><span class="o">.</span><span class="n">next</span><span class="p">()</span>
-<span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">):</span>
-  <span class="n">File</span> <span class="s2">&quot;&lt;stdin&gt;&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">1</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">StopIteration</span>
-</pre></div>
-
-
-<p>生成器调next()或send()方法后会执行函数体内的语句，执行到yield语句后停止, 并返回yield语句的参数，上例中就是 6。再次使用next()或send()会从停止处继续执行，由于之后已经没有yield了，所以会raise StopTteration异常。</p>
-<p>有时候可能会遇到这样的情况</p>
-<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f</span><span class="p">():</span>
-    <span class="n">m</span> <span class="o">=</span> <span class="mi">5</span>
-    <span class="n">m</span> <span class="o">=</span> <span class="k">yield</span> <span class="mi">6</span>
-    <span class="k">print</span> <span class="s2">&quot;m = &quot;</span><span class="p">,</span> <span class="n">m</span>
-</pre></div>
-
-
-<p>上例中 m 会得到（yield 6）这个式子的值。那么，这个值是多少呢？取决于i.next()和i.send(value)。如果是next，则是None。send的话就是value。</p>
-<p><em>can't send non-None value to a just-started generator</em> 第一次调用只能是
-i.next()或者i.send(None)</p>
-<p>这里需要注意一点，第一次next会在执行(yield 6)后停止，并不会执行m的赋值(重新绑定，毕竟python不太一样)。m的值是轮到下一个next或send来改变的。</p>
-<div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="k">def</span> <span class="nf">f</span><span class="p">():</span>
-<span class="o">...</span>     <span class="n">m</span> <span class="o">=</span> <span class="mi">5</span> 
-<span class="o">...</span>     <span class="n">m</span> <span class="o">=</span> <span class="k">yield</span> <span class="mi">6</span>
-<span class="o">...</span>     <span class="k">print</span> <span class="s2">&quot;m = &quot;</span><span class="p">,</span> <span class="n">m</span>
-<span class="o">...</span> 
-<span class="o">&gt;&gt;&gt;</span> <span class="n">i</span> <span class="o">=</span> <span class="n">f</span><span class="p">()</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">i</span><span class="o">.</span><span class="n">next</span><span class="p">()</span>
-<span class="mi">6</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">i</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="mi">7</span><span class="p">)</span>
-<span class="n">m</span> <span class="o">=</span>  <span class="mi">7</span>
-<span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">):</span>
-  <span class="n">File</span> <span class="s2">&quot;&lt;stdin&gt;&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">1</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">StopIteration</span>
-</pre></div>
-
-
-<h4>使用</h4>
-<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">fibonacci</span><span class="p">(</span><span class="n">i</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;关于斐波那契数列的生成器</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-    <span class="k">if</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
-        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">,</span> <span class="n">i</span>
-    <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-        <span class="k">yield</span> <span class="mi">0</span>
-
-    <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span>
-    <span class="k">while</span> <span class="n">count</span> <span class="o">&lt;=</span> <span class="n">i</span><span class="p">:</span>
-        <span class="k">yield</span> <span class="n">a</span>
-        <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">b</span><span class="p">,</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
-        <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
-
-<span class="o">&gt;&gt;&gt;</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">fibonacci</span><span class="p">(</span><span class="mi">13</span><span class="p">):</span>
-<span class="o">...</span>     <span class="k">print</span> <span class="n">i</span><span class="p">,</span>
-<span class="o">...</span> 
-<span class="mi">0</span> <span class="mi">1</span> <span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span> <span class="mi">5</span> <span class="mi">8</span> <span class="mi">13</span> <span class="mi">21</span> <span class="mi">34</span> <span class="mi">55</span> <span class="mi">89</span> <span class="mi">144</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">fibonacci</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
-<span class="o">...</span>     <span class="k">print</span> <span class="n">i</span><span class="p">,</span>
-<span class="o">...</span> 
-<span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">):</span>
-  <span class="n">File</span> <span class="s2">&quot;&lt;stdin&gt;&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">1</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-  <span class="n">File</span> <span class="s2">&quot;_yield.py&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">5</span><span class="p">,</span> <span class="ow">in</span> <span class="n">fibonacci</span>
-    <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">,</span> <span class="n">i</span>
-<span class="ne">ValueError</span><span class="p">:</span> <span class="o">-</span><span class="mi">1</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">fibonacci</span><span class="p">(</span><span class="mi">0</span><span class="p">):</span>
-<span class="o">...</span>     <span class="k">print</span> <span class="n">i</span><span class="p">,</span>
-<span class="o">...</span> 
-<span class="mi">0</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">fibonacci</span><span class="p">(</span><span class="mi">1</span><span class="p">):</span>
-<span class="o">...</span>     <span class="k">print</span> <span class="n">i</span>
-<span class="o">...</span> 
-<span class="mi">0</span> <span class="mi">1</span>
-</pre></div>
-
-
-<p>随便写了一个关于斐波拉切数列的生成器，并且遍历了它。</p>
-<h4>终止生成器</h4>
-<div class="highlight"><pre><span></span><span class="n">fib</span> <span class="o">=</span> <span class="n">fibonacci</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span>
-<span class="n">fib</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
-</pre></div>
-
-
-<div class="highlight"><pre><span></span><span class="n">fib</span><span class="o">.</span><span class="n">throw</span><span class="p">(</span><span class="ne">GeneratorExit</span><span class="p">)</span>
-<span class="c1"># GeneratorExit 继承自 BaseException</span>
-</pre></div>
-
-
-<p>使用这两种方法之后，再去访问生成器的方法，会触发StopIteration异常。遍历的话也不会返回有效值。</p>
-<h4>最后</h4>
-<p>关于yield暂时只想到这些，以后可能补充。生成器不一定还能通过别的方式定义。比如</p>
-<div class="highlight"><pre><span></span><span class="p">(</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">6</span><span class="p">))</span>
-</pre></div></div>
-
-                    <div class="tags">
-                        <p>This entry was tagged on  
-                            <a href="https://importcjj.github.io/tag/python.html">#Python</a>,                             <a href="https://importcjj.github.io/tag/sheng-cheng-qi.html">#生成器</a> and                             <a href="https://importcjj.github.io/tag/yield.html">#yield</a></p>
                     </div>
 
             </div>
